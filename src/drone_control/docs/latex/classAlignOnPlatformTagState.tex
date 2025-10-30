@@ -1,0 +1,164 @@
+\hypertarget{classAlignOnPlatformTagState}{}\doxysection{Align\+On\+Platform\+Tag\+State Class Reference}
+\label{classAlignOnPlatformTagState}\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+
+
+对准平台标签状态类 负责控制无人机对准到平台上的\+Ar\+Uco标签的中心位置  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Align\+On\+Platform\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classAlignOnPlatformTagState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Align\+On\+Platform\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classAlignOnPlatformTagState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAlignOnPlatformTagState_a7adb457adad715f68f1fba3fa61bb74b}{Align\+On\+Platform\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAlignOnPlatformTagState_aa1f7293e8f9c8c21b9e6d0f3ef60bce7}{$\sim$\+Align\+On\+Platform\+Tag\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classAlignOnPlatformTagState_a03e484bd60450a9d09daba6af88cb795}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classAlignOnPlatformTagState_a53485303e7c25a61afc9533c6dba47f1}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAlignOnPlatformTagState_a7bb97c6a939c0322b99da65f3a258847}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classAlignOnPlatformTagState_aeebf9aabb117a2db9148d91902e18987}{\+\_\+down\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 下视摄像头的标签处理器 用于处理下视摄像头拍摄的图像中\+Ar\+Uco平台标签的检测和定位 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+对准平台标签状态类 负责控制无人机对准到平台上的\+Ar\+Uco标签的中心位置 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAlignOnPlatformTagState_a7adb457adad715f68f1fba3fa61bb74b}\label{classAlignOnPlatformTagState_a7adb457adad715f68f1fba3fa61bb74b}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{AlignOnPlatformTagState()}{AlignOnPlatformTagState()}}
+{\footnotesize\ttfamily Align\+On\+Platform\+Tag\+State\+::\+Align\+On\+Platform\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Align\+On\+Platform\+Tag\+State构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+\end{DoxyParams}
+初始化对准平台标记状态节点，获取下降标记处理器
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAlignOnPlatformTagState_aa1f7293e8f9c8c21b9e6d0f3ef60bce7}\label{classAlignOnPlatformTagState_aa1f7293e8f9c8c21b9e6d0f3ef60bce7}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!````~AlignOnPlatformTagState@{$\sim$AlignOnPlatformTagState}}
+\index{````~AlignOnPlatformTagState@{$\sim$AlignOnPlatformTagState}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{$\sim$AlignOnPlatformTagState()}{~AlignOnPlatformTagState()}}
+{\footnotesize\ttfamily Align\+On\+Platform\+Tag\+State\+::$\sim$\+Align\+On\+Platform\+Tag\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAlignOnPlatformTagState_a03e484bd60450a9d09daba6af88cb795}\label{classAlignOnPlatformTagState_a03e484bd60450a9d09daba6af88cb795}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Align\+On\+Platform\+Tag\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 
+
+进入对准平台标记状态时调用
+
+记录日志 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classAlignOnPlatformTagState_a7bb97c6a939c0322b99da65f3a258847}\label{classAlignOnPlatformTagState_a7bb97c6a939c0322b99da65f3a258847}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Align\+On\+Platform\+Tag\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 
+
+退出对准平台标记状态时调用
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classAlignOnPlatformTagState_a53485303e7c25a61afc9533c6dba47f1}\label{classAlignOnPlatformTagState_a53485303e7c25a61afc9533c6dba47f1}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Align\+On\+Platform\+Tag\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 
+
+对准平台标记状态更新方法
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+调整无人机位置以精确对准平台标记，对准完成后切换到下降状态
+
+\begin{DoxyReturn}{Returns}
+速度控制指令数组 \mbox{[}v\+\_\+x, v\+\_\+y, v\+\_\+z, v\+\_\+yaw\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAlignOnPlatformTagState_aeebf9aabb117a2db9148d91902e18987}\label{classAlignOnPlatformTagState_aeebf9aabb117a2db9148d91902e18987}} 
+\index{AlignOnPlatformTagState@{AlignOnPlatformTagState}!\_down\_tag\_processor@{\_down\_tag\_processor}}
+\index{\_down\_tag\_processor@{\_down\_tag\_processor}!AlignOnPlatformTagState@{AlignOnPlatformTagState}}
+\doxysubsubsection{\texorpdfstring{\_down\_tag\_processor}{\_down\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Align\+On\+Platform\+Tag\+State\+::\+\_\+down\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+下视摄像头的标签处理器 用于处理下视摄像头拍摄的图像中\+Ar\+Uco平台标签的检测和定位 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

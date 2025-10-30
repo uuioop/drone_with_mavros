@@ -1,0 +1,6 @@
+<map id="ArucoTagProcessor::get_yaw_error_deg" name="ArucoTagProcessor::get_yaw_error_deg">
+<area shape="rect" id="node1" title="获取偏航角误差（度）" alt="" coords="475,39,627,80"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a90eb16f0f62b260877263c3af29dc531" title="计算偏航角速度指令" alt="" coords="270,5,422,47"/>
+<area shape="rect" id="node4" href="$classArucoTagProcessor.html#a1e39474344ea5589188d750b5e24a78a" title="获取对齐误差向量" alt="" coords="265,71,427,112"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#a06e20fde1499c5c3b8a767379190e71c" title="计算速度指令" alt="" coords="5,5,217,47"/>
+</map>

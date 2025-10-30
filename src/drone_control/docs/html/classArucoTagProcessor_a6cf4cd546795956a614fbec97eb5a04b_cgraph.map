@@ -1,0 +1,4 @@
+<map id="ArucoTagProcessor::get_tag_body" name="ArucoTagProcessor::get_tag_body">
+<area shape="rect" id="node1" title="将相机坐标系中的标记转换为机体坐标系" alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node2" href="$structArucoTag.html#a37ff20c8908e31b47f7835655713811d" title="检查标记数据是否有效" alt="" coords="205,13,344,39"/>
+</map>

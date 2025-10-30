@@ -1,0 +1,4 @@
+<map id="PrecisionLandController::register_states" name="PrecisionLandController::register_states">
+<area shape="rect" id="node1" title="注册状态机中的各个状态 初始化并注册精确着陆过程中所需的各种状态到状态机中" alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node2" href="$classStateMachine.html#ac023b8ddd5febccd3539d4c293ea7847" title="注册状态节点" alt="" coords="229,5,399,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="include/VisualNav/ConfirmLicenseNodes.h" name="include/VisualNav/ConfirmLicenseNodes.h">
+<area shape="rect" id="node1" title="号牌确认状态机节点定义 包含搜索号牌、确认号牌和重新定位号牌三种状态" alt="" coords="136,5,331,47"/>
+<area shape="rect" id="node2" href="$ConfirmLicenseController_8cpp.html" title="号牌确认控制器实现" alt="" coords="5,95,221,136"/>
+<area shape="rect" id="node3" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="245,95,461,136"/>
+</map>

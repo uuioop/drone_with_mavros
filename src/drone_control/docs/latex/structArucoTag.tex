@@ -1,0 +1,106 @@
+\hypertarget{structArucoTag}{}\doxysection{Aruco\+Tag Struct Reference}
+\label{structArucoTag}\index{ArucoTag@{ArucoTag}}
+
+
+Ar\+Uco标记结构体  
+
+
+
+
+{\ttfamily \#include $<$Aruco\+Tag.\+h$>$}
+
+
+
+Collaboration diagram for Aruco\+Tag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{structArucoTag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structArucoTag_a37ff20c8908e31b47f7835655713811d}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em 检查标记数据是否有效 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{structArucoTag_a2cf5e28b4f0ef89309ca70c9e0f8d3ea}{position}} =Eigen\+::\+Vector3d\+::\+Constant(std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN())
+\begin{DoxyCompactList}\small\item\em 标记在机体坐标系中的位置，初始值为\+NaN \end{DoxyCompactList}\item 
+Eigen\+::\+Quaterniond \mbox{\hyperlink{structArucoTag_ad96a22ff14d118c474c6a545fdb7f8f5}{orientation}}
+\begin{DoxyCompactList}\small\item\em 标记在机体坐标系中的姿态四元数 \end{DoxyCompactList}\item 
+ros\+::\+Time \mbox{\hyperlink{structArucoTag_abaacf5e0ed51a8ae8c786f0d28cdcc3a}{timestamp}} =ros\+::\+Time(0)
+\begin{DoxyCompactList}\small\item\em 标记检测的时间戳 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ar\+Uco标记结构体 
+
+用于存储检测到的\+Ar\+Uco标记的位置、姿态和时间戳信息。 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structArucoTag_a37ff20c8908e31b47f7835655713811d}\label{structArucoTag_a37ff20c8908e31b47f7835655713811d}} 
+\index{ArucoTag@{ArucoTag}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!ArucoTag@{ArucoTag}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily bool Aruco\+Tag\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查标记数据是否有效 
+
+通过判断时间戳是否大于0来确定数据是否已被更新
+
+\begin{DoxyReturn}{Returns}
+true 如果标记数据有效 
+
+false 如果标记数据无效 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structArucoTag_a37ff20c8908e31b47f7835655713811d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structArucoTag_ad96a22ff14d118c474c6a545fdb7f8f5}\label{structArucoTag_ad96a22ff14d118c474c6a545fdb7f8f5}} 
+\index{ArucoTag@{ArucoTag}!orientation@{orientation}}
+\index{orientation@{orientation}!ArucoTag@{ArucoTag}}
+\doxysubsubsection{\texorpdfstring{orientation}{orientation}}
+{\footnotesize\ttfamily Eigen\+::\+Quaterniond Aruco\+Tag\+::orientation}
+
+
+
+标记在机体坐标系中的姿态四元数 
+
+\mbox{\Hypertarget{structArucoTag_a2cf5e28b4f0ef89309ca70c9e0f8d3ea}\label{structArucoTag_a2cf5e28b4f0ef89309ca70c9e0f8d3ea}} 
+\index{ArucoTag@{ArucoTag}!position@{position}}
+\index{position@{position}!ArucoTag@{ArucoTag}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d Aruco\+Tag\+::position =Eigen\+::\+Vector3d\+::\+Constant(std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN())}
+
+
+
+标记在机体坐标系中的位置，初始值为\+NaN 
+
+\mbox{\Hypertarget{structArucoTag_abaacf5e0ed51a8ae8c786f0d28cdcc3a}\label{structArucoTag_abaacf5e0ed51a8ae8c786f0d28cdcc3a}} 
+\index{ArucoTag@{ArucoTag}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!ArucoTag@{ArucoTag}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily ros\+::\+Time Aruco\+Tag\+::timestamp =ros\+::\+Time(0)}
+
+
+
+标记检测的时间戳 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tag/\mbox{\hyperlink{ArucoTag_8h}{Aruco\+Tag.\+h}}\end{DoxyCompactItemize}

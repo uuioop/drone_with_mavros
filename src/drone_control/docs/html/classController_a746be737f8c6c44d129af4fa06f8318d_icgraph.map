@@ -1,0 +1,8 @@
+<map id="Controller::on_enter" name="Controller::on_enter">
+<area shape="rect" id="node1" title="控制器进入时调用的方法，用于初始化" alt="" coords="565,42,716,69"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#ae83af02883d9b648ab186b3f2140638d" title="设置入口控制器" alt="" coords="340,13,517,39"/>
+<area shape="rect" id="node4" href="$classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="349,64,508,105"/>
+<area shape="rect" id="node3" href="$classDroneControl.html#aae24fc650525708b52e30bcba97998cf" title="设置入口控制器的服务回调函数" alt="" coords="111,5,289,47"/>
+<area shape="rect" id="node5" href="$classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,71,292,98"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,71,60,98"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="RepositionLicenseState" name="RepositionLicenseState">
+<area shape="rect" id="node1" title="重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试" alt="" coords="5,248,216,399"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="33,5,189,200"/>
+</map>

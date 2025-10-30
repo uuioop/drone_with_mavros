@@ -1,0 +1,91 @@
+\hypertarget{utils_8h}{}\doxysection{include/util/utils.h File Reference}
+\label{utils_8h}\index{include/util/utils.h@{include/util/utils.h}}
+
+
+数学工具函数头文件  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8h_a91efdd328cd59d46a9b3b670757173ae}{deg2rad\+\_\+normalized}} (double degrees)
+\begin{DoxyCompactList}\small\item\em 将角度转换为弧度并归一化到\mbox{[}-\/π, π\mbox{]}范围 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}{rad2deg\+\_\+normalized}} (double radians)
+\begin{DoxyCompactList}\small\item\em 将弧度转换为角度并归一化到\mbox{[}-\/180, 180\mbox{]}范围 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+数学工具函数头文件 
+
+该文件提供了角度和弧度转换相关的工具函数，用于无人机控制中的坐标变换和姿态计算。 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a91efdd328cd59d46a9b3b670757173ae}\label{utils_8h_a91efdd328cd59d46a9b3b670757173ae}} 
+\index{utils.h@{utils.h}!deg2rad\_normalized@{deg2rad\_normalized}}
+\index{deg2rad\_normalized@{deg2rad\_normalized}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{deg2rad\_normalized()}{deg2rad\_normalized()}}
+{\footnotesize\ttfamily double deg2rad\+\_\+normalized (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+将角度转换为弧度并归一化到\mbox{[}-\/π, π\mbox{]}范围 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & 角度值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+归一化后的弧度值 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h_a91efdd328cd59d46a9b3b670757173ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}\label{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}} 
+\index{utils.h@{utils.h}!rad2deg\_normalized@{rad2deg\_normalized}}
+\index{rad2deg\_normalized@{rad2deg\_normalized}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{rad2deg\_normalized()}{rad2deg\_normalized()}}
+{\footnotesize\ttfamily double rad2deg\+\_\+normalized (\begin{DoxyParamCaption}\item[{double}]{radians }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+将弧度转换为角度并归一化到\mbox{[}-\/180, 180\mbox{]}范围 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radians} & 弧度值 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+归一化后的角度值 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08_icgraph}
+\end{center}
+\end{figure}

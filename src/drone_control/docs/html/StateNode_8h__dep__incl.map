@@ -1,0 +1,19 @@
+<map id="include/fsm/StateNode.h" name="include/fsm/StateNode.h">
+<area shape="rect" id="node1" title="状态节点基类定义" alt="" coords="667,5,850,32"/>
+<area shape="rect" id="node2" href="$StateMachine_8h.html" title="状态机类定义" alt="" coords="657,80,860,107"/>
+<area shape="rect" id="node16" href="$ConfirmLicenseNodes_8h.html" title="号牌确认状态机节点定义 包含搜索号牌、确认号牌和重新定位号牌三种状态" alt="" coords="1200,229,1395,271"/>
+<area shape="rect" id="node17" href="$PrecisionLandNodes_8h.html" title="精确着陆状态机节点定义 包含搜索标签、对准引导标签、接近引导标签、对准平台标签、下降和着陆等状态" alt="" coords="72,229,275,271"/>
+<area shape="rect" id="node3" href="$Controller_8h.html" title="控制器基类定义，所有具体控制器的抽象接口" alt="" coords="563,155,744,181"/>
+<area shape="rect" id="node9" href="$ConfirmLicenseController_8h.html" title="号牌确认控制器头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="981,229,1176,271"/>
+<area shape="rect" id="node12" href="$PrecisionLandController_8h.html" title="精确着陆控制器头文件 负责管理无人机使用ArUco标签进行精确着陆的过程" alt="" coords="299,229,501,271"/>
+<area shape="rect" id="node15" href="$StateMachine_8cpp.html" title="状态机实现文件" alt="" coords="769,155,959,181"/>
+<area shape="rect" id="node4" href="$DroneControl_8h.html" title="无人机控制类" alt="" coords="525,237,728,263"/>
+<area shape="rect" id="node7" href="$MissionNavController_8h.html" title="任务导航控制器类定义" alt="" coords="752,229,957,271"/>
+<area shape="rect" id="node5" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="594,326,785,353"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="465,326,570,353"/>
+<area shape="rect" id="node8" href="$MissionNavController_8cpp.html" title="GPS任务导航控制器实现文件" alt="" coords="809,326,1077,353"/>
+<area shape="rect" id="node10" href="$ConfirmLicenseController_8cpp.html" title="号牌确认控制器实现" alt="" coords="1341,319,1557,360"/>
+<area shape="rect" id="node11" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="1101,319,1317,360"/>
+<area shape="rect" id="node13" href="$PrecisionLandController_8cpp.html" title="精确着陆控制器实现文件" alt="" coords="235,319,440,360"/>
+<area shape="rect" id="node14" href="$PrecisionLandNodes_8cpp.html" title="精确着陆状态节点实现文件" alt="" coords="5,319,211,360"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ArucoTagProcessor::calculate_velocity_command" name="ArucoTagProcessor::calculate_velocity_command">
+<area shape="rect" id="node1" title="计算速度指令" alt="" coords="5,5,217,47"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a90eb16f0f62b260877263c3af29dc531" title="计算偏航角速度指令" alt="" coords="265,5,417,47"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#aaf3d1fa5498ab780a8186adac557807d" title="获取偏航角误差（度）" alt="" coords="465,5,617,47"/>
+<area shape="rect" id="node4" href="$utils_8h.html#a7c49671bd08b0ecb3cb52cbfb2063f08" title="将弧度转换为角度并归一化到[&#45;180, 180]范围" alt="" coords="665,13,820,39"/>
+</map>

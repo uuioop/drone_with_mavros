@@ -1,0 +1,73 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+无人机控制节点主入口文件  
+
+
+{\ttfamily \#include $<$clocale$>$}\newline
+{\ttfamily \#include \char`\"{}core/\+Drone\+Control.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em 主函数，无人机控制节点的入口点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+无人机控制节点主入口文件 
+
+初始化\+R\+O\+S节点，创建\+Drone\+Control实例并运行主控制循环 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+主函数，无人机控制节点的入口点 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & 命令行参数数量 \\
+\hline
+{\em argv} & 命令行参数数组 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+程序退出码，成功执行返回0 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+使用\+Async\+Spinner处理\+R\+O\+S回调，确保多订阅者正常工作 
+
+运行持续的控制循环，直到\+R\+O\+S节点关闭 
+\end{DoxyNote}
+创建异步旋转器 \begin{DoxyNote}{Note}
+参数2表示使用2个线程处理回调 
+
+多线程适合处理\+Status\+Monitor的多个订阅者
+\end{DoxyNote}
+主控制循环 \begin{DoxyNote}{Note}
+持续调用on\+\_\+update()方法，保持控制逻辑运行 
+
+当\+R\+O\+S节点关闭时退出循环
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

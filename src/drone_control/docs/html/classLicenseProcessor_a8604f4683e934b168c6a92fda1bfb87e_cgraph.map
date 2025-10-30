@@ -1,0 +1,6 @@
+<map id="LicenseProcessor::LicenseProcessor" name="LicenseProcessor::LicenseProcessor">
+<area shape="rect" id="node1" title="构造函数" alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$classLicenseProcessor.html#a8223a97cd8d9c8c5886f2ff4a256da5e" title="号牌回调函数" alt="" coords="244,5,432,47"/>
+<area shape="rect" id="node3" href="$classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b" title="更新识别到的号牌信息" alt="" coords="480,5,667,47"/>
+<area shape="rect" id="node4" href="$classLicenseProcessor.html#a313cfa61be30832cb44dfcda57d06db8" title="检查号牌内容是否有效" alt="" coords="715,5,868,47"/>
+</map>

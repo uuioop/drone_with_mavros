@@ -1,0 +1,6 @@
+<map id="ArucoTagProcessor::update_and_log_validity" name="ArucoTagProcessor::update_and_log_validity">
+<area shape="rect" id="node1" title="更新并记录标记有效性" alt="" coords="5,49,187,91"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#abe7deb02d9d29837747d9a4e5349e216" title="检查标记与目标的距离是否有效" alt="" coords="235,49,396,91"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#ab460550439913f709e8673cad3e0d127" title="检查标记是否超时" alt="" coords="444,5,596,47"/>
+<area shape="rect" id="node4" href="$structArucoTag.html#a37ff20c8908e31b47f7835655713811d" title="检查标记数据是否有效" alt="" coords="451,86,589,113"/>
+</map>

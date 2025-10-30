@@ -1,0 +1,4 @@
+<map id="StatusMonitor::imu_data_cb" name="StatusMonitor::imu_data_cb">
+<area shape="rect" id="node1" title="IMU数据回调函数" alt="" coords="265,5,412,47"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+</map>

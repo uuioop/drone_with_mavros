@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,56,92,83"/>
+<area shape="rect" id="node2" href="$classConfirmLicenseController.html" title="号牌确认控制器类 继承自Controller基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="140,5,327,32"/>
+<area shape="rect" id="node3" href="$classMissionNavController.html" title="任务导航控制器" alt="" coords="152,56,315,83"/>
+<area shape="rect" id="node4" href="$classPrecisionLandController.html" title="精确着陆控制器类 继承自Controller基类，实现无人机基于ArUco标签的精确着陆控制逻辑" alt="" coords="145,107,321,133"/>
+</map>

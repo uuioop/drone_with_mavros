@@ -1,0 +1,4 @@
+<map id="ConfirmLicenseState" name="ConfirmLicenseState">
+<area shape="rect" id="node1" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="5,248,199,384"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="24,5,180,200"/>
+</map>

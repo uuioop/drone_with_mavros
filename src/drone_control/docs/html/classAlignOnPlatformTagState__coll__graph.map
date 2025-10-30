@@ -1,0 +1,7 @@
+<map id="AlignOnPlatformTagState" name="AlignOnPlatformTagState">
+<area shape="rect" id="node1" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="5,1491,227,1627"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="38,1261,194,1441"/>
+<area shape="rect" id="node3" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="7,975,225,1199"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="35,5,197,508"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="241,571,423,912"/>
+</map>

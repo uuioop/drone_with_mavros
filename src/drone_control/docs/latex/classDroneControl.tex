@@ -1,0 +1,372 @@
+\hypertarget{classDroneControl}{}\doxysection{Drone\+Control Class Reference}
+\label{classDroneControl}\index{DroneControl@{DroneControl}}
+
+
+{\ttfamily \#include $<$Drone\+Control.\+h$>$}
+
+
+
+Collaboration diagram for Drone\+Control\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDroneControl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDroneControl_af04a844fd29a35376c40c83217646e30}{Drone\+Control}} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDroneControl_a80167369cb14c68fc2f088c44f98f5e0}{$\sim$\+Drone\+Control}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDroneControl_ae83af02883d9b648ab186b3f2140638d}{set\+\_\+entry}} (const std\+::string \&controller\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 设置入口控制器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0}{switch\+\_\+controller}} (const std\+::string \&controller\+\_\+name)
+\begin{DoxyCompactList}\small\item\em 切换当前活动控制器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1}{on\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em 更新当前活动控制器的状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDroneControl_adc7a106117a5370cf0370641de606636}{register\+\_\+controllers}} ()
+\begin{DoxyCompactList}\small\item\em 注册所有可用的控制器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDroneControl_aae24fc650525708b52e30bcba97998cf}{set\+\_\+entry\+\_\+service\+\_\+callback}} (const my\+\_\+interfaces\+::\+Nav\+::\+Request \&req, my\+\_\+interfaces\+::\+Nav\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em 设置入口控制器的服务回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDroneControl_ad23c17af9a1e664863c1b480dee70c67}{switch\+\_\+flight\+\_\+mode}} (const std\+::string \&current\+\_\+mode, const std\+::string \&target\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em 切换无人机飞行模式 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \mbox{\hyperlink{classDroneControl_aa714c9a649544b377cda14ef5b891c47}{\+\_\+nh}}
+\item 
+\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \mbox{\hyperlink{classDroneControl_a4f508798ba8b49eaee963645e65f4955}{\+\_\+status\+\_\+monitor}}
+\begin{DoxyCompactList}\small\item\em 状态监控器 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \mbox{\hyperlink{classDroneControl_aac8cdffb3eb493afffa55cad78f8e2d0}{\+\_\+mavros\+\_\+bridge}}
+\begin{DoxyCompactList}\small\item\em Mavros桥接器 \end{DoxyCompactList}\item 
+ros\+::\+Service\+Server \mbox{\hyperlink{classDroneControl_a573fd584251de1ab9ca4b15f3a32a54b}{\+\_\+set\+\_\+entry\+\_\+service}}
+\item 
+\mbox{\hyperlink{classController}{Controller}} $\ast$ \mbox{\hyperlink{classDroneControl_af8af12910c06146e861c754d78f8d013}{\+\_\+active\+\_\+controller}} = nullptr
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classController}{Controller}} $>$ $>$ \mbox{\hyperlink{classDroneControl_a88d84f132fe54076d02fa227da93b599}{\+\_\+controller\+\_\+pool}}
+\item 
+ros\+::\+Rate \mbox{\hyperlink{classDroneControl_a80fcfc5241b11ea2d2728c31da52401d}{\+\_\+rate}} \{20.\+0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDroneControl_af04a844fd29a35376c40c83217646e30}\label{classDroneControl_af04a844fd29a35376c40c83217646e30}} 
+\index{DroneControl@{DroneControl}!DroneControl@{DroneControl}}
+\index{DroneControl@{DroneControl}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{DroneControl()}{DroneControl()}}
+{\footnotesize\ttfamily Drone\+Control\+::\+Drone\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Drone\+Control类构造函数
+
+初始化无人机控制类，注册服务、状态监控和\+Mavros桥接。
+
+\begin{DoxyNote}{Note}
+使用初始化列表直接进行初始化，而不是\char`\"{}先默认构造再赋值\char`\"{} 
+
+成员变量中的引用类型必须在成员初始化列表中进行初始化 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_af04a844fd29a35376c40c83217646e30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_a80167369cb14c68fc2f088c44f98f5e0}\label{classDroneControl_a80167369cb14c68fc2f088c44f98f5e0}} 
+\index{DroneControl@{DroneControl}!````~DroneControl@{$\sim$DroneControl}}
+\index{````~DroneControl@{$\sim$DroneControl}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{$\sim$DroneControl()}{~DroneControl()}}
+{\footnotesize\ttfamily Drone\+Control\+::$\sim$\+Drone\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+Drone\+Control类析构函数
+
+清理无人机控制类，释放资源。
+
+\begin{DoxyNote}{Note}
+使用默认实现 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1}\label{classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1}} 
+\index{DroneControl@{DroneControl}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily void Drone\+Control\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新当前活动控制器的状态 
+
+更新控制器状态，主控制循环函数
+
+调用当前活动控制器的on\+\_\+update()方法，更新其状态。
+
+\begin{DoxyNote}{Note}
+检查当前控制器是否完成任务，必要时切换控制器 
+
+调用当前活动控制器的on\+\_\+update方法 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_adc7a106117a5370cf0370641de606636}\label{classDroneControl_adc7a106117a5370cf0370641de606636}} 
+\index{DroneControl@{DroneControl}!register\_controllers@{register\_controllers}}
+\index{register\_controllers@{register\_controllers}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{register\_controllers()}{register\_controllers()}}
+{\footnotesize\ttfamily void Drone\+Control\+::register\+\_\+controllers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+注册所有可用的控制器 
+
+\begin{DoxyNote}{Note}
+将各控制器实例化并添加到控制器池中 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_adc7a106117a5370cf0370641de606636_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_ae83af02883d9b648ab186b3f2140638d}\label{classDroneControl_ae83af02883d9b648ab186b3f2140638d}} 
+\index{DroneControl@{DroneControl}!set\_entry@{set\_entry}}
+\index{set\_entry@{set\_entry}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{set\_entry()}{set\_entry()}}
+{\footnotesize\ttfamily void Drone\+Control\+::set\+\_\+entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{controller\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+设置入口控制器 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+name} & 入口控制器的名称\\
+\hline
+{\em controller\+\_\+name} & 控制器名称 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+将指定名称的控制器设为活动控制器并调用其on\+\_\+enter方法 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_ae83af02883d9b648ab186b3f2140638d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_ae83af02883d9b648ab186b3f2140638d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_aae24fc650525708b52e30bcba97998cf}\label{classDroneControl_aae24fc650525708b52e30bcba97998cf}} 
+\index{DroneControl@{DroneControl}!set\_entry\_service\_callback@{set\_entry\_service\_callback}}
+\index{set\_entry\_service\_callback@{set\_entry\_service\_callback}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{set\_entry\_service\_callback()}{set\_entry\_service\_callback()}}
+{\footnotesize\ttfamily void Drone\+Control\+::set\+\_\+entry\+\_\+service\+\_\+callback (\begin{DoxyParamCaption}\item[{const my\+\_\+interfaces\+::\+Nav\+::\+Request \&}]{req,  }\item[{my\+\_\+interfaces\+::\+Nav\+::\+Response \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+设置入口控制器的服务回调函数 
+
+入口服务回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & 服务请求，包含目标位置和测试标志 \\
+\hline
+{\em res} & 服务响应，设置执行结果和消息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+虽然函数返回类型为void，但需要正确设置res.\+success和res.\+message字段
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & 服务请求，包含目标位置和测试标志 \\
+\hline
+{\em res} & 服务响应，用于设置执行结果 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+服务通过修改res参数的success和message字段返回结果，无显式返回值 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_aae24fc650525708b52e30bcba97998cf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0}\label{classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0}} 
+\index{DroneControl@{DroneControl}!switch\_controller@{switch\_controller}}
+\index{switch\_controller@{switch\_controller}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{switch\_controller()}{switch\_controller()}}
+{\footnotesize\ttfamily void Drone\+Control\+::switch\+\_\+controller (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{controller\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+切换当前活动控制器 
+
+切换控制器
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+\_\+name} & 目标控制器的名称\\
+\hline
+{\em controller\+\_\+name} & 新控制器名称，空字符串表示结束控制 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+先退出当前控制器，再切换到新控制器并调用其on\+\_\+enter方法 
+
+自动切换飞行模式到新控制器所需的模式 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDroneControl_ad23c17af9a1e664863c1b480dee70c67}\label{classDroneControl_ad23c17af9a1e664863c1b480dee70c67}} 
+\index{DroneControl@{DroneControl}!switch\_flight\_mode@{switch\_flight\_mode}}
+\index{switch\_flight\_mode@{switch\_flight\_mode}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{switch\_flight\_mode()}{switch\_flight\_mode()}}
+{\footnotesize\ttfamily void Drone\+Control\+::switch\+\_\+flight\+\_\+mode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{current\+\_\+mode,  }\item[{const std\+::string \&}]{target\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+切换无人机飞行模式 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+mode} & 当前飞行模式 \\
+\hline
+{\em target\+\_\+mode} & 目标飞行模式 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+从\+O\+F\+F\+B\+O\+A\+R\+D模式切换时会持续发布悬停指令以保持稳定 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_ad23c17af9a1e664863c1b480dee70c67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDroneControl_ad23c17af9a1e664863c1b480dee70c67_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDroneControl_af8af12910c06146e861c754d78f8d013}\label{classDroneControl_af8af12910c06146e861c754d78f8d013}} 
+\index{DroneControl@{DroneControl}!\_active\_controller@{\_active\_controller}}
+\index{\_active\_controller@{\_active\_controller}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_active\_controller}{\_active\_controller}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classController}{Controller}}$\ast$ Drone\+Control\+::\+\_\+active\+\_\+controller = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDroneControl_a88d84f132fe54076d02fa227da93b599}\label{classDroneControl_a88d84f132fe54076d02fa227da93b599}} 
+\index{DroneControl@{DroneControl}!\_controller\_pool@{\_controller\_pool}}
+\index{\_controller\_pool@{\_controller\_pool}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_controller\_pool}{\_controller\_pool}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classController}{Controller}}$>$ $>$ Drone\+Control\+::\+\_\+controller\+\_\+pool\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDroneControl_aac8cdffb3eb493afffa55cad78f8e2d0}\label{classDroneControl_aac8cdffb3eb493afffa55cad78f8e2d0}} 
+\index{DroneControl@{DroneControl}!\_mavros\_bridge@{\_mavros\_bridge}}
+\index{\_mavros\_bridge@{\_mavros\_bridge}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_mavros\_bridge}{\_mavros\_bridge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} Drone\+Control\+::\+\_\+mavros\+\_\+bridge\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mavros桥接器 
+
+用于与\+M\+A\+V\+R\+O\+S通信，发送和接收无人机的状态和命令。 \mbox{\Hypertarget{classDroneControl_aa714c9a649544b377cda14ef5b891c47}\label{classDroneControl_aa714c9a649544b377cda14ef5b891c47}} 
+\index{DroneControl@{DroneControl}!\_nh@{\_nh}}
+\index{\_nh@{\_nh}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_nh}{\_nh}}
+{\footnotesize\ttfamily ros\+::\+Node\+Handle Drone\+Control\+::\+\_\+nh\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDroneControl_a80fcfc5241b11ea2d2728c31da52401d}\label{classDroneControl_a80fcfc5241b11ea2d2728c31da52401d}} 
+\index{DroneControl@{DroneControl}!\_rate@{\_rate}}
+\index{\_rate@{\_rate}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_rate}{\_rate}}
+{\footnotesize\ttfamily ros\+::\+Rate Drone\+Control\+::\+\_\+rate \{20.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDroneControl_a573fd584251de1ab9ca4b15f3a32a54b}\label{classDroneControl_a573fd584251de1ab9ca4b15f3a32a54b}} 
+\index{DroneControl@{DroneControl}!\_set\_entry\_service@{\_set\_entry\_service}}
+\index{\_set\_entry\_service@{\_set\_entry\_service}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_set\_entry\_service}{\_set\_entry\_service}}
+{\footnotesize\ttfamily ros\+::\+Service\+Server Drone\+Control\+::\+\_\+set\+\_\+entry\+\_\+service\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDroneControl_a4f508798ba8b49eaee963645e65f4955}\label{classDroneControl_a4f508798ba8b49eaee963645e65f4955}} 
+\index{DroneControl@{DroneControl}!\_status\_monitor@{\_status\_monitor}}
+\index{\_status\_monitor@{\_status\_monitor}!DroneControl@{DroneControl}}
+\doxysubsubsection{\texorpdfstring{\_status\_monitor}{\_status\_monitor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} Drone\+Control\+::\+\_\+status\+\_\+monitor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+状态监控器 
+
+用于监控无人机的状态，如位置、速度、姿态等。 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{DroneControl_8h}{Drone\+Control.\+h}}\item 
+src/core/\mbox{\hyperlink{DroneControl_8cpp}{Drone\+Control.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\hypertarget{DroneControl_8h}{}\doxysection{include/core/\+Drone\+Control.h File Reference}
+\label{DroneControl_8h}\index{include/core/DroneControl.h@{include/core/DroneControl.h}}
+
+
+无人机控制类  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$my\+\_\+interfaces/\+Nav.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}core/\+Status\+Monitor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}core/\+Mavros\+Bridge.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}core/\+Controller.\+h\char`\"{}}\newline
+Include dependency graph for Drone\+Control.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DroneControl_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{DroneControl_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDroneControl}{Drone\+Control}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+无人机控制类 
+
+该类负责管理无人机的状态监控、\+Mavros桥接、控制器池和服务调用。 它提供了设置入口控制器、切换控制器和更新状态的方法。 

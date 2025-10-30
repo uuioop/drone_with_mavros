@@ -1,0 +1,7 @@
+<map id="rad2deg_normalized" name="rad2deg_normalized">
+<area shape="rect" id="node1" title="将弧度转换为角度并归一化到[&#45;180, 180]范围" alt="" coords="675,46,829,73"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#aaf3d1fa5498ab780a8186adac557807d" title="获取偏航角误差（度）" alt="" coords="475,39,627,80"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#a90eb16f0f62b260877263c3af29dc531" title="计算偏航角速度指令" alt="" coords="270,5,422,47"/>
+<area shape="rect" id="node5" href="$classArucoTagProcessor.html#a1e39474344ea5589188d750b5e24a78a" title="获取对齐误差向量" alt="" coords="265,71,427,112"/>
+<area shape="rect" id="node4" href="$classArucoTagProcessor.html#a06e20fde1499c5c3b8a767379190e71c" title="计算速度指令" alt="" coords="5,5,217,47"/>
+</map>

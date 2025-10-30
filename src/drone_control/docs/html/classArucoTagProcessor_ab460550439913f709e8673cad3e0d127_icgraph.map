@@ -1,0 +1,5 @@
+<map id="ArucoTagProcessor::check_tag_timeout" name="ArucoTagProcessor::check_tag_timeout">
+<area shape="rect" id="node1" title="检查标记是否超时" alt="" coords="444,35,596,76"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#abe7deb02d9d29837747d9a4e5349e216" title="检查标记与目标的距离是否有效" alt="" coords="235,5,396,47"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#a08383d557a51c32c36fcf05b2038f10a" title="更新并记录标记有效性" alt="" coords="5,35,187,76"/>
+</map>

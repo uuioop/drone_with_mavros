@@ -1,0 +1,165 @@
+\hypertarget{classDescendState}{}\doxysection{Descend\+State Class Reference}
+\label{classDescendState}\index{DescendState@{DescendState}}
+
+
+下降状态类 负责控制无人机在对准平台标签后平稳下降  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Descend\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classDescendState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Descend\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDescendState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}{Descend\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}{$\sim$\+Descend\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classDescendState_a5d48743d70f39bb6a17c88880e3d935d}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDescendState_a0225b407efca8b737df018be306bd3e7}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classDescendState_a8999e688703cc86496fa499b8d206905}{\+\_\+down\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 下视摄像头的标签处理器 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+下降状态类 负责控制无人机在对准平台标签后平稳下降 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}\label{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}} 
+\index{DescendState@{DescendState}!DescendState@{DescendState}}
+\index{DescendState@{DescendState}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{DescendState()}{DescendState()}}
+{\footnotesize\ttfamily Descend\+State\+::\+Descend\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+下降状态类构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+{\em controller} & 控制器引用，用于获取下降标记处理器 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}\label{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}} 
+\index{DescendState@{DescendState}!````~DescendState@{$\sim$DescendState}}
+\index{````~DescendState@{$\sim$DescendState}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{$\sim$DescendState()}{~DescendState()}}
+{\footnotesize\ttfamily Descend\+State\+::$\sim$\+Descend\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDescendState_a5d48743d70f39bb6a17c88880e3d935d}\label{classDescendState_a5d48743d70f39bb6a17c88880e3d935d}} 
+\index{DescendState@{DescendState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Descend\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 
+
+进入下降状态
+
+记录进入下降状态的日志信息 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classDescendState_a0225b407efca8b737df018be306bd3e7}\label{classDescendState_a0225b407efca8b737df018be306bd3e7}} 
+\index{DescendState@{DescendState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Descend\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 
+
+退出下降状态
+
+退出下降状态时调用，目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20}\label{classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20}} 
+\index{DescendState@{DescendState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Descend\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 
+
+更新下降状态
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+处理下降逻辑，包括平台标记检测、着陆状态检查和速度计算 \begin{DoxyReturn}{Returns}
+速度指令数组 \mbox{[}vx, vy, vz, yaw\+\_\+rate\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDescendState_a8999e688703cc86496fa499b8d206905}\label{classDescendState_a8999e688703cc86496fa499b8d206905}} 
+\index{DescendState@{DescendState}!\_down\_tag\_processor@{\_down\_tag\_processor}}
+\index{\_down\_tag\_processor@{\_down\_tag\_processor}!DescendState@{DescendState}}
+\doxysubsubsection{\texorpdfstring{\_down\_tag\_processor}{\_down\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Descend\+State\+::\+\_\+down\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+下视摄像头的标签处理器 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

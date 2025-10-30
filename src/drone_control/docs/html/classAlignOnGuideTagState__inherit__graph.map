@@ -1,0 +1,4 @@
+<map id="AlignOnGuideTagState" name="AlignOnGuideTagState">
+<area shape="rect" id="node1" title="对准引导标签状态类 负责控制无人机对准到ArUco引导标签的中心位置" alt="" coords="5,248,208,413"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="29,5,185,200"/>
+</map>

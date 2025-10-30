@@ -1,0 +1,172 @@
+\hypertarget{classConfirmLicenseState}{}\doxysection{Confirm\+License\+State Class Reference}
+\label{classConfirmLicenseState}\index{ConfirmLicenseState@{ConfirmLicenseState}}
+
+
+确认号牌状态类 负责确认检测到的号牌是否为目标号牌  
+
+
+
+
+{\ttfamily \#include $<$Confirm\+License\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Confirm\+License\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classConfirmLicenseState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Confirm\+License\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classConfirmLicenseState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}{Confirm\+License\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}{$\sim$\+Confirm\+License\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classConfirmLicenseState_a10267b3026ac5329dd56df0de475486f}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 初始化确认过程所需的参数和状态 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classConfirmLicenseState_aca1b10812f587026513f22100a40793c}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 验证检测到的号牌是否与目标号牌匹配 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseState_a8a3a286e145af2a6774ec95fc27883ea}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 清理确认过程中的临时变量和状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLicenseProcessor}{License\+Processor}} $>$ \mbox{\hyperlink{classConfirmLicenseState_a8d8d6b5f795a970ccd1983d92d5e0a24}{\+\_\+license\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 号牌处理器，用于处理和识别号牌信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+确认号牌状态类 负责确认检测到的号牌是否为目标号牌 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}\label{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!ConfirmLicenseState@{ConfirmLicenseState}}
+\index{ConfirmLicenseState@{ConfirmLicenseState}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{ConfirmLicenseState()}{ConfirmLicenseState()}}
+{\footnotesize\ttfamily Confirm\+License\+State\+::\+Confirm\+License\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Confirm\+License\+State构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+\end{DoxyParams}
+初始化确认号牌状态节点，获取号牌处理器并设置超时时长
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}\label{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!````~ConfirmLicenseState@{$\sim$ConfirmLicenseState}}
+\index{````~ConfirmLicenseState@{$\sim$ConfirmLicenseState}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConfirmLicenseState()}{~ConfirmLicenseState()}}
+{\footnotesize\ttfamily Confirm\+License\+State\+::$\sim$\+Confirm\+License\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConfirmLicenseState_a10267b3026ac5329dd56df0de475486f}\label{classConfirmLicenseState_a10267b3026ac5329dd56df0de475486f}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Confirm\+License\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 初始化确认过程所需的参数和状态 
+
+进入确认号牌状态时调用
+
+记录日志，清空已拒绝的号牌，并记录进入时间 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classConfirmLicenseState_a8a3a286e145af2a6774ec95fc27883ea}\label{classConfirmLicenseState_a8a3a286e145af2a6774ec95fc27883ea}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Confirm\+License\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 清理确认过程中的临时变量和状态 
+
+退出确认号牌状态时调用
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classConfirmLicenseState_aca1b10812f587026513f22100a40793c}\label{classConfirmLicenseState_aca1b10812f587026513f22100a40793c}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Confirm\+License\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 验证检测到的号牌是否与目标号牌匹配 
+
+确认号牌状态更新方法
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+检查号牌有效性，等待超时后比对号牌，成功则完成任务，失败则切换到重新定位状态
+
+\begin{DoxyReturn}{Returns}
+速度控制指令数组 \mbox{[}v\+\_\+x, v\+\_\+y, v\+\_\+z, v\+\_\+yaw\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseState_aca1b10812f587026513f22100a40793c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConfirmLicenseState_a8d8d6b5f795a970ccd1983d92d5e0a24}\label{classConfirmLicenseState_a8d8d6b5f795a970ccd1983d92d5e0a24}} 
+\index{ConfirmLicenseState@{ConfirmLicenseState}!\_license\_processor@{\_license\_processor}}
+\index{\_license\_processor@{\_license\_processor}!ConfirmLicenseState@{ConfirmLicenseState}}
+\doxysubsubsection{\texorpdfstring{\_license\_processor}{\_license\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classLicenseProcessor}{License\+Processor}}$>$ Confirm\+License\+State\+::\+\_\+license\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌处理器，用于处理和识别号牌信息 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}}\end{DoxyCompactItemize}

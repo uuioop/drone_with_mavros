@@ -1,0 +1,5 @@
+<map id="DroneControl::set_entry_service_callback" name="DroneControl::set_entry_service_callback">
+<area shape="rect" id="node1" title="设置入口控制器的服务回调函数" alt="" coords="5,5,183,47"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#ae83af02883d9b648ab186b3f2140638d" title="设置入口控制器" alt="" coords="231,13,408,39"/>
+<area shape="rect" id="node3" href="$classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="456,13,607,39"/>
+</map>

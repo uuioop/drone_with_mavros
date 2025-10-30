@@ -1,0 +1,5 @@
+<map id="ArucoTagProcessor::get_tag_body" name="ArucoTagProcessor::get_tag_body">
+<area shape="rect" id="node1" title="将相机坐标系中的标记转换为机体坐标系" alt="" coords="413,5,565,47"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a07e1d1da2791953f47be1112c34635ec" title="目标位姿回调函数" alt="" coords="205,5,365,47"/>
+<area shape="rect" id="node3" href="$classArucoTagProcessor.html#ab247bff9d180ac87924120c2e81e3d06" title="构造函数" alt="" coords="5,5,157,47"/>
+</map>

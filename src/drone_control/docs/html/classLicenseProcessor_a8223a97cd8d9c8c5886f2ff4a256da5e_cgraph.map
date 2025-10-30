@@ -1,0 +1,5 @@
+<map id="LicenseProcessor::license_callback" name="LicenseProcessor::license_callback">
+<area shape="rect" id="node1" title="号牌回调函数" alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b" title="更新识别到的号牌信息" alt="" coords="241,5,428,47"/>
+<area shape="rect" id="node3" href="$classLicenseProcessor.html#a313cfa61be30832cb44dfcda57d06db8" title="检查号牌内容是否有效" alt="" coords="476,5,629,47"/>
+</map>

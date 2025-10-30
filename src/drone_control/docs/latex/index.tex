@@ -1,0 +1,63 @@
+这是一个为 P\+X4 自动驾驶仪设计的、基于 R\+OS 的高级控制系统。该系统旨在实现模块化的任务控制，集成了视觉导航和 G\+PS 导航功能，提供稳定可靠的无人机自主控制能力。\hypertarget{index_autotoc_md1}{}\doxysection{主要功能}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{多控制器架构}}\+: 系统被设计为可以轻松切换不同的高级控制器，以执行不同的任务。
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{classMissionNavController}{Mission\+Nav\+Controller}}}\+: 执行基于 G\+PS 航点的任务。
+\item {\ttfamily \mbox{\hyperlink{classConfirmLicenseController}{Confirm\+License\+Controller}}}\+: 使用视觉识别技术搜索并确认特定号牌。
+\item {\ttfamily \mbox{\hyperlink{classPrecisionLandController}{Precision\+Land\+Controller}}}\+: 利用 Ar\+Uco 标记实现高精度的视觉着陆。
+\end{DoxyItemize}
+\item {\bfseries{状态机驱动}}\+: 每个控制器内部都使用状态机（\+F\+S\+M）来管理其复杂的逻辑流程，使得任务执行过程清晰、稳定且易于扩展。
+\item {\bfseries{M\+A\+V\+R\+OS 通信}}\+: 通过 {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}} 与飞控进行底层通信，负责模式切换、解锁/上锁以及发送速度/位置指令。
+\item {\bfseries{硬件抽象}}\+: {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}} 类订阅了所有必要的 M\+A\+V\+R\+OS 话题，为上层应用提供了统一、线程安全的状态接口。
+\item {\bfseries{视觉处理}}\+: 支持 Ar\+Uco 标记检测和号牌识别，用于精确导航和任务确认。
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{系统架构}\label{index_autotoc_md2}
+系统采用分层架构设计：
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{底层通信层}}\+: 由 {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}} 负责与 P\+X4 飞控通信
+\item {\bfseries{状态监控层}}\+: 由 {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}} 提供统一的状态访问接口
+\item {\bfseries{控制器层}}\+: 包含多个高级控制器，如 {\ttfamily \mbox{\hyperlink{classMissionNavController}{Mission\+Nav\+Controller}}}、{\ttfamily \mbox{\hyperlink{classConfirmLicenseController}{Confirm\+License\+Controller}}} 等
+\item {\bfseries{状态机层}}\+: 每个控制器内部使用状态机管理复杂任务流程
+\item {\bfseries{工具层}}\+: 提供 Ar\+Uco 标记处理、号牌识别等辅助功能
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{项目依赖}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item R\+OS Noetic
+\item P\+X4 自动驾驶仪
+\item M\+A\+V\+R\+OS 包
+\item Open\+C\+V（用于视觉处理）
+\item Doxygen（用于文档生成）
+\item S\+Q\+Lite（用于数据存储,还未使用）
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{项目结构}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\ttfamily /include}\+: 包含所有头文件 ({\ttfamily .h})。
+\begin{DoxyItemize}
+\item {\ttfamily /core}\+: 核心控制类，如 {\ttfamily \mbox{\hyperlink{classDroneControl}{Drone\+Control}}}, {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}}, {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}}。
+\item {\ttfamily /fsm}\+: 状态机 ({\ttfamily \mbox{\hyperlink{classStateMachine}{State\+Machine}}}) 和状态节点 ({\ttfamily \mbox{\hyperlink{classStateNode}{State\+Node}}}) 的基类。
+\item {\ttfamily /\+Visual\+Nav}\+: 视觉导航相关的控制器和状态定义。
+\item {\ttfamily /\+G\+P\+S\+Nav}\+: G\+PS 导航相关的控制器定义。
+\item {\ttfamily /\+Tag}\+: Ar\+Uco 标记和号牌处理的相关工具类。
+\item {\ttfamily /util}\+: 通用工具类，如数学工具函数和 S\+Q\+Lite 数据库操作。
+\end{DoxyItemize}
+\item {\ttfamily /src}\+: 包含所有源文件 ({\ttfamily .cpp})，目录结构与 {\ttfamily include} 对应。
+\item {\ttfamily /docs}\+: Doxygen 生成的文档输出目录，包含 H\+T\+ML 和 La\+TeX 格式的文档。
+\item {\ttfamily \mbox{\hyperlink{CMakeLists_8txt}{C\+Make\+Lists.\+txt}}}\+: 项目构建配置文件
+\item {\ttfamily package.\+xml}\+: R\+OS 包描述文件
+\item {\ttfamily Doxyfile}\+: Doxygen 文档生成配置文件
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{文档生成}\label{index_autotoc_md5}
+使用 Doxygen 生成项目文档：
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd /home/colu/catkin\_ws/src/drone\_control}
+\DoxyCodeLine{doxygen Doxyfile}
+\end{DoxyCode}
+
+
+生成的文档将位于 {\ttfamily /docs/html} 目录中。\hypertarget{index_autotoc_md6}{}\doxysection{许可证}\label{index_autotoc_md6}
+\mbox{[}在此添加许可证信息\mbox{]}\hypertarget{index_autotoc_md7}{}\doxysection{贡献指南}\label{index_autotoc_md7}
+欢迎提交问题报告和功能请求。如需贡献代码，请提交 Pull Request。\hypertarget{index_autotoc_md8}{}\doxysection{联系方式}\label{index_autotoc_md8}
+\mbox{[}在此添加项目维护者的联系方式\mbox{]} 

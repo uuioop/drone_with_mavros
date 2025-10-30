@@ -1,0 +1,4 @@
+<map id="PrecisionLandController" name="PrecisionLandController">
+<area shape="rect" id="node1" title="精确着陆控制器类 继承自Controller基类，实现无人机基于ArUco标签的精确着陆控制逻辑" alt="" coords="5,307,223,589"/>
+<area shape="rect" id="node2" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,5,223,259"/>
+</map>

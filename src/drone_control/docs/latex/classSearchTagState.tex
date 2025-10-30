@@ -1,0 +1,172 @@
+\hypertarget{classSearchTagState}{}\doxysection{Search\+Tag\+State Class Reference}
+\label{classSearchTagState}\index{SearchTagState@{SearchTagState}}
+
+
+搜索标签状态类 负责控制无人机搜索并发现\+Ar\+Uco引导标签  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Search\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classSearchTagState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Search\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSearchTagState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}{Search\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}{$\sim$\+Search\+Tag\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classSearchTagState_afdfda239d47a65dbc8fb0f2b3ff13575}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 初始化着陆过程所需的参数和状态 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSearchTagState_aa2c7f8744957218b5edad31f609a1dd6}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 清理着陆过程中的临时变量和状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classSearchTagState_a635310f5a3fa9c6371302208f50509fd}{\+\_\+front\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+搜索标签状态类 负责控制无人机搜索并发现\+Ar\+Uco引导标签 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}\label{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}} 
+\index{SearchTagState@{SearchTagState}!SearchTagState@{SearchTagState}}
+\index{SearchTagState@{SearchTagState}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{SearchTagState()}{SearchTagState()}}
+{\footnotesize\ttfamily Search\+Tag\+State\+::\+Search\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Search\+Tag\+State构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+\end{DoxyParams}
+初始化搜索标记状态节点，获取前端标记处理器并设置超时时长
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}\label{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}} 
+\index{SearchTagState@{SearchTagState}!````~SearchTagState@{$\sim$SearchTagState}}
+\index{````~SearchTagState@{$\sim$SearchTagState}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{$\sim$SearchTagState()}{~SearchTagState()}}
+{\footnotesize\ttfamily Search\+Tag\+State\+::$\sim$\+Search\+Tag\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSearchTagState_afdfda239d47a65dbc8fb0f2b3ff13575}\label{classSearchTagState_afdfda239d47a65dbc8fb0f2b3ff13575}} 
+\index{SearchTagState@{SearchTagState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Search\+Tag\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 初始化着陆过程所需的参数和状态 
+
+进入搜索标记状态时调用
+
+记录日志并设置进入时间 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classSearchTagState_aa2c7f8744957218b5edad31f609a1dd6}\label{classSearchTagState_aa2c7f8744957218b5edad31f609a1dd6}} 
+\index{SearchTagState@{SearchTagState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Search\+Tag\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 清理着陆过程中的临时变量和状态 
+
+退出搜索标记状态时调用
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54}\label{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54}} 
+\index{SearchTagState@{SearchTagState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Search\+Tag\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台 
+
+搜索标记状态更新方法
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+检查是否发现引导标记，超时则直接降落，否则保持上升
+
+\begin{DoxyReturn}{Returns}
+速度控制指令数组 \mbox{[}v\+\_\+x, v\+\_\+y, v\+\_\+z, v\+\_\+yaw\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSearchTagState_a635310f5a3fa9c6371302208f50509fd}\label{classSearchTagState_a635310f5a3fa9c6371302208f50509fd}} 
+\index{SearchTagState@{SearchTagState}!\_front\_tag\_processor@{\_front\_tag\_processor}}
+\index{\_front\_tag\_processor@{\_front\_tag\_processor}!SearchTagState@{SearchTagState}}
+\doxysubsubsection{\texorpdfstring{\_front\_tag\_processor}{\_front\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Search\+Tag\+State\+::\+\_\+front\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

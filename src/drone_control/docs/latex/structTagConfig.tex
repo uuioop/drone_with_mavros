@@ -1,0 +1,226 @@
+\hypertarget{structTagConfig}{}\doxysection{Tag\+Config Struct Reference}
+\label{structTagConfig}\index{TagConfig@{TagConfig}}
+
+
+标记配置结构体  
+
+
+
+
+{\ttfamily \#include $<$Aruco\+Tag.\+h$>$}
+
+
+
+Collaboration diagram for Tag\+Config\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structTagConfig__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structTagConfig_a3dd3c6a4cfca3c39a65607879413f4fe}{topic\+\_\+name}} =\char`\"{}/aruco\+\_\+detect/pose\char`\"{}
+\begin{DoxyCompactList}\small\item\em 订阅的主题名称，用于接收标记检测结果 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structTagConfig_a6890180795996a006b15ad6a83a80ccb}{tag\+\_\+name}} =\char`\"{}default\char`\"{}
+\begin{DoxyCompactList}\small\item\em 标记名称标识，用于区分不同标记 \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix3d \mbox{\hyperlink{structTagConfig_a42488812cb64e2f04df86341b22d1395}{rotation\+\_\+matrix}} =Eigen\+::\+Matrix3d\+::\+Identity()
+\begin{DoxyCompactList}\small\item\em 相机到机体的旋转矩阵，用于坐标变换 \end{DoxyCompactList}\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structTagConfig_aae6e95975521df2b22517c1d4f6c9ebf}{alignment\+\_\+axes}} =\{\textquotesingle{}x\textquotesingle{},\textquotesingle{}y\textquotesingle{},\textquotesingle{}\textbackslash{}0\textquotesingle{}\}
+\begin{DoxyCompactList}\small\item\em 对准轴，指定需要控制的轴向 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{structTagConfig_a757b85ee64c7607b18cd3a0fb166df0a}{max\+\_\+detection\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em 最大检测距离，超过此距离的标记将被忽略 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_ad15e1dcbd074486e83dc58877430236b}{aligned\+\_\+tolerance}} =0.\+2
+\begin{DoxyCompactList}\small\item\em 对准容差，确定标记对准的精度要求 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a0455b0f461be9495ef691633eeb21f65}{yaw\+\_\+tolerance\+\_\+deg}} =20.\+0
+\begin{DoxyCompactList}\small\item\em 偏航角容差，以度为单位 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_ace0c995f5782f00b831b8075b28a2fff}{max\+\_\+yaw\+\_\+rate\+\_\+deg\+\_\+s}} =10.\+0
+\begin{DoxyCompactList}\small\item\em 最大偏航角速度，以度/秒为单位 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a0bf6c8812bf420403bc41fbb3f396a13}{min\+\_\+yaw\+\_\+rate\+\_\+deg\+\_\+s}} =2.\+0
+\begin{DoxyCompactList}\small\item\em 最小偏航角速度，以度/秒为单位 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_ab7d54fc94d58b476fe8975685dff6213}{target\+\_\+timeout}} =3.\+0
+\begin{DoxyCompactList}\small\item\em 目标超时时间，超过此时间未检测到标记将认为丢失 \end{DoxyCompactList}\item 
+Eigen\+::\+Vector3d \mbox{\hyperlink{structTagConfig_aad02527ca4bd31123b109a8ab2c57a98}{target\+\_\+offset}} =Eigen\+::\+Vector3d\+::\+Zero()
+\begin{DoxyCompactList}\small\item\em 目标偏移量，用于调整目标位置 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a2609ea67c4c7869e8af24f01b37d4eee}{kp}} =0.\+5
+\begin{DoxyCompactList}\small\item\em P\+I\+D控制器的比例系数 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a36e2259b668dcd88af5a5ac820dbd73e}{ki}} =0.\+0
+\begin{DoxyCompactList}\small\item\em P\+I\+D控制器的积分系数 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a42881fa9d89e15d276751d52c14d9519}{kd}} =0.\+0
+\begin{DoxyCompactList}\small\item\em P\+I\+D控制器的微分系数 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structTagConfig_a98c9c81f5a40e9589d8ab0c203433fee}{max\+\_\+speed}} =0.\+6
+\begin{DoxyCompactList}\small\item\em 最大移动速度，限制控制输出 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+标记配置结构体 
+
+用于存储\+Ar\+Uco标记检测和控制的配置参数，所有参数基于机体坐标系 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structTagConfig_ad15e1dcbd074486e83dc58877430236b}\label{structTagConfig_ad15e1dcbd074486e83dc58877430236b}} 
+\index{TagConfig@{TagConfig}!aligned\_tolerance@{aligned\_tolerance}}
+\index{aligned\_tolerance@{aligned\_tolerance}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{aligned\_tolerance}{aligned\_tolerance}}
+{\footnotesize\ttfamily double Tag\+Config\+::aligned\+\_\+tolerance =0.\+2}
+
+
+
+对准容差，确定标记对准的精度要求 
+
+\mbox{\Hypertarget{structTagConfig_aae6e95975521df2b22517c1d4f6c9ebf}\label{structTagConfig_aae6e95975521df2b22517c1d4f6c9ebf}} 
+\index{TagConfig@{TagConfig}!alignment\_axes@{alignment\_axes}}
+\index{alignment\_axes@{alignment\_axes}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{alignment\_axes}{alignment\_axes}}
+{\footnotesize\ttfamily std\+::vector$<$char$>$ Tag\+Config\+::alignment\+\_\+axes =\{\textquotesingle{}x\textquotesingle{},\textquotesingle{}y\textquotesingle{},\textquotesingle{}\textbackslash{}0\textquotesingle{}\}}
+
+
+
+对准轴，指定需要控制的轴向 
+
+\mbox{\Hypertarget{structTagConfig_a42881fa9d89e15d276751d52c14d9519}\label{structTagConfig_a42881fa9d89e15d276751d52c14d9519}} 
+\index{TagConfig@{TagConfig}!kd@{kd}}
+\index{kd@{kd}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily double Tag\+Config\+::kd =0.\+0}
+
+
+
+P\+I\+D控制器的微分系数 
+
+\mbox{\Hypertarget{structTagConfig_a36e2259b668dcd88af5a5ac820dbd73e}\label{structTagConfig_a36e2259b668dcd88af5a5ac820dbd73e}} 
+\index{TagConfig@{TagConfig}!ki@{ki}}
+\index{ki@{ki}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{ki}{ki}}
+{\footnotesize\ttfamily double Tag\+Config\+::ki =0.\+0}
+
+
+
+P\+I\+D控制器的积分系数 
+
+\mbox{\Hypertarget{structTagConfig_a2609ea67c4c7869e8af24f01b37d4eee}\label{structTagConfig_a2609ea67c4c7869e8af24f01b37d4eee}} 
+\index{TagConfig@{TagConfig}!kp@{kp}}
+\index{kp@{kp}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily double Tag\+Config\+::kp =0.\+5}
+
+
+
+P\+I\+D控制器的比例系数 
+
+\mbox{\Hypertarget{structTagConfig_a757b85ee64c7607b18cd3a0fb166df0a}\label{structTagConfig_a757b85ee64c7607b18cd3a0fb166df0a}} 
+\index{TagConfig@{TagConfig}!max\_detection\_distance@{max\_detection\_distance}}
+\index{max\_detection\_distance@{max\_detection\_distance}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{max\_detection\_distance}{max\_detection\_distance}}
+{\footnotesize\ttfamily std\+::array$<$double,3$>$ Tag\+Config\+::max\+\_\+detection\+\_\+distance}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{        std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{        std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{        std::numeric\_limits<double>::infinity()}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+最大检测距离，超过此距离的标记将被忽略 
+
+\mbox{\Hypertarget{structTagConfig_a98c9c81f5a40e9589d8ab0c203433fee}\label{structTagConfig_a98c9c81f5a40e9589d8ab0c203433fee}} 
+\index{TagConfig@{TagConfig}!max\_speed@{max\_speed}}
+\index{max\_speed@{max\_speed}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{max\_speed}{max\_speed}}
+{\footnotesize\ttfamily double Tag\+Config\+::max\+\_\+speed =0.\+6}
+
+
+
+最大移动速度，限制控制输出 
+
+\mbox{\Hypertarget{structTagConfig_ace0c995f5782f00b831b8075b28a2fff}\label{structTagConfig_ace0c995f5782f00b831b8075b28a2fff}} 
+\index{TagConfig@{TagConfig}!max\_yaw\_rate\_deg\_s@{max\_yaw\_rate\_deg\_s}}
+\index{max\_yaw\_rate\_deg\_s@{max\_yaw\_rate\_deg\_s}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{max\_yaw\_rate\_deg\_s}{max\_yaw\_rate\_deg\_s}}
+{\footnotesize\ttfamily double Tag\+Config\+::max\+\_\+yaw\+\_\+rate\+\_\+deg\+\_\+s =10.\+0}
+
+
+
+最大偏航角速度，以度/秒为单位 
+
+\mbox{\Hypertarget{structTagConfig_a0bf6c8812bf420403bc41fbb3f396a13}\label{structTagConfig_a0bf6c8812bf420403bc41fbb3f396a13}} 
+\index{TagConfig@{TagConfig}!min\_yaw\_rate\_deg\_s@{min\_yaw\_rate\_deg\_s}}
+\index{min\_yaw\_rate\_deg\_s@{min\_yaw\_rate\_deg\_s}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{min\_yaw\_rate\_deg\_s}{min\_yaw\_rate\_deg\_s}}
+{\footnotesize\ttfamily double Tag\+Config\+::min\+\_\+yaw\+\_\+rate\+\_\+deg\+\_\+s =2.\+0}
+
+
+
+最小偏航角速度，以度/秒为单位 
+
+\mbox{\Hypertarget{structTagConfig_a42488812cb64e2f04df86341b22d1395}\label{structTagConfig_a42488812cb64e2f04df86341b22d1395}} 
+\index{TagConfig@{TagConfig}!rotation\_matrix@{rotation\_matrix}}
+\index{rotation\_matrix@{rotation\_matrix}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{rotation\_matrix}{rotation\_matrix}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix3d Tag\+Config\+::rotation\+\_\+matrix =Eigen\+::\+Matrix3d\+::\+Identity()}
+
+
+
+相机到机体的旋转矩阵，用于坐标变换 
+
+\mbox{\Hypertarget{structTagConfig_a6890180795996a006b15ad6a83a80ccb}\label{structTagConfig_a6890180795996a006b15ad6a83a80ccb}} 
+\index{TagConfig@{TagConfig}!tag\_name@{tag\_name}}
+\index{tag\_name@{tag\_name}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{tag\_name}{tag\_name}}
+{\footnotesize\ttfamily std\+::string Tag\+Config\+::tag\+\_\+name =\char`\"{}default\char`\"{}}
+
+
+
+标记名称标识，用于区分不同标记 
+
+\mbox{\Hypertarget{structTagConfig_aad02527ca4bd31123b109a8ab2c57a98}\label{structTagConfig_aad02527ca4bd31123b109a8ab2c57a98}} 
+\index{TagConfig@{TagConfig}!target\_offset@{target\_offset}}
+\index{target\_offset@{target\_offset}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{target\_offset}{target\_offset}}
+{\footnotesize\ttfamily Eigen\+::\+Vector3d Tag\+Config\+::target\+\_\+offset =Eigen\+::\+Vector3d\+::\+Zero()}
+
+
+
+目标偏移量，用于调整目标位置 
+
+\mbox{\Hypertarget{structTagConfig_ab7d54fc94d58b476fe8975685dff6213}\label{structTagConfig_ab7d54fc94d58b476fe8975685dff6213}} 
+\index{TagConfig@{TagConfig}!target\_timeout@{target\_timeout}}
+\index{target\_timeout@{target\_timeout}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{target\_timeout}{target\_timeout}}
+{\footnotesize\ttfamily double Tag\+Config\+::target\+\_\+timeout =3.\+0}
+
+
+
+目标超时时间，超过此时间未检测到标记将认为丢失 
+
+\mbox{\Hypertarget{structTagConfig_a3dd3c6a4cfca3c39a65607879413f4fe}\label{structTagConfig_a3dd3c6a4cfca3c39a65607879413f4fe}} 
+\index{TagConfig@{TagConfig}!topic\_name@{topic\_name}}
+\index{topic\_name@{topic\_name}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{topic\_name}{topic\_name}}
+{\footnotesize\ttfamily std\+::string Tag\+Config\+::topic\+\_\+name =\char`\"{}/aruco\+\_\+detect/pose\char`\"{}}
+
+
+
+订阅的主题名称，用于接收标记检测结果 
+
+\mbox{\Hypertarget{structTagConfig_a0455b0f461be9495ef691633eeb21f65}\label{structTagConfig_a0455b0f461be9495ef691633eeb21f65}} 
+\index{TagConfig@{TagConfig}!yaw\_tolerance\_deg@{yaw\_tolerance\_deg}}
+\index{yaw\_tolerance\_deg@{yaw\_tolerance\_deg}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{yaw\_tolerance\_deg}{yaw\_tolerance\_deg}}
+{\footnotesize\ttfamily double Tag\+Config\+::yaw\+\_\+tolerance\+\_\+deg =20.\+0}
+
+
+
+偏航角容差，以度为单位 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tag/\mbox{\hyperlink{ArucoTag_8h}{Aruco\+Tag.\+h}}\end{DoxyCompactItemize}

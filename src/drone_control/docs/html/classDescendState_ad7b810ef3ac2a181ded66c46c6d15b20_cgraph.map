@@ -1,0 +1,6 @@
+<map id="DescendState::on_update" name="DescendState::on_update">
+<area shape="rect" id="node1" title="更新状态时调用，返回控制指令" alt="" coords="5,78,193,105"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aa83b58721d13650beae16ba9c0652739" title="获取无人机的着陆状态" alt="" coords="257,5,399,47"/>
+<area shape="rect" id="node3" href="$classController.html#a4d5cb7dcd365b5fb9ff031d04d762fd5" title="获取状态监控器引用" alt="" coords="247,71,409,112"/>
+<area shape="rect" id="node4" href="$classController.html#a87e7895e31eefb805a690a6fbfcffddd" title="设置控制器的完成状态" alt="" coords="241,137,415,163"/>
+</map>

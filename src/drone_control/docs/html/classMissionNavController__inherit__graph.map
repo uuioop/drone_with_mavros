@@ -1,0 +1,4 @@
+<map id="MissionNavController" name="MissionNavController">
+<area shape="rect" id="node1" title="任务导航控制器" alt="" coords="5,307,223,487"/>
+<area shape="rect" id="node2" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,5,223,259"/>
+</map>

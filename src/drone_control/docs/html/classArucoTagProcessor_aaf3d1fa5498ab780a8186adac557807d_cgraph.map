@@ -1,0 +1,4 @@
+<map id="ArucoTagProcessor::get_yaw_error_deg" name="ArucoTagProcessor::get_yaw_error_deg">
+<area shape="rect" id="node1" title="获取偏航角误差（度）" alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node2" href="$utils_8h.html#a7c49671bd08b0ecb3cb52cbfb2063f08" title="将弧度转换为角度并归一化到[&#45;180, 180]范围" alt="" coords="205,13,360,39"/>
+</map>

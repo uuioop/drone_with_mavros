@@ -1,0 +1,85 @@
+\hypertarget{structLicenseConfig}{}\doxysection{License\+Config Struct Reference}
+\label{structLicenseConfig}\index{LicenseConfig@{LicenseConfig}}
+
+
+号牌配置结构体  
+
+
+
+
+{\ttfamily \#include $<$License.\+h$>$}
+
+
+
+Collaboration diagram for License\+Config\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{structLicenseConfig__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structLicenseConfig_a3b340c3eca75869e6925b7c328a510a8}{license\+\_\+topic}} =\char`\"{}/license\+\_\+detection\+\_\+result\char`\"{}
+\begin{DoxyCompactList}\small\item\em 号牌检测结果话题名称 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structLicenseConfig_a7d40b3db8b1457ed3680153d3efad9a8}{target\+\_\+timeout}} =1.\+0
+\begin{DoxyCompactList}\small\item\em 目标超时时间，单位：秒 \end{DoxyCompactList}\item 
+std\+::array$<$ int, 2 $>$ \mbox{\hyperlink{structLicenseConfig_ad9f80672709fc4174857428735a938ad}{image\+\_\+frame\+\_\+size}} =\{1920,1080\}
+\begin{DoxyCompactList}\small\item\em 图像大小 \mbox{[}宽度, 高度\mbox{]} \end{DoxyCompactList}\item 
+std\+::array$<$ int, 2 $>$ \mbox{\hyperlink{structLicenseConfig_a082ee9d956bf43b627484a141e6c9f64}{detection\+\_\+frame\+\_\+size}} =\{640,360\}
+\begin{DoxyCompactList}\small\item\em 检测框大小 \mbox{[}宽度, 高度\mbox{]}，为图像大小的三分之一 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+号牌配置结构体 
+
+用于存储号牌检测和处理的配置参数。 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLicenseConfig_a082ee9d956bf43b627484a141e6c9f64}\label{structLicenseConfig_a082ee9d956bf43b627484a141e6c9f64}} 
+\index{LicenseConfig@{LicenseConfig}!detection\_frame\_size@{detection\_frame\_size}}
+\index{detection\_frame\_size@{detection\_frame\_size}!LicenseConfig@{LicenseConfig}}
+\doxysubsubsection{\texorpdfstring{detection\_frame\_size}{detection\_frame\_size}}
+{\footnotesize\ttfamily std\+::array$<$int,2$>$ License\+Config\+::detection\+\_\+frame\+\_\+size =\{640,360\}}
+
+
+
+检测框大小 \mbox{[}宽度, 高度\mbox{]}，为图像大小的三分之一 
+
+\mbox{\Hypertarget{structLicenseConfig_ad9f80672709fc4174857428735a938ad}\label{structLicenseConfig_ad9f80672709fc4174857428735a938ad}} 
+\index{LicenseConfig@{LicenseConfig}!image\_frame\_size@{image\_frame\_size}}
+\index{image\_frame\_size@{image\_frame\_size}!LicenseConfig@{LicenseConfig}}
+\doxysubsubsection{\texorpdfstring{image\_frame\_size}{image\_frame\_size}}
+{\footnotesize\ttfamily std\+::array$<$int,2$>$ License\+Config\+::image\+\_\+frame\+\_\+size =\{1920,1080\}}
+
+
+
+图像大小 \mbox{[}宽度, 高度\mbox{]} 
+
+\mbox{\Hypertarget{structLicenseConfig_a3b340c3eca75869e6925b7c328a510a8}\label{structLicenseConfig_a3b340c3eca75869e6925b7c328a510a8}} 
+\index{LicenseConfig@{LicenseConfig}!license\_topic@{license\_topic}}
+\index{license\_topic@{license\_topic}!LicenseConfig@{LicenseConfig}}
+\doxysubsubsection{\texorpdfstring{license\_topic}{license\_topic}}
+{\footnotesize\ttfamily std\+::string License\+Config\+::license\+\_\+topic =\char`\"{}/license\+\_\+detection\+\_\+result\char`\"{}}
+
+
+
+号牌检测结果话题名称 
+
+\mbox{\Hypertarget{structLicenseConfig_a7d40b3db8b1457ed3680153d3efad9a8}\label{structLicenseConfig_a7d40b3db8b1457ed3680153d3efad9a8}} 
+\index{LicenseConfig@{LicenseConfig}!target\_timeout@{target\_timeout}}
+\index{target\_timeout@{target\_timeout}!LicenseConfig@{LicenseConfig}}
+\doxysubsubsection{\texorpdfstring{target\_timeout}{target\_timeout}}
+{\footnotesize\ttfamily double License\+Config\+::target\+\_\+timeout =1.\+0}
+
+
+
+目标超时时间，单位：秒 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tag/\mbox{\hyperlink{License_8h}{License.\+h}}\end{DoxyCompactItemize}

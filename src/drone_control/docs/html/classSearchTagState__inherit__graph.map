@@ -1,0 +1,4 @@
+<map id="SearchTagState" name="SearchTagState">
+<area shape="rect" id="node1" title="搜索标签状态类 负责控制无人机搜索并发现ArUco引导标签" alt="" coords="5,248,172,384"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="11,5,167,200"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="StateNode::on_enter" name="StateNode::on_enter">
+<area shape="rect" id="node1" title="进入状态时执行的函数" alt="" coords="475,111,629,138"/>
+<area shape="rect" id="node2" href="$classStateMachine.html#a4866fbecfed4a1533180a6b29deea590" title="更新当前状态" alt="" coords="240,78,427,105"/>
+<area shape="rect" id="node5" href="$classStateMachine.html#ae8658b2080bd1550c57174a68c65df59" title="切换到指定的状态" alt="" coords="253,136,414,177"/>
+<area shape="rect" id="node3" href="$classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="11,5,187,47"/>
+<area shape="rect" id="node4" href="$classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="5,71,192,112"/>
+<area shape="rect" id="node6" href="$classPrecisionLandController.html#ab603c9a00fd58c9cbf250fbd215821bc" title="切换状态机状态" alt="" coords="11,136,187,177"/>
+<area shape="rect" id="node7" href="$classConfirmLicenseController.html#a5d901dfae633f65ff3be6c14d9c364a4" title="切换状态机状态" alt="" coords="5,201,192,243"/>
+</map>

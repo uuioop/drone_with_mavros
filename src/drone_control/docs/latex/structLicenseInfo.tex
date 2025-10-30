@@ -1,0 +1,118 @@
+\hypertarget{structLicenseInfo}{}\doxysection{License\+Info Struct Reference}
+\label{structLicenseInfo}\index{LicenseInfo@{LicenseInfo}}
+
+
+号牌信息结构体  
+
+
+
+
+{\ttfamily \#include $<$License.\+h$>$}
+
+
+
+Collaboration diagram for License\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{structLicenseInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structLicenseInfo_ac089cd2a387806e6c893057be891d716}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em 检查号牌数据是否有效 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structLicenseInfo_a31999b197bdb75419dc34bc47f1c57f4}{license\+\_\+no}} =\char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em 号牌号码字符串 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structLicenseInfo_ae35d13db83f6c371726fb01130be9a9c}{center\+\_\+x}} =0.\+0
+\begin{DoxyCompactList}\small\item\em 号牌在图像中的x坐标中心位置 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structLicenseInfo_aa6db5cd8bbf069e3277cb5fd2e2c7cac}{center\+\_\+y}} =0.\+0
+\begin{DoxyCompactList}\small\item\em 号牌在图像中的y坐标中心位置 \end{DoxyCompactList}\item 
+ros\+::\+Time \mbox{\hyperlink{structLicenseInfo_a46b4da9c1ace05bd56e9a9cfb0d4a386}{timestamp}} =ros\+::\+Time(0)
+\begin{DoxyCompactList}\small\item\em 号牌检测的时间戳 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+号牌信息结构体 
+
+用于存储检测到的号牌信息，包括号牌号码、位置和时间戳。 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structLicenseInfo_ac089cd2a387806e6c893057be891d716}\label{structLicenseInfo_ac089cd2a387806e6c893057be891d716}} 
+\index{LicenseInfo@{LicenseInfo}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!LicenseInfo@{LicenseInfo}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily bool License\+Info\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查号牌数据是否有效 
+
+通过判断时间戳是否大于0来确定数据是否已被更新
+
+\begin{DoxyReturn}{Returns}
+true 如果号牌数据有效 
+
+false 如果号牌数据无效 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{structLicenseInfo_ac089cd2a387806e6c893057be891d716_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structLicenseInfo_ae35d13db83f6c371726fb01130be9a9c}\label{structLicenseInfo_ae35d13db83f6c371726fb01130be9a9c}} 
+\index{LicenseInfo@{LicenseInfo}!center\_x@{center\_x}}
+\index{center\_x@{center\_x}!LicenseInfo@{LicenseInfo}}
+\doxysubsubsection{\texorpdfstring{center\_x}{center\_x}}
+{\footnotesize\ttfamily double License\+Info\+::center\+\_\+x =0.\+0}
+
+
+
+号牌在图像中的x坐标中心位置 
+
+\mbox{\Hypertarget{structLicenseInfo_aa6db5cd8bbf069e3277cb5fd2e2c7cac}\label{structLicenseInfo_aa6db5cd8bbf069e3277cb5fd2e2c7cac}} 
+\index{LicenseInfo@{LicenseInfo}!center\_y@{center\_y}}
+\index{center\_y@{center\_y}!LicenseInfo@{LicenseInfo}}
+\doxysubsubsection{\texorpdfstring{center\_y}{center\_y}}
+{\footnotesize\ttfamily double License\+Info\+::center\+\_\+y =0.\+0}
+
+
+
+号牌在图像中的y坐标中心位置 
+
+\mbox{\Hypertarget{structLicenseInfo_a31999b197bdb75419dc34bc47f1c57f4}\label{structLicenseInfo_a31999b197bdb75419dc34bc47f1c57f4}} 
+\index{LicenseInfo@{LicenseInfo}!license\_no@{license\_no}}
+\index{license\_no@{license\_no}!LicenseInfo@{LicenseInfo}}
+\doxysubsubsection{\texorpdfstring{license\_no}{license\_no}}
+{\footnotesize\ttfamily std\+::string License\+Info\+::license\+\_\+no =\char`\"{}\char`\"{}}
+
+
+
+号牌号码字符串 
+
+\mbox{\Hypertarget{structLicenseInfo_a46b4da9c1ace05bd56e9a9cfb0d4a386}\label{structLicenseInfo_a46b4da9c1ace05bd56e9a9cfb0d4a386}} 
+\index{LicenseInfo@{LicenseInfo}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!LicenseInfo@{LicenseInfo}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily ros\+::\+Time License\+Info\+::timestamp =ros\+::\+Time(0)}
+
+
+
+号牌检测的时间戳 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tag/\mbox{\hyperlink{License_8h}{License.\+h}}\end{DoxyCompactItemize}

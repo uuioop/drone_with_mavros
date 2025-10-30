@@ -1,0 +1,4 @@
+<map id="ArucoTagProcessor::check_distance_valid" name="ArucoTagProcessor::check_distance_valid">
+<area shape="rect" id="node1" title="检查标记与目标的距离是否有效" alt="" coords="235,5,396,47"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a08383d557a51c32c36fcf05b2038f10a" title="更新并记录标记有效性" alt="" coords="5,5,187,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="DescendState" name="DescendState">
+<area shape="rect" id="node1" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="5,248,176,384"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="13,5,169,200"/>
+</map>

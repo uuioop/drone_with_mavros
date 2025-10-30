@@ -1,0 +1,236 @@
+\hypertarget{classMissionNavController}{}\doxysection{Mission\+Nav\+Controller Class Reference}
+\label{classMissionNavController}\index{MissionNavController@{MissionNavController}}
+
+
+任务导航控制器  
+
+
+
+
+{\ttfamily \#include $<$Mission\+Nav\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for Mission\+Nav\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classMissionNavController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mission\+Nav\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMissionNavController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMissionNavController_aa12c985f9e6b8e61cb3a85a63d6ef1f4}{Mission\+Nav\+Controller}} (ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMissionNavController_acb15b815a60ba9f26347ebcaaa69fa81}{$\sim$\+Mission\+Nav\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNavController_a9f3c6ec8fca4331476585e80a5c7534d}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时执行 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNavController_a3381b62d3a5510230642cd82ad57ea35}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 状态更新时执行 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNavController_a250b8a998388c06dca7745e4adf76fca}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时执行 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMissionNavController_ac8e1c1db9fd25ecca60d711e37f06903}{get\+\_\+required\+\_\+flight\+\_\+mode}} () const override
+\begin{DoxyCompactList}\small\item\em 获取控制器所需的飞行模式 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMissionNavController_ac924c3331bbf6e799117b4c80f645814}{get\+\_\+next\+\_\+controller\+\_\+name}} () const override
+\begin{DoxyCompactList}\small\item\em 获取控制器完成后应切换到的下一个控制器名称 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNavController_a9c32ad8b10d94046523934f335960597}{update\+\_\+target\+\_\+position}} (double latitude\+\_\+deg, double longitude\+\_\+deg, double absolute\+\_\+altitude\+\_\+m)
+\begin{DoxyCompactList}\small\item\em 更新目标位置 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{classMissionNavController_a69f1d827c18b8613f3ff11543e1ca2cc}{\+\_\+target\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em 目标位置数组 \mbox{[}纬度(度), 经度(度), 绝对高度(米)\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+任务导航控制器 
+
+继承自\+Controller基类，实现基于\+G\+P\+S的自动任务导航功能 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMissionNavController_aa12c985f9e6b8e61cb3a85a63d6ef1f4}\label{classMissionNavController_aa12c985f9e6b8e61cb3a85a63d6ef1f4}} 
+\index{MissionNavController@{MissionNavController}!MissionNavController@{MissionNavController}}
+\index{MissionNavController@{MissionNavController}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{MissionNavController()}{MissionNavController()}}
+{\footnotesize\ttfamily Mission\+Nav\+Controller\+::\+Mission\+Nav\+Controller (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+构造函数实现
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄引用 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用\\
+\hline
+\end{DoxyParams}
+初始化\+G\+P\+S任务导航控制器
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMissionNavController_acb15b815a60ba9f26347ebcaaa69fa81}\label{classMissionNavController_acb15b815a60ba9f26347ebcaaa69fa81}} 
+\index{MissionNavController@{MissionNavController}!````~MissionNavController@{$\sim$MissionNavController}}
+\index{````~MissionNavController@{$\sim$MissionNavController}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{$\sim$MissionNavController()}{~MissionNavController()}}
+{\footnotesize\ttfamily Mission\+Nav\+Controller\+::$\sim$\+Mission\+Nav\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现
+
+使用默认析构函数，自动管理资源释放 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMissionNavController_ac924c3331bbf6e799117b4c80f645814}\label{classMissionNavController_ac924c3331bbf6e799117b4c80f645814}} 
+\index{MissionNavController@{MissionNavController}!get\_next\_controller\_name@{get\_next\_controller\_name}}
+\index{get\_next\_controller\_name@{get\_next\_controller\_name}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{get\_next\_controller\_name()}{get\_next\_controller\_name()}}
+{\footnotesize\ttfamily std\+::string Mission\+Nav\+Controller\+::get\+\_\+next\+\_\+controller\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+获取控制器完成后应切换到的下一个控制器名称 
+
+\begin{DoxyReturn}{Returns}
+下一个控制器名称 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classController_a9dd1c9b5f003f3bb5241df1804f7fa22}{Controller}}.
+
+\mbox{\Hypertarget{classMissionNavController_ac8e1c1db9fd25ecca60d711e37f06903}\label{classMissionNavController_ac8e1c1db9fd25ecca60d711e37f06903}} 
+\index{MissionNavController@{MissionNavController}!get\_required\_flight\_mode@{get\_required\_flight\_mode}}
+\index{get\_required\_flight\_mode@{get\_required\_flight\_mode}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{get\_required\_flight\_mode()}{get\_required\_flight\_mode()}}
+{\footnotesize\ttfamily std\+::string Mission\+Nav\+Controller\+::get\+\_\+required\+\_\+flight\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+获取控制器所需的飞行模式 
+
+\begin{DoxyReturn}{Returns}
+飞行模式名称 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classController_acffd5ea0506661240bf37d07ab0df646}{Controller}}.
+
+\mbox{\Hypertarget{classMissionNavController_a9f3c6ec8fca4331476585e80a5c7534d}\label{classMissionNavController_a9f3c6ec8fca4331476585e80a5c7534d}} 
+\index{MissionNavController@{MissionNavController}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Mission\+Nav\+Controller\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时执行 
+
+进入控制器时的回调实现
+
+\begin{DoxyNote}{Note}
+初始化导航相关参数和设置
+\end{DoxyNote}
+目前为空实现，可根据需要添加初始化逻辑 
+
+Implements \mbox{\hyperlink{classController_a746be737f8c6c44d129af4fa06f8318d}{Controller}}.
+
+\mbox{\Hypertarget{classMissionNavController_a250b8a998388c06dca7745e4adf76fca}\label{classMissionNavController_a250b8a998388c06dca7745e4adf76fca}} 
+\index{MissionNavController@{MissionNavController}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Mission\+Nav\+Controller\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时执行 
+
+退出控制器时的回调实现
+
+\begin{DoxyNote}{Note}
+清理导航相关资源和状态
+\end{DoxyNote}
+目前为空实现，可根据需要添加清理逻辑 
+
+Implements \mbox{\hyperlink{classController_abccf9fcc461f9ecc60276e42457c62e0}{Controller}}.
+
+\mbox{\Hypertarget{classMissionNavController_a3381b62d3a5510230642cd82ad57ea35}\label{classMissionNavController_a3381b62d3a5510230642cd82ad57ea35}} 
+\index{MissionNavController@{MissionNavController}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily void Mission\+Nav\+Controller\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+状态更新时执行 
+
+更新控制器状态时的回调实现
+
+\begin{DoxyNote}{Note}
+实现导航逻辑，控制无人机到达目标位置
+\end{DoxyNote}
+目前为空实现，可根据需要添加\+G\+P\+S导航逻辑 
+
+Implements \mbox{\hyperlink{classController_a8b2a76f58fb42a8520fccecc62077754}{Controller}}.
+
+\mbox{\Hypertarget{classMissionNavController_a9c32ad8b10d94046523934f335960597}\label{classMissionNavController_a9c32ad8b10d94046523934f335960597}} 
+\index{MissionNavController@{MissionNavController}!update\_target\_position@{update\_target\_position}}
+\index{update\_target\_position@{update\_target\_position}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{update\_target\_position()}{update\_target\_position()}}
+{\footnotesize\ttfamily void Mission\+Nav\+Controller\+::update\+\_\+target\+\_\+position (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+deg,  }\item[{double}]{longitude\+\_\+deg,  }\item[{double}]{absolute\+\_\+altitude\+\_\+m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+更新目标位置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & 新的目标位置，格式为\{X, Y, Z\} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMissionNavController_a69f1d827c18b8613f3ff11543e1ca2cc}\label{classMissionNavController_a69f1d827c18b8613f3ff11543e1ca2cc}} 
+\index{MissionNavController@{MissionNavController}!\_target\_position@{\_target\_position}}
+\index{\_target\_position@{\_target\_position}!MissionNavController@{MissionNavController}}
+\doxysubsubsection{\texorpdfstring{\_target\_position}{\_target\_position}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ Mission\+Nav\+Controller\+::\+\_\+target\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+目标位置数组 \mbox{[}纬度(度), 经度(度), 绝对高度(米)\mbox{]} 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+G\+P\+S\+Nav/\mbox{\hyperlink{MissionNavController_8h}{Mission\+Nav\+Controller.\+h}}\item 
+src/\+G\+P\+S\+Nav/\mbox{\hyperlink{MissionNavController_8cpp}{Mission\+Nav\+Controller.\+cpp}}\end{DoxyCompactItemize}

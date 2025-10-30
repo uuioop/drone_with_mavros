@@ -1,0 +1,4 @@
+<map id="StatusMonitor::is_connected" name="StatusMonitor::is_connected">
+<area shape="rect" id="node1" title="检查无人机是否已连接" alt="" coords="224,13,431,39"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a7a70c52e8e986a2c7a3cfeb5bfc82419" title="连接到飞控单元(FCU)" alt="" coords="5,5,176,47"/>
+</map>

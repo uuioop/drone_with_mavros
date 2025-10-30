@@ -1,0 +1,176 @@
+\hypertarget{classApproachGuideTagState}{}\doxysection{Approach\+Guide\+Tag\+State Class Reference}
+\label{classApproachGuideTagState}\index{ApproachGuideTagState@{ApproachGuideTagState}}
+
+
+接近引导标签状态类 负责控制无人机向\+Ar\+Uco引导标签方向接近，同时开始使用下视摄像头搜索平台标签  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Approach\+Guide\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classApproachGuideTagState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Approach\+Guide\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classApproachGuideTagState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApproachGuideTagState_a295f01c55739ff6eef76cf50673be623}{Approach\+Guide\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classApproachGuideTagState_a00b27306f488000c9cb77bf74a13bd20}{$\sim$\+Approach\+Guide\+Tag\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classApproachGuideTagState_af29bb3b7189d7cc4c6efaac70d3bc922}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classApproachGuideTagState_af4683b61821014fd6156ad44bd52db55}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classApproachGuideTagState_a65f57b028f0659476705032b09c89af4}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classApproachGuideTagState_a76efe16de8aba2d5079597a2d406c202}{\+\_\+front\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco引导标签的检测和定位 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classApproachGuideTagState_abee4ad888e9137a5f17e765ac8823379}{\+\_\+down\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 下视摄像头的标签处理器 用于处理下视摄像头拍摄的图像中\+Ar\+Uco平台标签的检测和定位 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+接近引导标签状态类 负责控制无人机向\+Ar\+Uco引导标签方向接近，同时开始使用下视摄像头搜索平台标签 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classApproachGuideTagState_a295f01c55739ff6eef76cf50673be623}\label{classApproachGuideTagState_a295f01c55739ff6eef76cf50673be623}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!ApproachGuideTagState@{ApproachGuideTagState}}
+\index{ApproachGuideTagState@{ApproachGuideTagState}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{ApproachGuideTagState()}{ApproachGuideTagState()}}
+{\footnotesize\ttfamily Approach\+Guide\+Tag\+State\+::\+Approach\+Guide\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Approach\+Guide\+Tag\+State构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+\end{DoxyParams}
+初始化接近引导标记状态节点，获取前端和下降标记处理器
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classApproachGuideTagState_a00b27306f488000c9cb77bf74a13bd20}\label{classApproachGuideTagState_a00b27306f488000c9cb77bf74a13bd20}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!````~ApproachGuideTagState@{$\sim$ApproachGuideTagState}}
+\index{````~ApproachGuideTagState@{$\sim$ApproachGuideTagState}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{$\sim$ApproachGuideTagState()}{~ApproachGuideTagState()}}
+{\footnotesize\ttfamily Approach\+Guide\+Tag\+State\+::$\sim$\+Approach\+Guide\+Tag\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classApproachGuideTagState_af29bb3b7189d7cc4c6efaac70d3bc922}\label{classApproachGuideTagState_af29bb3b7189d7cc4c6efaac70d3bc922}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Approach\+Guide\+Tag\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 
+
+进入接近引导标记状态时调用
+
+记录日志 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classApproachGuideTagState_a65f57b028f0659476705032b09c89af4}\label{classApproachGuideTagState_a65f57b028f0659476705032b09c89af4}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Approach\+Guide\+Tag\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 
+
+退出接近引导标记状态时调用
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classApproachGuideTagState_af4683b61821014fd6156ad44bd52db55}\label{classApproachGuideTagState_af4683b61821014fd6156ad44bd52db55}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Approach\+Guide\+Tag\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 
+
+接近引导标记状态更新方法
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+保持对准引导标记前进，当检测到下方平台标记时切换到对准平台标记状态
+
+\begin{DoxyReturn}{Returns}
+速度控制指令数组 \mbox{[}v\+\_\+x, v\+\_\+y, v\+\_\+z, v\+\_\+yaw\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classApproachGuideTagState_abee4ad888e9137a5f17e765ac8823379}\label{classApproachGuideTagState_abee4ad888e9137a5f17e765ac8823379}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!\_down\_tag\_processor@{\_down\_tag\_processor}}
+\index{\_down\_tag\_processor@{\_down\_tag\_processor}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{\_down\_tag\_processor}{\_down\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Approach\+Guide\+Tag\+State\+::\+\_\+down\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+下视摄像头的标签处理器 用于处理下视摄像头拍摄的图像中\+Ar\+Uco平台标签的检测和定位 
+
+\mbox{\Hypertarget{classApproachGuideTagState_a76efe16de8aba2d5079597a2d406c202}\label{classApproachGuideTagState_a76efe16de8aba2d5079597a2d406c202}} 
+\index{ApproachGuideTagState@{ApproachGuideTagState}!\_front\_tag\_processor@{\_front\_tag\_processor}}
+\index{\_front\_tag\_processor@{\_front\_tag\_processor}!ApproachGuideTagState@{ApproachGuideTagState}}
+\doxysubsubsection{\texorpdfstring{\_front\_tag\_processor}{\_front\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Approach\+Guide\+Tag\+State\+::\+\_\+front\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco引导标签的检测和定位 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

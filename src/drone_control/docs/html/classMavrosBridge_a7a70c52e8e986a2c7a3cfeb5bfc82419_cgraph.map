@@ -1,0 +1,4 @@
+<map id="MavrosBridge::connect_to_fcu" name="MavrosBridge::connect_to_fcu">
+<area shape="rect" id="node1" title="连接到飞控单元(FCU)" alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aa2410eeb8de71dcb00e8d7105d6cf97a" title="检查无人机是否已连接" alt="" coords="224,13,431,39"/>
+</map>

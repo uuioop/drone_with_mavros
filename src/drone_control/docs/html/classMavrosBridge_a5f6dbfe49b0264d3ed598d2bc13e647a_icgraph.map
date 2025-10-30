@@ -1,0 +1,5 @@
+<map id="MavrosBridge::arm" name="MavrosBridge::arm">
+<area shape="rect" id="node1" title="解锁无人机（准备飞行）" alt="" coords="440,5,587,32"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="5,5,171,32"/>
+</map>

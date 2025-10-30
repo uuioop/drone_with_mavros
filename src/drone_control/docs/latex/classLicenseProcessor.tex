@@ -1,0 +1,613 @@
+\hypertarget{classLicenseProcessor}{}\doxysection{License\+Processor Class Reference}
+\label{classLicenseProcessor}\index{LicenseProcessor@{LicenseProcessor}}
+
+
+号牌处理器类  
+
+
+
+
+{\ttfamily \#include $<$License\+Processor.\+h$>$}
+
+
+
+Collaboration diagram for License\+Processor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLicenseProcessor_a8604f4683e934b168c6a92fda1bfb87e}{License\+Processor}} (ros\+::\+Node\+Handle \&nh, const \mbox{\hyperlink{structLicenseConfig}{License\+Config}} \&license\+\_\+config)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLicenseProcessor_ae480a9d5180cd06be50bd32461552a77}{$\sim$\+License\+Processor}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLicenseInfo}{License\+Info}} \mbox{\hyperlink{classLicenseProcessor_af841af957c86bcd1dd70bd27fb732d62}{get\+\_\+license\+\_\+info\+\_\+stable}} () const
+\begin{DoxyCompactList}\small\item\em 获取识别稳定的号牌信息 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}{set\+\_\+start}} (bool started)
+\begin{DoxyCompactList}\small\item\em 设置是否启动回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}{set\+\_\+target\+\_\+license}} (const std\+::string \&license\+\_\+no)
+\begin{DoxyCompactList}\small\item\em 设置目标号牌 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em 检查当前号牌信息是否有效 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_af13f3d5ae0ccced549405f5a1b14772b}{is\+\_\+aligned}} () const
+\begin{DoxyCompactList}\small\item\em 检查是否已对齐到号牌 \end{DoxyCompactList}\item 
+std\+::tuple$<$ char, double $>$ \mbox{\hyperlink{classLicenseProcessor_aa160075c27e92731c3e7e7783f38d940}{calculate\+\_\+movement\+\_\+from\+\_\+plate\+\_\+diff}} () const
+\begin{DoxyCompactList}\small\item\em 计算从当前号牌到目标位置的移动指令 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLicenseProcessor_a491e5c290a1b8d9050d631d1d5a22730}{calculate\+\_\+velocity}} (const char \&axis) const
+\begin{DoxyCompactList}\small\item\em 计算指定轴的速度指令 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_a8b60789cb68dec32c56becf65781945d}{compare\+\_\+license}} () const
+\begin{DoxyCompactList}\small\item\em 比较当前号牌与目标号牌 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLicenseProcessor_abfaa9717a32f8232372e17acafe50f2e}{add\+\_\+rejected\+\_\+plate}} ()
+\begin{DoxyCompactList}\small\item\em 添加拒绝号牌 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}{clear\+\_\+rejected\+\_\+plates}} ()
+\begin{DoxyCompactList}\small\item\em 清除已拒绝的号牌 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e}{license\+\_\+callback}} (const my\+\_\+interfaces\+::\+License\+Info\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 号牌回调函数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}{check\+\_\+timeout}} () const
+\begin{DoxyCompactList}\small\item\em 检查号牌信息是否超时 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b}{update\+\_\+recognized\+\_\+license}} (const \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \&license\+\_\+info)
+\begin{DoxyCompactList}\small\item\em 更新识别到的号牌信息 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_a313cfa61be30832cb44dfcda57d06db8}{is\+\_\+license\+\_\+no\+\_\+valid}} (const std\+::string \&license\+\_\+no) const
+\begin{DoxyCompactList}\small\item\em 检查号牌内容是否有效 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \& \mbox{\hyperlink{classLicenseProcessor_a1968a1473d21514fa5030b2b929db3fe}{\+\_\+nh}}
+\begin{DoxyCompactList}\small\item\em R\+O\+S节点句柄引用 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_af005e27feae2c380f5a860c72e313ba1}{\+\_\+is\+\_\+started}} = false
+\begin{DoxyCompactList}\small\item\em 处理器是否已启动 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}{\+\_\+license\+\_\+no}}
+\begin{DoxyCompactList}\small\item\em 最新识别的号牌内容 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLicenseInfo}{License\+Info}} \mbox{\hyperlink{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}{\+\_\+license\+\_\+info\+\_\+stable}}
+\begin{DoxyCompactList}\small\item\em 稳定识别的号牌信息 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLicenseConfig}{License\+Config}} \mbox{\hyperlink{classLicenseProcessor_a9d0c9d50954dac7c0f6d133f42420b3c}{\+\_\+license\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em 号牌配置参数 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classLicenseProcessor_a16ca8dce78b6779872921363dac42374}{\+\_\+license\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 号牌话题订阅者 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLicenseProcessor_a929cce9196f6fa3438abd56fa6b718a1}{\+\_\+target\+\_\+license\+\_\+no}}
+\begin{DoxyCompactList}\small\item\em 目标号牌号码 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLicenseProcessor_a51992bcc7c9d2c5954586b2aec054113}{\+\_\+stability\+\_\+counter}} = 0
+\begin{DoxyCompactList}\small\item\em 识别结果稳定性计数器 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLicenseProcessor_a3015be56a12d538a360eaecb9798d073}{\+\_\+required\+\_\+stability\+\_\+count}} = 3
+\begin{DoxyCompactList}\small\item\em 识别结果稳定性要求次数 \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classLicenseProcessor_a51795b51b757431f04e43cae0ef33795}{\+\_\+rejected\+\_\+plates}}
+\begin{DoxyCompactList}\small\item\em 已拒绝的号牌集合 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+号牌处理器类 
+
+负责订阅和处理号牌检测信息，验证号牌有效性， 比较当前号牌与目标号牌，并计算用于控制无人机对准号牌的指令。 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLicenseProcessor_a8604f4683e934b168c6a92fda1bfb87e}\label{classLicenseProcessor_a8604f4683e934b168c6a92fda1bfb87e}} 
+\index{LicenseProcessor@{LicenseProcessor}!LicenseProcessor@{LicenseProcessor}}
+\index{LicenseProcessor@{LicenseProcessor}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{LicenseProcessor()}{LicenseProcessor()}}
+{\footnotesize\ttfamily License\+Processor\+::\+License\+Processor (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{const \mbox{\hyperlink{structLicenseConfig}{License\+Config}} \&}]{license\+\_\+config }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+构造函数实现
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em license\+\_\+config} & 号牌配置参数\\
+\hline
+\end{DoxyParams}
+初始化号牌处理器，订阅号牌识别话题
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em license\+\_\+config} & 号牌配置参数 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a8604f4683e934b168c6a92fda1bfb87e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_ae480a9d5180cd06be50bd32461552a77}\label{classLicenseProcessor_ae480a9d5180cd06be50bd32461552a77}} 
+\index{LicenseProcessor@{LicenseProcessor}!````~LicenseProcessor@{$\sim$LicenseProcessor}}
+\index{````~LicenseProcessor@{$\sim$LicenseProcessor}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{$\sim$LicenseProcessor()}{~LicenseProcessor()}}
+{\footnotesize\ttfamily License\+Processor\+::$\sim$\+License\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现
+
+使用默认析构函数，订阅者会自动清理 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLicenseProcessor_abfaa9717a32f8232372e17acafe50f2e}\label{classLicenseProcessor_abfaa9717a32f8232372e17acafe50f2e}} 
+\index{LicenseProcessor@{LicenseProcessor}!add\_rejected\_plate@{add\_rejected\_plate}}
+\index{add\_rejected\_plate@{add\_rejected\_plate}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{add\_rejected\_plate()}{add\_rejected\_plate()}}
+{\footnotesize\ttfamily void License\+Processor\+::add\+\_\+rejected\+\_\+plate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+添加拒绝号牌 
+
+添加当前稳定的号牌到拒绝列表
+
+将当前识别的号牌添加到拒绝列表中
+
+当确认当前号牌不是目标号牌时，将其添加到拒绝列表，避免重复检查 \mbox{\Hypertarget{classLicenseProcessor_aa160075c27e92731c3e7e7783f38d940}\label{classLicenseProcessor_aa160075c27e92731c3e7e7783f38d940}} 
+\index{LicenseProcessor@{LicenseProcessor}!calculate\_movement\_from\_plate\_diff@{calculate\_movement\_from\_plate\_diff}}
+\index{calculate\_movement\_from\_plate\_diff@{calculate\_movement\_from\_plate\_diff}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{calculate\_movement\_from\_plate\_diff()}{calculate\_movement\_from\_plate\_diff()}}
+{\footnotesize\ttfamily std\+::tuple$<$ char, double $>$ License\+Processor\+::calculate\+\_\+movement\+\_\+from\+\_\+plate\+\_\+diff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+计算从当前号牌到目标位置的移动指令 
+
+根据号牌编号差异计算移动方向
+
+基于号牌在图像中的位置，计算无人机需要移动的方向和距离
+
+\begin{DoxyReturn}{Returns}
+std\+::tuple$<$char, double$>$ 包含移动方向和距离的元组
+\end{DoxyReturn}
+解析目标号牌和检测到的号牌，计算垂直（\+Z轴）和水平（\+Y轴）方向上的移动需求
+
+\begin{DoxyReturn}{Returns}
+包含移动轴(\textquotesingle{}y\textquotesingle{}/\textquotesingle{}z\textquotesingle{})和方向(正负值)的元组，无移动时返回(\textquotesingle{}\textbackslash{}0\textquotesingle{}, 0.\+0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLicenseProcessor_a491e5c290a1b8d9050d631d1d5a22730}\label{classLicenseProcessor_a491e5c290a1b8d9050d631d1d5a22730}} 
+\index{LicenseProcessor@{LicenseProcessor}!calculate\_velocity@{calculate\_velocity}}
+\index{calculate\_velocity@{calculate\_velocity}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{calculate\_velocity()}{calculate\_velocity()}}
+{\footnotesize\ttfamily double License\+Processor\+::calculate\+\_\+velocity (\begin{DoxyParamCaption}\item[{const char \&}]{axis }\end{DoxyParamCaption}) const}
+
+
+
+计算指定轴的速度指令 
+
+根据指定的轴向，计算相应的速度控制指令
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & 控制轴向 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 速度指令值
+\end{DoxyReturn}
+根据号牌中心位置与检测框的关系，计算机体坐标系下的速度指令
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & 要计算速度的轴，\textquotesingle{}y\textquotesingle{}或\textquotesingle{}z\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+对应轴的速度指令值 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}\label{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}} 
+\index{LicenseProcessor@{LicenseProcessor}!check\_timeout@{check\_timeout}}
+\index{check\_timeout@{check\_timeout}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{check\_timeout()}{check\_timeout()}}
+{\footnotesize\ttfamily bool License\+Processor\+::check\+\_\+timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+检查号牌信息是否超时 
+
+判断从上次有效检测到现在的时间是否超过配置的超时时间
+
+\begin{DoxyReturn}{Returns}
+true 如果号牌信息已超时 
+
+false 如果号牌信息未超时
+\end{DoxyReturn}
+比较当前时间与号牌信息时间戳，判断数据是否过期
+
+\begin{DoxyReturn}{Returns}
+如果号牌信息超时返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}\label{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}} 
+\index{LicenseProcessor@{LicenseProcessor}!clear\_rejected\_plates@{clear\_rejected\_plates}}
+\index{clear\_rejected\_plates@{clear\_rejected\_plates}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{clear\_rejected\_plates()}{clear\_rejected\_plates()}}
+{\footnotesize\ttfamily void License\+Processor\+::clear\+\_\+rejected\+\_\+plates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+清除已拒绝的号牌 
+
+清除所有被拒绝的号牌
+
+清空拒绝号牌列表
+
+重置拒绝列表，允许重新检查之前被拒绝的号牌 \mbox{\Hypertarget{classLicenseProcessor_a8b60789cb68dec32c56becf65781945d}\label{classLicenseProcessor_a8b60789cb68dec32c56becf65781945d}} 
+\index{LicenseProcessor@{LicenseProcessor}!compare\_license@{compare\_license}}
+\index{compare\_license@{compare\_license}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{compare\_license()}{compare\_license()}}
+{\footnotesize\ttfamily bool License\+Processor\+::compare\+\_\+license (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+比较当前号牌与目标号牌 
+
+比较当前稳定的号牌是否匹配目标号牌
+
+检查当前识别的稳定号牌是否与目标号牌匹配
+
+\begin{DoxyReturn}{Returns}
+true 如果匹配 
+
+false 如果不匹配
+
+如果号牌匹配返回true，否则返回false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLicenseProcessor_af841af957c86bcd1dd70bd27fb732d62}\label{classLicenseProcessor_af841af957c86bcd1dd70bd27fb732d62}} 
+\index{LicenseProcessor@{LicenseProcessor}!get\_license\_info\_stable@{get\_license\_info\_stable}}
+\index{get\_license\_info\_stable@{get\_license\_info\_stable}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{get\_license\_info\_stable()}{get\_license\_info\_stable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLicenseInfo}{License\+Info}} License\+Processor\+::get\+\_\+license\+\_\+info\+\_\+stable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取识别稳定的号牌信息 
+
+返回已通过稳定性验证的号牌信息
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structLicenseInfo}{License\+Info}} 稳定识别的号牌信息 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLicenseProcessor_af13f3d5ae0ccced549405f5a1b14772b}\label{classLicenseProcessor_af13f3d5ae0ccced549405f5a1b14772b}} 
+\index{LicenseProcessor@{LicenseProcessor}!is\_aligned@{is\_aligned}}
+\index{is\_aligned@{is\_aligned}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{is\_aligned()}{is\_aligned()}}
+{\footnotesize\ttfamily bool License\+Processor\+::is\+\_\+aligned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+检查是否已对齐到号牌 
+
+检查号牌中心是否在期望的检测框内
+
+判断无人机是否已经对准到号牌的中心位置
+
+\begin{DoxyReturn}{Returns}
+true 如果已对齐 
+
+false 如果未对齐
+\end{DoxyReturn}
+判断号牌中心在\+X和\+Y方向上是否位于配置的检测框范围内
+
+\begin{DoxyReturn}{Returns}
+如果号牌中心在检测框内返回true，否则返回false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLicenseProcessor_a313cfa61be30832cb44dfcda57d06db8}\label{classLicenseProcessor_a313cfa61be30832cb44dfcda57d06db8}} 
+\index{LicenseProcessor@{LicenseProcessor}!is\_license\_no\_valid@{is\_license\_no\_valid}}
+\index{is\_license\_no\_valid@{is\_license\_no\_valid}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{is\_license\_no\_valid()}{is\_license\_no\_valid()}}
+{\footnotesize\ttfamily bool License\+Processor\+::is\+\_\+license\+\_\+no\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{license\+\_\+no }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+检查号牌内容是否有效 
+
+验证号牌号码格式是否有效
+
+验证号牌号码格式是否符合要求
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+no} & 号牌号码 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 如果号牌号码有效 
+
+false 如果号牌号码无效
+\end{DoxyReturn}
+检查号牌长度是否在有效范围内，并且后八位是否全部为数字
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+no} & 要验证的号牌号码 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+如果号牌格式有效返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a313cfa61be30832cb44dfcda57d06db8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}\label{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}} 
+\index{LicenseProcessor@{LicenseProcessor}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily bool License\+Processor\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+检查当前号牌信息是否有效 
+
+\begin{DoxyReturn}{Returns}
+true 如果号牌信息有效 
+
+false 如果号牌信息无效
+\end{DoxyReturn}
+验证号牌信息是否完整、未超时且未被拒绝
+
+\begin{DoxyReturn}{Returns}
+如果号牌信息有效返回true，否则返回false 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e}\label{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e}} 
+\index{LicenseProcessor@{LicenseProcessor}!license\_callback@{license\_callback}}
+\index{license\_callback@{license\_callback}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{license\_callback()}{license\_callback()}}
+{\footnotesize\ttfamily void License\+Processor\+::license\+\_\+callback (\begin{DoxyParamCaption}\item[{const my\+\_\+interfaces\+::\+License\+Info\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌回调函数 
+
+号牌信息回调函数
+
+处理接收到的号牌检测消息
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 号牌信息消息指针\\
+\hline
+\end{DoxyParams}
+处理从识别节点接收到的号牌信息，提取相关数据并更新状态
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 包含号牌信息的\+R\+O\+S消息 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}\label{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}} 
+\index{LicenseProcessor@{LicenseProcessor}!set\_start@{set\_start}}
+\index{set\_start@{set\_start}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{set\_start()}{set\_start()}}
+{\footnotesize\ttfamily void License\+Processor\+::set\+\_\+start (\begin{DoxyParamCaption}\item[{bool}]{started }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置是否启动回调函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em started} & 启动状态 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}\label{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}} 
+\index{LicenseProcessor@{LicenseProcessor}!set\_target\_license@{set\_target\_license}}
+\index{set\_target\_license@{set\_target\_license}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{set\_target\_license()}{set\_target\_license()}}
+{\footnotesize\ttfamily void License\+Processor\+::set\+\_\+target\+\_\+license (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{license\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+设置目标号牌 
+
+设置目标号牌号码
+
+设置需要识别和对准的目标号牌号码
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+no} & 目标号牌号码\\
+\hline
+\end{DoxyParams}
+指定要跟踪或寻找的目标号牌
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+no} & 目标号牌号码 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b}\label{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b}} 
+\index{LicenseProcessor@{LicenseProcessor}!update\_recognized\_license@{update\_recognized\_license}}
+\index{update\_recognized\_license@{update\_recognized\_license}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{update\_recognized\_license()}{update\_recognized\_license()}}
+{\footnotesize\ttfamily void License\+Processor\+::update\+\_\+recognized\+\_\+license (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \&}]{license\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+更新识别到的号牌信息 
+
+处理新识别到的号牌信息，更新稳定性计数器
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+info} & 新的号牌信息\\
+\hline
+\end{DoxyParams}
+验证号牌有效性，更新稳定性计数器，并在达到稳定阈值时更新稳定的号牌信息
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+info} & 最新识别到的号牌信息 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLicenseProcessor_af005e27feae2c380f5a860c72e313ba1}\label{classLicenseProcessor_af005e27feae2c380f5a860c72e313ba1}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_is\_started@{\_is\_started}}
+\index{\_is\_started@{\_is\_started}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_is\_started}{\_is\_started}}
+{\footnotesize\ttfamily bool License\+Processor\+::\+\_\+is\+\_\+started = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理器是否已启动 
+
+\mbox{\Hypertarget{classLicenseProcessor_a9d0c9d50954dac7c0f6d133f42420b3c}\label{classLicenseProcessor_a9d0c9d50954dac7c0f6d133f42420b3c}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_license\_config@{\_license\_config}}
+\index{\_license\_config@{\_license\_config}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_license\_config}{\_license\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLicenseConfig}{License\+Config}} License\+Processor\+::\+\_\+license\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌配置参数 
+
+\mbox{\Hypertarget{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}\label{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_license\_info\_stable@{\_license\_info\_stable}}
+\index{\_license\_info\_stable@{\_license\_info\_stable}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_license\_info\_stable}{\_license\_info\_stable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLicenseInfo}{License\+Info}} License\+Processor\+::\+\_\+license\+\_\+info\+\_\+stable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+稳定识别的号牌信息 
+
+\mbox{\Hypertarget{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}\label{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_license\_no@{\_license\_no}}
+\index{\_license\_no@{\_license\_no}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_license\_no}{\_license\_no}}
+{\footnotesize\ttfamily std\+::string License\+Processor\+::\+\_\+license\+\_\+no\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+最新识别的号牌内容 
+
+\mbox{\Hypertarget{classLicenseProcessor_a16ca8dce78b6779872921363dac42374}\label{classLicenseProcessor_a16ca8dce78b6779872921363dac42374}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_license\_sub@{\_license\_sub}}
+\index{\_license\_sub@{\_license\_sub}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_license\_sub}{\_license\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber License\+Processor\+::\+\_\+license\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌话题订阅者 
+
+\mbox{\Hypertarget{classLicenseProcessor_a1968a1473d21514fa5030b2b929db3fe}\label{classLicenseProcessor_a1968a1473d21514fa5030b2b929db3fe}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_nh@{\_nh}}
+\index{\_nh@{\_nh}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_nh}{\_nh}}
+{\footnotesize\ttfamily ros\+::\+Node\+Handle\& License\+Processor\+::\+\_\+nh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+R\+O\+S节点句柄引用 
+
+\mbox{\Hypertarget{classLicenseProcessor_a51795b51b757431f04e43cae0ef33795}\label{classLicenseProcessor_a51795b51b757431f04e43cae0ef33795}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_rejected\_plates@{\_rejected\_plates}}
+\index{\_rejected\_plates@{\_rejected\_plates}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_rejected\_plates}{\_rejected\_plates}}
+{\footnotesize\ttfamily std\+::set$<$std\+::string$>$ License\+Processor\+::\+\_\+rejected\+\_\+plates\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+已拒绝的号牌集合 
+
+\mbox{\Hypertarget{classLicenseProcessor_a3015be56a12d538a360eaecb9798d073}\label{classLicenseProcessor_a3015be56a12d538a360eaecb9798d073}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_required\_stability\_count@{\_required\_stability\_count}}
+\index{\_required\_stability\_count@{\_required\_stability\_count}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_required\_stability\_count}{\_required\_stability\_count}}
+{\footnotesize\ttfamily int License\+Processor\+::\+\_\+required\+\_\+stability\+\_\+count = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+识别结果稳定性要求次数 
+
+\mbox{\Hypertarget{classLicenseProcessor_a51992bcc7c9d2c5954586b2aec054113}\label{classLicenseProcessor_a51992bcc7c9d2c5954586b2aec054113}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_stability\_counter@{\_stability\_counter}}
+\index{\_stability\_counter@{\_stability\_counter}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_stability\_counter}{\_stability\_counter}}
+{\footnotesize\ttfamily int License\+Processor\+::\+\_\+stability\+\_\+counter = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+识别结果稳定性计数器 
+
+\mbox{\Hypertarget{classLicenseProcessor_a929cce9196f6fa3438abd56fa6b718a1}\label{classLicenseProcessor_a929cce9196f6fa3438abd56fa6b718a1}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_target\_license\_no@{\_target\_license\_no}}
+\index{\_target\_license\_no@{\_target\_license\_no}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_target\_license\_no}{\_target\_license\_no}}
+{\footnotesize\ttfamily std\+::string License\+Processor\+::\+\_\+target\+\_\+license\+\_\+no\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+目标号牌号码 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Tag/\mbox{\hyperlink{LicenseProcessor_8h}{License\+Processor.\+h}}\item 
+src/\+Tag/\mbox{\hyperlink{LicenseProcessor_8cpp}{License\+Processor.\+cpp}}\end{DoxyCompactItemize}

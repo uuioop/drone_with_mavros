@@ -1,0 +1,4 @@
+<map id="AlignOnPlatformTagState" name="AlignOnPlatformTagState">
+<area shape="rect" id="node1" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="5,248,227,384"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="38,5,194,200"/>
+</map>

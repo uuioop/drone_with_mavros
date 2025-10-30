@@ -1,0 +1,12 @@
+<map id="DroneControl::switch_controller" name="DroneControl::switch_controller">
+<area shape="rect" id="node1" title="切换当前活动控制器" alt="" coords="5,129,164,171"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="229,5,371,47"/>
+<area shape="rect" id="node3" href="$classController.html#acffd5ea0506661240bf37d07ab0df646" title="获取控制器所需的飞行模式" alt="" coords="212,71,388,112"/>
+<area shape="rect" id="node4" href="$classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="225,137,375,163"/>
+<area shape="rect" id="node5" href="$classController.html#abccf9fcc461f9ecc60276e42457c62e0" title="控制器退出时调用的方法，用于清理资源" alt="" coords="229,187,371,214"/>
+<area shape="rect" id="node6" href="$classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="221,239,379,280"/>
+<area shape="rect" id="node7" href="$classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="463,221,647,247"/>
+<area shape="rect" id="node8" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="436,271,675,298"/>
+<area shape="rect" id="node9" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="758,246,913,273"/>
+<area shape="rect" id="node10" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="723,297,948,323"/>
+</map>

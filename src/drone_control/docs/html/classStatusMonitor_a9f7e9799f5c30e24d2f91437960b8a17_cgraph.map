@@ -1,0 +1,8 @@
+<map id="StatusMonitor::StatusMonitor" name="StatusMonitor::StatusMonitor">
+<area shape="rect" id="node1" title="构造函数" alt="" coords="5,143,217,170"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aab35b2d5c02c767a822a059d3e502368" title="全局位置消息回调函数" alt="" coords="273,5,434,47"/>
+<area shape="rect" id="node3" href="$classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d" title="IMU数据回调函数" alt="" coords="280,71,427,112"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html#ab44b211a6f2edbd83a58a34c2ddeba5b" title="着陆状态消息回调函数" alt="" coords="271,136,436,177"/>
+<area shape="rect" id="node5" href="$classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4" title="本地位置消息回调函数" alt="" coords="277,201,429,243"/>
+<area shape="rect" id="node6" href="$classStatusMonitor.html#a6dd5eb828b94287931a0b5c40b6c24e6" title="状态消息回调函数" alt="" coords="265,267,441,294"/>
+</map>

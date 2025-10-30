@@ -1,0 +1,615 @@
+\hypertarget{classStatusMonitor}{}\doxysection{Status\+Monitor Class Reference}
+\label{classStatusMonitor}\index{StatusMonitor@{StatusMonitor}}
+
+
+无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息  
+
+
+
+
+{\ttfamily \#include $<$Status\+Monitor.\+h$>$}
+
+
+
+Collaboration diagram for Status\+Monitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classStatusMonitor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17}{Status\+Monitor}} (ros\+::\+Node\+Handle \&nh)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatusMonitor_ae3373536aee5926854598781a56f7462}{$\sim$\+Status\+Monitor}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a}{is\+\_\+connected}} () const
+\begin{DoxyCompactList}\small\item\em 检查无人机是否已连接 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1}{is\+\_\+armed}} () const
+\begin{DoxyCompactList}\small\item\em 检查无人机是否已解锁（可飞行状态） \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a53e32f033bfe3b8d8239737a201b1fa7}{is\+\_\+ready\+\_\+for\+\_\+fly}} () const
+\begin{DoxyCompactList}\small\item\em 检查无人机是否准备好飞行（已连接且已解锁） \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classStatusMonitor_aa83b58721d13650beae16ba9c0652739}{get\+\_\+landed\+\_\+state}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机的着陆状态 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f}{get\+\_\+flight\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机当前的飞行模式 \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Quaternion \mbox{\hyperlink{classStatusMonitor_ab5f5c9bb36eebfcf077becb58b7acf8b}{get\+\_\+orientation}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机的姿态四元数 \end{DoxyCompactList}\item 
+mavros\+\_\+msgs\+::\+State \mbox{\hyperlink{classStatusMonitor_af285baaffa39cc25968885be3d1d82ee}{get\+\_\+current\+\_\+state}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机当前的完整状态 \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a628eb238fed7d855d58f9fe97084dfe2}{get\+\_\+local\+\_\+pos}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机的本地位置 \end{DoxyCompactList}\item 
+geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}{get\+\_\+global\+\_\+pos}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机的全局位置 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}{state\+\_\+cb}} (const mavros\+\_\+msgs\+::\+State\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 状态消息回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4}{local\+\_\+pos\+\_\+cb}} (const geometry\+\_\+msgs\+::\+Pose\+Stamped\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 本地位置消息回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}{global\+\_\+pos\+\_\+cb}} (const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 全局位置消息回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}{imu\+\_\+data\+\_\+cb}} (const sensor\+\_\+msgs\+::\+Imu\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em I\+M\+U数据回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_ab44b211a6f2edbd83a58a34c2ddeba5b}{landed\+\_\+state\+\_\+cb}} (const mavros\+\_\+msgs\+::\+Extended\+State\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 着陆状态消息回调函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \& \mbox{\hyperlink{classStatusMonitor_a4fafc3bf8ac75e61f7d9b096e3131a7c}{\+\_\+nh}}
+\begin{DoxyCompactList}\small\item\em R\+O\+S节点句柄引用 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a830f7545332b436fec6363558d865780}{\+\_\+state\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 无人机状态订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a889a4fb2368093f9eba35c3945491023}{\+\_\+local\+\_\+pos\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 本地位置订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}{\+\_\+global\+\_\+pos\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 全局位置订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}{\+\_\+imu\+\_\+data\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em I\+M\+U数据订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a9ce27e48b8ddd7832201880067813126}{\+\_\+landed\+\_\+state\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 着陆状态订阅器 \end{DoxyCompactList}\item 
+mavros\+\_\+msgs\+::\+State \mbox{\hyperlink{classStatusMonitor_aff499596c1d6189f63f086d62a130554}{\+\_\+current\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em 无人机当前状态 \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a565be98baaa535352972c33fc58ed71c}{\+\_\+local\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em 本地位置（\+E\+N\+U坐标系） \end{DoxyCompactList}\item 
+geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}{\+\_\+global\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em 全局位置（经纬度高度） \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Quaternion \mbox{\hyperlink{classStatusMonitor_a6cdfb5b3a25d0426652e916d22a7454c}{\+\_\+orientation}}
+\begin{DoxyCompactList}\small\item\em 无人机姿态四元数 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStatusMonitor_af4be51b26d3f2ee44bfd23082b84cd2e}{\+\_\+current\+\_\+mode}} = \char`\"{}U\+N\+K\+O\+WN\char`\"{}
+\begin{DoxyCompactList}\small\item\em 无人机当前飞行模式 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_add5e3ac3cbb0e98f158c0ba7d5fbfb3e}{\+\_\+connected}} = false
+\begin{DoxyCompactList}\small\item\em 连接状态标志 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_ac9ca062636ac1a86e27656c517b27395}{\+\_\+armed}} = false
+\begin{DoxyCompactList}\small\item\em 解锁状态标志 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classStatusMonitor_a537228994a45d303ee933fdef49680a8}{\+\_\+landed\+\_\+state}} = 0
+\begin{DoxyCompactList}\small\item\em 着陆状态代码 \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{classStatusMonitor_a1cb0f22fcaddbcb7c25085fb8d305c0f}{\+\_\+status\+\_\+mutex}}
+\begin{DoxyCompactList}\small\item\em 状态互斥锁，用于保护状态变量的并发访问 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17}\label{classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17}} 
+\index{StatusMonitor@{StatusMonitor}!StatusMonitor@{StatusMonitor}}
+\index{StatusMonitor@{StatusMonitor}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{StatusMonitor()}{StatusMonitor()}}
+{\footnotesize\ttfamily Status\+Monitor\+::\+Status\+Monitor (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{nh }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Status\+Monitor构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄引用\\
+\hline
+{\em nh} & R\+O\+S节点句柄引用 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+初始化所有状态订阅器 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_ae3373536aee5926854598781a56f7462}\label{classStatusMonitor_ae3373536aee5926854598781a56f7462}} 
+\index{StatusMonitor@{StatusMonitor}!````~StatusMonitor@{$\sim$StatusMonitor}}
+\index{````~StatusMonitor@{$\sim$StatusMonitor}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$StatusMonitor()}{~StatusMonitor()}}
+{\footnotesize\ttfamily Status\+Monitor\+::$\sim$\+Status\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+Status\+Monitor析构函数
+
+\begin{DoxyNote}{Note}
+使用默认实现 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStatusMonitor_af285baaffa39cc25968885be3d1d82ee}\label{classStatusMonitor_af285baaffa39cc25968885be3d1d82ee}} 
+\index{StatusMonitor@{StatusMonitor}!get\_current\_state@{get\_current\_state}}
+\index{get\_current\_state@{get\_current\_state}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_current\_state()}{get\_current\_state()}}
+{\footnotesize\ttfamily mavros\+\_\+msgs\+::\+State Status\+Monitor\+::get\+\_\+current\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机当前的完整状态 
+
+\begin{DoxyReturn}{Returns}
+无人机状态消息 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f}\label{classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f}} 
+\index{StatusMonitor@{StatusMonitor}!get\_flight\_mode@{get\_flight\_mode}}
+\index{get\_flight\_mode@{get\_flight\_mode}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_flight\_mode()}{get\_flight\_mode()}}
+{\footnotesize\ttfamily std\+::string Status\+Monitor\+::get\+\_\+flight\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机当前的飞行模式 
+
+\begin{DoxyReturn}{Returns}
+飞行模式名称 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}\label{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}} 
+\index{StatusMonitor@{StatusMonitor}!get\_global\_pos@{get\_global\_pos}}
+\index{get\_global\_pos@{get\_global\_pos}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_global\_pos()}{get\_global\_pos()}}
+{\footnotesize\ttfamily geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped Status\+Monitor\+::get\+\_\+global\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机的全局位置 
+
+\begin{DoxyReturn}{Returns}
+全局位置消息 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStatusMonitor_aa83b58721d13650beae16ba9c0652739}\label{classStatusMonitor_aa83b58721d13650beae16ba9c0652739}} 
+\index{StatusMonitor@{StatusMonitor}!get\_landed\_state@{get\_landed\_state}}
+\index{get\_landed\_state@{get\_landed\_state}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_landed\_state()}{get\_landed\_state()}}
+{\footnotesize\ttfamily uint8\+\_\+t Status\+Monitor\+::get\+\_\+landed\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机的着陆状态 
+
+\begin{DoxyReturn}{Returns}
+着陆状态代码 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_aa83b58721d13650beae16ba9c0652739_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a628eb238fed7d855d58f9fe97084dfe2}\label{classStatusMonitor_a628eb238fed7d855d58f9fe97084dfe2}} 
+\index{StatusMonitor@{StatusMonitor}!get\_local\_pos@{get\_local\_pos}}
+\index{get\_local\_pos@{get\_local\_pos}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_local\_pos()}{get\_local\_pos()}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::\+Pose\+Stamped Status\+Monitor\+::get\+\_\+local\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机的本地位置 
+
+\begin{DoxyReturn}{Returns}
+本地位置消息 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStatusMonitor_ab5f5c9bb36eebfcf077becb58b7acf8b}\label{classStatusMonitor_ab5f5c9bb36eebfcf077becb58b7acf8b}} 
+\index{StatusMonitor@{StatusMonitor}!get\_orientation@{get\_orientation}}
+\index{get\_orientation@{get\_orientation}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{get\_orientation()}{get\_orientation()}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::\+Quaternion Status\+Monitor\+::get\+\_\+orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取无人机的姿态四元数 
+
+\begin{DoxyReturn}{Returns}
+姿态四元数 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}\label{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}} 
+\index{StatusMonitor@{StatusMonitor}!global\_pos\_cb@{global\_pos\_cb}}
+\index{global\_pos\_cb@{global\_pos\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{global\_pos\_cb()}{global\_pos\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::global\+\_\+pos\+\_\+cb (\begin{DoxyParamCaption}\item[{const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+全局位置消息回调函数 
+
+全局位置回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 全局位置消息\\
+\hline
+{\em msg} & 全局位置消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新无人机全局位置信息 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}\label{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}} 
+\index{StatusMonitor@{StatusMonitor}!imu\_data\_cb@{imu\_data\_cb}}
+\index{imu\_data\_cb@{imu\_data\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{imu\_data\_cb()}{imu\_data\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::imu\+\_\+data\+\_\+cb (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Imu\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I\+M\+U数据回调函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & I\+M\+U数据消息\\
+\hline
+{\em msg} & I\+M\+U数据消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新无人机姿态信息 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1}\label{classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1}} 
+\index{StatusMonitor@{StatusMonitor}!is\_armed@{is\_armed}}
+\index{is\_armed@{is\_armed}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_armed()}{is\_armed()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+armed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查无人机是否已解锁（可飞行状态） 
+
+\begin{DoxyReturn}{Returns}
+如果已解锁返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a}\label{classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a}} 
+\index{StatusMonitor@{StatusMonitor}!is\_connected@{is\_connected}}
+\index{is\_connected@{is\_connected}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_connected()}{is\_connected()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查无人机是否已连接 
+
+\begin{DoxyReturn}{Returns}
+如果连接返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a53e32f033bfe3b8d8239737a201b1fa7}\label{classStatusMonitor_a53e32f033bfe3b8d8239737a201b1fa7}} 
+\index{StatusMonitor@{StatusMonitor}!is\_ready\_for\_fly@{is\_ready\_for\_fly}}
+\index{is\_ready\_for\_fly@{is\_ready\_for\_fly}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_ready\_for\_fly()}{is\_ready\_for\_fly()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+ready\+\_\+for\+\_\+fly (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查无人机是否准备好飞行（已连接且已解锁） 
+
+\begin{DoxyReturn}{Returns}
+如果准备好飞行返回true，否则返回false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStatusMonitor_ab44b211a6f2edbd83a58a34c2ddeba5b}\label{classStatusMonitor_ab44b211a6f2edbd83a58a34c2ddeba5b}} 
+\index{StatusMonitor@{StatusMonitor}!landed\_state\_cb@{landed\_state\_cb}}
+\index{landed\_state\_cb@{landed\_state\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{landed\_state\_cb()}{landed\_state\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::landed\+\_\+state\+\_\+cb (\begin{DoxyParamCaption}\item[{const mavros\+\_\+msgs\+::\+Extended\+State\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+着陆状态消息回调函数 
+
+着陆状态回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 扩展状态消息，包含着陆状态\\
+\hline
+{\em msg} & 扩展状态消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新无人机着陆状态 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_ab44b211a6f2edbd83a58a34c2ddeba5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4}\label{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4}} 
+\index{StatusMonitor@{StatusMonitor}!local\_pos\_cb@{local\_pos\_cb}}
+\index{local\_pos\_cb@{local\_pos\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{local\_pos\_cb()}{local\_pos\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::local\+\_\+pos\+\_\+cb (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+本地位置消息回调函数 
+
+本地位置回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 本地位置消息\\
+\hline
+{\em msg} & 本地位置消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新无人机本地位置信息 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}\label{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}} 
+\index{StatusMonitor@{StatusMonitor}!state\_cb@{state\_cb}}
+\index{state\_cb@{state\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{state\_cb()}{state\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::state\+\_\+cb (\begin{DoxyParamCaption}\item[{const mavros\+\_\+msgs\+::\+State\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+状态消息回调函数 
+
+M\+A\+V\+R\+O\+S状态回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 无人机状态消息\\
+\hline
+{\em msg} & M\+A\+V\+R\+O\+S状态消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新连接状态、解锁状态和飞行模式 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStatusMonitor_ac9ca062636ac1a86e27656c517b27395}\label{classStatusMonitor_ac9ca062636ac1a86e27656c517b27395}} 
+\index{StatusMonitor@{StatusMonitor}!\_armed@{\_armed}}
+\index{\_armed@{\_armed}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_armed}{\_armed}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::\+\_\+armed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+解锁状态标志 
+
+\mbox{\Hypertarget{classStatusMonitor_add5e3ac3cbb0e98f158c0ba7d5fbfb3e}\label{classStatusMonitor_add5e3ac3cbb0e98f158c0ba7d5fbfb3e}} 
+\index{StatusMonitor@{StatusMonitor}!\_connected@{\_connected}}
+\index{\_connected@{\_connected}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_connected}{\_connected}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::\+\_\+connected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+连接状态标志 
+
+\mbox{\Hypertarget{classStatusMonitor_af4be51b26d3f2ee44bfd23082b84cd2e}\label{classStatusMonitor_af4be51b26d3f2ee44bfd23082b84cd2e}} 
+\index{StatusMonitor@{StatusMonitor}!\_current\_mode@{\_current\_mode}}
+\index{\_current\_mode@{\_current\_mode}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_current\_mode}{\_current\_mode}}
+{\footnotesize\ttfamily std\+::string Status\+Monitor\+::\+\_\+current\+\_\+mode = \char`\"{}U\+N\+K\+O\+WN\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+无人机当前飞行模式 
+
+\mbox{\Hypertarget{classStatusMonitor_aff499596c1d6189f63f086d62a130554}\label{classStatusMonitor_aff499596c1d6189f63f086d62a130554}} 
+\index{StatusMonitor@{StatusMonitor}!\_current\_state@{\_current\_state}}
+\index{\_current\_state@{\_current\_state}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_current\_state}{\_current\_state}}
+{\footnotesize\ttfamily mavros\+\_\+msgs\+::\+State Status\+Monitor\+::\+\_\+current\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+无人机当前状态 
+
+\mbox{\Hypertarget{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}\label{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}} 
+\index{StatusMonitor@{StatusMonitor}!\_global\_pos@{\_global\_pos}}
+\index{\_global\_pos@{\_global\_pos}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_global\_pos}{\_global\_pos}}
+{\footnotesize\ttfamily geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped Status\+Monitor\+::\+\_\+global\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+全局位置（经纬度高度） 
+
+\mbox{\Hypertarget{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}\label{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}} 
+\index{StatusMonitor@{StatusMonitor}!\_global\_pos\_sub@{\_global\_pos\_sub}}
+\index{\_global\_pos\_sub@{\_global\_pos\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_global\_pos\_sub}{\_global\_pos\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+global\+\_\+pos\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+全局位置订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}\label{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}} 
+\index{StatusMonitor@{StatusMonitor}!\_imu\_data\_sub@{\_imu\_data\_sub}}
+\index{\_imu\_data\_sub@{\_imu\_data\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_imu\_data\_sub}{\_imu\_data\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+imu\+\_\+data\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I\+M\+U数据订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_a537228994a45d303ee933fdef49680a8}\label{classStatusMonitor_a537228994a45d303ee933fdef49680a8}} 
+\index{StatusMonitor@{StatusMonitor}!\_landed\_state@{\_landed\_state}}
+\index{\_landed\_state@{\_landed\_state}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_landed\_state}{\_landed\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Status\+Monitor\+::\+\_\+landed\+\_\+state = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+着陆状态代码 
+
+\mbox{\Hypertarget{classStatusMonitor_a9ce27e48b8ddd7832201880067813126}\label{classStatusMonitor_a9ce27e48b8ddd7832201880067813126}} 
+\index{StatusMonitor@{StatusMonitor}!\_landed\_state\_sub@{\_landed\_state\_sub}}
+\index{\_landed\_state\_sub@{\_landed\_state\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_landed\_state\_sub}{\_landed\_state\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+landed\+\_\+state\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+着陆状态订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_a565be98baaa535352972c33fc58ed71c}\label{classStatusMonitor_a565be98baaa535352972c33fc58ed71c}} 
+\index{StatusMonitor@{StatusMonitor}!\_local\_pos@{\_local\_pos}}
+\index{\_local\_pos@{\_local\_pos}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_local\_pos}{\_local\_pos}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::\+Pose\+Stamped Status\+Monitor\+::\+\_\+local\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+本地位置（\+E\+N\+U坐标系） 
+
+\mbox{\Hypertarget{classStatusMonitor_a889a4fb2368093f9eba35c3945491023}\label{classStatusMonitor_a889a4fb2368093f9eba35c3945491023}} 
+\index{StatusMonitor@{StatusMonitor}!\_local\_pos\_sub@{\_local\_pos\_sub}}
+\index{\_local\_pos\_sub@{\_local\_pos\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_local\_pos\_sub}{\_local\_pos\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+local\+\_\+pos\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+本地位置订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_a4fafc3bf8ac75e61f7d9b096e3131a7c}\label{classStatusMonitor_a4fafc3bf8ac75e61f7d9b096e3131a7c}} 
+\index{StatusMonitor@{StatusMonitor}!\_nh@{\_nh}}
+\index{\_nh@{\_nh}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_nh}{\_nh}}
+{\footnotesize\ttfamily ros\+::\+Node\+Handle\& Status\+Monitor\+::\+\_\+nh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+R\+O\+S节点句柄引用 
+
+\mbox{\Hypertarget{classStatusMonitor_a6cdfb5b3a25d0426652e916d22a7454c}\label{classStatusMonitor_a6cdfb5b3a25d0426652e916d22a7454c}} 
+\index{StatusMonitor@{StatusMonitor}!\_orientation@{\_orientation}}
+\index{\_orientation@{\_orientation}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_orientation}{\_orientation}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::\+Quaternion Status\+Monitor\+::\+\_\+orientation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+无人机姿态四元数 
+
+\mbox{\Hypertarget{classStatusMonitor_a830f7545332b436fec6363558d865780}\label{classStatusMonitor_a830f7545332b436fec6363558d865780}} 
+\index{StatusMonitor@{StatusMonitor}!\_state\_sub@{\_state\_sub}}
+\index{\_state\_sub@{\_state\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_state\_sub}{\_state\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+state\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+无人机状态订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_a1cb0f22fcaddbcb7c25085fb8d305c0f}\label{classStatusMonitor_a1cb0f22fcaddbcb7c25085fb8d305c0f}} 
+\index{StatusMonitor@{StatusMonitor}!\_status\_mutex@{\_status\_mutex}}
+\index{\_status\_mutex@{\_status\_mutex}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_status\_mutex}{\_status\_mutex}}
+{\footnotesize\ttfamily std\+::mutex Status\+Monitor\+::\+\_\+status\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+状态互斥锁，用于保护状态变量的并发访问 
+
+\begin{DoxyNote}{Note}
+mutable关键字允许在const成员函数中锁定和解锁互斥锁 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{StatusMonitor_8h}{Status\+Monitor.\+h}}\item 
+src/core/\mbox{\hyperlink{StatusMonitor_8cpp}{Status\+Monitor.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+\hypertarget{classAlignOnGuideTagState}{}\doxysection{Align\+On\+Guide\+Tag\+State Class Reference}
+\label{classAlignOnGuideTagState}\index{AlignOnGuideTagState@{AlignOnGuideTagState}}
+
+
+对准引导标签状态类 负责控制无人机对准到\+Ar\+Uco引导标签的中心位置  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Align\+On\+Guide\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classAlignOnGuideTagState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Align\+On\+Guide\+Tag\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classAlignOnGuideTagState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}{Align\+On\+Guide\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}{$\sim$\+Align\+On\+Guide\+Tag\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classAlignOnGuideTagState_af6c20a79bec4a9fd58d735dc73aec73a}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classAlignOnGuideTagState_a5ca2f99e3c378d6848bdda603fb9573b}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAlignOnGuideTagState_aea4160e57acfe2b8520a88804d5ef660}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classAlignOnGuideTagState_ac6380bc3071ef33a2cbf3b4e5bc6aed5}{\+\_\+front\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \mbox{\hyperlink{classAlignOnGuideTagState_a00a3266aa1117c6355b3ceeae4da2a9b}{\+\_\+align\+\_\+tolerance}}
+\begin{DoxyCompactList}\small\item\em 对准容差映射表，定义各方向的误差容忍范围 存储x、y、z和偏航角各方向的允许误差值 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classAlignOnGuideTagState_a6673a73f0c484af61025e76a95f3ac9b}{\+\_\+alignment\+\_\+errors}}
+\begin{DoxyCompactList}\small\item\em 对准误差向量，存储各方向的误差值 包含\mbox{[}x, y, z, yaw\mbox{]}四个方向的误差 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+对准引导标签状态类 负责控制无人机对准到\+Ar\+Uco引导标签的中心位置 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}\label{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{AlignOnGuideTagState()}{AlignOnGuideTagState()}}
+{\footnotesize\ttfamily Align\+On\+Guide\+Tag\+State\+::\+Align\+On\+Guide\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+Align\+On\+Guide\+Tag\+State构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用\\
+\hline
+\end{DoxyParams}
+初始化对准引导标记状态节点，获取前端标记处理器并设置对准容差
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}\label{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!````~AlignOnGuideTagState@{$\sim$AlignOnGuideTagState}}
+\index{````~AlignOnGuideTagState@{$\sim$AlignOnGuideTagState}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{$\sim$AlignOnGuideTagState()}{~AlignOnGuideTagState()}}
+{\footnotesize\ttfamily Align\+On\+Guide\+Tag\+State\+::$\sim$\+Align\+On\+Guide\+Tag\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAlignOnGuideTagState_af6c20a79bec4a9fd58d735dc73aec73a}\label{classAlignOnGuideTagState_af6c20a79bec4a9fd58d735dc73aec73a}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Align\+On\+Guide\+Tag\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 
+
+进入对准引导标记状态时调用
+
+记录日志 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classAlignOnGuideTagState_aea4160e57acfe2b8520a88804d5ef660}\label{classAlignOnGuideTagState_aea4160e57acfe2b8520a88804d5ef660}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Align\+On\+Guide\+Tag\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 
+
+退出对准引导标记状态时调用
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classAlignOnGuideTagState_a5ca2f99e3c378d6848bdda603fb9573b}\label{classAlignOnGuideTagState_a5ca2f99e3c378d6848bdda603fb9573b}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Align\+On\+Guide\+Tag\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 
+
+对准引导标记状态更新方法
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+根据标记处理器计算的误差向量，按优先级调整无人机姿态和位置， 对准完成后切换到接近引导标记状态
+
+\begin{DoxyReturn}{Returns}
+速度控制指令数组 \mbox{[}v\+\_\+x, v\+\_\+y, v\+\_\+z, v\+\_\+yaw\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAlignOnGuideTagState_a00a3266aa1117c6355b3ceeae4da2a9b}\label{classAlignOnGuideTagState_a00a3266aa1117c6355b3ceeae4da2a9b}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!\_align\_tolerance@{\_align\_tolerance}}
+\index{\_align\_tolerance@{\_align\_tolerance}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{\_align\_tolerance}{\_align\_tolerance}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, double$>$ Align\+On\+Guide\+Tag\+State\+::\+\_\+align\+\_\+tolerance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+对准容差映射表，定义各方向的误差容忍范围 存储x、y、z和偏航角各方向的允许误差值 
+
+\mbox{\Hypertarget{classAlignOnGuideTagState_a6673a73f0c484af61025e76a95f3ac9b}\label{classAlignOnGuideTagState_a6673a73f0c484af61025e76a95f3ac9b}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!\_alignment\_errors@{\_alignment\_errors}}
+\index{\_alignment\_errors@{\_alignment\_errors}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{\_alignment\_errors}{\_alignment\_errors}}
+{\footnotesize\ttfamily std\+::array$<$double, 4$>$ Align\+On\+Guide\+Tag\+State\+::\+\_\+alignment\+\_\+errors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+对准误差向量，存储各方向的误差值 包含\mbox{[}x, y, z, yaw\mbox{]}四个方向的误差 
+
+\mbox{\Hypertarget{classAlignOnGuideTagState_ac6380bc3071ef33a2cbf3b4e5bc6aed5}\label{classAlignOnGuideTagState_ac6380bc3071ef33a2cbf3b4e5bc6aed5}} 
+\index{AlignOnGuideTagState@{AlignOnGuideTagState}!\_front\_tag\_processor@{\_front\_tag\_processor}}
+\index{\_front\_tag\_processor@{\_front\_tag\_processor}!AlignOnGuideTagState@{AlignOnGuideTagState}}
+\doxysubsubsection{\texorpdfstring{\_front\_tag\_processor}{\_front\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Align\+On\+Guide\+Tag\+State\+::\+\_\+front\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+前置摄像头的标签处理器 用于处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

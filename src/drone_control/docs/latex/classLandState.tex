@@ -1,0 +1,143 @@
+\hypertarget{classLandState}{}\doxysection{Land\+State Class Reference}
+\label{classLandState}\index{LandState@{LandState}}
+
+
+着陆状态类 负责控制无人机执行最终的着陆操作  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Nodes.\+h$>$}
+
+
+
+Inheritance diagram for Land\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classLandState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Land\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classLandState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}{Land\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}{$\sim$\+Land\+State}} ()=default
+\item 
+void \mbox{\hyperlink{classLandState_af2c37240588ecaa7412d9e317d5c728f}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classLandState_a2aeb2224aa76fffb0181de050b7613e5}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandState_a76407ac1403443fa4ae604afad7dc51b}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+着陆状态类 负责控制无人机执行最终的着陆操作 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}\label{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}} 
+\index{LandState@{LandState}!LandState@{LandState}}
+\index{LandState@{LandState}!LandState@{LandState}}
+\doxysubsubsection{\texorpdfstring{LandState()}{LandState()}}
+{\footnotesize\ttfamily Land\+State\+::\+Land\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & 控制器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}\label{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}} 
+\index{LandState@{LandState}!````~LandState@{$\sim$LandState}}
+\index{````~LandState@{$\sim$LandState}!LandState@{LandState}}
+\doxysubsubsection{\texorpdfstring{$\sim$LandState()}{~LandState()}}
+{\footnotesize\ttfamily Land\+State\+::$\sim$\+Land\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandState_af2c37240588ecaa7412d9e317d5c728f}\label{classLandState_af2c37240588ecaa7412d9e317d5c728f}} 
+\index{LandState@{LandState}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!LandState@{LandState}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Land\+State\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时调用 
+
+进入着陆状态
+
+记录进入着陆状态的日志信息 
+
+Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
+
+\mbox{\Hypertarget{classLandState_a76407ac1403443fa4ae604afad7dc51b}\label{classLandState_a76407ac1403443fa4ae604afad7dc51b}} 
+\index{LandState@{LandState}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!LandState@{LandState}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Land\+State\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时调用 
+
+退出应急降落状态
+
+退出应急降落状态时调用，目前为空实现 
+
+Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
+
+\mbox{\Hypertarget{classLandState_a2aeb2224aa76fffb0181de050b7613e5}\label{classLandState_a2aeb2224aa76fffb0181de050b7613e5}} 
+\index{LandState@{LandState}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!LandState@{LandState}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Land\+State\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新状态时调用，返回控制指令 
+
+更新着陆状态
+
+\begin{DoxyReturn}{Returns}
+控制指令数组 \mbox{[}x, y, z, yaw\mbox{]}
+\end{DoxyReturn}
+处理着陆逻辑，检查着陆状态并返回固定的下降速度 \begin{DoxyReturn}{Returns}
+速度指令数组 \mbox{[}vx, vy, vz, yaw\+\_\+rate\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLandState_a2aeb2224aa76fffb0181de050b7613e5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

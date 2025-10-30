@@ -1,0 +1,5 @@
+<map id="ArucoTagProcessor::target_pose_callback" name="ArucoTagProcessor::target_pose_callback">
+<area shape="rect" id="node1" title="目标位姿回调函数" alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a6cf4cd546795956a614fbec97eb5a04b" title="将相机坐标系中的标记转换为机体坐标系" alt="" coords="213,5,365,47"/>
+<area shape="rect" id="node3" href="$structArucoTag.html#a37ff20c8908e31b47f7835655713811d" title="检查标记数据是否有效" alt="" coords="413,13,552,39"/>
+</map>

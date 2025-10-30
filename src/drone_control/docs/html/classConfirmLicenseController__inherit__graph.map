@@ -1,0 +1,4 @@
+<map id="ConfirmLicenseController" name="ConfirmLicenseController">
+<area shape="rect" id="node1" title="号牌确认控制器类 继承自Controller基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="5,307,228,604"/>
+<area shape="rect" id="node2" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="8,5,225,259"/>
+</map>

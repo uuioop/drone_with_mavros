@@ -1,0 +1,12 @@
+<map id="include/core/StatusMonitor.h" name="include/core/StatusMonitor.h">
+<area shape="rect" id="node1" title="无人机状态监控器，用于订阅和管理无人机的各种状态信息" alt="" coords="846,5,1054,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,84,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="109,80,271,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="295,80,527,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="551,80,818,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="843,80,1057,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1081,80,1229,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1254,80,1478,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1502,80,1561,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1585,80,1649,107"/>
+</map>

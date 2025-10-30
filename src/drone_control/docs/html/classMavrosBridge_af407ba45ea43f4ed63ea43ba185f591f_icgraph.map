@@ -1,0 +1,12 @@
+<map id="MavrosBridge::publishMessage" name="MavrosBridge::publishMessage">
+<area shape="rect" id="node1" title="消息发布辅助函数" alt="" coords="1068,82,1293,109"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a642bbce30b30e90deca38c3372852538" title="设置本地坐标系下的目标位置和姿态" alt="" coords="801,45,1000,87"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="781,111,1020,138"/>
+<area shape="rect" id="node4" href="$classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="552,5,728,47"/>
+<area shape="rect" id="node5" href="$classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="547,71,733,112"/>
+<area shape="rect" id="node6" href="$classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="565,136,715,177"/>
+<area shape="rect" id="node7" href="$classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="561,201,719,243"/>
+<area shape="rect" id="node8" href="$classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,201,499,243"/>
+<area shape="rect" id="node9" href="$classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,209,292,235"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,209,60,235"/>
+</map>

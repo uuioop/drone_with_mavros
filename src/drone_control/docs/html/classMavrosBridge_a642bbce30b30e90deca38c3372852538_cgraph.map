@@ -1,0 +1,5 @@
+<map id="MavrosBridge::set_position_local" name="MavrosBridge::set_position_local">
+<area shape="rect" id="node1" title="设置本地坐标系下的目标位置和姿态" alt="" coords="5,23,204,65"/>
+<area shape="rect" id="node2" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="287,5,442,32"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="252,56,477,83"/>
+</map>

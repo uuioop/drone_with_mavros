@@ -1,0 +1,6 @@
+<map id="include/VisualNav/ConfirmLicenseController.h" name="include/VisualNav/ConfirmLicenseController.h">
+<area shape="rect" id="node1" title="号牌确认控制器头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="231,5,426,47"/>
+<area shape="rect" id="node2" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="5,102,196,129"/>
+<area shape="rect" id="node3" href="$ConfirmLicenseController_8cpp.html" title="号牌确认控制器实现" alt="" coords="221,95,437,136"/>
+<area shape="rect" id="node4" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="461,95,677,136"/>
+</map>

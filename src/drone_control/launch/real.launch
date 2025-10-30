@@ -1,0 +1,41 @@
+<launch>
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="enable_infra1" value="true"/>
+        <arg name="serial_no"     value="141222072356"/>
+    </include>
+
+    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="io_method" value="mmap"/>
+    </node>
+
+    <group ns="infra_tracker">
+        <node pkg="aruco_detect" type="aruco_detect" name="aruco_detect" output="screen">
+            <remap from="/image_raw" to="/camera/infra1/image_rect_raw" />
+            <remap from="/camera_info" to="/camera/infra1/camera_info" />
+
+            <param name="image_is_rectified" value="true"/>
+            <param name="marker_size"        value="0.289"/> <param name="marker_id"          value="1"/>     <param name="dictionary"         value="2"/>     <param name="normalizeImage"     value="true"/>
+            <param name="fiducial_len_override" value="true" />
+            <param name="parent_name"        value="camera_infra1_optical_frame"/> <param name="child_name_prefix"  value="aruco_marker_infra"/> </node>
+    </group>
+
+
+    <group ns="mono_tracker">
+        <node pkg="aruco_detect" type="aruco_detect" name="aruco_detect" output="screen">
+            <remap from="/image_raw" to="/usb_cam/image_raw" />
+            <remap from="/camera_info" to="/usb_cam/camera_info" />
+
+            <param name="image_is_rectified" value="true"/>
+            <param name="marker_size"        value="0.198"/> <param name="marker_id"          value="0"/>     <param name="dictionary"         value="2"/>     <param name="normalizeImage"     value="true"/>
+            <param name="fiducial_len_override" value="true" />
+            <param name="parent_name"        value="usb_cam"/> <param name="child_name_prefix"  value="aruco_marker_mono"/> </node>
+    </group>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find aruco_detect)/launch/aruco_config.rviz" />
+
+</launch>

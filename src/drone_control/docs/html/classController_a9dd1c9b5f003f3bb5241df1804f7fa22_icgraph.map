@@ -1,0 +1,5 @@
+<map id="Controller::get_next_controller_name" name="Controller::get_next_controller_name">
+<area shape="rect" id="node1" title="获取控制器完成后应切换到的下一个控制器名称" alt="" coords="340,5,491,47"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
+</map>

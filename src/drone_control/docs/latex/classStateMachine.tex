@@ -1,0 +1,259 @@
+\hypertarget{classStateMachine}{}\doxysection{State\+Machine Class Reference}
+\label{classStateMachine}\index{StateMachine@{StateMachine}}
+
+
+状态机类  
+
+
+
+
+{\ttfamily \#include $<$State\+Machine.\+h$>$}
+
+
+
+Collaboration diagram for State\+Machine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classStateMachine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStateMachine_a2fb07002510ea9141019559750acfab8}{State\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStateMachine_a93d66cb2a89b186789d655a08b02674e}{$\sim$\+State\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateMachine_abe90c8bdc762539a5501d71cb86b6b7a}{set\+\_\+entry}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 设置状态机的入口状态 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateMachine_ae8658b2080bd1550c57174a68c65df59}{switch\+\_\+state}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 切换到指定的状态 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateMachine_ac023b8ddd5febccd3539d4c293ea7847}{register\+\_\+state}} (const std\+::string \&id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classStateNode}{State\+Node}} $>$ state\+\_\+node)
+\begin{DoxyCompactList}\small\item\em 注册状态节点 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classStateMachine_a4866fbecfed4a1533180a6b29deea590}{on\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em 更新当前状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classStateMachine_a9728b94ee6c58b0622223107634bc2cd}{\+\_\+need\+\_\+init}} = true
+\begin{DoxyCompactList}\small\item\em 标识状态机是否需要初始化 \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classStateNode}{State\+Node}} $>$ $>$ \mbox{\hyperlink{classStateMachine_a77b65e83da128a9aa9718b095858901d}{\+\_\+state\+\_\+pool}}
+\begin{DoxyCompactList}\small\item\em 状态节点池，存储所有已注册的状态节点 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStateNode}{State\+Node}} $\ast$ \mbox{\hyperlink{classStateMachine_aa47accb8dbddf721e80aa545fd1e87bf}{\+\_\+current\+\_\+state}} =nullptr
+\begin{DoxyCompactList}\small\item\em 当前活动状态的指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+状态机类 
+
+负责管理状态节点的注册、切换和更新，提供状态转换的基础设施， 用于实现无人机的各种复杂控制任务流程。 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStateMachine_a2fb07002510ea9141019559750acfab8}\label{classStateMachine_a2fb07002510ea9141019559750acfab8}} 
+\index{StateMachine@{StateMachine}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{StateMachine()}{StateMachine()}}
+{\footnotesize\ttfamily State\+Machine\+::\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+构造函数 
+
+构造函数实现
+
+使用默认构造函数，无需特殊初始化 \mbox{\Hypertarget{classStateMachine_a93d66cb2a89b186789d655a08b02674e}\label{classStateMachine_a93d66cb2a89b186789d655a08b02674e}} 
+\index{StateMachine@{StateMachine}!````~StateMachine@{$\sim$StateMachine}}
+\index{````~StateMachine@{$\sim$StateMachine}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{$\sim$StateMachine()}{~StateMachine()}}
+{\footnotesize\ttfamily State\+Machine\+::$\sim$\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现
+
+使用默认析构函数，智能指针会自动管理资源 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStateMachine_a4866fbecfed4a1533180a6b29deea590}\label{classStateMachine_a4866fbecfed4a1533180a6b29deea590}} 
+\index{StateMachine@{StateMachine}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ State\+Machine\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新当前状态 
+
+执行当前状态的更新逻辑，返回控制指令
+
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double,4$>$ 包含x,y,z,yaw速度指令的数组
+\end{DoxyReturn}
+检查当前状态是否存在，进行初始化（如果需要），然后执行状态的更新逻辑
+
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double,4$>$ 包含x,y,z,yaw速度指令的数组 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_a4866fbecfed4a1533180a6b29deea590_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_a4866fbecfed4a1533180a6b29deea590_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStateMachine_ac023b8ddd5febccd3539d4c293ea7847}\label{classStateMachine_ac023b8ddd5febccd3539d4c293ea7847}} 
+\index{StateMachine@{StateMachine}!register\_state@{register\_state}}
+\index{register\_state@{register\_state}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{register\_state()}{register\_state()}}
+{\footnotesize\ttfamily void State\+Machine\+::register\+\_\+state (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classStateNode}{State\+Node}} $>$}]{state\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+注册状态节点 
+
+将状态节点添加到状态机的状态池中
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 状态节点的唯一标识符 \\
+\hline
+{\em state\+\_\+node} & 状态节点的智能指针\\
+\hline
+\end{DoxyParams}
+将状态节点添加到状态机的状态池中，以便后续切换和管理
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 状态节点的唯一标识符 \\
+\hline
+{\em state\+\_\+node} & 状态节点的智能指针 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_ac023b8ddd5febccd3539d4c293ea7847_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStateMachine_abe90c8bdc762539a5501d71cb86b6b7a}\label{classStateMachine_abe90c8bdc762539a5501d71cb86b6b7a}} 
+\index{StateMachine@{StateMachine}!set\_entry@{set\_entry}}
+\index{set\_entry@{set\_entry}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{set\_entry()}{set\_entry()}}
+{\footnotesize\ttfamily void State\+Machine\+::set\+\_\+entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+设置状态机的入口状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 入口状态的唯一标识符\\
+\hline
+\end{DoxyParams}
+从状态池中查找并设置指定\+I\+D的状态为当前状态
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 入口状态的唯一标识符 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_abe90c8bdc762539a5501d71cb86b6b7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStateMachine_ae8658b2080bd1550c57174a68c65df59}\label{classStateMachine_ae8658b2080bd1550c57174a68c65df59}} 
+\index{StateMachine@{StateMachine}!switch\_state@{switch\_state}}
+\index{switch\_state@{switch\_state}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{switch\_state()}{switch\_state()}}
+{\footnotesize\ttfamily void State\+Machine\+::switch\+\_\+state (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+切换到指定的状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 目标状态的唯一标识符\\
+\hline
+\end{DoxyParams}
+执行当前状态的退出操作，然后切换到目标状态并执行其进入操作
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 目标状态的唯一标识符 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_ae8658b2080bd1550c57174a68c65df59_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStateMachine_ae8658b2080bd1550c57174a68c65df59_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStateMachine_aa47accb8dbddf721e80aa545fd1e87bf}\label{classStateMachine_aa47accb8dbddf721e80aa545fd1e87bf}} 
+\index{StateMachine@{StateMachine}!\_current\_state@{\_current\_state}}
+\index{\_current\_state@{\_current\_state}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{\_current\_state}{\_current\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStateNode}{State\+Node}}$\ast$ State\+Machine\+::\+\_\+current\+\_\+state =nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+当前活动状态的指针 
+
+\mbox{\Hypertarget{classStateMachine_a9728b94ee6c58b0622223107634bc2cd}\label{classStateMachine_a9728b94ee6c58b0622223107634bc2cd}} 
+\index{StateMachine@{StateMachine}!\_need\_init@{\_need\_init}}
+\index{\_need\_init@{\_need\_init}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{\_need\_init}{\_need\_init}}
+{\footnotesize\ttfamily bool State\+Machine\+::\+\_\+need\+\_\+init = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+标识状态机是否需要初始化 
+
+\mbox{\Hypertarget{classStateMachine_a77b65e83da128a9aa9718b095858901d}\label{classStateMachine_a77b65e83da128a9aa9718b095858901d}} 
+\index{StateMachine@{StateMachine}!\_state\_pool@{\_state\_pool}}
+\index{\_state\_pool@{\_state\_pool}!StateMachine@{StateMachine}}
+\doxysubsubsection{\texorpdfstring{\_state\_pool}{\_state\_pool}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classStateNode}{State\+Node}}$>$ $>$ State\+Machine\+::\+\_\+state\+\_\+pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+状态节点池，存储所有已注册的状态节点 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/fsm/\mbox{\hyperlink{StateMachine_8h}{State\+Machine.\+h}}\item 
+src/fsm/\mbox{\hyperlink{StateMachine_8cpp}{State\+Machine.\+cpp}}\end{DoxyCompactItemize}

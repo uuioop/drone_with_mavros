@@ -1,0 +1,6 @@
+<map id="DroneControl::switch_flight_mode" name="DroneControl::switch_flight_mode">
+<area shape="rect" id="node1" title="切换无人机飞行模式" alt="" coords="547,5,705,47"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,5,499,47"/>
+<area shape="rect" id="node3" href="$classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
+</map>

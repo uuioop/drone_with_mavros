@@ -1,0 +1,7 @@
+<map id="MavrosBridge::start_offboard_mode" name="MavrosBridge::start_offboard_mode">
+<area shape="rect" id="node1" title="启动离板控制模式(OFFBOARD)" alt="" coords="5,23,156,65"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="231,5,415,32"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="204,56,443,83"/>
+<area shape="rect" id="node4" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="526,31,681,57"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="491,81,716,108"/>
+</map>

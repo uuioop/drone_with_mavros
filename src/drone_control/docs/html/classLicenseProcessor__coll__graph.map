@@ -1,0 +1,5 @@
+<map id="LicenseProcessor" name="LicenseProcessor">
+<area shape="rect" id="node1" title="号牌处理器类" alt="" coords="68,189,285,619"/>
+<area shape="rect" id="node2" href="$structLicenseConfig.html" title="号牌配置结构体" alt="" coords="5,5,183,127"/>
+<area shape="rect" id="node3" href="$structLicenseInfo.html" title="号牌信息结构体" alt="" coords="207,5,315,127"/>
+</map>

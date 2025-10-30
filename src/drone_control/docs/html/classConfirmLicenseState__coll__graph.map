@@ -1,0 +1,7 @@
+<map id="ConfirmLicenseState" name="ConfirmLicenseState">
+<area shape="rect" id="node1" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="17,1491,211,1627"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="36,1261,192,1441"/>
+<area shape="rect" id="node3" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,975,223,1199"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="33,5,195,508"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="239,571,421,912"/>
+</map>

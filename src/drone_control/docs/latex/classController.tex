@@ -1,0 +1,332 @@
+\hypertarget{classController}{}\doxysection{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+
+
+控制器基类，定义了所有控制器必须实现的接口和共享功能  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classController_a4824c00e777bea4f176b5876001f12bd}{Controller}} (ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classController_a8d16a7a97c266dc0d5aa5685c4dcdd89}{$\sim$\+Controller}} ()=default
+\begin{DoxyCompactList}\small\item\em 虚析构函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classController_a746be737f8c6c44d129af4fa06f8318d}{on\+\_\+enter}} ()=0
+\begin{DoxyCompactList}\small\item\em 控制器进入时调用的方法，用于初始化 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classController_abccf9fcc461f9ecc60276e42457c62e0}{on\+\_\+exit}} ()=0
+\begin{DoxyCompactList}\small\item\em 控制器退出时调用的方法，用于清理资源 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classController_a8b2a76f58fb42a8520fccecc62077754}{on\+\_\+update}} ()=0
+\begin{DoxyCompactList}\small\item\em 控制器更新方法，在主循环中被持续调用 \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classController_acffd5ea0506661240bf37d07ab0df646}{get\+\_\+required\+\_\+flight\+\_\+mode}} () const =0
+\begin{DoxyCompactList}\small\item\em 获取控制器所需的飞行模式 \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classController_a9dd1c9b5f003f3bb5241df1804f7fa22}{get\+\_\+next\+\_\+controller\+\_\+name}} () const =0
+\begin{DoxyCompactList}\small\item\em 获取控制器完成后应切换到的下一个控制器名称 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classController_ad82023794b210bafcf0033fd4000ff40}{check\+\_\+finished}} () const
+\begin{DoxyCompactList}\small\item\em 检查控制器是否完成 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classController_a87e7895e31eefb805a690a6fbfcffddd}{set\+\_\+finished}} (bool finished)
+\begin{DoxyCompactList}\small\item\em 设置控制器的完成状态 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \& \mbox{\hyperlink{classController_a4d5cb7dcd365b5fb9ff031d04d762fd5}{get\+\_\+status\+\_\+monitor}} () const
+\begin{DoxyCompactList}\small\item\em 获取状态监控器引用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Node\+Handle \& \mbox{\hyperlink{classController_a9bd74aeff857a607c75feb461520663f}{\+\_\+nh}}
+\begin{DoxyCompactList}\small\item\em R\+O\+S节点句柄引用 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \& \mbox{\hyperlink{classController_a41ce90e4711779a719c60566ea01cbdc}{\+\_\+status\+\_\+monitor}}
+\begin{DoxyCompactList}\small\item\em 状态监控器引用，用于获取无人机状态信息 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \& \mbox{\hyperlink{classController_a152ecb136bfeb988346ca20921c52f69}{\+\_\+mavros\+\_\+bridge}}
+\begin{DoxyCompactList}\small\item\em M\+A\+V\+R\+O\+S桥接器引用，用于与无人机通信 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classController_af91ada6c2bd79d6b3d2d5c033b12c5b1}{is\+\_\+finished}} =false
+\begin{DoxyCompactList}\small\item\em 控制器完成标志，为true时表示控制器任务已完成 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+控制器基类，定义了所有控制器必须实现的接口和共享功能 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classController_a4824c00e777bea4f176b5876001f12bd}\label{classController_a4824c00e777bea4f176b5876001f12bd}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄引用 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classController_a8d16a7a97c266dc0d5aa5685c4dcdd89}\label{classController_a8d16a7a97c266dc0d5aa5685c4dcdd89}} 
+\index{Controller@{Controller}!````~Controller@{$\sim$Controller}}
+\index{````~Controller@{$\sim$Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{$\sim$Controller()}{~Controller()}}
+{\footnotesize\ttfamily virtual Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+虚析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_ad82023794b210bafcf0033fd4000ff40}\label{classController_ad82023794b210bafcf0033fd4000ff40}} 
+\index{Controller@{Controller}!check\_finished@{check\_finished}}
+\index{check\_finished@{check\_finished}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{check\_finished()}{check\_finished()}}
+{\footnotesize\ttfamily bool Controller\+::check\+\_\+finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查控制器是否完成 
+
+\begin{DoxyReturn}{Returns}
+如果控制器已完成返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_ad82023794b210bafcf0033fd4000ff40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_a9dd1c9b5f003f3bb5241df1804f7fa22}\label{classController_a9dd1c9b5f003f3bb5241df1804f7fa22}} 
+\index{Controller@{Controller}!get\_next\_controller\_name@{get\_next\_controller\_name}}
+\index{get\_next\_controller\_name@{get\_next\_controller\_name}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{get\_next\_controller\_name()}{get\_next\_controller\_name()}}
+{\footnotesize\ttfamily virtual std\+::string Controller\+::get\+\_\+next\+\_\+controller\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+获取控制器完成后应切换到的下一个控制器名称 
+
+\begin{DoxyReturn}{Returns}
+下一个控制器名称 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseController_a340e5437f222c6433c0028cc00a4fd1f}{Confirm\+License\+Controller}}, \mbox{\hyperlink{classPrecisionLandController_a9333d3aad938b12d4730f38433d1ad93}{Precision\+Land\+Controller}}, and \mbox{\hyperlink{classMissionNavController_ac924c3331bbf6e799117b4c80f645814}{Mission\+Nav\+Controller}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_a9dd1c9b5f003f3bb5241df1804f7fa22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_acffd5ea0506661240bf37d07ab0df646}\label{classController_acffd5ea0506661240bf37d07ab0df646}} 
+\index{Controller@{Controller}!get\_required\_flight\_mode@{get\_required\_flight\_mode}}
+\index{get\_required\_flight\_mode@{get\_required\_flight\_mode}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{get\_required\_flight\_mode()}{get\_required\_flight\_mode()}}
+{\footnotesize\ttfamily virtual std\+::string Controller\+::get\+\_\+required\+\_\+flight\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+获取控制器所需的飞行模式 
+
+\begin{DoxyReturn}{Returns}
+飞行模式名称 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseController_a4d39767034bffad4fd8c34d83f8c708f}{Confirm\+License\+Controller}}, \mbox{\hyperlink{classPrecisionLandController_a146b13e208abfae605403206f08eb6ab}{Precision\+Land\+Controller}}, and \mbox{\hyperlink{classMissionNavController_ac8e1c1db9fd25ecca60d711e37f06903}{Mission\+Nav\+Controller}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_acffd5ea0506661240bf37d07ab0df646_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_a4d5cb7dcd365b5fb9ff031d04d762fd5}\label{classController_a4d5cb7dcd365b5fb9ff031d04d762fd5}} 
+\index{Controller@{Controller}!get\_status\_monitor@{get\_status\_monitor}}
+\index{get\_status\_monitor@{get\_status\_monitor}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{get\_status\_monitor()}{get\_status\_monitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}\& Controller\+::get\+\_\+status\+\_\+monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取状态监控器引用 
+
+\begin{DoxyReturn}{Returns}
+状态监控器引用 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_a4d5cb7dcd365b5fb9ff031d04d762fd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_a746be737f8c6c44d129af4fa06f8318d}\label{classController_a746be737f8c6c44d129af4fa06f8318d}} 
+\index{Controller@{Controller}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily virtual void Controller\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+控制器进入时调用的方法，用于初始化 
+
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseController_ad8885e59ba1d57004d4a45d05e9f6738}{Confirm\+License\+Controller}}, \mbox{\hyperlink{classPrecisionLandController_a66f46b5a6520c5dd271a09c5777b785b}{Precision\+Land\+Controller}}, and \mbox{\hyperlink{classMissionNavController_a9f3c6ec8fca4331476585e80a5c7534d}{Mission\+Nav\+Controller}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_a746be737f8c6c44d129af4fa06f8318d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_abccf9fcc461f9ecc60276e42457c62e0}\label{classController_abccf9fcc461f9ecc60276e42457c62e0}} 
+\index{Controller@{Controller}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily virtual void Controller\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+控制器退出时调用的方法，用于清理资源 
+
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseController_ad70fcd8bcf337f69e0cd629b04c7bd5c}{Confirm\+License\+Controller}}, \mbox{\hyperlink{classPrecisionLandController_a12770bdec0087676d54c04ee32947b66}{Precision\+Land\+Controller}}, and \mbox{\hyperlink{classMissionNavController_a250b8a998388c06dca7745e4adf76fca}{Mission\+Nav\+Controller}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_abccf9fcc461f9ecc60276e42457c62e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_a8b2a76f58fb42a8520fccecc62077754}\label{classController_a8b2a76f58fb42a8520fccecc62077754}} 
+\index{Controller@{Controller}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily virtual void Controller\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+控制器更新方法，在主循环中被持续调用 
+
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseController_a1a689ce809261d1119f2380d59a5c3c9}{Confirm\+License\+Controller}}, \mbox{\hyperlink{classPrecisionLandController_a2803292393c8e8c5d902e366219aeeb0}{Precision\+Land\+Controller}}, and \mbox{\hyperlink{classMissionNavController_a3381b62d3a5510230642cd82ad57ea35}{Mission\+Nav\+Controller}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_a8b2a76f58fb42a8520fccecc62077754_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classController_a87e7895e31eefb805a690a6fbfcffddd}\label{classController_a87e7895e31eefb805a690a6fbfcffddd}} 
+\index{Controller@{Controller}!set\_finished@{set\_finished}}
+\index{set\_finished@{set\_finished}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{set\_finished()}{set\_finished()}}
+{\footnotesize\ttfamily void Controller\+::set\+\_\+finished (\begin{DoxyParamCaption}\item[{bool}]{finished }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置控制器的完成状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em finished} & 完成状态 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController_a87e7895e31eefb805a690a6fbfcffddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classController_a152ecb136bfeb988346ca20921c52f69}\label{classController_a152ecb136bfeb988346ca20921c52f69}} 
+\index{Controller@{Controller}!\_mavros\_bridge@{\_mavros\_bridge}}
+\index{\_mavros\_bridge@{\_mavros\_bridge}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{\_mavros\_bridge}{\_mavros\_bridge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}\& Controller\+::\+\_\+mavros\+\_\+bridge\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+M\+A\+V\+R\+O\+S桥接器引用，用于与无人机通信 
+
+\mbox{\Hypertarget{classController_a9bd74aeff857a607c75feb461520663f}\label{classController_a9bd74aeff857a607c75feb461520663f}} 
+\index{Controller@{Controller}!\_nh@{\_nh}}
+\index{\_nh@{\_nh}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{\_nh}{\_nh}}
+{\footnotesize\ttfamily ros\+::\+Node\+Handle\& Controller\+::\+\_\+nh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+R\+O\+S节点句柄引用 
+
+\mbox{\Hypertarget{classController_a41ce90e4711779a719c60566ea01cbdc}\label{classController_a41ce90e4711779a719c60566ea01cbdc}} 
+\index{Controller@{Controller}!\_status\_monitor@{\_status\_monitor}}
+\index{\_status\_monitor@{\_status\_monitor}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{\_status\_monitor}{\_status\_monitor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}\& Controller\+::\+\_\+status\+\_\+monitor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+状态监控器引用，用于获取无人机状态信息 
+
+\mbox{\Hypertarget{classController_af91ada6c2bd79d6b3d2d5c033b12c5b1}\label{classController_af91ada6c2bd79d6b3d2d5c033b12c5b1}} 
+\index{Controller@{Controller}!is\_finished@{is\_finished}}
+\index{is\_finished@{is\_finished}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{is\_finished}{is\_finished}}
+{\footnotesize\ttfamily bool Controller\+::is\+\_\+finished =false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+控制器完成标志，为true时表示控制器任务已完成 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{Controller_8h}{Controller.\+h}}\end{DoxyCompactItemize}

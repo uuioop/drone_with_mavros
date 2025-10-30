@@ -1,0 +1,16 @@
+<map id="include/fsm/StateMachine.h" name="include/fsm/StateMachine.h">
+<area shape="rect" id="node1" title="状态机类定义" alt="" coords="737,5,939,32"/>
+<area shape="rect" id="node2" href="$Controller_8h.html" title="控制器基类定义，所有具体控制器的抽象接口" alt="" coords="594,80,775,107"/>
+<area shape="rect" id="node8" href="$ConfirmLicenseController_8h.html" title="号牌确认控制器头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="651,155,846,196"/>
+<area shape="rect" id="node11" href="$PrecisionLandController_8h.html" title="精确着陆控制器头文件 负责管理无人机使用ArUco标签进行精确着陆的过程" alt="" coords="870,155,1073,196"/>
+<area shape="rect" id="node14" href="$StateMachine_8cpp.html" title="状态机实现文件" alt="" coords="901,80,1092,107"/>
+<area shape="rect" id="node3" href="$DroneControl_8h.html" title="无人机控制类" alt="" coords="422,162,625,189"/>
+<area shape="rect" id="node6" href="$MissionNavController_8h.html" title="任务导航控制器类定义" alt="" coords="193,155,398,196"/>
+<area shape="rect" id="node4" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="427,251,617,278"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="297,251,403,278"/>
+<area shape="rect" id="node7" href="$MissionNavController_8cpp.html" title="GPS任务导航控制器实现文件" alt="" coords="5,251,273,278"/>
+<area shape="rect" id="node9" href="$ConfirmLicenseController_8cpp.html" title="号牌确认控制器实现" alt="" coords="882,244,1098,285"/>
+<area shape="rect" id="node10" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="642,244,858,285"/>
+<area shape="rect" id="node12" href="$PrecisionLandController_8cpp.html" title="精确着陆控制器实现文件" alt="" coords="1351,244,1557,285"/>
+<area shape="rect" id="node13" href="$PrecisionLandNodes_8cpp.html" title="精确着陆状态节点实现文件" alt="" coords="1122,244,1327,285"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="LicenseProcessor::update_recognized_license" name="LicenseProcessor::update_recognized_license">
+<area shape="rect" id="node1" title="更新识别到的号牌信息" alt="" coords="480,5,667,47"/>
+<area shape="rect" id="node2" href="$classLicenseProcessor.html#a8223a97cd8d9c8c5886f2ff4a256da5e" title="号牌回调函数" alt="" coords="244,5,432,47"/>
+<area shape="rect" id="node3" href="$classLicenseProcessor.html#a8604f4683e934b168c6a92fda1bfb87e" title="构造函数" alt="" coords="5,5,196,47"/>
+</map>

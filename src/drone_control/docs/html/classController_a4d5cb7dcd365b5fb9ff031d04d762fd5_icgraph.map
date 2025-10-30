@@ -1,0 +1,5 @@
+<map id="Controller::get_status_monitor" name="Controller::get_status_monitor">
+<area shape="rect" id="node1" title="获取状态监控器引用" alt="" coords="241,23,404,65"/>
+<area shape="rect" id="node2" href="$classDescendState.html#ad7b810ef3ac2a181ded66c46c6d15b20" title="更新状态时调用，返回控制指令" alt="" coords="5,5,193,32"/>
+<area shape="rect" id="node3" href="$classLandState.html#a2aeb2224aa76fffb0181de050b7613e5" title="更新状态时调用，返回控制指令" alt="" coords="18,56,181,83"/>
+</map>

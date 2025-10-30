@@ -1,0 +1,7 @@
+<map id="StateMachine::register_state" name="StateMachine::register_state">
+<area shape="rect" id="node1" title="注册状态节点" alt="" coords="483,39,652,80"/>
+<area shape="rect" id="node2" href="$classPrecisionLandController.html#a035b72f7444b980c21c5c90e9e3cd4be" title="注册状态机中的各个状态 初始化并注册精确着陆过程中所需的各种状态到状态机中" alt="" coords="253,5,429,47"/>
+<area shape="rect" id="node4" href="$classConfirmLicenseController.html#ac37f53481b21b54eba89daeab2924a79" title="注册状态机中的各个状态 初始化并注册搜索、确认和重新定位三种状态到状态机中" alt="" coords="248,71,435,112"/>
+<area shape="rect" id="node3" href="$classPrecisionLandController.html#a31d5b9b12f6d1008b6811c41c2b12c10" title="构造函数" alt="" coords="11,5,195,47"/>
+<area shape="rect" id="node5" href="$classConfirmLicenseController.html#a07673aa61940655d78bb28038e136cdd" title="构造函数" alt="" coords="5,71,200,112"/>
+</map>

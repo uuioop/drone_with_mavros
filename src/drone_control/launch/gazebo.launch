@@ -1,0 +1,44 @@
+<launch>
+    <!-- Gazebo环境下无需开启真实相机节点 -->
+    <!-- 直接使用Gazebo仿真环境提供的相机话题 -->
+
+    <!-- 前视相机ArUco检测 -->
+    <group ns="front_aruco_tracker">
+        <node pkg="aruco_detect" type="aruco_detect" name="aruco_detect" output="screen">
+            <!-- 话题重命名 -->
+            <remap from="camera" to="/iris_front_down_camera/camera/rgb/image_raw" />
+            <remap from="camera_info" to="/iris_front_down_camera/camera/rgb/camera_info" />
+            <remap from="/fiducial_images" to="/front_aruco_tracker/fiducial_images" />
+
+            <!-- 是否发布调试图像 -->
+            <param name="publish_images" value="true"/>
+            <!-- 是否已去畸变 -->
+            <param name="image_is_rectified" value="false"/>
+            <!-- ArUco标记长度 -->
+            <param name="fiducial_len"        value="0.4"/>  
+            <!-- 字典类型  -->
+            <param name="dictionary"         value="2"/> 
+
+        </node>
+    </group>
+
+    <!-- 下视相机ArUco检测 -->
+    <group ns="down_aruco_tracker">
+        <node pkg="aruco_detect" type="aruco_detect" name="aruco_detect" output="screen">
+            <remap from="camera" to="/iris_front_down_camera/usb_cam/image_raw" />
+            <remap from="camera_info" to="/iris_front_down_camera/usb_cam/camera_info" />
+            <remap from="/fiducial_images" to="/down_aruco_tracker/fiducial_images" />
+
+            <param name="publish_images" value="true"/>
+            <param name="image_is_rectified" value="false"/>
+            <param name="fiducial_len"        value="0.4"/> 
+            <param name="dictionary"         value="2"/>     
+
+        </node>
+    </group>
+
+    <node pkg="drone_control" type="drone_control_node" name="drone_control_node" output="screen">
+    </node>
+    <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find aruco_detect)/launch/aruco_config.rviz" /> -->
+
+</launch>

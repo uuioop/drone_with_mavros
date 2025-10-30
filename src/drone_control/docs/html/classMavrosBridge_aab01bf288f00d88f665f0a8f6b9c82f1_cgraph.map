@@ -1,0 +1,6 @@
+<map id="MavrosBridge::disarm" name="MavrosBridge::disarm">
+<area shape="rect" id="node1" title="锁定无人机（停止飞行）" alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="457,5,604,32"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="440,56,621,83"/>
+</map>

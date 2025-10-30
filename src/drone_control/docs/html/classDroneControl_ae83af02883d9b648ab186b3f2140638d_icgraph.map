@@ -1,0 +1,4 @@
+<map id="DroneControl::set_entry" name="DroneControl::set_entry">
+<area shape="rect" id="node1" title="设置入口控制器" alt="" coords="231,13,408,39"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#aae24fc650525708b52e30bcba97998cf" title="设置入口控制器的服务回调函数" alt="" coords="5,5,183,47"/>
+</map>

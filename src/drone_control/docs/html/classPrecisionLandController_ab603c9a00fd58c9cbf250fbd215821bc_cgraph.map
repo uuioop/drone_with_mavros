@@ -1,0 +1,6 @@
+<map id="PrecisionLandController::switch_state" name="PrecisionLandController::switch_state">
+<area shape="rect" id="node1" title="切换状态机状态" alt="" coords="5,23,181,65"/>
+<area shape="rect" id="node2" href="$classStateMachine.html#ae8658b2080bd1550c57174a68c65df59" title="切换到指定的状态" alt="" coords="229,23,391,65"/>
+<area shape="rect" id="node3" href="$classStateNode.html#aadf61cd1c8fa8c2f48688170f65ec926" title="进入状态时执行的函数" alt="" coords="439,5,593,32"/>
+<area shape="rect" id="node4" href="$classStateNode.html#a5df00068ea1553216865bc4879009739" title="退出状态时执行的函数" alt="" coords="443,56,589,83"/>
+</map>
