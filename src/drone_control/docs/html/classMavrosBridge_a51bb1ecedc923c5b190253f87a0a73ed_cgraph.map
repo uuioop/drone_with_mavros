@@ -1,0 +1,9 @@
+<map id="MavrosBridge::switch_flight_mode" name="MavrosBridge::switch_flight_mode">
+<area shape="rect" id="node1" title="切换无人机飞行模式" alt="" coords="5,64,168,105"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="220,5,363,47"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5" title="设置无人机飞行模式" alt="" coords="442,75,626,102"/>
+<area shape="rect" id="node4" href="$classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="216,123,367,164"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="415,130,653,157"/>
+<area shape="rect" id="node6" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="737,105,891,131"/>
+<area shape="rect" id="node7" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="701,155,927,182"/>
+</map>

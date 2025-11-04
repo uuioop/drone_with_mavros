@@ -1,6 +1,6 @@
 <map id="ArucoTagProcessor::ArucoTagProcessor" name="ArucoTagProcessor::ArucoTagProcessor">
 <area shape="rect" id="node1" title="构造函数" alt="" coords="5,5,157,47"/>
-<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a07e1d1da2791953f47be1112c34635ec" title="目标位姿回调函数" alt="" coords="205,5,365,47"/>
+<area shape="rect" id="node2" href="$classArucoTagProcessor.html#a38afe2fd9f5556679f2936427e23787d" title="目标位姿回调函数" alt="" coords="205,5,365,47"/>
 <area shape="rect" id="node3" href="$classArucoTagProcessor.html#a6cf4cd546795956a614fbec97eb5a04b" title="将相机坐标系中的标记转换为机体坐标系" alt="" coords="413,5,565,47"/>
 <area shape="rect" id="node4" href="$structArucoTag.html#a37ff20c8908e31b47f7835655713811d" title="检查标记数据是否有效" alt="" coords="613,13,752,39"/>
 </map>

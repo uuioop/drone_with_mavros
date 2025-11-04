@@ -1,27 +1,58 @@
 这是一个为 P\+X4 自动驾驶仪设计的、基于 R\+OS 的高级控制系统。该系统旨在实现模块化的任务控制，集成了视觉导航和 G\+PS 导航功能，提供稳定可靠的无人机自主控制能力。\hypertarget{index_autotoc_md1}{}\doxysection{主要功能}\label{index_autotoc_md1}
 
 \begin{DoxyItemize}
-\item {\bfseries{多控制器架构}}\+: 系统被设计为可以轻松切换不同的高级控制器，以执行不同的任务。
+\item {\bfseries{任务模式架构}}\+: 系统采用完整的任务模式设计，每个任务都是独立的执行单元，可以轻松切换不同的任务模式。
 \begin{DoxyItemize}
-\item {\ttfamily \mbox{\hyperlink{classMissionNavController}{Mission\+Nav\+Controller}}}\+: 执行基于 G\+PS 航点的任务。
-\item {\ttfamily \mbox{\hyperlink{classConfirmLicenseController}{Confirm\+License\+Controller}}}\+: 使用视觉识别技术搜索并确认特定号牌。
-\item {\ttfamily \mbox{\hyperlink{classPrecisionLandController}{Precision\+Land\+Controller}}}\+: 利用 Ar\+Uco 标记实现高精度的视觉着陆。
+\item {\ttfamily \mbox{\hyperlink{classIdleMission}{Idle\+Mission}}}\+: 空闲任务模式，作为系统的默认任务状态。
+\item {\ttfamily \mbox{\hyperlink{classGPSNavMission}{G\+P\+S\+Nav\+Mission}}}\+: G\+PS 导航任务模式，负责根据预定义的航点序列执行导航。
+\item {\ttfamily \mbox{\hyperlink{classConfirmLicenseMission}{Confirm\+License\+Mission}}}\+: 号牌确认任务模式，负责搜索并确认目标号牌(当前版本未实现)。
+\item {\ttfamily \mbox{\hyperlink{classPrecisionLandMission}{Precision\+Land\+Mission}}}\+: 精准降落任务模式，利用 Ar\+Uco 标记实现高精度的视觉着陆。
+\item 其他任务模式正在开发中，将集成\+G\+P\+S导航、精准降落和号牌确认等功能。
 \end{DoxyItemize}
-\item {\bfseries{状态机驱动}}\+: 每个控制器内部都使用状态机（\+F\+S\+M）来管理其复杂的逻辑流程，使得任务执行过程清晰、稳定且易于扩展。
+\item {\bfseries{状态机驱动}}\+: 每个任务内部都使用状态机（\+F\+S\+M）来管理其复杂的逻辑流程，使得任务执行过程清晰、稳定且易于扩展。
 \item {\bfseries{M\+A\+V\+R\+OS 通信}}\+: 通过 {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}} 与飞控进行底层通信，负责模式切换、解锁/上锁以及发送速度/位置指令。
 \item {\bfseries{硬件抽象}}\+: {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}} 类订阅了所有必要的 M\+A\+V\+R\+OS 话题，为上层应用提供了统一、线程安全的状态接口。
 \item {\bfseries{视觉处理}}\+: 支持 Ar\+Uco 标记检测和号牌识别，用于精确导航和任务确认。
-\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{系统架构}\label{index_autotoc_md2}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{功能实现状态}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item ✅ {\bfseries{精准降落}}\+: 已实现，支持基于 Ar\+Uco 标记的高精度视觉着陆
+\item ✅ {\bfseries{G\+P\+S导航}}\+: 已实现，支持基于 G\+PS 航点的任务执行
+\item ⏳ {\bfseries{号牌确认}}\+: 等待号牌模型确定后实现
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{使用方法}\label{index_autotoc_md3}
+系统支持两种使用模式：\hypertarget{index_autotoc_md4}{}\doxysubsection{模式一：直接精准降落}\label{index_autotoc_md4}
+直接启动精准降落模式，无人机将在当前位置附近搜索 Ar\+Uco 标记并执行精准降落：
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# 在单独终端中启动服务调用}
+\DoxyCodeLine{rosservice call /start\_flight 0 0 0 0 true}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{模式二：\+G\+P\+S导航后精准降落}\label{index_autotoc_md5}
+先执行\+G\+P\+S导航到指定位置，然后自动切换到精准降落模式：
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# 在单独终端中启动服务调用，只需提供前两个参数（经纬度）}
+\DoxyCodeLine{rosservice call /start\_flight 47.3979711 8.5461636 0 0 false}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{参数说明}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item 参数1-\/2\+: 目标位置的纬度和经度（单位：度）
+\item 参数3-\/4\+: 目标高度和偏航角（当前版本未使用，设为0）
+\item 参数5\+: 是否直接精准降落（true=直接降落，false=先\+G\+P\+S导航再降落）
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{系统架构}\label{index_autotoc_md7}
 系统采用分层架构设计：
 
 
 \begin{DoxyEnumerate}
 \item {\bfseries{底层通信层}}\+: 由 {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}} 负责与 P\+X4 飞控通信
 \item {\bfseries{状态监控层}}\+: 由 {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}} 提供统一的状态访问接口
-\item {\bfseries{控制器层}}\+: 包含多个高级控制器，如 {\ttfamily \mbox{\hyperlink{classMissionNavController}{Mission\+Nav\+Controller}}}、{\ttfamily \mbox{\hyperlink{classConfirmLicenseController}{Confirm\+License\+Controller}}} 等
-\item {\bfseries{状态机层}}\+: 每个控制器内部使用状态机管理复杂任务流程
+\item {\bfseries{任务层}}\+: 包含完整的任务模式，如 {\ttfamily \mbox{\hyperlink{classIdleMission}{Idle\+Mission}}} 等
+\item {\bfseries{状态机层}}\+: 每个任务内部使用状态机管理复杂任务流程
 \item {\bfseries{工具层}}\+: 提供 Ar\+Uco 标记处理、号牌识别等辅助功能
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{项目依赖}\label{index_autotoc_md3}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md8}{}\doxysection{项目依赖}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
 \item R\+OS Noetic
@@ -29,25 +60,32 @@
 \item M\+A\+V\+R\+OS 包
 \item Open\+C\+V（用于视觉处理）
 \item Doxygen（用于文档生成）
-\item S\+Q\+Lite（用于数据存储,还未使用）
-\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{项目结构}\label{index_autotoc_md4}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysection{项目结构}\label{index_autotoc_md9}
 
 \begin{DoxyItemize}
 \item {\ttfamily /include}\+: 包含所有头文件 ({\ttfamily .h})。
 \begin{DoxyItemize}
 \item {\ttfamily /core}\+: 核心控制类，如 {\ttfamily \mbox{\hyperlink{classDroneControl}{Drone\+Control}}}, {\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}}, {\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}}。
-\item {\ttfamily /fsm}\+: 状态机 ({\ttfamily \mbox{\hyperlink{classStateMachine}{State\+Machine}}}) 和状态节点 ({\ttfamily \mbox{\hyperlink{classStateNode}{State\+Node}}}) 的基类。
-\item {\ttfamily /\+Visual\+Nav}\+: 视觉导航相关的控制器和状态定义。
-\item {\ttfamily /\+G\+P\+S\+Nav}\+: G\+PS 导航相关的控制器定义。
+\item {\ttfamily /\+Mission\+Node}\+: 任务节点基类和具体任务实现。
+\item {\ttfamily /\+State\+Node}\+: 状态机节点定义。
 \item {\ttfamily /\+Tag}\+: Ar\+Uco 标记和号牌处理的相关工具类。
 \item {\ttfamily /util}\+: 通用工具类，如数学工具函数和 S\+Q\+Lite 数据库操作。
 \end{DoxyItemize}
 \item {\ttfamily /src}\+: 包含所有源文件 ({\ttfamily .cpp})，目录结构与 {\ttfamily include} 对应。
+\begin{DoxyItemize}
+\item {\ttfamily /core}\+: 核心控制类实现。
+\item {\ttfamily /\+Mission\+Node}\+: 任务节点具体实现。
+\item {\ttfamily /\+State\+Node}\+: 状态机节点实现。
+\item {\ttfamily /\+Tag}\+: 视觉处理工具实现。
+\item {\ttfamily \mbox{\hyperlink{main_8cpp}{main.\+cpp}}}\+: 程序入口点。
+\end{DoxyItemize}
+\item {\ttfamily /launch}\+: R\+OS launch 文件，如 {\ttfamily gazebo.\+launch}。
 \item {\ttfamily /docs}\+: Doxygen 生成的文档输出目录，包含 H\+T\+ML 和 La\+TeX 格式的文档。
 \item {\ttfamily \mbox{\hyperlink{CMakeLists_8txt}{C\+Make\+Lists.\+txt}}}\+: 项目构建配置文件
 \item {\ttfamily package.\+xml}\+: R\+OS 包描述文件
 \item {\ttfamily Doxyfile}\+: Doxygen 文档生成配置文件
-\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{文档生成}\label{index_autotoc_md5}
+\item {\ttfamily \mbox{\hyperlink{README_8md}{R\+E\+A\+D\+M\+E.\+md}}}\+: 项目说明文档
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{文档生成}\label{index_autotoc_md10}
 使用 Doxygen 生成项目文档：
 
 
@@ -57,7 +95,7 @@
 \end{DoxyCode}
 
 
-生成的文档将位于 {\ttfamily /docs/html} 目录中。\hypertarget{index_autotoc_md6}{}\doxysection{许可证}\label{index_autotoc_md6}
-\mbox{[}在此添加许可证信息\mbox{]}\hypertarget{index_autotoc_md7}{}\doxysection{贡献指南}\label{index_autotoc_md7}
-欢迎提交问题报告和功能请求。如需贡献代码，请提交 Pull Request。\hypertarget{index_autotoc_md8}{}\doxysection{联系方式}\label{index_autotoc_md8}
+生成的文档将位于 {\ttfamily /docs/html} 目录中。\hypertarget{index_autotoc_md11}{}\doxysection{许可证}\label{index_autotoc_md11}
+\mbox{[}在此添加许可证信息\mbox{]}\hypertarget{index_autotoc_md12}{}\doxysection{贡献指南}\label{index_autotoc_md12}
+欢迎提交问题报告和功能请求。如需贡献代码，请提交 Pull Request。\hypertarget{index_autotoc_md13}{}\doxysection{联系方式}\label{index_autotoc_md13}
 \mbox{[}在此添加项目维护者的联系方式\mbox{]} 

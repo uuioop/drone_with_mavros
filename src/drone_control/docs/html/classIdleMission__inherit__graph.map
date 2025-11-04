@@ -1,0 +1,5 @@
+<map id="IdleMission" name="IdleMission">
+<area shape="rect" id="node1" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="7,520,187,700"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="5,189,188,472"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="35,5,159,141"/>
+</map>

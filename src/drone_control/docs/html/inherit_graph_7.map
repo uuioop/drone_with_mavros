@@ -1,3 +1,18 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node1" href="$classNodeBase.html" title="节点基类" alt="" coords="5,259,93,285"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="141,107,248,133"/>
+<area shape="rect" id="node7" href="$classStateNode.html" title="状态节点基类" alt="" coords="149,385,240,412"/>
+<area shape="rect" id="node3" href="$classConfirmLicenseMission.html" title="号牌确认任务类 继承自MissionNode基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="302,5,475,32"/>
+<area shape="rect" id="node4" href="$classGPSNavMission.html" title="GPS导航任务" alt="" coords="327,56,451,83"/>
+<area shape="rect" id="node5" href="$classIdleMission.html" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="341,107,437,133"/>
+<area shape="rect" id="node6" href="$classPrecisionLandMission.html" title="精确着陆任务类 继承自MissionNode基类，实现无人机基于ArUco标签的精确着陆控制逻辑" alt="" coords="307,157,470,184"/>
+<area shape="rect" id="node8" href="$classAlignOnGuideTagState.html" title="对准引导标签状态类 负责控制无人机对准到ArUco引导标签的中心位置" alt="" coords="305,208,472,235"/>
+<area shape="rect" id="node9" href="$classAlignOnPlatformTagState.html" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="296,259,481,285"/>
+<area shape="rect" id="node10" href="$classApproachGuideTagState.html" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="300,309,477,336"/>
+<area shape="rect" id="node11" href="$classConfirmLicenseState.html" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="310,360,467,387"/>
+<area shape="rect" id="node12" href="$classDescendState.html" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="333,411,445,437"/>
+<area shape="rect" id="node13" href="$classLandState.html" title="着陆状态类 负责控制无人机执行最终的着陆操作" alt="" coords="345,461,432,488"/>
+<area shape="rect" id="node14" href="$classRepositionLicenseState.html" title="重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试" alt="" coords="301,512,476,539"/>
+<area shape="rect" id="node15" href="$classSearchLicenseState.html" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="314,563,463,589"/>
+<area shape="rect" id="node16" href="$classSearchTagState.html" title="搜索标签状态类 负责控制无人机搜索并发现ArUco引导标签" alt="" coords="327,613,450,640"/>
 </map>

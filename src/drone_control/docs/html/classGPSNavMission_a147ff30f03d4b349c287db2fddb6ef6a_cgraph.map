@@ -1,0 +1,8 @@
+<map id="GPSNavMission::upload_mission" name="GPSNavMission::upload_mission">
+<area shape="rect" id="node1" title="上传任务航点到无人机" alt="" coords="5,39,181,80"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#a947972082d98fd812d025c6b8a43227d" title="获取无人机的全局位置（经纬度+绝对海拔高度）" alt="" coords="240,5,383,47"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="229,71,393,112"/>
+<area shape="rect" id="node4" href="$classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="447,37,599,79"/>
+<area shape="rect" id="node6" href="$classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b" title="上传航点列表到飞控" alt="" coords="441,103,605,144"/>
+<area shape="rect" id="node5" href="$classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="653,37,808,79"/>
+</map>

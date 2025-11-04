@@ -1,32 +1,33 @@
 \doxysection{File List}
 Here is a list of all files with brief descriptions\+:\begin{DoxyCompactList}
-\item\contentsline{section}{include/core/\mbox{\hyperlink{Controller_8h}{Controller.\+h}} \\*控制器基类定义，所有具体控制器的抽象接口 }{\pageref{Controller_8h}}{}
 \item\contentsline{section}{include/core/\mbox{\hyperlink{DroneControl_8h}{Drone\+Control.\+h}} \\*无人机控制类 }{\pageref{DroneControl_8h}}{}
 \item\contentsline{section}{include/core/\mbox{\hyperlink{MavrosBridge_8h}{Mavros\+Bridge.\+h}} \\*M\+A\+V\+R\+O\+S桥接器，提供与\+M\+A\+V\+R\+O\+S通信的接口，用于控制无人机 }{\pageref{MavrosBridge_8h}}{}
+\item\contentsline{section}{include/core/\mbox{\hyperlink{NodeBase_8h}{Node\+Base.\+h}} \\*节点基类定义 }{\pageref{NodeBase_8h}}{}
+\item\contentsline{section}{include/core/\mbox{\hyperlink{NodeMachine_8h}{Node\+Machine.\+h}} \\*节点机基类定义 }{\pageref{NodeMachine_8h}}{}
 \item\contentsline{section}{include/core/\mbox{\hyperlink{StatusMonitor_8h}{Status\+Monitor.\+h}} \\*无人机状态监控器，用于订阅和管理无人机的各种状态信息 }{\pageref{StatusMonitor_8h}}{}
-\item\contentsline{section}{include/fsm/\mbox{\hyperlink{StateMachine_8h}{State\+Machine.\+h}} \\*状态机类定义 }{\pageref{StateMachine_8h}}{}
-\item\contentsline{section}{include/fsm/\mbox{\hyperlink{StateNode_8h}{State\+Node.\+h}} \\*状态节点基类定义 }{\pageref{StateNode_8h}}{}
-\item\contentsline{section}{include/\+G\+P\+S\+Nav/\mbox{\hyperlink{MissionNavController_8h}{Mission\+Nav\+Controller.\+h}} \\*任务导航控制器类定义 }{\pageref{MissionNavController_8h}}{}
+\item\contentsline{section}{include/\+Mission\+Node/\mbox{\hyperlink{ConfirmLicenseMission_8h}{Confirm\+License\+Mission.\+h}} \\*号牌确认任务头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程 }{\pageref{ConfirmLicenseMission_8h}}{}
+\item\contentsline{section}{include/\+Mission\+Node/\mbox{\hyperlink{GPSNavMission_8h}{G\+P\+S\+Nav\+Mission.\+h}} \\*G\+P\+S导航任务类定义 }{\pageref{GPSNavMission_8h}}{}
+\item\contentsline{section}{include/\+Mission\+Node/\mbox{\hyperlink{IdleMission_8h}{Idle\+Mission.\+h}} \\*空闲状态任务头文件 负责在无人机未执行任何任务时监听启动任务机服务请求 }{\pageref{IdleMission_8h}}{}
+\item\contentsline{section}{include/\+Mission\+Node/\mbox{\hyperlink{MissionNode_8h}{Mission\+Node.\+h}} \\*任务基类定义，所有具体任务的抽象接口 }{\pageref{MissionNode_8h}}{}
+\item\contentsline{section}{include/\+Mission\+Node/\mbox{\hyperlink{PrecisionLandMission_8h}{Precision\+Land\+Mission.\+h}} \\*精确着陆任务头文件 负责管理无人机使用\+Ar\+Uco标签进行精确着陆的过程 }{\pageref{PrecisionLandMission_8h}}{}
+\item\contentsline{section}{include/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}} \\*号牌确认状态机节点定义 包含搜索号牌、确认号牌和重新定位号牌三种状态 }{\pageref{ConfirmLicenseNodes_8h}}{}
+\item\contentsline{section}{include/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}} \\*精确着陆状态机节点定义 包含搜索标签、对准引导标签、接近引导标签、对准平台标签、下降和着陆等状态 }{\pageref{PrecisionLandNodes_8h}}{}
+\item\contentsline{section}{include/\+State\+Node/\mbox{\hyperlink{StateNode_8h}{State\+Node.\+h}} \\*状态节点基类定义 }{\pageref{StateNode_8h}}{}
 \item\contentsline{section}{include/\+Tag/\mbox{\hyperlink{ArucoTag_8h}{Aruco\+Tag.\+h}} \\*Ar\+Uco标记相关的数据结构定义 }{\pageref{ArucoTag_8h}}{}
 \item\contentsline{section}{include/\+Tag/\mbox{\hyperlink{ArucoTagProcessor_8h}{Aruco\+Tag\+Processor.\+h}} \\*Ar\+Uco标记处理器类定义 }{\pageref{ArucoTagProcessor_8h}}{}
 \item\contentsline{section}{include/\+Tag/\mbox{\hyperlink{License_8h}{License.\+h}} \\*号牌相关的数据结构定义 }{\pageref{License_8h}}{}
 \item\contentsline{section}{include/\+Tag/\mbox{\hyperlink{LicenseProcessor_8h}{License\+Processor.\+h}} \\*号牌处理器类定义 }{\pageref{LicenseProcessor_8h}}{}
-\item\contentsline{section}{include/util/\mbox{\hyperlink{SQLite_8h}{S\+Q\+Lite.\+h}} }{\pageref{SQLite_8h}}{}
 \item\contentsline{section}{include/util/\mbox{\hyperlink{utils_8h}{utils.\+h}} \\*数学工具函数头文件 }{\pageref{utils_8h}}{}
-\item\contentsline{section}{include/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseController_8h}{Confirm\+License\+Controller.\+h}} \\*号牌确认控制器头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程 }{\pageref{ConfirmLicenseController_8h}}{}
-\item\contentsline{section}{include/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}} \\*号牌确认状态机节点定义 包含搜索号牌、确认号牌和重新定位号牌三种状态 }{\pageref{ConfirmLicenseNodes_8h}}{}
-\item\contentsline{section}{include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandController_8h}{Precision\+Land\+Controller.\+h}} \\*精确着陆控制器头文件 负责管理无人机使用\+Ar\+Uco标签进行精确着陆的过程 }{\pageref{PrecisionLandController_8h}}{}
-\item\contentsline{section}{include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}} \\*精确着陆状态机节点定义 包含搜索标签、对准引导标签、接近引导标签、对准平台标签、下降和着陆等状态 }{\pageref{PrecisionLandNodes_8h}}{}
 \item\contentsline{section}{src/\mbox{\hyperlink{main_8cpp}{main.\+cpp}} \\*无人机控制节点主入口文件 }{\pageref{main_8cpp}}{}
 \item\contentsline{section}{src/core/\mbox{\hyperlink{DroneControl_8cpp}{Drone\+Control.\+cpp}} \\*Drone\+Control类的实现文件，提供无人机的整体控制功能 }{\pageref{DroneControl_8cpp}}{}
 \item\contentsline{section}{src/core/\mbox{\hyperlink{MavrosBridge_8cpp}{Mavros\+Bridge.\+cpp}} \\*Mavros\+Bridge类的实现文件，提供与\+M\+A\+V\+R\+O\+S通信的具体实现 }{\pageref{MavrosBridge_8cpp}}{}
 \item\contentsline{section}{src/core/\mbox{\hyperlink{StatusMonitor_8cpp}{Status\+Monitor.\+cpp}} \\*Status\+Monitor类的实现文件，负责监控无人机状态 }{\pageref{StatusMonitor_8cpp}}{}
-\item\contentsline{section}{src/fsm/\mbox{\hyperlink{StateMachine_8cpp}{State\+Machine.\+cpp}} \\*状态机实现文件 }{\pageref{StateMachine_8cpp}}{}
-\item\contentsline{section}{src/\+G\+P\+S\+Nav/\mbox{\hyperlink{MissionNavController_8cpp}{Mission\+Nav\+Controller.\+cpp}} \\*G\+P\+S任务导航控制器实现文件 }{\pageref{MissionNavController_8cpp}}{}
+\item\contentsline{section}{src/\+Mission\+Node/\mbox{\hyperlink{ConfirmLicenseMission_8cpp}{Confirm\+License\+Mission.\+cpp}} \\*号牌确认任务实现 }{\pageref{ConfirmLicenseMission_8cpp}}{}
+\item\contentsline{section}{src/\+Mission\+Node/\mbox{\hyperlink{GPSNavMission_8cpp}{G\+P\+S\+Nav\+Mission.\+cpp}} \\*任务导航任务节点实现文件 }{\pageref{GPSNavMission_8cpp}}{}
+\item\contentsline{section}{src/\+Mission\+Node/\mbox{\hyperlink{IdleMission_8cpp}{Idle\+Mission.\+cpp}} \\*空闲状态任务实现 }{\pageref{IdleMission_8cpp}}{}
+\item\contentsline{section}{src/\+Mission\+Node/\mbox{\hyperlink{PrecisionLandMission_8cpp}{Precision\+Land\+Mission.\+cpp}} \\*精确着陆任务节点实现文件 }{\pageref{PrecisionLandMission_8cpp}}{}
+\item\contentsline{section}{src/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}} \\*号牌确认状态节点实现文件 }{\pageref{ConfirmLicenseNodes_8cpp}}{}
+\item\contentsline{section}{src/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}} \\*精确着陆状态节点实现文件 }{\pageref{PrecisionLandNodes_8cpp}}{}
 \item\contentsline{section}{src/\+Tag/\mbox{\hyperlink{ArucoTagProcessor_8cpp}{Aruco\+Tag\+Processor.\+cpp}} \\*Ar\+Uco标记处理器实现文件 }{\pageref{ArucoTagProcessor_8cpp}}{}
 \item\contentsline{section}{src/\+Tag/\mbox{\hyperlink{LicenseProcessor_8cpp}{License\+Processor.\+cpp}} \\*号牌处理器实现文件 }{\pageref{LicenseProcessor_8cpp}}{}
-\item\contentsline{section}{src/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseController_8cpp}{Confirm\+License\+Controller.\+cpp}} \\*号牌确认控制器实现 }{\pageref{ConfirmLicenseController_8cpp}}{}
-\item\contentsline{section}{src/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}} \\*号牌确认状态节点实现文件 }{\pageref{ConfirmLicenseNodes_8cpp}}{}
-\item\contentsline{section}{src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandController_8cpp}{Precision\+Land\+Controller.\+cpp}} \\*精确着陆控制器实现文件 }{\pageref{PrecisionLandController_8cpp}}{}
-\item\contentsline{section}{src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}} \\*精确着陆状态节点实现文件 }{\pageref{PrecisionLandNodes_8cpp}}{}
 \end{DoxyCompactList}

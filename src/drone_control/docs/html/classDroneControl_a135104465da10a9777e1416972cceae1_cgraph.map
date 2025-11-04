@@ -1,0 +1,4 @@
+<map id="DroneControl::switch_mission" name="DroneControl::switch_mission">
+<area shape="rect" id="node1" title="切换当前任务" alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="212,13,412,39"/>
+</map>

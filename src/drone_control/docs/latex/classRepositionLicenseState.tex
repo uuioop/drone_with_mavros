@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Reposition\+License\+State\+:
-\nopagebreak
+Inheritance diagram for Reposition\+License\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Reposition\+License\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Reposition\+License\+State\+:
-\nopagebreak
+Collaboration diagram for Reposition\+License\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +30,7 @@ Collaboration diagram for Reposition\+License\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classRepositionLicenseState_a2dcd73cdd819d062230efad204289211}{Reposition\+License\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classRepositionLicenseState_a829934cdca525fa48c1a93a158ff5060}{Reposition\+License\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classRepositionLicenseState_a839b065d25921753d042df7b047cdded}{$\sim$\+Reposition\+License\+State}} ()=default
 \item 
@@ -56,11 +54,11 @@ std\+::tuple$<$ char, double $>$ \mbox{\hyperlink{classRepositionLicenseState_ae
 重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classRepositionLicenseState_a2dcd73cdd819d062230efad204289211}\label{classRepositionLicenseState_a2dcd73cdd819d062230efad204289211}} 
+\mbox{\Hypertarget{classRepositionLicenseState_a829934cdca525fa48c1a93a158ff5060}\label{classRepositionLicenseState_a829934cdca525fa48c1a93a158ff5060}} 
 \index{RepositionLicenseState@{RepositionLicenseState}!RepositionLicenseState@{RepositionLicenseState}}
 \index{RepositionLicenseState@{RepositionLicenseState}!RepositionLicenseState@{RepositionLicenseState}}
 \doxysubsubsection{\texorpdfstring{RepositionLicenseState()}{RepositionLicenseState()}}
-{\footnotesize\ttfamily Reposition\+License\+State\+::\+Reposition\+License\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Reposition\+License\+State\+::\+Reposition\+License\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})}
 
 
 
@@ -70,14 +68,14 @@ Reposition\+License\+State构造函数
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用\\
+{\em mission} & 所在任务引用\\
 \hline
 \end{DoxyParams}
 初始化重新定位状态节点，获取号牌处理器并设置超时时长
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用 \\
+{\em mission} & 所在任务引用 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classRepositionLicenseState_a839b065d25921753d042df7b047cdded}\label{classRepositionLicenseState_a839b065d25921753d042df7b047cdded}} 
@@ -101,7 +99,7 @@ Reposition\+License\+State构造函数
 
 进入重新定位状态时调用
 
-记录日志，计算新的移动向量，并更新控制器的移动方向 
+记录日志，计算新的移动向量，并更新号牌确认任务的移动方向 
 
 Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}.
 
@@ -143,10 +141,9 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -180,5 +177,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}}\end{DoxyCompactItemize}

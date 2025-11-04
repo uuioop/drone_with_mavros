@@ -1,8 +1,11 @@
 <map id="StatusMonitor::StatusMonitor" name="StatusMonitor::StatusMonitor">
-<area shape="rect" id="node1" title="构造函数" alt="" coords="5,143,217,170"/>
-<area shape="rect" id="node2" href="$classStatusMonitor.html#aab35b2d5c02c767a822a059d3e502368" title="全局位置消息回调函数" alt="" coords="273,5,434,47"/>
-<area shape="rect" id="node3" href="$classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d" title="IMU数据回调函数" alt="" coords="280,71,427,112"/>
-<area shape="rect" id="node4" href="$classStatusMonitor.html#ab44b211a6f2edbd83a58a34c2ddeba5b" title="着陆状态消息回调函数" alt="" coords="271,136,436,177"/>
-<area shape="rect" id="node5" href="$classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4" title="本地位置消息回调函数" alt="" coords="277,201,429,243"/>
-<area shape="rect" id="node6" href="$classStatusMonitor.html#a6dd5eb828b94287931a0b5c40b6c24e6" title="状态消息回调函数" alt="" coords="265,267,441,294"/>
+<area shape="rect" id="node1" title="构造函数" alt="" coords="5,228,217,255"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aea222c43dddd2f34e3d3e2d31c3f06b4" title="GPS位置消息回调函数" alt="" coords="270,5,437,32"/>
+<area shape="rect" id="node3" href="$classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d" title="IMU数据回调函数" alt="" coords="280,57,427,98"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html#ab44b211a6f2edbd83a58a34c2ddeba5b" title="着陆状态消息回调函数" alt="" coords="271,122,436,163"/>
+<area shape="rect" id="node5" href="$classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4" title="本地位置消息回调函数" alt="" coords="277,187,429,229"/>
+<area shape="rect" id="node6" href="$classStatusMonitor.html#a41b560aff8ebe76be0e5af4305c99a08" title="任务列表回调函数" alt="" coords="267,253,439,294"/>
+<area shape="rect" id="node7" href="$classStatusMonitor.html#a8847099319441b1e8d05cb9cc8af0f44" title="任务完成回调函数" alt="" coords="267,318,439,359"/>
+<area shape="rect" id="node8" href="$classStatusMonitor.html#adbc9dafa33e2d5e24634adc623a9c493" title="相对高度(Home点)回调函数" alt="" coords="284,383,423,425"/>
+<area shape="rect" id="node9" href="$classStatusMonitor.html#a6dd5eb828b94287931a0b5c40b6c24e6" title="状态消息回调函数" alt="" coords="265,449,441,476"/>
 </map>

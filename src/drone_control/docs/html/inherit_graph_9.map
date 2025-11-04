@@ -1,12 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classStateNode.html" title="状态节点基类" alt="" coords="5,208,96,235"/>
-<area shape="rect" id="node2" href="$classAlignOnGuideTagState.html" title="对准引导标签状态类 负责控制无人机对准到ArUco引导标签的中心位置" alt="" coords="153,5,320,32"/>
-<area shape="rect" id="node3" href="$classAlignOnPlatformTagState.html" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="144,56,329,83"/>
-<area shape="rect" id="node4" href="$classApproachGuideTagState.html" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="148,107,325,133"/>
-<area shape="rect" id="node5" href="$classConfirmLicenseState.html" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="158,157,315,184"/>
-<area shape="rect" id="node6" href="$classDescendState.html" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="181,208,293,235"/>
-<area shape="rect" id="node7" href="$classLandState.html" title="着陆状态类 负责控制无人机执行最终的着陆操作" alt="" coords="193,259,280,285"/>
-<area shape="rect" id="node8" href="$classRepositionLicenseState.html" title="重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试" alt="" coords="149,309,324,336"/>
-<area shape="rect" id="node9" href="$classSearchLicenseState.html" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="162,360,311,387"/>
-<area shape="rect" id="node10" href="$classSearchTagState.html" title="搜索标签状态类 负责控制无人机搜索并发现ArUco引导标签" alt="" coords="175,411,298,437"/>
+<area shape="rect" id="node1" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,119,32"/>
 </map>

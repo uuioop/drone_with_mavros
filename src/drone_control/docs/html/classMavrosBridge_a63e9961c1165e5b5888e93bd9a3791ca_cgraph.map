@@ -1,0 +1,6 @@
+<map id="MavrosBridge::upload_mission" name="MavrosBridge::upload_mission">
+<area shape="rect" id="node1" title="设置任务航点位置列表" alt="" coords="5,39,169,80"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="223,5,375,47"/>
+<area shape="rect" id="node4" href="$classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b" title="上传航点列表到飞控" alt="" coords="217,71,381,112"/>
+<area shape="rect" id="node3" href="$classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="429,5,584,47"/>
+</map>

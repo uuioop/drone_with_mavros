@@ -1,0 +1,8 @@
+<map id="MissionNode" name="MissionNode">
+<area shape="rect" id="node1" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="339,189,521,472"/>
+<area shape="rect" id="node3" href="$classConfirmLicenseMission.html" title="号牌确认任务类 继承自MissionNode基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="5,520,220,788"/>
+<area shape="rect" id="node4" href="$classGPSNavMission.html" title="GPS导航任务" alt="" coords="244,557,416,751"/>
+<area shape="rect" id="node5" href="$classIdleMission.html" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="440,564,620,744"/>
+<area shape="rect" id="node6" href="$classPrecisionLandMission.html" title="精确着陆任务类 继承自MissionNode基类，实现无人机基于ArUco标签的精确着陆控制逻辑" alt="" coords="645,527,853,781"/>
+<area shape="rect" id="node2" href="$classNodeBase.html" title="节点基类" alt="" coords="368,5,492,141"/>
+</map>

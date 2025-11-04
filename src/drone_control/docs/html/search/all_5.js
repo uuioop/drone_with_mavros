@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['image_5fframe_5fsize_122',['image_frame_size',['../structLicenseConfig.html#ad9f80672709fc4174857428735a938ad',1,'LicenseConfig']]],
-  ['imu_5fdata_5fcb_123',['imu_data_cb',['../classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d',1,'StatusMonitor']]],
-  ['is_5faligned_124',['is_aligned',['../classArucoTagProcessor.html#adcc21c5619797a337d1f70290d1e506f',1,'ArucoTagProcessor::is_aligned()'],['../classLicenseProcessor.html#af13f3d5ae0ccced549405f5a1b14772b',1,'LicenseProcessor::is_aligned()']]],
-  ['is_5farmed_125',['is_armed',['../classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1',1,'StatusMonitor']]],
-  ['is_5fconnected_126',['is_connected',['../classStatusMonitor.html#aa2410eeb8de71dcb00e8d7105d6cf97a',1,'StatusMonitor']]],
-  ['is_5ffinished_127',['is_finished',['../classController.html#af91ada6c2bd79d6b3d2d5c033b12c5b1',1,'Controller']]],
-  ['is_5flicense_5fno_5fvalid_128',['is_license_no_valid',['../classLicenseProcessor.html#a313cfa61be30832cb44dfcda57d06db8',1,'LicenseProcessor']]],
-  ['is_5fready_5ffor_5ffly_129',['is_ready_for_fly',['../classStatusMonitor.html#a53e32f033bfe3b8d8239737a201b1fa7',1,'StatusMonitor']]],
-  ['is_5ftimeout_130',['is_timeout',['../classStateNode.html#a5ff2f5fee9df9c19d2cf6eefa9b0be41',1,'StateNode']]],
-  ['is_5fvalid_131',['is_valid',['../structArucoTag.html#a37ff20c8908e31b47f7835655713811d',1,'ArucoTag::is_valid()'],['../classArucoTagProcessor.html#a54b70e6de83233fd0a85fe5256c440a6',1,'ArucoTagProcessor::is_valid()'],['../structLicenseInfo.html#ac089cd2a387806e6c893057be891d716',1,'LicenseInfo::is_valid()'],['../classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d',1,'LicenseProcessor::is_valid()']]]
+  ['idlemission_139',['IdleMission',['../classIdleMission.html',1,'IdleMission'],['../classIdleMission.html#a51d05e324190449745d11a87fc4168ff',1,'IdleMission::IdleMission()']]],
+  ['idlemission_2ecpp_140',['IdleMission.cpp',['../IdleMission_8cpp.html',1,'']]],
+  ['idlemission_2eh_141',['IdleMission.h',['../IdleMission_8h.html',1,'']]],
+  ['image_5fframe_5fsize_142',['image_frame_size',['../structLicenseConfig.html#ad9f80672709fc4174857428735a938ad',1,'LicenseConfig']]],
+  ['imu_5fdata_5fcb_143',['imu_data_cb',['../classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d',1,'StatusMonitor']]],
+  ['is_5faligned_144',['is_aligned',['../classArucoTagProcessor.html#adcc21c5619797a337d1f70290d1e506f',1,'ArucoTagProcessor::is_aligned()'],['../classLicenseProcessor.html#af13f3d5ae0ccced549405f5a1b14772b',1,'LicenseProcessor::is_aligned()']]],
+  ['is_5farmed_145',['is_armed',['../classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1',1,'StatusMonitor']]],
+  ['is_5fconnected_146',['is_connected',['../classStatusMonitor.html#aa2410eeb8de71dcb00e8d7105d6cf97a',1,'StatusMonitor']]],
+  ['is_5fgps_5ffixed_147',['is_gps_fixed',['../classStatusMonitor.html#af8b5ac1bf2119b5abf6c82828be23e6a',1,'StatusMonitor']]],
+  ['is_5flicense_5fno_5fvalid_148',['is_license_no_valid',['../classLicenseProcessor.html#a313cfa61be30832cb44dfcda57d06db8',1,'LicenseProcessor']]],
+  ['is_5fmission_5faborted_149',['is_mission_aborted',['../classStatusMonitor.html#a7697d36430b3eef8ac364b5799e8b87d',1,'StatusMonitor']]],
+  ['is_5fmission_5fcompleted_150',['is_mission_completed',['../classStatusMonitor.html#ad0ac15226e5f468fc23e054880303265',1,'StatusMonitor']]],
+  ['is_5fready_5ffor_5ffly_151',['is_ready_for_fly',['../classStatusMonitor.html#a53e32f033bfe3b8d8239737a201b1fa7',1,'StatusMonitor']]],
+  ['is_5frecognized_152',['is_recognized',['../classLicenseProcessor.html#ae137449e70ae5c6979f4b9b35788d1b3',1,'LicenseProcessor']]],
+  ['is_5ftimeout_153',['is_timeout',['../classStateNode.html#a5ff2f5fee9df9c19d2cf6eefa9b0be41',1,'StateNode']]],
+  ['is_5fvalid_154',['is_valid',['../structArucoTag.html#a37ff20c8908e31b47f7835655713811d',1,'ArucoTag::is_valid()'],['../classArucoTagProcessor.html#a54b70e6de83233fd0a85fe5256c440a6',1,'ArucoTagProcessor::is_valid()'],['../structLicenseInfo.html#ac089cd2a387806e6c893057be891d716',1,'LicenseInfo::is_valid()'],['../classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d',1,'LicenseProcessor::is_valid()']]]
 ];

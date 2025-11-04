@@ -1,0 +1,128 @@
+\hypertarget{classNodeBase}{}\doxysection{Node\+Base Class Reference}
+\label{classNodeBase}\index{NodeBase@{NodeBase}}
+
+
+节点基类  
+
+
+
+
+{\ttfamily \#include $<$Node\+Base.\+h$>$}
+
+
+
+Inheritance diagram for Node\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNodeBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Node\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classNodeBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodeBase_a8b29cce339eab89eed354ae8774eec65}{Node\+Base}} ()=default
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNodeBase_abbdfa42dcaeb43e7224084f37318c595}{$\sim$\+Node\+Base}} ()=default
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}{on\+\_\+enter}} ()=0
+\begin{DoxyCompactList}\small\item\em 进入节点时执行的函数 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNodeBase_a2f56336a670af1f962a449d42758595c}{on\+\_\+exit}} ()=0
+\begin{DoxyCompactList}\small\item\em 退出节点时执行的函数 \end{DoxyCompactList}\item 
+virtual std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}{on\+\_\+update}} ()=0
+\begin{DoxyCompactList}\small\item\em 更新节点时执行的函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+节点基类 
+
+所有状态机和任务机中的节点都应继承自此类，提供统一的接口。 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNodeBase_a8b29cce339eab89eed354ae8774eec65}\label{classNodeBase_a8b29cce339eab89eed354ae8774eec65}} 
+\index{NodeBase@{NodeBase}!NodeBase@{NodeBase}}
+\index{NodeBase@{NodeBase}!NodeBase@{NodeBase}}
+\doxysubsubsection{\texorpdfstring{NodeBase()}{NodeBase()}}
+{\footnotesize\ttfamily Node\+Base\+::\+Node\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+构造函数 
+
+\mbox{\Hypertarget{classNodeBase_abbdfa42dcaeb43e7224084f37318c595}\label{classNodeBase_abbdfa42dcaeb43e7224084f37318c595}} 
+\index{NodeBase@{NodeBase}!````~NodeBase@{$\sim$NodeBase}}
+\index{````~NodeBase@{$\sim$NodeBase}!NodeBase@{NodeBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$NodeBase()}{~NodeBase()}}
+{\footnotesize\ttfamily virtual Node\+Base\+::$\sim$\+Node\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}\label{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}} 
+\index{NodeBase@{NodeBase}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!NodeBase@{NodeBase}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily virtual void Node\+Base\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+进入节点时执行的函数 
+
+虚函数，派生类可以重写，用于初始化节点相关的变量和行为 
+
+Implemented in \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{State\+Node}}, \mbox{\hyperlink{classLandState_af2c37240588ecaa7412d9e317d5c728f}{Land\+State}}, \mbox{\hyperlink{classDescendState_a5d48743d70f39bb6a17c88880e3d935d}{Descend\+State}}, \mbox{\hyperlink{classAlignOnPlatformTagState_a03e484bd60450a9d09daba6af88cb795}{Align\+On\+Platform\+Tag\+State}}, \mbox{\hyperlink{classApproachGuideTagState_af29bb3b7189d7cc4c6efaac70d3bc922}{Approach\+Guide\+Tag\+State}}, \mbox{\hyperlink{classRepositionLicenseState_a03155c6789b00363f22d3a2794640e50}{Reposition\+License\+State}}, \mbox{\hyperlink{classConfirmLicenseState_a10267b3026ac5329dd56df0de475486f}{Confirm\+License\+State}}, \mbox{\hyperlink{classAlignOnGuideTagState_af6c20a79bec4a9fd58d735dc73aec73a}{Align\+On\+Guide\+Tag\+State}}, \mbox{\hyperlink{classConfirmLicenseMission_aa61dfdb1632c9a8b474da4c8c09e0c9f}{Confirm\+License\+Mission}}, \mbox{\hyperlink{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f}{Precision\+Land\+Mission}}, \mbox{\hyperlink{classGPSNavMission_a2f1f48325006a33848bf31853410363f}{G\+P\+S\+Nav\+Mission}}, \mbox{\hyperlink{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17}{Mission\+Node}}, \mbox{\hyperlink{classSearchTagState_afdfda239d47a65dbc8fb0f2b3ff13575}{Search\+Tag\+State}}, \mbox{\hyperlink{classSearchLicenseState_a976ddd05b5154ef6b2b0f8177224623d}{Search\+License\+State}}, and \mbox{\hyperlink{classIdleMission_a0beb3c3cc26a37b91f3e59ef52d014f7}{Idle\+Mission}}.
+
+\mbox{\Hypertarget{classNodeBase_a2f56336a670af1f962a449d42758595c}\label{classNodeBase_a2f56336a670af1f962a449d42758595c}} 
+\index{NodeBase@{NodeBase}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!NodeBase@{NodeBase}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily virtual void Node\+Base\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+退出节点时执行的函数 
+
+虚纯函数，派生类必须实现，用于清理节点相关的资源和行为 
+
+Implemented in \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}, \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{Mission\+Node}}, \mbox{\hyperlink{classLandState_a76407ac1403443fa4ae604afad7dc51b}{Land\+State}}, \mbox{\hyperlink{classDescendState_a0225b407efca8b737df018be306bd3e7}{Descend\+State}}, \mbox{\hyperlink{classAlignOnPlatformTagState_a7bb97c6a939c0322b99da65f3a258847}{Align\+On\+Platform\+Tag\+State}}, \mbox{\hyperlink{classApproachGuideTagState_a65f57b028f0659476705032b09c89af4}{Approach\+Guide\+Tag\+State}}, \mbox{\hyperlink{classRepositionLicenseState_a0e82fd9404af119652417940af732807}{Reposition\+License\+State}}, \mbox{\hyperlink{classConfirmLicenseState_a8a3a286e145af2a6774ec95fc27883ea}{Confirm\+License\+State}}, \mbox{\hyperlink{classAlignOnGuideTagState_aea4160e57acfe2b8520a88804d5ef660}{Align\+On\+Guide\+Tag\+State}}, \mbox{\hyperlink{classConfirmLicenseMission_a3dabb33440d77c2c34012293aa38e50c}{Confirm\+License\+Mission}}, \mbox{\hyperlink{classPrecisionLandMission_a2474daa2506e61781b8e443ec8da2b06}{Precision\+Land\+Mission}}, \mbox{\hyperlink{classGPSNavMission_a46550a8d5d26166aa07ad6c265626c11}{G\+P\+S\+Nav\+Mission}}, \mbox{\hyperlink{classSearchTagState_aa2c7f8744957218b5edad31f609a1dd6}{Search\+Tag\+State}}, \mbox{\hyperlink{classSearchLicenseState_ac67159bddb3023ab284711d1737d04ed}{Search\+License\+State}}, and \mbox{\hyperlink{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30}{Idle\+Mission}}.
+
+\mbox{\Hypertarget{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}\label{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}} 
+\index{NodeBase@{NodeBase}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!NodeBase@{NodeBase}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily virtual std\+::array$<$double,4$>$ Node\+Base\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+更新节点时执行的函数 
+
+虚函数，派生类可以重写，用于执行节点的主要逻辑
+
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double,4$>$ 包含x,y,z,yaw速度指令的数组 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+为了兼顾使用板外模式的状态（返回速度指令），任务及状态的更新函数都返回数组类型 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}, \mbox{\hyperlink{classLandState_a2aeb2224aa76fffb0181de050b7613e5}{Land\+State}}, \mbox{\hyperlink{classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20}{Descend\+State}}, \mbox{\hyperlink{classAlignOnPlatformTagState_a53485303e7c25a61afc9533c6dba47f1}{Align\+On\+Platform\+Tag\+State}}, \mbox{\hyperlink{classApproachGuideTagState_af4683b61821014fd6156ad44bd52db55}{Approach\+Guide\+Tag\+State}}, \mbox{\hyperlink{classRepositionLicenseState_a40a629b3fc375c4418692022567f0770}{Reposition\+License\+State}}, \mbox{\hyperlink{classConfirmLicenseState_aca1b10812f587026513f22100a40793c}{Confirm\+License\+State}}, \mbox{\hyperlink{classAlignOnGuideTagState_a5ca2f99e3c378d6848bdda603fb9573b}{Align\+On\+Guide\+Tag\+State}}, \mbox{\hyperlink{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1}{Mission\+Node}}, \mbox{\hyperlink{classConfirmLicenseMission_addccaaab98b57127b1d5c9ae325e23b5}{Confirm\+License\+Mission}}, \mbox{\hyperlink{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7}{Precision\+Land\+Mission}}, \mbox{\hyperlink{classGPSNavMission_ab509b50683832063050c891ac38b1f55}{G\+P\+S\+Nav\+Mission}}, \mbox{\hyperlink{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54}{Search\+Tag\+State}}, \mbox{\hyperlink{classSearchLicenseState_aaf18a8d2c7f56f8ad2a6ff2a662c1fe0}{Search\+License\+State}}, and \mbox{\hyperlink{classIdleMission_ae99afd2b2cb6e4d82e87e79e0fc958c9}{Idle\+Mission}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{NodeBase_8h}{Node\+Base.\+h}}\end{DoxyCompactItemize}

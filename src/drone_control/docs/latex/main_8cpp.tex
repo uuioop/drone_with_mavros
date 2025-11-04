@@ -7,8 +7,7 @@
 
 {\ttfamily \#include $<$clocale$>$}\newline
 {\ttfamily \#include \char`\"{}core/\+Drone\+Control.\+h\char`\"{}}\newline
-Include dependency graph for main.\+cpp\+:
-\nopagebreak
+Include dependency graph for main.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -54,17 +53,16 @@ int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int ar
 运行持续的控制循环，直到\+R\+O\+S节点关闭 
 \end{DoxyNote}
 创建异步旋转器 \begin{DoxyNote}{Note}
-参数2表示使用2个线程处理回调 
+使用2个线程处理回调，确保服务和话题回调能同时处理 
 
-多线程适合处理\+Status\+Monitor的多个订阅者
+多线程可以避免服务回调阻塞话题回调的执行
 \end{DoxyNote}
 主控制循环 \begin{DoxyNote}{Note}
 持续调用on\+\_\+update()方法，保持控制逻辑运行 
 
 当\+R\+O\+S节点关闭时退出循环
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

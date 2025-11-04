@@ -3,6 +3,7 @@
  * @brief MavrosBridge类的实现文件，提供与MAVROS通信的具体实现
  */
 #include <cmath>  // 用于 M_PI 常量
+#include <mavros_msgs/CommandCode.h>
 
 #include "core/MavrosBridge.h"
 #include "util/utils.h"
@@ -18,8 +19,10 @@ MavrosBridge::MavrosBridge(ros::NodeHandle& nh, StatusMonitor& status_monitor)
 {
     _arm_client = _nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
     _set_mode_client = _nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
+    _wp_clear_client = _nh.serviceClient<mavros_msgs::WaypointClear>("mavros/mission/clear");
+    _wp_push_client = _nh.serviceClient<mavros_msgs::WaypointPush>("mavros/mission/push");
+
     _local_pos_pub = _nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 10);
-    _global_pos_pub = _nh.advertise<geographic_msgs::GeoPoseStamped>("mavros/setpoint_position/global", 10);
     _body_vel_pub = _nh.advertise<mavros_msgs::PositionTarget>("mavros/setpoint_raw/local", 10);
 }
 
@@ -77,7 +80,15 @@ bool MavrosBridge::set_mode(const std::string& mode)
 {
     mavros_msgs::SetMode set_mode_srv;
     set_mode_srv.request.custom_mode = mode;
-    return callService<mavros_msgs::SetMode>(_set_mode_client, set_mode_srv, "/mavros/set_mode");
+    if (_set_mode_client.call(set_mode_srv) && set_mode_srv.response.mode_sent)
+    {
+        return true;
+    }
+    else
+    {
+        ROS_ERROR("Failed to set mode %s", mode.c_str());
+        return false;
+    }
 }
 
 /**
@@ -93,6 +104,38 @@ bool MavrosBridge::start_offboard_mode()
         _rate.sleep();
     }
     return set_mode("OFFBOARD");
+}
+
+/**
+ * @brief 清除当前航点列表
+ * @return 清除成功返回true
+ * @note 调用MAVROS的waypoint_clear服务
+ */
+bool MavrosBridge::clear_waypoints()
+{
+    _status_monitor.reset_mission_flags();
+    mavros_msgs::WaypointClear clear_srv;
+    return callService<mavros_msgs::WaypointClear>(_wp_clear_client, clear_srv, "/mavros/mission/clear");
+}
+
+/**
+ * @brief 上传航点列表到飞控
+ * @param waypoints 航点列表
+ * @return 上传成功返回true
+ * @note 调用MAVROS的waypoint_push服务
+ */
+bool MavrosBridge::upload_waypoints(const std::vector<mavros_msgs::Waypoint>& waypoints)
+{
+    if (waypoints.empty())
+    {
+        ROS_ERROR("Waypoint list is empty");
+        return false;
+    }
+    mavros_msgs::WaypointPush push_srv;
+    // 覆盖第一个航点
+    push_srv.request.start_index = 0;
+    push_srv.request.waypoints = waypoints;
+    return callService<mavros_msgs::WaypointPush>(_wp_push_client, push_srv, "/mavros/mission/push");
 }
 
 /**
@@ -173,6 +216,62 @@ bool MavrosBridge::set_position_local(const std::array<double, 4>& pos,const std
     }
 
     return publishMessage(_local_pos_pub, local_pos_msg, "odom");
+}
+
+bool MavrosBridge::upload_mission(const std::vector<mavros_msgs::Waypoint>& waypoints)
+{
+    // 清除当前航点列表
+    if(!clear_waypoints())
+    {
+        ROS_ERROR("Failed to clear waypoints");
+        return false;
+    }
+    // 上传新航点列表
+    if(!upload_waypoints(waypoints))
+    {
+        ROS_ERROR("Failed to upload waypoints");
+        return false;
+    }
+    return true;
+}
+
+bool MavrosBridge::upload_mission(const std::vector<std::array<double, 3>>& waypoint_positions)
+{
+    // 清除当前航点列表
+    if(!clear_waypoints())
+    {
+        ROS_ERROR("Failed to clear waypoints");
+        return false;
+    }
+    std::vector<mavros_msgs::Waypoint> waypoints;
+    for(int i=0;i<waypoint_positions.size();i++)
+    {
+        mavros_msgs::Waypoint waypoint;
+        waypoint.frame = mavros_msgs::Waypoint::FRAME_GLOBAL_REL_ALT;
+        // 第一个航点为起飞航点
+        if (i == 0)
+        {
+            waypoint.command = mavros_msgs::CommandCode::NAV_TAKEOFF;
+            waypoint.is_current = true;
+        }
+        else
+        {
+            waypoint.command = mavros_msgs::CommandCode::NAV_WAYPOINT;
+            waypoint.is_current = false;
+        }
+        waypoint.autocontinue = true;
+        waypoint.x_lat = waypoint_positions[i][0];
+        waypoint.y_long = waypoint_positions[i][1];
+        waypoint.z_alt = waypoint_positions[i][2];
+        waypoints.push_back(waypoint);
+    }
+    // 上传新航点列表
+    if(!upload_waypoints(waypoints))
+    {
+        ROS_ERROR("Failed to upload waypoints");
+        return false;
+    }
+    return true;
 }
 
 /**

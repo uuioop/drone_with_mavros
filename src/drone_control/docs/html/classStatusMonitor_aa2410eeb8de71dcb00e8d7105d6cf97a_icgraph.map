@@ -1,4 +1,6 @@
 <map id="StatusMonitor::is_connected" name="StatusMonitor::is_connected">
-<area shape="rect" id="node1" title="检查无人机是否已连接" alt="" coords="224,13,431,39"/>
-<area shape="rect" id="node2" href="$classMavrosBridge.html#a7a70c52e8e986a2c7a3cfeb5bfc82419" title="连接到飞控单元(FCU)" alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node1" title="检查无人机是否已连接" alt="" coords="475,46,681,73"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a7a70c52e8e986a2c7a3cfeb5bfc82419" title="连接到飞控单元(FCU)" alt="" coords="244,5,415,47"/>
+<area shape="rect" id="node3" href="$classIdleMission.html#a773446138cfd397f4978f26cf9636a00" title="处理启动任务机服务请求" alt="" coords="232,71,427,112"/>
+<area shape="rect" id="node4" href="$classIdleMission.html#a51d05e324190449745d11a87fc4168ff" title="构造函数" alt="" coords="5,78,184,105"/>
 </map>

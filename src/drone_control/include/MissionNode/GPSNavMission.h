@@ -6,6 +6,8 @@
 #pragma once
 
 #include <array>
+#include <vector>
+#include <mavros_msgs/Waypoint.h>
 
 #include "MissionNode/MissionNode.h"
 
@@ -52,14 +54,27 @@ public:
      * @brief 更新目标位置
      * @param position 新的目标位置，格式为{X, Y, Z}
      */
-    void update_target_position(double latitude_deg, double longitude_deg, double absolute_altitude_m)
+    void set_target_position(double latitude_deg, double longitude_deg, double relative_altitude_m)
     {
-        _target_position = {latitude_deg, longitude_deg, absolute_altitude_m};
+        _target_position = {latitude_deg, longitude_deg, relative_altitude_m};
     }
 
 private:
     /**
-     * @brief 目标位置数组 [纬度(度), 经度(度), 绝对高度(米)]
+     * @brief 目标位置数组 [纬度(度), 经度(度), 相对高度(米)]
      */
     std::array<double, 3> _target_position;
+    /**
+     * @brief 任务航点列表
+     */
+    std::vector<mavros_msgs::Waypoint> waypoints;
+    /**
+     * @brief 任务航点位置列表，每个元素为{纬度(度), 经度(度), 相对高度(米)}
+     */
+    std::vector<std::array<double, 3>> _waypoint_positions;
+private:
+    /**
+     * @brief 上传任务航点到无人机
+     */
+    void upload_mission();
 };

@@ -69,28 +69,57 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 主要功能</h1>
 <ul>
-<li><b>多控制器架构</b>: 系统被设计为可以轻松切换不同的高级控制器，以执行不同的任务。<ul>
-<li><code><a class="el" href="classMissionNavController.html" title="任务导航控制器">MissionNavController</a></code>: 执行基于 GPS 航点的任务。</li>
-<li><code><a class="el" href="classConfirmLicenseController.html" title="号牌确认控制器类 继承自Controller基类，实现无人机对目标号牌的识别和确认控制逻辑">ConfirmLicenseController</a></code>: 使用视觉识别技术搜索并确认特定号牌。</li>
-<li><code><a class="el" href="classPrecisionLandController.html" title="精确着陆控制器类 继承自Controller基类，实现无人机基于ArUco标签的精确着陆控制逻辑">PrecisionLandController</a></code>: 利用 ArUco 标记实现高精度的视觉着陆。</li>
+<li><b>任务模式架构</b>: 系统采用完整的任务模式设计，每个任务都是独立的执行单元，可以轻松切换不同的任务模式。<ul>
+<li><code><a class="el" href="classIdleMission.html" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求">IdleMission</a></code>: 空闲任务模式，作为系统的默认任务状态。</li>
+<li><code><a class="el" href="classGPSNavMission.html" title="GPS导航任务">GPSNavMission</a></code>: GPS 导航任务模式，负责根据预定义的航点序列执行导航。</li>
+<li><code><a class="el" href="classConfirmLicenseMission.html" title="号牌确认任务类 继承自MissionNode基类，实现无人机对目标号牌的识别和确认控制逻辑">ConfirmLicenseMission</a></code>: 号牌确认任务模式，负责搜索并确认目标号牌(当前版本未实现)。</li>
+<li><code><a class="el" href="classPrecisionLandMission.html" title="精确着陆任务类 继承自MissionNode基类，实现无人机基于ArUco标签的精确着陆控制逻辑">PrecisionLandMission</a></code>: 精准降落任务模式，利用 ArUco 标记实现高精度的视觉着陆。</li>
+<li>其他任务模式正在开发中，将集成GPS导航、精准降落和号牌确认等功能。</li>
 </ul>
 </li>
-<li><b>状态机驱动</b>: 每个控制器内部都使用状态机（FSM）来管理其复杂的逻辑流程，使得任务执行过程清晰、稳定且易于扩展。</li>
+<li><b>状态机驱动</b>: 每个任务内部都使用状态机（FSM）来管理其复杂的逻辑流程，使得任务执行过程清晰、稳定且易于扩展。</li>
 <li><b>MAVROS 通信</b>: 通过 <code><a class="el" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口">MavrosBridge</a></code> 与飞控进行底层通信，负责模式切换、解锁/上锁以及发送速度/位置指令。</li>
 <li><b>硬件抽象</b>: <code><a class="el" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息">StatusMonitor</a></code> 类订阅了所有必要的 MAVROS 话题，为上层应用提供了统一、线程安全的状态接口。</li>
 <li><b>视觉处理</b>: 支持 ArUco 标记检测和号牌识别，用于精确导航和任务确认。</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+功能实现状态</h1>
+<ul>
+<li>✅ <b>精准降落</b>: 已实现，支持基于 ArUco 标记的高精度视觉着陆</li>
+<li>✅ <b>GPS导航</b>: 已实现，支持基于 GPS 航点的任务执行</li>
+<li>⏳ <b>号牌确认</b>: 等待号牌模型确定后实现</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+使用方法</h1>
+<p>系统支持两种使用模式：</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+模式一：直接精准降落</h2>
+<p>直接启动精准降落模式，无人机将在当前位置附近搜索 ArUco 标记并执行精准降落：</p>
+<div class="fragment"><div class="line"># 在单独终端中启动服务调用</div>
+<div class="line">rosservice call /start_flight 0 0 0 0 true</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+模式二：GPS导航后精准降落</h2>
+<p>先执行GPS导航到指定位置，然后自动切换到精准降落模式：</p>
+<div class="fragment"><div class="line"># 在单独终端中启动服务调用，只需提供前两个参数（经纬度）</div>
+<div class="line">rosservice call /start_flight 47.3979711 8.5461636 0 0 false</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+参数说明</h2>
+<ul>
+<li>参数1-2: 目标位置的纬度和经度（单位：度）</li>
+<li>参数3-4: 目标高度和偏航角（当前版本未使用，设为0）</li>
+<li>参数5: 是否直接精准降落（true=直接降落，false=先GPS导航再降落）</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
 系统架构</h1>
 <p>系统采用分层架构设计：</p>
 <ol type="1">
 <li><b>底层通信层</b>: 由 <code><a class="el" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口">MavrosBridge</a></code> 负责与 PX4 飞控通信</li>
 <li><b>状态监控层</b>: 由 <code><a class="el" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息">StatusMonitor</a></code> 提供统一的状态访问接口</li>
-<li><b>控制器层</b>: 包含多个高级控制器，如 <code><a class="el" href="classMissionNavController.html" title="任务导航控制器">MissionNavController</a></code>、<code><a class="el" href="classConfirmLicenseController.html" title="号牌确认控制器类 继承自Controller基类，实现无人机对目标号牌的识别和确认控制逻辑">ConfirmLicenseController</a></code> 等</li>
-<li><b>状态机层</b>: 每个控制器内部使用状态机管理复杂任务流程</li>
+<li><b>任务层</b>: 包含完整的任务模式，如 <code><a class="el" href="classIdleMission.html" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求">IdleMission</a></code> 等</li>
+<li><b>状态机层</b>: 每个任务内部使用状态机管理复杂任务流程</li>
 <li><b>工具层</b>: 提供 ArUco 标记处理、号牌识别等辅助功能</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 项目依赖</h1>
 <ul>
 <li>ROS Noetic</li>
@@ -98,39 +127,46 @@ $(function() {
 <li>MAVROS 包</li>
 <li>OpenCV（用于视觉处理）</li>
 <li>Doxygen（用于文档生成）</li>
-<li>SQLite（用于数据存储,还未使用）</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 项目结构</h1>
 <ul>
 <li><code>/include</code>: 包含所有头文件 (<code>.h</code>)。<ul>
-<li><code>/core</code>: 核心控制类，如 <code><a class="el" href="classDroneControl.html">DroneControl</a></code>, <code><a class="el" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口">MavrosBridge</a></code>, <code><a class="el" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息">StatusMonitor</a></code>。</li>
-<li><code>/fsm</code>: 状态机 (<code><a class="el" href="classStateMachine.html" title="状态机类">StateMachine</a></code>) 和状态节点 (<code><a class="el" href="classStateNode.html" title="状态节点基类">StateNode</a></code>) 的基类。</li>
-<li><code>/VisualNav</code>: 视觉导航相关的控制器和状态定义。</li>
-<li><code>/GPSNav</code>: GPS 导航相关的控制器定义。</li>
+<li><code>/core</code>: 核心控制类，如 <code><a class="el" href="classDroneControl.html" title="无人机控制类">DroneControl</a></code>, <code><a class="el" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口">MavrosBridge</a></code>, <code><a class="el" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息">StatusMonitor</a></code>。</li>
+<li><code>/MissionNode</code>: 任务节点基类和具体任务实现。</li>
+<li><code>/StateNode</code>: 状态机节点定义。</li>
 <li><code>/Tag</code>: ArUco 标记和号牌处理的相关工具类。</li>
 <li><code>/util</code>: 通用工具类，如数学工具函数和 SQLite 数据库操作。</li>
 </ul>
 </li>
-<li><code>/src</code>: 包含所有源文件 (<code>.cpp</code>)，目录结构与 <code>include</code> 对应。</li>
+<li><code>/src</code>: 包含所有源文件 (<code>.cpp</code>)，目录结构与 <code>include</code> 对应。<ul>
+<li><code>/core</code>: 核心控制类实现。</li>
+<li><code>/MissionNode</code>: 任务节点具体实现。</li>
+<li><code>/StateNode</code>: 状态机节点实现。</li>
+<li><code>/Tag</code>: 视觉处理工具实现。</li>
+<li><code><a class="el" href="main_8cpp.html" title="无人机控制节点主入口文件">main.cpp</a></code>: 程序入口点。</li>
+</ul>
+</li>
+<li><code>/launch</code>: ROS launch 文件，如 <code>gazebo.launch</code>。</li>
 <li><code>/docs</code>: Doxygen 生成的文档输出目录，包含 HTML 和 LaTeX 格式的文档。</li>
 <li><code><a class="el" href="CMakeLists_8txt.html">CMakeLists.txt</a></code>: 项目构建配置文件</li>
 <li><code>package.xml</code>: ROS 包描述文件</li>
 <li><code>Doxyfile</code>: Doxygen 文档生成配置文件</li>
+<li><code><a class="el" href="README_8md.html">README.md</a></code>: 项目说明文档</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 文档生成</h1>
 <p>使用 Doxygen 生成项目文档：</p>
 <div class="fragment"><div class="line">cd /home/colu/catkin_ws/src/drone_control</div>
 <div class="line">doxygen Doxyfile</div>
 </div><!-- fragment --><p>生成的文档将位于 <code>/docs/html</code> 目录中。</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 许可证</h1>
 <p>[在此添加许可证信息]</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 贡献指南</h1>
 <p>欢迎提交问题报告和功能请求。如需贡献代码，请提交 Pull Request。</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 联系方式</h1>
 <p>[在此添加项目维护者的联系方式] </p>
 </div></div><!-- PageDoc -->

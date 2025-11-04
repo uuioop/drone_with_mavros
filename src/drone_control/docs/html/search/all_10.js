@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['_7ealignonguidetagstate_219',['~AlignOnGuideTagState',['../classAlignOnGuideTagState.html#a05d856af987c44dc33258d4ae1190ece',1,'AlignOnGuideTagState']]],
-  ['_7ealignonplatformtagstate_220',['~AlignOnPlatformTagState',['../classAlignOnPlatformTagState.html#aa1f7293e8f9c8c21b9e6d0f3ef60bce7',1,'AlignOnPlatformTagState']]],
-  ['_7eapproachguidetagstate_221',['~ApproachGuideTagState',['../classApproachGuideTagState.html#a00b27306f488000c9cb77bf74a13bd20',1,'ApproachGuideTagState']]],
-  ['_7earucotagprocessor_222',['~ArucoTagProcessor',['../classArucoTagProcessor.html#a584fafed502cd5fa21691c1cbcf11250',1,'ArucoTagProcessor']]],
-  ['_7econfirmlicensecontroller_223',['~ConfirmLicenseController',['../classConfirmLicenseController.html#a89b3c1e459d28132b40a4c85067828bb',1,'ConfirmLicenseController']]],
-  ['_7econfirmlicensestate_224',['~ConfirmLicenseState',['../classConfirmLicenseState.html#a88af3bb6e63bfa51937f6ef26d481fba',1,'ConfirmLicenseState']]],
-  ['_7econtroller_225',['~Controller',['../classController.html#a8d16a7a97c266dc0d5aa5685c4dcdd89',1,'Controller']]],
-  ['_7edescendstate_226',['~DescendState',['../classDescendState.html#ab734ac6e23ad7a8b1e685372547c054a',1,'DescendState']]],
-  ['_7edronecontrol_227',['~DroneControl',['../classDroneControl.html#a80167369cb14c68fc2f088c44f98f5e0',1,'DroneControl']]],
-  ['_7elandstate_228',['~LandState',['../classLandState.html#a5c28cd0a8c2c4caadd7dcc62ae7b59b2',1,'LandState']]],
-  ['_7elicenseprocessor_229',['~LicenseProcessor',['../classLicenseProcessor.html#ae480a9d5180cd06be50bd32461552a77',1,'LicenseProcessor']]],
-  ['_7emavrosbridge_230',['~MavrosBridge',['../classMavrosBridge.html#acf771a52097c415bc8832797ea0885c6',1,'MavrosBridge']]],
-  ['_7emissionnavcontroller_231',['~MissionNavController',['../classMissionNavController.html#acb15b815a60ba9f26347ebcaaa69fa81',1,'MissionNavController']]],
-  ['_7eprecisionlandcontroller_232',['~PrecisionLandController',['../classPrecisionLandController.html#ac8908be0e71163c249d3cdd3d5dc728c',1,'PrecisionLandController']]],
-  ['_7erepositionlicensestate_233',['~RepositionLicenseState',['../classRepositionLicenseState.html#a839b065d25921753d042df7b047cdded',1,'RepositionLicenseState']]],
-  ['_7esearchlicensestate_234',['~SearchLicenseState',['../classSearchLicenseState.html#a2391a827541adb016dfaa10fb09a59e7',1,'SearchLicenseState']]],
-  ['_7esearchtagstate_235',['~SearchTagState',['../classSearchTagState.html#a0e56d1859f3bf6e264f3f1abbaa7c385',1,'SearchTagState']]],
-  ['_7estatemachine_236',['~StateMachine',['../classStateMachine.html#a93d66cb2a89b186789d655a08b02674e',1,'StateMachine']]],
-  ['_7estatenode_237',['~StateNode',['../classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270',1,'StateNode']]],
-  ['_7estatusmonitor_238',['~StatusMonitor',['../classStatusMonitor.html#ae3373536aee5926854598781a56f7462',1,'StatusMonitor']]]
+  ['waypoints_247',['waypoints',['../classGPSNavMission.html#a294122f478e4cd6501bd9e80e46d4ae6',1,'GPSNavMission']]]
 ];

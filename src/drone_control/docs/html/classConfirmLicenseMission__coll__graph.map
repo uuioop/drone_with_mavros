@@ -1,0 +1,10 @@
+<map id="ConfirmLicenseMission" name="ConfirmLicenseMission">
+<area shape="rect" id="node1" title="号牌确认任务类 继承自MissionNode基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="587,1548,801,1787"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="217,1247,400,1485"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="5,1041,129,1177"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="239,5,418,493"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="240,556,417,971"/>
+<area shape="rect" id="node6" href="$classDroneControl.html" title="无人机控制类" alt="" coords="453,1033,609,1184"/>
+<area shape="rect" id="node7" href="$classNodeMachine.html" title="节点机基类" alt="" coords="625,666,771,861"/>
+<area shape="rect" id="node8" href="$structLicenseConfig.html" title="号牌配置结构体" alt="" coords="732,1305,909,1427"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="LicenseProcessor::is_valid" name="LicenseProcessor::is_valid">
 <area shape="rect" id="node1" title="检查当前号牌信息是否有效" alt="" coords="5,35,159,76"/>
-<area shape="rect" id="node2" href="$classLicenseProcessor.html#a075134905e6ca1b4a495018a1ab03566" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
+<area shape="rect" id="node2" href="$classLicenseProcessor.html#a339109baf10b973d08cf2882fa49aeda" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
 <area shape="rect" id="node3" href="$structLicenseInfo.html#ac089cd2a387806e6c893057be891d716" title="检查号牌数据是否有效" alt="" coords="219,71,374,98"/>
 </map>

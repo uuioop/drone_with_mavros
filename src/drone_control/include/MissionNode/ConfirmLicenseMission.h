@@ -1,3 +1,8 @@
+/**
+ * @file ConfirmLicenseMission.h
+ * @brief 号牌确认任务头文件
+ * 负责管理无人机对目标号牌的搜索、确认和重新定位过程
+ */
 #pragma once
 
 #include <memory>
@@ -6,12 +11,6 @@
 #include "core/NodeMachine.h"
 #include "Tag/License.h"
 #include "Tag/LicenseProcessor.h"
-
-/**
- * @file ConfirmLicenseMission.h
- * @brief 号牌确认任务头文件
- * 负责管理无人机对目标号牌的搜索、确认和重新定位过程
- */
 
 /**
  * @class ConfirmLicenseMission

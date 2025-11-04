@@ -64,9 +64,6 @@ $(function() {
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index__5F"></a>- _ -</h3><ul>
-<li>_active_controller
-: <a class="el" href="classDroneControl.html#af8af12910c06146e861c754d78f8d013">DroneControl</a>
-</li>
 <li>_align_timer
 : <a class="el" href="classArucoTagProcessor.html#aef7b4b750698d472443dad5cade1a6ea">ArucoTagProcessor</a>
 </li>
@@ -88,27 +85,26 @@ $(function() {
 <li>_connected
 : <a class="el" href="classStatusMonitor.html#add5e3ac3cbb0e98f158c0ba7d5fbfb3e">StatusMonitor</a>
 </li>
-<li>_controller
-: <a class="el" href="classStateNode.html#ae3156769eab1071dfeb5123f043c1a50">StateNode</a>
-</li>
-<li>_controller_pool
-: <a class="el" href="classDroneControl.html#a88d84f132fe54076d02fa227da93b599">DroneControl</a>
-</li>
 <li>_current_mode
 : <a class="el" href="classStatusMonitor.html#af4be51b26d3f2ee44bfd23082b84cd2e">StatusMonitor</a>
 </li>
+<li>_current_node
+: <a class="el" href="classNodeMachine.html#adfdcbda4f2fa0945b621c968b6c00806">NodeMachine</a>
+</li>
 <li>_current_state
-: <a class="el" href="classStateMachine.html#aa47accb8dbddf721e80aa545fd1e87bf">StateMachine</a>
-, <a class="el" href="classStatusMonitor.html#aff499596c1d6189f63f086d62a130554">StatusMonitor</a>
+: <a class="el" href="classStatusMonitor.html#aff499596c1d6189f63f086d62a130554">StatusMonitor</a>
 </li>
 <li>_down_tag_config
-: <a class="el" href="classPrecisionLandController.html#a573486de05e462126c71e97467833539">PrecisionLandController</a>
+: <a class="el" href="classPrecisionLandMission.html#a9f8d1a428a7c7804fd892f32488a48ef">PrecisionLandMission</a>
 </li>
 <li>_down_tag_processor
 : <a class="el" href="classAlignOnPlatformTagState.html#aeebf9aabb117a2db9148d91902e18987">AlignOnPlatformTagState</a>
 , <a class="el" href="classApproachGuideTagState.html#abee4ad888e9137a5f17e765ac8823379">ApproachGuideTagState</a>
 , <a class="el" href="classDescendState.html#a8999e688703cc86496fa499b8d206905">DescendState</a>
-, <a class="el" href="classPrecisionLandController.html#af81a67784cf1ea7dce790593e8850cb3">PrecisionLandController</a>
+, <a class="el" href="classPrecisionLandMission.html#af48793faaa40ccea029918b33c6952f7">PrecisionLandMission</a>
+</li>
+<li>_drone_control
+: <a class="el" href="classMissionNode.html#aaf7305c9f0bc752a21446588e37fd250">MissionNode</a>
 </li>
 <li>_entry_time
 : <a class="el" href="classStateNode.html#a091d0085239e0fad335a033e7381f210">StateNode</a>
@@ -120,25 +116,34 @@ $(function() {
 : <a class="el" href="classArucoTagProcessor.html#af854973d2fc22f14e839a271be7bb965">ArucoTagProcessor</a>
 </li>
 <li>_front_tag_config
-: <a class="el" href="classPrecisionLandController.html#ad76adb6f369627eaaa1708a98a268a30">PrecisionLandController</a>
+: <a class="el" href="classPrecisionLandMission.html#a24559fcdd5277877f350c15e9126b838">PrecisionLandMission</a>
 </li>
 <li>_front_tag_processor
 : <a class="el" href="classAlignOnGuideTagState.html#ac6380bc3071ef33a2cbf3b4e5bc6aed5">AlignOnGuideTagState</a>
 , <a class="el" href="classApproachGuideTagState.html#a76efe16de8aba2d5079597a2d406c202">ApproachGuideTagState</a>
-, <a class="el" href="classPrecisionLandController.html#a8848c30c55f06e025d00bcb6cfa578ef">PrecisionLandController</a>
+, <a class="el" href="classPrecisionLandMission.html#a10c5bbcbd73d7ae31088c557468b8909">PrecisionLandMission</a>
 , <a class="el" href="classSearchTagState.html#a635310f5a3fa9c6371302208f50509fd">SearchTagState</a>
 </li>
 <li>_global_pos
-: <a class="el" href="classStatusMonitor.html#a81d91b2d229258195e1d2ff3ebb51c84">StatusMonitor</a>
+: <a class="el" href="classStatusMonitor.html#afe91817c3c1c3a1a3ac1807a971a7df1">StatusMonitor</a>
 </li>
-<li>_global_pos_pub
-: <a class="el" href="classMavrosBridge.html#ad10b9dc75db43605a1af5d5332451410">MavrosBridge</a>
+<li>_gps_received_fix
+: <a class="el" href="classStatusMonitor.html#a4f3d8610a5a99ca6bf74127a018a6f3d">StatusMonitor</a>
 </li>
-<li>_global_pos_sub
-: <a class="el" href="classStatusMonitor.html#a134647fed34f8fdb045f7dceafb6ff2a">StatusMonitor</a>
+<li>_gps_sub
+: <a class="el" href="classStatusMonitor.html#a773f1ec99b399432b9ee1eee02f6c3da">StatusMonitor</a>
 </li>
 <li>_imu_data_sub
 : <a class="el" href="classStatusMonitor.html#aa7abda62b316401a98aff1107d8896b4">StatusMonitor</a>
+</li>
+<li>_is_finished
+: <a class="el" href="classMissionNode.html#aeae824c1572f7df08623c40902cd1126">MissionNode</a>
+</li>
+<li>_is_for_fly
+: <a class="el" href="classMissionNode.html#a031953e02ecef3de61b50f264a56f0e6">MissionNode</a>
+</li>
+<li>_is_running
+: <a class="el" href="classIdleMission.html#afa128c97a555cb374e340453c3c0c14a">IdleMission</a>
 </li>
 <li>_is_started
 : <a class="el" href="classArucoTagProcessor.html#a23fdeecdba02495187b74fe2b617f764">ArucoTagProcessor</a>
@@ -154,17 +159,17 @@ $(function() {
 : <a class="el" href="classStatusMonitor.html#a9ce27e48b8ddd7832201880067813126">StatusMonitor</a>
 </li>
 <li>_license_config
-: <a class="el" href="classConfirmLicenseController.html#ae2482574884f8f9a83f1afebf46f2d5e">ConfirmLicenseController</a>
+: <a class="el" href="classConfirmLicenseMission.html#a77754da8064a18c349329ffb05ddae15">ConfirmLicenseMission</a>
 , <a class="el" href="classLicenseProcessor.html#a9d0c9d50954dac7c0f6d133f42420b3c">LicenseProcessor</a>
+</li>
+<li>_license_info
+: <a class="el" href="classLicenseProcessor.html#aafd53cad3e170444dd2b594eb55c8b64">LicenseProcessor</a>
 </li>
 <li>_license_info_stable
 : <a class="el" href="classLicenseProcessor.html#acb4745d71a28e374014fdc7e8423f460">LicenseProcessor</a>
 </li>
-<li>_license_no
-: <a class="el" href="classLicenseProcessor.html#a7532b99c060b6eeaf7dc75a2e23754f1">LicenseProcessor</a>
-</li>
 <li>_license_processor
-: <a class="el" href="classConfirmLicenseController.html#acc351971539df9c8b731427a7e786bb1">ConfirmLicenseController</a>
+: <a class="el" href="classConfirmLicenseMission.html#a8cb20a4d972a80119d8fc6d9bf78d006">ConfirmLicenseMission</a>
 , <a class="el" href="classConfirmLicenseState.html#a8d8d6b5f795a970ccd1983d92d5e0a24">ConfirmLicenseState</a>
 , <a class="el" href="classRepositionLicenseState.html#ad740ffe876a94865047531d0a2d2f3dc">RepositionLicenseState</a>
 , <a class="el" href="classSearchLicenseState.html#a5cdc12ff4a024d43892dab302eebdd54">SearchLicenseState</a>
@@ -182,42 +187,75 @@ $(function() {
 : <a class="el" href="classStatusMonitor.html#a889a4fb2368093f9eba35c3945491023">StatusMonitor</a>
 </li>
 <li>_mavros_bridge
-: <a class="el" href="classController.html#a152ecb136bfeb988346ca20921c52f69">Controller</a>
-, <a class="el" href="classDroneControl.html#aac8cdffb3eb493afffa55cad78f8e2d0">DroneControl</a>
+: <a class="el" href="classDroneControl.html#aac8cdffb3eb493afffa55cad78f8e2d0">DroneControl</a>
+, <a class="el" href="classMissionNode.html#a2264632994a5827eee9f82d59d285ebd">MissionNode</a>
+</li>
+<li>_mission
+: <a class="el" href="classStateNode.html#a91f3ac220b3935abbb4179773223eeb8">StateNode</a>
+</li>
+<li>_mission_aborted
+: <a class="el" href="classStatusMonitor.html#a3b79aa724c45c4f85ed133210b2361e9">StatusMonitor</a>
+</li>
+<li>_mission_completed
+: <a class="el" href="classStatusMonitor.html#a57c467a29131f9234a32d5fc69c6ae63">StatusMonitor</a>
+</li>
+<li>_mission_list_sub
+: <a class="el" href="classStatusMonitor.html#a6b746484c7a679c68c2b3f087595a2fd">StatusMonitor</a>
+</li>
+<li>_mission_machine
+: <a class="el" href="classDroneControl.html#a152c6c4e1a0df1b1313dbe0cc0092c8e">DroneControl</a>
+</li>
+<li>_mission_reached_sub
+: <a class="el" href="classStatusMonitor.html#a4a3d756a575e63e62ee8f5e89ad7d00c">StatusMonitor</a>
 </li>
 <li>_move_vector
-: <a class="el" href="classConfirmLicenseController.html#ab1327b779d93a446a583c404f7288739">ConfirmLicenseController</a>
+: <a class="el" href="classConfirmLicenseMission.html#a14a410cc182533d9531a77ce26e0c8e6">ConfirmLicenseMission</a>
 , <a class="el" href="classSearchLicenseState.html#aaba74243ed3dc3c2f19a1312e6f988ad">SearchLicenseState</a>
 </li>
 <li>_need_init
-: <a class="el" href="classStateMachine.html#a9728b94ee6c58b0622223107634bc2cd">StateMachine</a>
+: <a class="el" href="classNodeMachine.html#a8447eb4fedb82cc96abbcf3454aca56f">NodeMachine</a>
 </li>
 <li>_new_move_vector
 : <a class="el" href="classRepositionLicenseState.html#ae23eb4a09696247cef071bc3c3b3aebb">RepositionLicenseState</a>
 </li>
+<li>_next_mission_name
+: <a class="el" href="classMissionNode.html#a021dc8272cc1a96bd6d9c49072473c86">MissionNode</a>
+</li>
 <li>_nh
 : <a class="el" href="classArucoTagProcessor.html#a86fc16595788f9e950c5084ce28fec66">ArucoTagProcessor</a>
-, <a class="el" href="classController.html#a9bd74aeff857a607c75feb461520663f">Controller</a>
 , <a class="el" href="classDroneControl.html#aa714c9a649544b377cda14ef5b891c47">DroneControl</a>
 , <a class="el" href="classLicenseProcessor.html#a1968a1473d21514fa5030b2b929db3fe">LicenseProcessor</a>
 , <a class="el" href="classMavrosBridge.html#aae2015013b7cad37b28f31e08944eba8">MavrosBridge</a>
+, <a class="el" href="classMissionNode.html#a213b42465d997d4b3bb1c43f271a8e52">MissionNode</a>
 , <a class="el" href="classStatusMonitor.html#a4fafc3bf8ac75e61f7d9b096e3131a7c">StatusMonitor</a>
+</li>
+<li>_node_pool
+: <a class="el" href="classNodeMachine.html#add602019c24b7645b0ca7e18601cfcf8">NodeMachine</a>
 </li>
 <li>_orientation
 : <a class="el" href="classStatusMonitor.html#a6cdfb5b3a25d0426652e916d22a7454c">StatusMonitor</a>
 </li>
 <li>_rate
-: <a class="el" href="classDroneControl.html#a80fcfc5241b11ea2d2728c31da52401d">DroneControl</a>
-, <a class="el" href="classMavrosBridge.html#ab27aeb0ad1b611bb96fe07b4f907ceab">MavrosBridge</a>
+: <a class="el" href="classMavrosBridge.html#ab27aeb0ad1b611bb96fe07b4f907ceab">MavrosBridge</a>
+, <a class="el" href="classMissionNode.html#a18d8ba39261ff48154a3d12fa601c530">MissionNode</a>
+</li>
+<li>_reached_waypoint_index
+: <a class="el" href="classStatusMonitor.html#a337e760e279c42754e5e75c0723bdcc1">StatusMonitor</a>
 </li>
 <li>_rejected_plates
 : <a class="el" href="classLicenseProcessor.html#a51795b51b757431f04e43cae0ef33795">LicenseProcessor</a>
 </li>
+<li>_rel_alt
+: <a class="el" href="classStatusMonitor.html#a2b3284da37ac6c0a94b1f38e73aa9fa6">StatusMonitor</a>
+</li>
+<li>_rel_alt_sub
+: <a class="el" href="classStatusMonitor.html#ae77b728c0c2df9e43f67d84c0663d80b">StatusMonitor</a>
+</li>
+<li>_required_flight_mode
+: <a class="el" href="classMissionNode.html#a86f75fc11322704c3952dd6db99648b6">MissionNode</a>
+</li>
 <li>_required_stability_count
 : <a class="el" href="classLicenseProcessor.html#a3015be56a12d538a360eaecb9798d073">LicenseProcessor</a>
-</li>
-<li>_set_entry_service
-: <a class="el" href="classDroneControl.html#a573fd584251de1ab9ca4b15f3a32a54b">DroneControl</a>
 </li>
 <li>_set_mode_client
 : <a class="el" href="classMavrosBridge.html#ad29b4b290b1a1da58491eba4cb97415f">MavrosBridge</a>
@@ -225,20 +263,20 @@ $(function() {
 <li>_stability_counter
 : <a class="el" href="classLicenseProcessor.html#a51992bcc7c9d2c5954586b2aec054113">LicenseProcessor</a>
 </li>
-<li>_state_machine
-: <a class="el" href="classConfirmLicenseController.html#a47f47833a32b3c152b4d568c1459966b">ConfirmLicenseController</a>
-, <a class="el" href="classPrecisionLandController.html#a4e6efd6c9055ad583762e29d83ce917b">PrecisionLandController</a>
+<li>_start_mission_service
+: <a class="el" href="classIdleMission.html#a7e24cb1c98dd0882aa377b2b2eab6494">IdleMission</a>
 </li>
-<li>_state_pool
-: <a class="el" href="classStateMachine.html#a77b65e83da128a9aa9718b095858901d">StateMachine</a>
+<li>_state_machine
+: <a class="el" href="classConfirmLicenseMission.html#a07a50e90a1af87b3c67d9631a03501fe">ConfirmLicenseMission</a>
+, <a class="el" href="classPrecisionLandMission.html#a22049f789220cfc82dd8ab70b92b2803">PrecisionLandMission</a>
 </li>
 <li>_state_sub
 : <a class="el" href="classStatusMonitor.html#a830f7545332b436fec6363558d865780">StatusMonitor</a>
 </li>
 <li>_status_monitor
-: <a class="el" href="classController.html#a41ce90e4711779a719c60566ea01cbdc">Controller</a>
-, <a class="el" href="classDroneControl.html#a4f508798ba8b49eaee963645e65f4955">DroneControl</a>
+: <a class="el" href="classDroneControl.html#a4f508798ba8b49eaee963645e65f4955">DroneControl</a>
 , <a class="el" href="classMavrosBridge.html#aed8d59ef37bce0670f1ba57c3c48c753">MavrosBridge</a>
+, <a class="el" href="classMissionNode.html#a991fe290eb69d6228e8cd07527bf8c25">MissionNode</a>
 </li>
 <li>_status_mutex
 : <a class="el" href="classStatusMonitor.html#a1cb0f22fcaddbcb7c25085fb8d305c0f">StatusMonitor</a>
@@ -256,16 +294,28 @@ $(function() {
 : <a class="el" href="classArucoTagProcessor.html#a47cf01c8fc2ed09b2c0730da88ad5123">ArucoTagProcessor</a>
 </li>
 <li>_target_position
-: <a class="el" href="classMissionNavController.html#a69f1d827c18b8613f3ff11543e1ca2cc">MissionNavController</a>
+: <a class="el" href="classGPSNavMission.html#a041d8c583c852427f491b554533d83ed">GPSNavMission</a>
 </li>
 <li>_timeout_duration
 : <a class="el" href="classStateNode.html#ae4a912ab449c698496a1df843fe01b72">StateNode</a>
+</li>
+<li>_total_waypoints
+: <a class="el" href="classStatusMonitor.html#aab75259ef058ebcc3e41cd3864dafec0">StatusMonitor</a>
 </li>
 <li>_vel_cmd
 : <a class="el" href="classStateNode.html#a1aa7e5e00ea1d3de2e93f9ba1052a1e4">StateNode</a>
 </li>
 <li>_was_previously_valid
 : <a class="el" href="classArucoTagProcessor.html#ad4453e2cee4baaedd7121328929d5179">ArucoTagProcessor</a>
+</li>
+<li>_waypoint_positions
+: <a class="el" href="classGPSNavMission.html#a1055c3abc623c067e543f76ee91a446f">GPSNavMission</a>
+</li>
+<li>_wp_clear_client
+: <a class="el" href="classMavrosBridge.html#a95df6b4756f729ac4964e4d0f1f8dc0b">MavrosBridge</a>
+</li>
+<li>_wp_push_client
+: <a class="el" href="classMavrosBridge.html#a4979b44203a259baf434047bfd2173a6">MavrosBridge</a>
 </li>
 </ul>
 </div><!-- contents -->

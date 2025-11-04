@@ -1,4 +1,5 @@
 <map id="SearchLicenseState" name="SearchLicenseState">
-<area shape="rect" id="node1" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="5,248,191,399"/>
-<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="20,5,176,200"/>
+<area shape="rect" id="node1" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="5,432,191,583"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="20,189,176,384"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="36,5,160,141"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="StatusMonitor::is_mission_completed" name="StatusMonitor::is_mission_completed">
+<area shape="rect" id="node1" title="检查任务是否已完成" alt="" coords="253,5,444,47"/>
+<area shape="rect" id="node2" href="$classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,13,205,39"/>
+</map>

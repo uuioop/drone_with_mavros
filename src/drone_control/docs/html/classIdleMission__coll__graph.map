@@ -1,0 +1,9 @@
+<map id="IdleMission" name="IdleMission">
+<area shape="rect" id="node1" title="空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="148,1535,328,1715"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="147,1247,329,1485"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="5,1041,129,1177"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="239,5,418,493"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="240,556,417,971"/>
+<area shape="rect" id="node6" href="$classDroneControl.html" title="无人机控制类" alt="" coords="453,1033,609,1184"/>
+<area shape="rect" id="node7" href="$classNodeMachine.html" title="节点机基类" alt="" coords="625,666,771,861"/>
+</map>

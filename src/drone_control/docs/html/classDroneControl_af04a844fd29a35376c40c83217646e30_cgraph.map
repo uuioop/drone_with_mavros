@@ -1,4 +1,6 @@
 <map id="DroneControl::DroneControl" name="DroneControl::DroneControl">
-<area shape="rect" id="node1" title="构造函数" alt="" coords="5,13,208,39"/>
-<area shape="rect" id="node2" href="$classDroneControl.html#adc7a106117a5370cf0370641de606636" title="注册所有可用的控制器" alt="" coords="256,5,423,47"/>
+<area shape="rect" id="node1" title="构造函数" alt="" coords="5,42,208,69"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#a2ebb293b278c7cecfbeed0d45c932409" title="注册所有可用的任务" alt="" coords="263,5,429,47"/>
+<area shape="rect" id="node4" href="$classNodeMachine.html#aa807db605eae5d920695ca964207c1e5" title="设置节点机的入口节点" alt="" coords="256,71,436,98"/>
+<area shape="rect" id="node3" href="$classNodeMachine.html#a4916c83ae35f3b55a3bfa83d18be30fc" title="注册节点" alt="" coords="484,13,692,39"/>
 </map>

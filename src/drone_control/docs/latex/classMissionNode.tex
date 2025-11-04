@@ -1,0 +1,331 @@
+\hypertarget{classMissionNode}{}\doxysection{Mission\+Node Class Reference}
+\label{classMissionNode}\index{MissionNode@{MissionNode}}
+
+
+任务基类，定义了所有任务必须实现的接口和共享功能  
+
+
+
+
+{\ttfamily \#include $<$Mission\+Node.\+h$>$}
+
+
+
+Inheritance diagram for Mission\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mission\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classMissionNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMissionNode_a00c7e003e1759e862dd62acca20a3a64}{Mission\+Node}} (\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&drone\+\_\+control, ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMissionNode_a1026724dd0cf005f4974936d1ad19354}{$\sim$\+Mission\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 任务进入时调用的方法，用于初始化 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 任务更新方法，在主循环中被持续调用 ~\newline
+ \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{on\+\_\+exit}} () override=0
+\begin{DoxyCompactList}\small\item\em 任务退出时调用的方法，用于清理资源 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMissionNode_ac3727d486f52f84d383367a65ae1145f}{set\+\_\+finished}} (bool flag)
+\begin{DoxyCompactList}\small\item\em 设置任务完成标志 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \& \mbox{\hyperlink{classMissionNode_a812711a9bd5064d70befec8bbbac9ea7}{get\+\_\+status\+\_\+monitor}} () const
+\begin{DoxyCompactList}\small\item\em 获取状态监控器引用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \& \mbox{\hyperlink{classMissionNode_aaf7305c9f0bc752a21446588e37fd250}{\+\_\+drone\+\_\+control}}
+\item 
+ros\+::\+Node\+Handle \& \mbox{\hyperlink{classMissionNode_a213b42465d997d4b3bb1c43f271a8e52}{\+\_\+nh}}
+\begin{DoxyCompactList}\small\item\em R\+O\+S节点句柄引用 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \& \mbox{\hyperlink{classMissionNode_a991fe290eb69d6228e8cd07527bf8c25}{\+\_\+status\+\_\+monitor}}
+\begin{DoxyCompactList}\small\item\em 状态监控器引用，用于获取无人机状态信息 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \& \mbox{\hyperlink{classMissionNode_a2264632994a5827eee9f82d59d285ebd}{\+\_\+mavros\+\_\+bridge}}
+\begin{DoxyCompactList}\small\item\em M\+A\+V\+R\+O\+S桥接器引用，用于与无人机通信 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMissionNode_a021dc8272cc1a96bd6d9c49072473c86}{\+\_\+next\+\_\+mission\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em 下一个任务名称，用于任务切换 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMissionNode_a86f75fc11322704c3952dd6db99648b6}{\+\_\+required\+\_\+flight\+\_\+mode}} =\char`\"{}A\+U\+T\+O.\+L\+O\+I\+T\+ER\char`\"{}
+\begin{DoxyCompactList}\small\item\em 任务要求的飞行模式，默认值为\+A\+U\+T\+O.\+L\+O\+I\+T\+ER \end{DoxyCompactList}\item 
+ros\+::\+Rate \mbox{\hyperlink{classMissionNode_a18d8ba39261ff48154a3d12fa601c530}{\+\_\+rate}} \{5.\+0\}
+\begin{DoxyCompactList}\small\item\em 任务更新频率，默认值为5\+Hz \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMissionNode_aeae824c1572f7df08623c40902cd1126}{\+\_\+is\+\_\+finished}} = false
+\begin{DoxyCompactList}\small\item\em 任务完成标志，为true时表示任务已完成 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMissionNode_a031953e02ecef3de61b50f264a56f0e6}{\+\_\+is\+\_\+for\+\_\+fly}} = true
+\begin{DoxyCompactList}\small\item\em 任务是否用于飞行，默认值为true \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+任务基类，定义了所有任务必须实现的接口和共享功能 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMissionNode_a00c7e003e1759e862dd62acca20a3a64}\label{classMissionNode_a00c7e003e1759e862dd62acca20a3a64}} 
+\index{MissionNode@{MissionNode}!MissionNode@{MissionNode}}
+\index{MissionNode@{MissionNode}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{MissionNode()}{MissionNode()}}
+{\footnotesize\ttfamily Mission\+Node\+::\+Mission\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&}]{drone\+\_\+control,  }\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄引用 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMissionNode_a1026724dd0cf005f4974936d1ad19354}\label{classMissionNode_a1026724dd0cf005f4974936d1ad19354}} 
+\index{MissionNode@{MissionNode}!````~MissionNode@{$\sim$MissionNode}}
+\index{````~MissionNode@{$\sim$MissionNode}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$MissionNode()}{~MissionNode()}}
+{\footnotesize\ttfamily Mission\+Node\+::$\sim$\+Mission\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMissionNode_a812711a9bd5064d70befec8bbbac9ea7}\label{classMissionNode_a812711a9bd5064d70befec8bbbac9ea7}} 
+\index{MissionNode@{MissionNode}!get\_status\_monitor@{get\_status\_monitor}}
+\index{get\_status\_monitor@{get\_status\_monitor}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{get\_status\_monitor()}{get\_status\_monitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}\& Mission\+Node\+::get\+\_\+status\+\_\+monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取状态监控器引用 
+
+\begin{DoxyReturn}{Returns}
+状态监控器引用 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_a812711a9bd5064d70befec8bbbac9ea7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17}\label{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17}} 
+\index{MissionNode@{MissionNode}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Mission\+Node\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+任务进入时调用的方法，用于初始化 
+
+
+
+Implements \mbox{\hyperlink{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}{Node\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f}{Precision\+Land\+Mission}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}\label{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}} 
+\index{MissionNode@{MissionNode}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily virtual void Mission\+Node\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+任务退出时调用的方法，用于清理资源 
+
+
+
+Implements \mbox{\hyperlink{classNodeBase_a2f56336a670af1f962a449d42758595c}{Node\+Base}}.
+
+
+
+Implemented in \mbox{\hyperlink{classConfirmLicenseMission_a3dabb33440d77c2c34012293aa38e50c}{Confirm\+License\+Mission}}, \mbox{\hyperlink{classPrecisionLandMission_a2474daa2506e61781b8e443ec8da2b06}{Precision\+Land\+Mission}}, \mbox{\hyperlink{classGPSNavMission_a46550a8d5d26166aa07ad6c265626c11}{G\+P\+S\+Nav\+Mission}}, and \mbox{\hyperlink{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30}{Idle\+Mission}}.
+
+\mbox{\Hypertarget{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1}\label{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1}} 
+\index{MissionNode@{MissionNode}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$double,4$>$ Mission\+Node\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+任务更新方法，在主循环中被持续调用 ~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double,4$>$ 默认返回零值数组(不使用返回值) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}{Node\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7}{Precision\+Land\+Mission}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMissionNode_ac3727d486f52f84d383367a65ae1145f}\label{classMissionNode_ac3727d486f52f84d383367a65ae1145f}} 
+\index{MissionNode@{MissionNode}!set\_finished@{set\_finished}}
+\index{set\_finished@{set\_finished}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{set\_finished()}{set\_finished()}}
+{\footnotesize\ttfamily void Mission\+Node\+::set\+\_\+finished (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置任务完成标志 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & 任务完成标志，为true时表示任务已完成 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+给予原子状态可调用的函数，用于设置任务完成状态 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMissionNode_ac3727d486f52f84d383367a65ae1145f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMissionNode_aaf7305c9f0bc752a21446588e37fd250}\label{classMissionNode_aaf7305c9f0bc752a21446588e37fd250}} 
+\index{MissionNode@{MissionNode}!\_drone\_control@{\_drone\_control}}
+\index{\_drone\_control@{\_drone\_control}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_drone\_control}{\_drone\_control}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDroneControl}{Drone\+Control}}\& Mission\+Node\+::\+\_\+drone\+\_\+control\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMissionNode_aeae824c1572f7df08623c40902cd1126}\label{classMissionNode_aeae824c1572f7df08623c40902cd1126}} 
+\index{MissionNode@{MissionNode}!\_is\_finished@{\_is\_finished}}
+\index{\_is\_finished@{\_is\_finished}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_is\_finished}{\_is\_finished}}
+{\footnotesize\ttfamily bool Mission\+Node\+::\+\_\+is\+\_\+finished = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+任务完成标志，为true时表示任务已完成 
+
+\mbox{\Hypertarget{classMissionNode_a031953e02ecef3de61b50f264a56f0e6}\label{classMissionNode_a031953e02ecef3de61b50f264a56f0e6}} 
+\index{MissionNode@{MissionNode}!\_is\_for\_fly@{\_is\_for\_fly}}
+\index{\_is\_for\_fly@{\_is\_for\_fly}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_is\_for\_fly}{\_is\_for\_fly}}
+{\footnotesize\ttfamily bool Mission\+Node\+::\+\_\+is\+\_\+for\+\_\+fly = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+任务是否用于飞行，默认值为true 
+
+\mbox{\Hypertarget{classMissionNode_a2264632994a5827eee9f82d59d285ebd}\label{classMissionNode_a2264632994a5827eee9f82d59d285ebd}} 
+\index{MissionNode@{MissionNode}!\_mavros\_bridge@{\_mavros\_bridge}}
+\index{\_mavros\_bridge@{\_mavros\_bridge}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_mavros\_bridge}{\_mavros\_bridge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}}\& Mission\+Node\+::\+\_\+mavros\+\_\+bridge\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+M\+A\+V\+R\+O\+S桥接器引用，用于与无人机通信 
+
+\mbox{\Hypertarget{classMissionNode_a021dc8272cc1a96bd6d9c49072473c86}\label{classMissionNode_a021dc8272cc1a96bd6d9c49072473c86}} 
+\index{MissionNode@{MissionNode}!\_next\_mission\_name@{\_next\_mission\_name}}
+\index{\_next\_mission\_name@{\_next\_mission\_name}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_next\_mission\_name}{\_next\_mission\_name}}
+{\footnotesize\ttfamily std\+::string Mission\+Node\+::\+\_\+next\+\_\+mission\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+下一个任务名称，用于任务切换 
+
+\mbox{\Hypertarget{classMissionNode_a213b42465d997d4b3bb1c43f271a8e52}\label{classMissionNode_a213b42465d997d4b3bb1c43f271a8e52}} 
+\index{MissionNode@{MissionNode}!\_nh@{\_nh}}
+\index{\_nh@{\_nh}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_nh}{\_nh}}
+{\footnotesize\ttfamily ros\+::\+Node\+Handle\& Mission\+Node\+::\+\_\+nh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+R\+O\+S节点句柄引用 
+
+\mbox{\Hypertarget{classMissionNode_a18d8ba39261ff48154a3d12fa601c530}\label{classMissionNode_a18d8ba39261ff48154a3d12fa601c530}} 
+\index{MissionNode@{MissionNode}!\_rate@{\_rate}}
+\index{\_rate@{\_rate}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_rate}{\_rate}}
+{\footnotesize\ttfamily ros\+::\+Rate Mission\+Node\+::\+\_\+rate \{5.\+0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+任务更新频率，默认值为5\+Hz 
+
+\mbox{\Hypertarget{classMissionNode_a86f75fc11322704c3952dd6db99648b6}\label{classMissionNode_a86f75fc11322704c3952dd6db99648b6}} 
+\index{MissionNode@{MissionNode}!\_required\_flight\_mode@{\_required\_flight\_mode}}
+\index{\_required\_flight\_mode@{\_required\_flight\_mode}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_required\_flight\_mode}{\_required\_flight\_mode}}
+{\footnotesize\ttfamily std\+::string Mission\+Node\+::\+\_\+required\+\_\+flight\+\_\+mode =\char`\"{}A\+U\+T\+O.\+L\+O\+I\+T\+ER\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+任务要求的飞行模式，默认值为\+A\+U\+T\+O.\+L\+O\+I\+T\+ER 
+
+\mbox{\Hypertarget{classMissionNode_a991fe290eb69d6228e8cd07527bf8c25}\label{classMissionNode_a991fe290eb69d6228e8cd07527bf8c25}} 
+\index{MissionNode@{MissionNode}!\_status\_monitor@{\_status\_monitor}}
+\index{\_status\_monitor@{\_status\_monitor}!MissionNode@{MissionNode}}
+\doxysubsubsection{\texorpdfstring{\_status\_monitor}{\_status\_monitor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}}\& Mission\+Node\+::\+\_\+status\+\_\+monitor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+状态监控器引用，用于获取无人机状态信息 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Mission\+Node/\mbox{\hyperlink{MissionNode_8h}{Mission\+Node.\+h}}\end{DoxyCompactItemize}

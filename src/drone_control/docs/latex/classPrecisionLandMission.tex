@@ -1,0 +1,301 @@
+\hypertarget{classPrecisionLandMission}{}\doxysection{Precision\+Land\+Mission Class Reference}
+\label{classPrecisionLandMission}\index{PrecisionLandMission@{PrecisionLandMission}}
+
+
+精确着陆任务类 继承自\+Mission\+Node基类，实现无人机基于\+Ar\+Uco标签的精确着陆控制逻辑  
+
+
+
+
+{\ttfamily \#include $<$Precision\+Land\+Mission.\+h$>$}
+
+
+
+Inheritance diagram for Precision\+Land\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPrecisionLandMission__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Precision\+Land\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPrecisionLandMission__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrecisionLandMission_a76f770109480896c50ac1d56962ed28a}{Precision\+Land\+Mission}} (\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&drone\+\_\+control, ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPrecisionLandMission_a926650bfb354de813b46584871ac7d52}{$\sim$\+Precision\+Land\+Mission}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrecisionLandMission_a1d478c0092fcd7f3f71c494823252dcd}{switch\+\_\+node}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 切换状态机状态 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入任务时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新任务状态时调用 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrecisionLandMission_a2474daa2506e61781b8e443ec8da2b06}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出任务时调用 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classPrecisionLandMission_aaecad345f73435a6b6e06c698ababc04}{get\+\_\+front\+\_\+tag\+\_\+processor}} () const
+\begin{DoxyCompactList}\small\item\em 获取前置摄像头的标签处理器 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classPrecisionLandMission_a5b22a1b26a1cd8b7fda12f6b5f9c8190}{get\+\_\+down\+\_\+tag\+\_\+processor}} () const
+\begin{DoxyCompactList}\small\item\em 获取下视摄像头的标签处理器 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPrecisionLandMission_aeb09eec149fc1f1aeaa4ed43edd7fa4a}{register\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em 注册状态机中的各个状态 初始化并注册精确着陆过程中所需的各种状态到状态机中 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodeMachine}{Node\+Machine}} \mbox{\hyperlink{classPrecisionLandMission_a22049f789220cfc82dd8ab70b92b2803}{\+\_\+state\+\_\+machine}}
+\begin{DoxyCompactList}\small\item\em 状态机，管理精确着陆过程中的各个状态 负责协调不同着陆阶段之间的转换和执行 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTagConfig}{Tag\+Config}} \mbox{\hyperlink{classPrecisionLandMission_a24559fcdd5277877f350c15e9126b838}{\+\_\+front\+\_\+tag\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em 前置摄像头的标签配置信息 存储前置摄像头检测\+Ar\+Uco标签的相关参数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTagConfig}{Tag\+Config}} \mbox{\hyperlink{classPrecisionLandMission_a9f8d1a428a7c7804fd892f32488a48ef}{\+\_\+down\+\_\+tag\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em 下视摄像头的标签配置信息 存储下视摄像头检测\+Ar\+Uco标签的相关参数 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classPrecisionLandMission_a10c5bbcbd73d7ae31088c557468b8909}{\+\_\+front\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 前置摄像头的标签处理器 处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}} $>$ \mbox{\hyperlink{classPrecisionLandMission_af48793faaa40ccea029918b33c6952f7}{\+\_\+down\+\_\+tag\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 下视摄像头的标签处理器 处理下视摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+精确着陆任务类 继承自\+Mission\+Node基类，实现无人机基于\+Ar\+Uco标签的精确着陆控制逻辑 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrecisionLandMission_a76f770109480896c50ac1d56962ed28a}\label{classPrecisionLandMission_a76f770109480896c50ac1d56962ed28a}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!PrecisionLandMission@{PrecisionLandMission}}
+\index{PrecisionLandMission@{PrecisionLandMission}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{PrecisionLandMission()}{PrecisionLandMission()}}
+{\footnotesize\ttfamily Precision\+Land\+Mission\+::\+Precision\+Land\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&}]{drone\+\_\+control,  }\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+构造函数实现 初始化前置和下视摄像头的标签配置，创建标签处理器，注册状态机中的状态
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_a76f770109480896c50ac1d56962ed28a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPrecisionLandMission_a926650bfb354de813b46584871ac7d52}\label{classPrecisionLandMission_a926650bfb354de813b46584871ac7d52}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!````~PrecisionLandMission@{$\sim$PrecisionLandMission}}
+\index{````~PrecisionLandMission@{$\sim$PrecisionLandMission}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{$\sim$PrecisionLandMission()}{~PrecisionLandMission()}}
+{\footnotesize\ttfamily Precision\+Land\+Mission\+::$\sim$\+Precision\+Land\+Mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现 使用默认析构函数，自动管理资源释放 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrecisionLandMission_a5b22a1b26a1cd8b7fda12f6b5f9c8190}\label{classPrecisionLandMission_a5b22a1b26a1cd8b7fda12f6b5f9c8190}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!get\_down\_tag\_processor@{get\_down\_tag\_processor}}
+\index{get\_down\_tag\_processor@{get\_down\_tag\_processor}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{get\_down\_tag\_processor()}{get\_down\_tag\_processor()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Precision\+Land\+Mission\+::get\+\_\+down\+\_\+tag\+\_\+processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取下视摄像头的标签处理器 
+
+\begin{DoxyReturn}{Returns}
+下视标签处理器智能指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrecisionLandMission_aaecad345f73435a6b6e06c698ababc04}\label{classPrecisionLandMission_aaecad345f73435a6b6e06c698ababc04}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!get\_front\_tag\_processor@{get\_front\_tag\_processor}}
+\index{get\_front\_tag\_processor@{get\_front\_tag\_processor}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{get\_front\_tag\_processor()}{get\_front\_tag\_processor()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Precision\+Land\+Mission\+::get\+\_\+front\+\_\+tag\+\_\+processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取前置摄像头的标签处理器 
+
+\begin{DoxyReturn}{Returns}
+前置标签处理器智能指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f}\label{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Precision\+Land\+Mission\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入任务时调用 
+
+进入精确着陆任务时的回调实现 启动标记处理器，开始处理标记检测数据 
+
+Reimplemented from \mbox{\hyperlink{classMissionNode_aaf3324362f617f71cbeb33a1c7ad0e17}{Mission\+Node}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_a7e8b6a7ca2efe301dc30ec8d7a8cfc1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPrecisionLandMission_a2474daa2506e61781b8e443ec8da2b06}\label{classPrecisionLandMission_a2474daa2506e61781b8e443ec8da2b06}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Precision\+Land\+Mission\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出任务时调用 
+
+退出精确着陆任务时的回调实现 目前为空实现，可根据需要添加清理逻辑 
+
+Implements \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{Mission\+Node}}.
+
+\mbox{\Hypertarget{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7}\label{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Precision\+Land\+Mission\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新任务状态时调用 
+
+更新精确着陆任务状态时的回调实现 更新标签处理器的有效性状态，并获取当前状态的控制指令通过\+M\+A\+V\+R\+O\+S桥接器发送给无人机 
+
+Reimplemented from \mbox{\hyperlink{classMissionNode_ab0889e7310b36a8e9397d5a2a172efc1}{Mission\+Node}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_a5efa3a6e054ecb9df15e85c9a72982d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPrecisionLandMission_aeb09eec149fc1f1aeaa4ed43edd7fa4a}\label{classPrecisionLandMission_aeb09eec149fc1f1aeaa4ed43edd7fa4a}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!register\_states@{register\_states}}
+\index{register\_states@{register\_states}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{register\_states()}{register\_states()}}
+{\footnotesize\ttfamily void Precision\+Land\+Mission\+::register\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+注册状态机中的各个状态 初始化并注册精确着陆过程中所需的各种状态到状态机中 
+
+注册状态机中的各个状态 将精确着陆过程中的六个状态依次注册到状态机中 Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_aeb09eec149fc1f1aeaa4ed43edd7fa4a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_aeb09eec149fc1f1aeaa4ed43edd7fa4a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classPrecisionLandMission_a1d478c0092fcd7f3f71c494823252dcd}\label{classPrecisionLandMission_a1d478c0092fcd7f3f71c494823252dcd}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!switch\_node@{switch\_node}}
+\index{switch\_node@{switch\_node}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{switch\_node()}{switch\_node()}}
+{\footnotesize\ttfamily void Precision\+Land\+Mission\+::switch\+\_\+node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+切换状态机状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 目标状态\+ID \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrecisionLandMission_a1d478c0092fcd7f3f71c494823252dcd_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPrecisionLandMission_a9f8d1a428a7c7804fd892f32488a48ef}\label{classPrecisionLandMission_a9f8d1a428a7c7804fd892f32488a48ef}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!\_down\_tag\_config@{\_down\_tag\_config}}
+\index{\_down\_tag\_config@{\_down\_tag\_config}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{\_down\_tag\_config}{\_down\_tag\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTagConfig}{Tag\+Config}} Precision\+Land\+Mission\+::\+\_\+down\+\_\+tag\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+下视摄像头的标签配置信息 存储下视摄像头检测\+Ar\+Uco标签的相关参数 
+
+\mbox{\Hypertarget{classPrecisionLandMission_af48793faaa40ccea029918b33c6952f7}\label{classPrecisionLandMission_af48793faaa40ccea029918b33c6952f7}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!\_down\_tag\_processor@{\_down\_tag\_processor}}
+\index{\_down\_tag\_processor@{\_down\_tag\_processor}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{\_down\_tag\_processor}{\_down\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Precision\+Land\+Mission\+::\+\_\+down\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+下视摄像头的标签处理器 处理下视摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 
+
+\mbox{\Hypertarget{classPrecisionLandMission_a24559fcdd5277877f350c15e9126b838}\label{classPrecisionLandMission_a24559fcdd5277877f350c15e9126b838}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!\_front\_tag\_config@{\_front\_tag\_config}}
+\index{\_front\_tag\_config@{\_front\_tag\_config}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{\_front\_tag\_config}{\_front\_tag\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTagConfig}{Tag\+Config}} Precision\+Land\+Mission\+::\+\_\+front\+\_\+tag\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+前置摄像头的标签配置信息 存储前置摄像头检测\+Ar\+Uco标签的相关参数 
+
+\mbox{\Hypertarget{classPrecisionLandMission_a10c5bbcbd73d7ae31088c557468b8909}\label{classPrecisionLandMission_a10c5bbcbd73d7ae31088c557468b8909}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!\_front\_tag\_processor@{\_front\_tag\_processor}}
+\index{\_front\_tag\_processor@{\_front\_tag\_processor}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{\_front\_tag\_processor}{\_front\_tag\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+Processor}}$>$ Precision\+Land\+Mission\+::\+\_\+front\+\_\+tag\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+前置摄像头的标签处理器 处理前置摄像头拍摄的图像中\+Ar\+Uco标签的检测和定位 
+
+\mbox{\Hypertarget{classPrecisionLandMission_a22049f789220cfc82dd8ab70b92b2803}\label{classPrecisionLandMission_a22049f789220cfc82dd8ab70b92b2803}} 
+\index{PrecisionLandMission@{PrecisionLandMission}!\_state\_machine@{\_state\_machine}}
+\index{\_state\_machine@{\_state\_machine}!PrecisionLandMission@{PrecisionLandMission}}
+\doxysubsubsection{\texorpdfstring{\_state\_machine}{\_state\_machine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNodeMachine}{Node\+Machine}} Precision\+Land\+Mission\+::\+\_\+state\+\_\+machine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+状态机，管理精确着陆过程中的各个状态 负责协调不同着陆阶段之间的转换和执行 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Mission\+Node/\mbox{\hyperlink{PrecisionLandMission_8h}{Precision\+Land\+Mission.\+h}}\item 
+src/\+Mission\+Node/\mbox{\hyperlink{PrecisionLandMission_8cpp}{Precision\+Land\+Mission.\+cpp}}\end{DoxyCompactItemize}

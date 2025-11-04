@@ -80,7 +80,7 @@ Collaboration diagram for StatusMonitor:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatusMonitor__coll__graph.png" border="0" usemap="#StatusMonitor_coll__map" alt="Collaboration graph"/></div>
 <map name="StatusMonitor_coll__map" id="StatusMonitor_coll__map">
-<area shape="rect" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,167,508"/>
+<area shape="rect" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,184,493"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -116,9 +116,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a628eb238fed7d855d58f9fe97084dfe2"><td class="memItemLeft" align="right" valign="top">geometry_msgs::PoseStamped&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a628eb238fed7d855d58f9fe97084dfe2">get_local_pos</a> () const</td></tr>
 <tr class="memdesc:a628eb238fed7d855d58f9fe97084dfe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取无人机的本地位置  <a href="classStatusMonitor.html#a628eb238fed7d855d58f9fe97084dfe2">More...</a><br /></td></tr>
 <tr class="separator:a628eb238fed7d855d58f9fe97084dfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5137291ee4c94d51b14639d9c4e9af7"><td class="memItemLeft" align="right" valign="top">geographic_msgs::GeoPoseStamped&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#ab5137291ee4c94d51b14639d9c4e9af7">get_global_pos</a> () const</td></tr>
-<tr class="memdesc:ab5137291ee4c94d51b14639d9c4e9af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取无人机的全局位置  <a href="classStatusMonitor.html#ab5137291ee4c94d51b14639d9c4e9af7">More...</a><br /></td></tr>
-<tr class="separator:ab5137291ee4c94d51b14639d9c4e9af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947972082d98fd812d025c6b8a43227d"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a947972082d98fd812d025c6b8a43227d">get_global_pos</a> () const</td></tr>
+<tr class="memdesc:a947972082d98fd812d025c6b8a43227d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取无人机的全局位置（经纬度+绝对海拔高度）  <a href="classStatusMonitor.html#a947972082d98fd812d025c6b8a43227d">More...</a><br /></td></tr>
+<tr class="separator:a947972082d98fd812d025c6b8a43227d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b5ac1bf2119b5abf6c82828be23e6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#af8b5ac1bf2119b5abf6c82828be23e6a">is_gps_fixed</a> () const</td></tr>
+<tr class="memdesc:af8b5ac1bf2119b5abf6c82828be23e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查GPS是否已接收固定位置  <a href="classStatusMonitor.html#af8b5ac1bf2119b5abf6c82828be23e6a">More...</a><br /></td></tr>
+<tr class="separator:af8b5ac1bf2119b5abf6c82828be23e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ac15226e5f468fc23e054880303265"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#ad0ac15226e5f468fc23e054880303265">is_mission_completed</a> () const</td></tr>
+<tr class="memdesc:ad0ac15226e5f468fc23e054880303265"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查任务是否已完成  <a href="classStatusMonitor.html#ad0ac15226e5f468fc23e054880303265">More...</a><br /></td></tr>
+<tr class="separator:ad0ac15226e5f468fc23e054880303265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7697d36430b3eef8ac364b5799e8b87d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a7697d36430b3eef8ac364b5799e8b87d">is_mission_aborted</a> () const</td></tr>
+<tr class="memdesc:a7697d36430b3eef8ac364b5799e8b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查任务是否已中止  <a href="classStatusMonitor.html#a7697d36430b3eef8ac364b5799e8b87d">More...</a><br /></td></tr>
+<tr class="separator:a7697d36430b3eef8ac364b5799e8b87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ff55721acb48d09f1729446d39804e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#aa3ff55721acb48d09f1729446d39804e">reset_gps_fix</a> ()</td></tr>
+<tr class="memdesc:aa3ff55721acb48d09f1729446d39804e"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置GPS固定位置标志  <a href="classStatusMonitor.html#aa3ff55721acb48d09f1729446d39804e">More...</a><br /></td></tr>
+<tr class="separator:aa3ff55721acb48d09f1729446d39804e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a79e0bb80e813509aa266f583384d87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87">reset_mission_flags</a> ()</td></tr>
+<tr class="memdesc:a9a79e0bb80e813509aa266f583384d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置任务相关标志（任务完成、任务中止、已到达航点索引）  <a href="classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87">More...</a><br /></td></tr>
+<tr class="separator:a9a79e0bb80e813509aa266f583384d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -128,9 +143,18 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a37fbabcb4c7331f8ef643e8f8601fbb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4">local_pos_cb</a> (const geometry_msgs::PoseStamped::ConstPtr &amp;msg)</td></tr>
 <tr class="memdesc:a37fbabcb4c7331f8ef643e8f8601fbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地位置消息回调函数  <a href="classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4">More...</a><br /></td></tr>
 <tr class="separator:a37fbabcb4c7331f8ef643e8f8601fbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab35b2d5c02c767a822a059d3e502368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#aab35b2d5c02c767a822a059d3e502368">global_pos_cb</a> (const geographic_msgs::GeoPoseStamped::ConstPtr &amp;msg)</td></tr>
-<tr class="memdesc:aab35b2d5c02c767a822a059d3e502368"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局位置消息回调函数  <a href="classStatusMonitor.html#aab35b2d5c02c767a822a059d3e502368">More...</a><br /></td></tr>
-<tr class="separator:aab35b2d5c02c767a822a059d3e502368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea222c43dddd2f34e3d3e2d31c3f06b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#aea222c43dddd2f34e3d3e2d31c3f06b4">gps_cb</a> (const sensor_msgs::NavSatFix::ConstPtr &amp;msg)</td></tr>
+<tr class="memdesc:aea222c43dddd2f34e3d3e2d31c3f06b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS位置消息回调函数  <a href="classStatusMonitor.html#aea222c43dddd2f34e3d3e2d31c3f06b4">More...</a><br /></td></tr>
+<tr class="separator:aea222c43dddd2f34e3d3e2d31c3f06b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc9dafa33e2d5e24634adc623a9c493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#adbc9dafa33e2d5e24634adc623a9c493">rel_alt_cb</a> (const std_msgs::Float64::ConstPtr &amp;msg)</td></tr>
+<tr class="memdesc:adbc9dafa33e2d5e24634adc623a9c493"><td class="mdescLeft">&#160;</td><td class="mdescRight">相对高度(Home点)回调函数  <a href="classStatusMonitor.html#adbc9dafa33e2d5e24634adc623a9c493">More...</a><br /></td></tr>
+<tr class="separator:adbc9dafa33e2d5e24634adc623a9c493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b560aff8ebe76be0e5af4305c99a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a41b560aff8ebe76be0e5af4305c99a08">mission_list_cb</a> (const mavros_msgs::WaypointList::ConstPtr &amp;msg)</td></tr>
+<tr class="memdesc:a41b560aff8ebe76be0e5af4305c99a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务列表回调函数  <a href="classStatusMonitor.html#a41b560aff8ebe76be0e5af4305c99a08">More...</a><br /></td></tr>
+<tr class="separator:a41b560aff8ebe76be0e5af4305c99a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8847099319441b1e8d05cb9cc8af0f44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a8847099319441b1e8d05cb9cc8af0f44">mission_reached_cb</a> (const mavros_msgs::WaypointReached::ConstPtr &amp;msg)</td></tr>
+<tr class="memdesc:a8847099319441b1e8d05cb9cc8af0f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务完成回调函数  <a href="classStatusMonitor.html#a8847099319441b1e8d05cb9cc8af0f44">More...</a><br /></td></tr>
+<tr class="separator:a8847099319441b1e8d05cb9cc8af0f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb563b4f08daaed1b9ca4c098445bb3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d">imu_data_cb</a> (const sensor_msgs::Imu::ConstPtr &amp;msg)</td></tr>
 <tr class="memdesc:afb563b4f08daaed1b9ca4c098445bb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">IMU数据回调函数  <a href="classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d">More...</a><br /></td></tr>
 <tr class="separator:afb563b4f08daaed1b9ca4c098445bb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +173,18 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a889a4fb2368093f9eba35c3945491023"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a889a4fb2368093f9eba35c3945491023">_local_pos_sub</a></td></tr>
 <tr class="memdesc:a889a4fb2368093f9eba35c3945491023"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地位置订阅器  <a href="classStatusMonitor.html#a889a4fb2368093f9eba35c3945491023">More...</a><br /></td></tr>
 <tr class="separator:a889a4fb2368093f9eba35c3945491023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a134647fed34f8fdb045f7dceafb6ff2a"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a134647fed34f8fdb045f7dceafb6ff2a">_global_pos_sub</a></td></tr>
-<tr class="memdesc:a134647fed34f8fdb045f7dceafb6ff2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局位置订阅器  <a href="classStatusMonitor.html#a134647fed34f8fdb045f7dceafb6ff2a">More...</a><br /></td></tr>
-<tr class="separator:a134647fed34f8fdb045f7dceafb6ff2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773f1ec99b399432b9ee1eee02f6c3da"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a773f1ec99b399432b9ee1eee02f6c3da">_gps_sub</a></td></tr>
+<tr class="memdesc:a773f1ec99b399432b9ee1eee02f6c3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS位置（绝对海拔高度）订阅器  <a href="classStatusMonitor.html#a773f1ec99b399432b9ee1eee02f6c3da">More...</a><br /></td></tr>
+<tr class="separator:a773f1ec99b399432b9ee1eee02f6c3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77b728c0c2df9e43f67d84c0663d80b"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#ae77b728c0c2df9e43f67d84c0663d80b">_rel_alt_sub</a></td></tr>
+<tr class="memdesc:ae77b728c0c2df9e43f67d84c0663d80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">相对高度(Home点)订阅器  <a href="classStatusMonitor.html#ae77b728c0c2df9e43f67d84c0663d80b">More...</a><br /></td></tr>
+<tr class="separator:ae77b728c0c2df9e43f67d84c0663d80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b746484c7a679c68c2b3f087595a2fd"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a6b746484c7a679c68c2b3f087595a2fd">_mission_list_sub</a></td></tr>
+<tr class="memdesc:a6b746484c7a679c68c2b3f087595a2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务列表订阅器  <a href="classStatusMonitor.html#a6b746484c7a679c68c2b3f087595a2fd">More...</a><br /></td></tr>
+<tr class="separator:a6b746484c7a679c68c2b3f087595a2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3d756a575e63e62ee8f5e89ad7d00c"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a4a3d756a575e63e62ee8f5e89ad7d00c">_mission_reached_sub</a></td></tr>
+<tr class="memdesc:a4a3d756a575e63e62ee8f5e89ad7d00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务完成订阅器  <a href="classStatusMonitor.html#a4a3d756a575e63e62ee8f5e89ad7d00c">More...</a><br /></td></tr>
+<tr class="separator:a4a3d756a575e63e62ee8f5e89ad7d00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7abda62b316401a98aff1107d8896b4"><td class="memItemLeft" align="right" valign="top">ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#aa7abda62b316401a98aff1107d8896b4">_imu_data_sub</a></td></tr>
 <tr class="memdesc:aa7abda62b316401a98aff1107d8896b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">IMU数据订阅器  <a href="classStatusMonitor.html#aa7abda62b316401a98aff1107d8896b4">More...</a><br /></td></tr>
 <tr class="separator:aa7abda62b316401a98aff1107d8896b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +197,27 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a565be98baaa535352972c33fc58ed71c"><td class="memItemLeft" align="right" valign="top">geometry_msgs::PoseStamped&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a565be98baaa535352972c33fc58ed71c">_local_pos</a></td></tr>
 <tr class="memdesc:a565be98baaa535352972c33fc58ed71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地位置（ENU坐标系）  <a href="classStatusMonitor.html#a565be98baaa535352972c33fc58ed71c">More...</a><br /></td></tr>
 <tr class="separator:a565be98baaa535352972c33fc58ed71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d91b2d229258195e1d2ff3ebb51c84"><td class="memItemLeft" align="right" valign="top">geographic_msgs::GeoPoseStamped&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a81d91b2d229258195e1d2ff3ebb51c84">_global_pos</a></td></tr>
-<tr class="memdesc:a81d91b2d229258195e1d2ff3ebb51c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局位置（经纬度高度）  <a href="classStatusMonitor.html#a81d91b2d229258195e1d2ff3ebb51c84">More...</a><br /></td></tr>
-<tr class="separator:a81d91b2d229258195e1d2ff3ebb51c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe91817c3c1c3a1a3ac1807a971a7df1"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#afe91817c3c1c3a1a3ac1807a971a7df1">_global_pos</a></td></tr>
+<tr class="memdesc:afe91817c3c1c3a1a3ac1807a971a7df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局位置（经纬度+绝对海拔高度）  <a href="classStatusMonitor.html#afe91817c3c1c3a1a3ac1807a971a7df1">More...</a><br /></td></tr>
+<tr class="separator:afe91817c3c1c3a1a3ac1807a971a7df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3d8610a5a99ca6bf74127a018a6f3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a4f3d8610a5a99ca6bf74127a018a6f3d">_gps_received_fix</a> = false</td></tr>
+<tr class="memdesc:a4f3d8610a5a99ca6bf74127a018a6f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS是否已接收固定位置  <a href="classStatusMonitor.html#a4f3d8610a5a99ca6bf74127a018a6f3d">More...</a><br /></td></tr>
+<tr class="separator:a4f3d8610a5a99ca6bf74127a018a6f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3284da37ac6c0a94b1f38e73aa9fa6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a2b3284da37ac6c0a94b1f38e73aa9fa6">_rel_alt</a> = std::numeric_limits&lt;double&gt;::quiet_NaN()</td></tr>
+<tr class="memdesc:a2b3284da37ac6c0a94b1f38e73aa9fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">相对高度(Home点)  <a href="classStatusMonitor.html#a2b3284da37ac6c0a94b1f38e73aa9fa6">More...</a><br /></td></tr>
+<tr class="separator:a2b3284da37ac6c0a94b1f38e73aa9fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab75259ef058ebcc3e41cd3864dafec0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#aab75259ef058ebcc3e41cd3864dafec0">_total_waypoints</a> = 0</td></tr>
+<tr class="memdesc:aab75259ef058ebcc3e41cd3864dafec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务总航点数  <a href="classStatusMonitor.html#aab75259ef058ebcc3e41cd3864dafec0">More...</a><br /></td></tr>
+<tr class="separator:aab75259ef058ebcc3e41cd3864dafec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337e760e279c42754e5e75c0723bdcc1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a337e760e279c42754e5e75c0723bdcc1">_reached_waypoint_index</a> = -1</td></tr>
+<tr class="memdesc:a337e760e279c42754e5e75c0723bdcc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前已到达的航点索引（从0开始）  <a href="classStatusMonitor.html#a337e760e279c42754e5e75c0723bdcc1">More...</a><br /></td></tr>
+<tr class="separator:a337e760e279c42754e5e75c0723bdcc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b79aa724c45c4f85ed133210b2361e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a3b79aa724c45c4f85ed133210b2361e9">_mission_aborted</a> = false</td></tr>
+<tr class="memdesc:a3b79aa724c45c4f85ed133210b2361e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务是否被中止的标志  <a href="classStatusMonitor.html#a3b79aa724c45c4f85ed133210b2361e9">More...</a><br /></td></tr>
+<tr class="separator:a3b79aa724c45c4f85ed133210b2361e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c467a29131f9234a32d5fc69c6ae63"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a57c467a29131f9234a32d5fc69c6ae63">_mission_completed</a> = false</td></tr>
+<tr class="memdesc:a57c467a29131f9234a32d5fc69c6ae63"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务是否已完成的标志  <a href="classStatusMonitor.html#a57c467a29131f9234a32d5fc69c6ae63">More...</a><br /></td></tr>
+<tr class="separator:a57c467a29131f9234a32d5fc69c6ae63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cdfb5b3a25d0426652e916d22a7454c"><td class="memItemLeft" align="right" valign="top">geometry_msgs::Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusMonitor.html#a6cdfb5b3a25d0426652e916d22a7454c">_orientation</a></td></tr>
 <tr class="memdesc:a6cdfb5b3a25d0426652e916d22a7454c"><td class="mdescLeft">&#160;</td><td class="mdescRight">无人机姿态四元数  <a href="classStatusMonitor.html#a6cdfb5b3a25d0426652e916d22a7454c">More...</a><br /></td></tr>
 <tr class="separator:a6cdfb5b3a25d0426652e916d22a7454c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,12 +271,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17_cgraph.png" border="0" usemap="#classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17_cgraph" alt=""/></div>
 <map name="classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17_cgraph" id="classStatusMonitor_a9f7e9799f5c30e24d2f91437960b8a17_cgraph">
-<area shape="rect" title="构造函数" alt="" coords="5,143,217,170"/>
-<area shape="rect" href="classStatusMonitor.html#aab35b2d5c02c767a822a059d3e502368" title="全局位置消息回调函数" alt="" coords="273,5,434,47"/>
-<area shape="rect" href="classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d" title="IMU数据回调函数" alt="" coords="280,71,427,112"/>
-<area shape="rect" href="classStatusMonitor.html#ab44b211a6f2edbd83a58a34c2ddeba5b" title="着陆状态消息回调函数" alt="" coords="271,136,436,177"/>
-<area shape="rect" href="classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4" title="本地位置消息回调函数" alt="" coords="277,201,429,243"/>
-<area shape="rect" href="classStatusMonitor.html#a6dd5eb828b94287931a0b5c40b6c24e6" title="状态消息回调函数" alt="" coords="265,267,441,294"/>
+<area shape="rect" title="构造函数" alt="" coords="5,228,217,255"/>
+<area shape="rect" href="classStatusMonitor.html#aea222c43dddd2f34e3d3e2d31c3f06b4" title="GPS位置消息回调函数" alt="" coords="270,5,437,32"/>
+<area shape="rect" href="classStatusMonitor.html#afb563b4f08daaed1b9ca4c098445bb3d" title="IMU数据回调函数" alt="" coords="280,57,427,98"/>
+<area shape="rect" href="classStatusMonitor.html#ab44b211a6f2edbd83a58a34c2ddeba5b" title="着陆状态消息回调函数" alt="" coords="271,122,436,163"/>
+<area shape="rect" href="classStatusMonitor.html#a37fbabcb4c7331f8ef643e8f8601fbb4" title="本地位置消息回调函数" alt="" coords="277,187,429,229"/>
+<area shape="rect" href="classStatusMonitor.html#a41b560aff8ebe76be0e5af4305c99a08" title="任务列表回调函数" alt="" coords="267,253,439,294"/>
+<area shape="rect" href="classStatusMonitor.html#a8847099319441b1e8d05cb9cc8af0f44" title="任务完成回调函数" alt="" coords="267,318,439,359"/>
+<area shape="rect" href="classStatusMonitor.html#adbc9dafa33e2d5e24634adc623a9c493" title="相对高度(Home点)回调函数" alt="" coords="284,383,423,425"/>
+<area shape="rect" href="classStatusMonitor.html#a6dd5eb828b94287931a0b5c40b6c24e6" title="状态消息回调函数" alt="" coords="265,449,441,476"/>
 </map>
 </div>
 
@@ -319,17 +373,20 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph.png" border="0" usemap="#classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph" alt=""/></div>
 <map name="classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph" id="classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph">
-<area shape="rect" title="获取无人机当前的飞行模式" alt="" coords="547,5,689,47"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,5,499,47"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
+<area shape="rect" title="获取无人机当前的飞行模式" alt="" coords="672,78,815,119"/>
+<area shape="rect" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab5137291ee4c94d51b14639d9c4e9af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5137291ee4c94d51b14639d9c4e9af7">&#9670;&nbsp;</a></span>get_global_pos()</h2>
+<a id="a947972082d98fd812d025c6b8a43227d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947972082d98fd812d025c6b8a43227d">&#9670;&nbsp;</a></span>get_global_pos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,7 +395,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">geographic_msgs::GeoPoseStamped StatusMonitor::get_global_pos </td>
+          <td class="memname">std::array&lt;double, 3&gt; StatusMonitor::get_global_pos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -351,8 +408,18 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>获取无人机的全局位置 </p>
-<dl class="section return"><dt>Returns</dt><dd>全局位置消息 </dd></dl>
+<p>获取无人机的全局位置（经纬度+绝对海拔高度） </p>
+<dl class="section return"><dt>Returns</dt><dd>全局位置消息（{经度, 纬度, 绝对海拔高度}） </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_a947972082d98fd812d025c6b8a43227d_icgraph.png" border="0" usemap="#classStatusMonitor_a947972082d98fd812d025c6b8a43227d_icgraph" alt=""/></div>
+<map name="classStatusMonitor_a947972082d98fd812d025c6b8a43227d_icgraph" id="classStatusMonitor_a947972082d98fd812d025c6b8a43227d_icgraph">
+<area shape="rect" title="获取无人机的全局位置（经纬度+绝对海拔高度）" alt="" coords="467,5,609,47"/>
+<area shape="rect" href="classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -450,8 +517,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aab35b2d5c02c767a822a059d3e502368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab35b2d5c02c767a822a059d3e502368">&#9670;&nbsp;</a></span>global_pos_cb()</h2>
+<a id="aea222c43dddd2f34e3d3e2d31c3f06b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea222c43dddd2f34e3d3e2d31c3f06b4">&#9670;&nbsp;</a></span>gps_cb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,9 +527,9 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void StatusMonitor::global_pos_cb </td>
+          <td class="memname">void StatusMonitor::gps_cb </td>
           <td>(</td>
-          <td class="paramtype">const geographic_msgs::GeoPoseStamped::ConstPtr &amp;&#160;</td>
+          <td class="paramtype">const sensor_msgs::NavSatFix::ConstPtr &amp;&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -474,25 +541,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>全局位置消息回调函数 </p>
-<p>全局位置回调函数</p>
+<p>GPS位置消息回调函数 </p>
+<p>GPS位置回调函数</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>全局位置消息</td></tr>
+    <tr><td class="paramname">msg</td><td>GPS位置消息</td></tr>
     <tr><td class="paramname">msg</td><td>全局位置消息指针 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>更新无人机全局位置信息 </dd>
+<dl class="section note"><dt>Note</dt><dd>更新无人机全局位置信息（经度、纬度） </dd>
 <dd>
 使用互斥锁保护状态数据 </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph.png" border="0" usemap="#classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph" alt=""/></div>
-<map name="classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph" id="classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph">
-<area shape="rect" title="全局位置消息回调函数" alt="" coords="265,5,427,47"/>
-<area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+<div class="center"><img src="classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4_icgraph.png" border="0" usemap="#classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4_icgraph" alt=""/></div>
+<map name="classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4_icgraph" id="classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4_icgraph">
+<area shape="rect" title="GPS位置消息回调函数" alt="" coords="265,5,432,32"/>
+<area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,5,217,32"/>
 </map>
 </div>
 
@@ -575,10 +642,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1_icgraph.png" border="0" usemap="#classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1_icgraph" alt=""/></div>
 <map name="classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1_icgraph" id="classStatusMonitor_a176f40ce866ce3a7ba56841c46e96dd1_icgraph">
-<area shape="rect" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="440,5,621,32"/>
-<area shape="rect" href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
-<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="15,5,161,32"/>
-<area shape="rect" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="5,56,171,83"/>
+<area shape="rect" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="896,85,1077,112"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classMavrosBridge.html#a68c2743effbb069153be9b7af647d783" title="设置无人机解锁或上锁状态" alt="" coords="675,111,848,137"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
+<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="471,111,617,137"/>
+<area shape="rect" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="461,161,627,188"/>
 </map>
 </div>
 
@@ -614,8 +686,121 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph.png" border="0" usemap="#classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph" alt=""/></div>
 <map name="classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph" id="classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph">
-<area shape="rect" title="检查无人机是否已连接" alt="" coords="224,13,431,39"/>
-<area shape="rect" href="classMavrosBridge.html#a7a70c52e8e986a2c7a3cfeb5bfc82419" title="连接到飞控单元(FCU)" alt="" coords="5,5,176,47"/>
+<area shape="rect" title="检查无人机是否已连接" alt="" coords="475,46,681,73"/>
+<area shape="rect" href="classMavrosBridge.html#a7a70c52e8e986a2c7a3cfeb5bfc82419" title="连接到飞控单元(FCU)" alt="" coords="244,5,415,47"/>
+<area shape="rect" href="classIdleMission.html#a773446138cfd397f4978f26cf9636a00" title="处理启动任务机服务请求" alt="" coords="232,71,427,112"/>
+<area shape="rect" href="classIdleMission.html#a51d05e324190449745d11a87fc4168ff" title="构造函数" alt="" coords="5,78,184,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8b5ac1bf2119b5abf6c82828be23e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b5ac1bf2119b5abf6c82828be23e6a">&#9670;&nbsp;</a></span>is_gps_fixed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StatusMonitor::is_gps_fixed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查GPS是否已接收固定位置 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果已接收固定位置返回true，否则返回false </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a_icgraph.png" border="0" usemap="#classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a_icgraph" alt=""/></div>
+<map name="classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a_icgraph" id="classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a_icgraph">
+<area shape="rect" title="检查GPS是否已接收固定位置" alt="" coords="243,5,405,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7697d36430b3eef8ac364b5799e8b87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7697d36430b3eef8ac364b5799e8b87d">&#9670;&nbsp;</a></span>is_mission_aborted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StatusMonitor::is_mission_aborted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查任务是否已中止 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果任务已中止返回true，否则返回false </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d_icgraph.png" border="0" usemap="#classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d_icgraph" alt=""/></div>
+<map name="classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d_icgraph" id="classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d_icgraph">
+<area shape="rect" title="检查任务是否已中止" alt="" coords="253,5,444,47"/>
+<area shape="rect" href="classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,13,205,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0ac15226e5f468fc23e054880303265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ac15226e5f468fc23e054880303265">&#9670;&nbsp;</a></span>is_mission_completed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StatusMonitor::is_mission_completed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查任务是否已完成 </p>
+<dl class="section return"><dt>Returns</dt><dd>如果任务已完成返回true，否则返回false </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_ad0ac15226e5f468fc23e054880303265_icgraph.png" border="0" usemap="#classStatusMonitor_ad0ac15226e5f468fc23e054880303265_icgraph" alt=""/></div>
+<map name="classStatusMonitor_ad0ac15226e5f468fc23e054880303265_icgraph" id="classStatusMonitor_ad0ac15226e5f468fc23e054880303265_icgraph">
+<area shape="rect" title="检查任务是否已完成" alt="" coords="253,5,444,47"/>
+<area shape="rect" href="classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,13,205,39"/>
 </map>
 </div>
 
@@ -740,6 +925,220 @@ Here is the caller graph for this function:</div>
 <map name="classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4_icgraph" id="classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4_icgraph">
 <area shape="rect" title="本地位置消息回调函数" alt="" coords="265,5,417,47"/>
 <area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41b560aff8ebe76be0e5af4305c99a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b560aff8ebe76be0e5af4305c99a08">&#9670;&nbsp;</a></span>mission_list_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StatusMonitor::mission_list_cb </td>
+          <td>(</td>
+          <td class="paramtype">const mavros_msgs::WaypointList::ConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务列表回调函数 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>任务列表消息</td></tr>
+    <tr><td class="paramname">msg</td><td>任务列表消息指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>更新任务的总航点数 </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08_icgraph.png" border="0" usemap="#classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08_icgraph" alt=""/></div>
+<map name="classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08_icgraph" id="classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08_icgraph">
+<area shape="rect" title="任务列表回调函数" alt="" coords="265,5,437,47"/>
+<area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8847099319441b1e8d05cb9cc8af0f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8847099319441b1e8d05cb9cc8af0f44">&#9670;&nbsp;</a></span>mission_reached_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StatusMonitor::mission_reached_cb </td>
+          <td>(</td>
+          <td class="paramtype">const mavros_msgs::WaypointReached::ConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务完成回调函数 </p>
+<p>航点到达回调函数</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>任务完成消息</td></tr>
+    <tr><td class="paramname">msg</td><td>航点到达消息指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>监控任务进度，判断任务是否完成 </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44_icgraph.png" border="0" usemap="#classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44_icgraph" alt=""/></div>
+<map name="classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44_icgraph" id="classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44_icgraph">
+<area shape="rect" title="任务完成回调函数" alt="" coords="265,5,437,47"/>
+<area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adbc9dafa33e2d5e24634adc623a9c493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc9dafa33e2d5e24634adc623a9c493">&#9670;&nbsp;</a></span>rel_alt_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StatusMonitor::rel_alt_cb </td>
+          <td>(</td>
+          <td class="paramtype">const std_msgs::Float64::ConstPtr &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>相对高度(Home点)回调函数 </p>
+<p>相对高度回调函数</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>相对高度消息</td></tr>
+    <tr><td class="paramname">msg</td><td>相对高度消息指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>更新无人机相对高度信息 </dd>
+<dd>
+使用互斥锁保护状态数据 </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493_icgraph.png" border="0" usemap="#classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493_icgraph" alt=""/></div>
+<map name="classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493_icgraph" id="classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493_icgraph">
+<area shape="rect" title="相对高度(Home点)回调函数" alt="" coords="265,5,404,47"/>
+<area shape="rect" href="classStatusMonitor.html#a9f7e9799f5c30e24d2f91437960b8a17" title="构造函数" alt="" coords="5,13,217,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa3ff55721acb48d09f1729446d39804e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ff55721acb48d09f1729446d39804e">&#9670;&nbsp;</a></span>reset_gps_fix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StatusMonitor::reset_gps_fix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置GPS固定位置标志 </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_aa3ff55721acb48d09f1729446d39804e_icgraph.png" border="0" usemap="#classStatusMonitor_aa3ff55721acb48d09f1729446d39804e_icgraph" alt=""/></div>
+<map name="classStatusMonitor_aa3ff55721acb48d09f1729446d39804e_icgraph" id="classStatusMonitor_aa3ff55721acb48d09f1729446d39804e_icgraph">
+<area shape="rect" title="重置GPS固定位置标志" alt="" coords="205,5,360,47"/>
+<area shape="rect" href="classIdleMission.html#a73a6cfc65cc627888d4f801ac1d93b30" title="退出空闲状态时调用" alt="" coords="5,13,157,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a79e0bb80e813509aa266f583384d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a79e0bb80e813509aa266f583384d87">&#9670;&nbsp;</a></span>reset_mission_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StatusMonitor::reset_mission_flags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置任务相关标志（任务完成、任务中止、已到达航点索引） </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStatusMonitor_a9a79e0bb80e813509aa266f583384d87_icgraph.png" border="0" usemap="#classStatusMonitor_a9a79e0bb80e813509aa266f583384d87_icgraph" alt=""/></div>
+<map name="classStatusMonitor_a9a79e0bb80e813509aa266f583384d87_icgraph" id="classStatusMonitor_a9a79e0bb80e813509aa266f583384d87_icgraph">
+<area shape="rect" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="879,5,1033,47"/>
+<area shape="rect" href="classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="679,5,831,47"/>
+<area shape="rect" href="classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="467,5,631,47"/>
+<area shape="rect" href="classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
 </map>
 </div>
 
@@ -890,8 +1289,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a81d91b2d229258195e1d2ff3ebb51c84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d91b2d229258195e1d2ff3ebb51c84">&#9670;&nbsp;</a></span>_global_pos</h2>
+<a id="afe91817c3c1c3a1a3ac1807a971a7df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe91817c3c1c3a1a3ac1807a971a7df1">&#9670;&nbsp;</a></span>_global_pos</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -900,7 +1299,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">geographic_msgs::GeoPoseStamped StatusMonitor::_global_pos</td>
+          <td class="memname">std::array&lt;double, 3&gt; StatusMonitor::_global_pos</td>
         </tr>
       </table>
   </td>
@@ -910,12 +1309,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>全局位置（经纬度高度） </p>
+<p>全局位置（经纬度+绝对海拔高度） </p>
 
 </div>
 </div>
-<a id="a134647fed34f8fdb045f7dceafb6ff2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a134647fed34f8fdb045f7dceafb6ff2a">&#9670;&nbsp;</a></span>_global_pos_sub</h2>
+<a id="a4f3d8610a5a99ca6bf74127a018a6f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3d8610a5a99ca6bf74127a018a6f3d">&#9670;&nbsp;</a></span>_gps_received_fix</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -924,7 +1323,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ros::Subscriber StatusMonitor::_global_pos_sub</td>
+          <td class="memname">bool StatusMonitor::_gps_received_fix = false</td>
         </tr>
       </table>
   </td>
@@ -934,7 +1333,31 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>全局位置订阅器 </p>
+<p>GPS是否已接收固定位置 </p>
+
+</div>
+</div>
+<a id="a773f1ec99b399432b9ee1eee02f6c3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773f1ec99b399432b9ee1eee02f6c3da">&#9670;&nbsp;</a></span>_gps_sub</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Subscriber StatusMonitor::_gps_sub</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GPS位置（绝对海拔高度）订阅器 </p>
 
 </div>
 </div>
@@ -1058,6 +1481,102 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3b79aa724c45c4f85ed133210b2361e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b79aa724c45c4f85ed133210b2361e9">&#9670;&nbsp;</a></span>_mission_aborted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StatusMonitor::_mission_aborted = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务是否被中止的标志 </p>
+
+</div>
+</div>
+<a id="a57c467a29131f9234a32d5fc69c6ae63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c467a29131f9234a32d5fc69c6ae63">&#9670;&nbsp;</a></span>_mission_completed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StatusMonitor::_mission_completed = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务是否已完成的标志 </p>
+
+</div>
+</div>
+<a id="a6b746484c7a679c68c2b3f087595a2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b746484c7a679c68c2b3f087595a2fd">&#9670;&nbsp;</a></span>_mission_list_sub</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Subscriber StatusMonitor::_mission_list_sub</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务列表订阅器 </p>
+
+</div>
+</div>
+<a id="a4a3d756a575e63e62ee8f5e89ad7d00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3d756a575e63e62ee8f5e89ad7d00c">&#9670;&nbsp;</a></span>_mission_reached_sub</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Subscriber StatusMonitor::_mission_reached_sub</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务完成订阅器 </p>
+
+</div>
+</div>
 <a id="a4fafc3bf8ac75e61f7d9b096e3131a7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fafc3bf8ac75e61f7d9b096e3131a7c">&#9670;&nbsp;</a></span>_nh</h2>
 
@@ -1103,6 +1622,78 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>无人机姿态四元数 </p>
+
+</div>
+</div>
+<a id="a337e760e279c42754e5e75c0723bdcc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337e760e279c42754e5e75c0723bdcc1">&#9670;&nbsp;</a></span>_reached_waypoint_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatusMonitor::_reached_waypoint_index = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前已到达的航点索引（从0开始） </p>
+
+</div>
+</div>
+<a id="a2b3284da37ac6c0a94b1f38e73aa9fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3284da37ac6c0a94b1f38e73aa9fa6">&#9670;&nbsp;</a></span>_rel_alt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double StatusMonitor::_rel_alt = std::numeric_limits&lt;double&gt;::quiet_NaN()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>相对高度(Home点) </p>
+
+</div>
+</div>
+<a id="ae77b728c0c2df9e43f67d84c0663d80b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae77b728c0c2df9e43f67d84c0663d80b">&#9670;&nbsp;</a></span>_rel_alt_sub</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::Subscriber StatusMonitor::_rel_alt_sub</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>相对高度(Home点)订阅器 </p>
 
 </div>
 </div>
@@ -1152,6 +1743,30 @@ Here is the caller graph for this function:</div>
 
 <p>状态互斥锁，用于保护状态变量的并发访问 </p>
 <dl class="section note"><dt>Note</dt><dd>mutable关键字允许在const成员函数中锁定和解锁互斥锁 </dd></dl>
+
+</div>
+</div>
+<a id="aab75259ef058ebcc3e41cd3864dafec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab75259ef058ebcc3e41cd3864dafec0">&#9670;&nbsp;</a></span>_total_waypoints</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t StatusMonitor::_total_waypoints = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务总航点数 </p>
 
 </div>
 </div>

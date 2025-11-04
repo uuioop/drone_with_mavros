@@ -1,0 +1,10 @@
+<map id="MavrosBridge::set_arm" name="MavrosBridge::set_arm">
+<area shape="rect" id="node1" title="设置无人机解锁或上锁状态" alt="" coords="675,111,848,137"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="471,85,617,112"/>
+<area shape="rect" id="node8" href="$classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="461,136,627,163"/>
+<area shape="rect" id="node3" href="$classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" id="node4" href="$classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" id="node5" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" id="node6" href="$classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" id="node7" href="$classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
+</map>

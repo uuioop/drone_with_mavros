@@ -7,10 +7,13 @@
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/SetMode.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <geographic_msgs/GeoPoseStamped.h>
+#include <mavros_msgs/Waypoint.h>
+#include <mavros_msgs/WaypointPush.h>
+#include <mavros_msgs/WaypointClear.h>
 #include <mavros_msgs/PositionTarget.h>
 #include <ros/ros.h>
 #include <array>
+#include <vector>
 
 #include "core/StatusMonitor.h"
 
@@ -71,11 +74,19 @@ public:
     bool set_position_local(const std::array<double, 4>& pos,const std::array<double, 4>& orient={0.0,0.0,0.0,1.0});
     
     /**
-     * @brief 设置全局坐标系下的目标位置
-     * @param pos 全局位置消息
+     * @brief 设置任务航点列表
+     * @param waypoints 任务航点列表
+     * @note 自定义程度高
      * @return 设置成功返回true
      */
-    bool set_position_global(const geographic_msgs::GeoPoseStamped& pos);
+    bool upload_mission(const std::vector<mavros_msgs::Waypoint>& waypoints);
+
+    /**
+     * @brief 设置任务航点位置列表
+     * @param waypoint_positions 任务航点位置列表，每个元素为{纬度(度), 经度(度), 绝对高度(米)}
+     * @return 设置成功返回true
+     */
+    bool upload_mission(const std::vector<std::array<double, 3>>& waypoint_positions);
     
     /**
      * @brief 设置机体坐标系下的速度指令
@@ -106,16 +117,21 @@ private:
      * @brief 设置模式服务客户端
      */
     ros::ServiceClient _set_mode_client;
+
+    /**
+     * @brief 清除航点服务客户端
+     */
+    ros::ServiceClient _wp_clear_client;
+    
+    /**
+     * @brief 推送航点服务客户端
+     */
+    ros::ServiceClient _wp_push_client;
     
     /**
      * @brief 本地位置发布者
      */
     ros::Publisher _local_pos_pub;
-    
-    /**
-     * @brief 全局位置发布者
-     */
-    ros::Publisher _global_pos_pub;
     
     /**
      * @brief 机体速度发布者
@@ -149,6 +165,19 @@ private:
     bool start_offboard_mode();
 
     /**
+     * @brief 清除当前航点列表
+     * @return 清除成功返回true
+     */
+    bool clear_waypoints();
+
+    /**
+     * @brief 上传航点列表到飞控
+     * @param waypoints 航点列表
+     * @return 上传成功返回true
+     */
+    bool upload_waypoints(const std::vector<mavros_msgs::Waypoint>& waypoints);
+
+    /**
      * @brief 服务调用辅助模板函数
      * @tparam ServiceType 服务类型
      * @param client 服务客户端
@@ -161,7 +190,7 @@ private:
                     ServiceType& service, 
                     const std::string& service_name)
     {
-        if (client.call(service))
+        if (client.call(service) && service.response.success)
         {
             return true;
         }

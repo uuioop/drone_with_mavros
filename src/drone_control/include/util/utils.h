@@ -5,7 +5,8 @@
  * 该文件提供了角度和弧度转换相关的工具函数，用于无人机控制中的坐标变换和姿态计算。
  */
 #pragma once
-#include <cmath>  // 用于 M_PI 常量
+#include <cmath>
+#include <array>
 
 
 /**
@@ -37,4 +38,38 @@ inline double rad2deg_normalized(double radians) {
     
     // 然后转换为角度
     return rad_norm * 180.0 / M_PI;
+}
+
+/**
+ * @brief 检查目标位置数据的有效性
+ * @param lat 纬度(度)
+ * @param lon 经度(度)
+ * @param alt 相对高度(米)
+ * @return 位置数据有效返回true
+ * @note 检测标准：
+ *   - 经纬度为非NaN且在合理范围内(-90到90度，-180到180度)
+ *   - 相对高度为非NaN且不小于-0.1米
+ */
+inline bool check_target_pos_valid(std::array<double, 3> target_pos){
+    // 检查是否为NaN
+    if (std::isnan(target_pos[0]) || std::isnan(target_pos[1]) || std::isnan(target_pos[2])) {
+        return false;
+    }
+    
+    // 检查纬度范围：-90到90度
+    if (target_pos[0] < -90.0 || target_pos[0] > 90.0) {
+        return false;
+    }
+    
+    // 检查经度范围：-180到180度
+    if (target_pos[1] < -180.0 || target_pos[1] > 180.0) {  
+        return false;
+    }
+    
+    // 检查相对高度：不小于-0.1米
+    if (target_pos[2] < -0.1) {
+        return false;
+    }
+    
+    return true;
 }

@@ -1,5 +1,16 @@
 <map id="include/core/DroneControl.h" name="include/core/DroneControl.h">
-<area shape="rect" id="node1" title="无人机控制类" alt="" coords="85,5,287,32"/>
-<area shape="rect" id="node2" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="5,80,196,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="220,80,325,107"/>
+<area shape="rect" id="node1" title="无人机控制类" alt="" coords="904,5,1107,32"/>
+<area shape="rect" id="node2" href="$MissionNode_8h.html" title="任务基类定义，所有具体任务的抽象接口" alt="" coords="811,80,968,121"/>
+<area shape="rect" id="node4" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="794,266,985,293"/>
+<area shape="rect" id="node14" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="1043,87,1149,114"/>
+<area shape="rect" id="node3" href="$ConfirmLicenseMission_8h.html" title="号牌确认任务头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="348,169,537,211"/>
+<area shape="rect" id="node7" href="$GPSNavMission_8h.html" title="GPS导航任务类定义" alt="" coords="629,169,787,211"/>
+<area shape="rect" id="node9" href="$IdleMission_8h.html" title="空闲状态任务头文件 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="811,169,968,211"/>
+<area shape="rect" id="node11" href="$PrecisionLandMission_8h.html" title="精确着陆任务头文件 负责管理无人机使用ArUco标签进行精确着陆的过程" alt="" coords="1159,169,1337,211"/>
+<area shape="rect" id="node5" href="$ConfirmLicenseMission_8cpp.html" title="号牌确认任务实现" alt="" coords="5,259,240,300"/>
+<area shape="rect" id="node6" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="264,259,483,300"/>
+<area shape="rect" id="node8" href="$GPSNavMission_8cpp.html" title="任务导航任务节点实现文件" alt="" coords="507,266,770,293"/>
+<area shape="rect" id="node10" href="$IdleMission_8cpp.html" title="空闲状态任务实现" alt="" coords="1009,266,1244,293"/>
+<area shape="rect" id="node12" href="$PrecisionLandMission_8cpp.html" title="精确着陆任务节点实现文件" alt="" coords="1268,259,1460,300"/>
+<area shape="rect" id="node13" href="$PrecisionLandNodes_8cpp.html" title="精确着陆状态节点实现文件" alt="" coords="1485,259,1691,300"/>
 </map>

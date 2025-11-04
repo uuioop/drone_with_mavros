@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Descend\+State\+:
-\nopagebreak
+Inheritance diagram for Descend\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Descend\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Descend\+State\+:
-\nopagebreak
+Collaboration diagram for Descend\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +30,7 @@ Collaboration diagram for Descend\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}{Descend\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classDescendState_a342d4e4f2800b084be9af5b185a7c8e6}{Descend\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}{$\sim$\+Descend\+State}} ()=default
 \item 
@@ -54,11 +52,11 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+P
 下降状态类 负责控制无人机在对准平台标签后平稳下降 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}\label{classDescendState_ae533fb6c8073bfe5c41625e315caef9d}} 
+\mbox{\Hypertarget{classDescendState_a342d4e4f2800b084be9af5b185a7c8e6}\label{classDescendState_a342d4e4f2800b084be9af5b185a7c8e6}} 
 \index{DescendState@{DescendState}!DescendState@{DescendState}}
 \index{DescendState@{DescendState}!DescendState@{DescendState}}
 \doxysubsubsection{\texorpdfstring{DescendState()}{DescendState()}}
-{\footnotesize\ttfamily Descend\+State\+::\+Descend\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Descend\+State\+::\+Descend\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})}
 
 
 
@@ -68,9 +66,9 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+P
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用\\
+{\em mission} & 所在任务引用\\
 \hline
-{\em controller} & 控制器引用，用于获取下降标记处理器 \\
+{\em mission} & 所在任务引用，用于获取下降标记处理器 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}\label{classDescendState_ab734ac6e23ad7a8b1e685372547c054a}} 
@@ -134,10 +132,9 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -161,5 +158,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

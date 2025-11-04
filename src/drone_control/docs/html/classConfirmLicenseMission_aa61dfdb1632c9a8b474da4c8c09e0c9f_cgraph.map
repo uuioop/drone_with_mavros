@@ -1,0 +1,16 @@
+<map id="ConfirmLicenseMission::on_enter" name="ConfirmLicenseMission::on_enter">
+<area shape="rect" id="node1" title="进入任务时调用" alt="" coords="5,99,179,141"/>
+<area shape="rect" id="node2" href="$classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="231,81,402,108"/>
+<area shape="rect" id="node14" href="$classNodeMachine.html#aa807db605eae5d920695ca964207c1e5" title="设置节点机的入口节点" alt="" coords="227,132,407,159"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="478,5,625,32"/>
+<area shape="rect" id="node5" href="$classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="946,31,1127,57"/>
+<area shape="rect" id="node6" href="$classMissionNode.html#ac3727d486f52f84d383367a65ae1145f" title="设置任务完成标志" alt="" coords="455,107,648,133"/>
+<area shape="rect" id="node7" href="$classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="470,162,633,203"/>
+<area shape="rect" id="node4" href="$classMavrosBridge.html#a68c2743effbb069153be9b7af647d783" title="设置无人机解锁或上锁状态" alt="" coords="696,5,869,32"/>
+<area shape="rect" id="node8" href="$classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="711,107,854,149"/>
+<area shape="rect" id="node9" href="$classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5" title="设置无人机飞行模式" alt="" coords="945,177,1129,204"/>
+<area shape="rect" id="node10" href="$classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="707,225,858,266"/>
+<area shape="rect" id="node11" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="917,232,1156,259"/>
+<area shape="rect" id="node12" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="1239,207,1394,233"/>
+<area shape="rect" id="node13" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="1204,257,1429,284"/>
+</map>

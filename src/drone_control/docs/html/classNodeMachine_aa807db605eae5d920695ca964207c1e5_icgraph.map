@@ -1,0 +1,6 @@
+<map id="NodeMachine::set_entry" name="NodeMachine::set_entry">
+<area shape="rect" id="node1" title="设置节点机的入口节点" alt="" coords="256,64,436,91"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#af04a844fd29a35376c40c83217646e30" title="构造函数" alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node3" href="$classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="25,57,188,98"/>
+<area shape="rect" id="node4" href="$classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="20,122,193,163"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="GPSNavMission" name="GPSNavMission">
+<area shape="rect" id="node1" title="GPS导航任务" alt="" coords="11,520,183,715"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="5,189,188,472"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="35,5,159,141"/>
+</map>

@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Confirm\+License\+State\+:
-\nopagebreak
+Inheritance diagram for Confirm\+License\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Confirm\+License\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Confirm\+License\+State\+:
-\nopagebreak
+Collaboration diagram for Confirm\+License\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +30,7 @@ Collaboration diagram for Confirm\+License\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}{Confirm\+License\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classConfirmLicenseState_a03269958dd71b7009eec92eeb364d394}{Confirm\+License\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}{$\sim$\+Confirm\+License\+State}} ()=default
 \item 
@@ -54,11 +52,11 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLicenseProcessor}{License\+Proce
 确认号牌状态类 负责确认检测到的号牌是否为目标号牌 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}\label{classConfirmLicenseState_accb1ed145f74fc870d20bdf01a58c029}} 
+\mbox{\Hypertarget{classConfirmLicenseState_a03269958dd71b7009eec92eeb364d394}\label{classConfirmLicenseState_a03269958dd71b7009eec92eeb364d394}} 
 \index{ConfirmLicenseState@{ConfirmLicenseState}!ConfirmLicenseState@{ConfirmLicenseState}}
 \index{ConfirmLicenseState@{ConfirmLicenseState}!ConfirmLicenseState@{ConfirmLicenseState}}
 \doxysubsubsection{\texorpdfstring{ConfirmLicenseState()}{ConfirmLicenseState()}}
-{\footnotesize\ttfamily Confirm\+License\+State\+::\+Confirm\+License\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Confirm\+License\+State\+::\+Confirm\+License\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})}
 
 
 
@@ -68,14 +66,14 @@ Confirm\+License\+State构造函数
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用\\
+{\em mission} & 所在任务引用\\
 \hline
 \end{DoxyParams}
 初始化确认号牌状态节点，获取号牌处理器并设置超时时长
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用 \\
+{\em mission} & 所在任务引用 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}\label{classConfirmLicenseState_a88af3bb6e63bfa51937f6ef26d481fba}} 
@@ -141,10 +139,9 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -168,5 +165,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8h}{Confirm\+License\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{ConfirmLicenseNodes_8cpp}{Confirm\+License\+Nodes.\+cpp}}\end{DoxyCompactItemize}

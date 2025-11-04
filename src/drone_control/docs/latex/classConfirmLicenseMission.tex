@@ -1,0 +1,323 @@
+\hypertarget{classConfirmLicenseMission}{}\doxysection{Confirm\+License\+Mission Class Reference}
+\label{classConfirmLicenseMission}\index{ConfirmLicenseMission@{ConfirmLicenseMission}}
+
+
+号牌确认任务类 继承自\+Mission\+Node基类，实现无人机对目标号牌的识别和确认控制逻辑  
+
+
+
+
+{\ttfamily \#include $<$Confirm\+License\+Mission.\+h$>$}
+
+
+
+Inheritance diagram for Confirm\+License\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classConfirmLicenseMission__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Confirm\+License\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classConfirmLicenseMission__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConfirmLicenseMission_aecfbc877a3b95f27b66a03d0b0a52ce2}{Confirm\+License\+Mission}} (\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&drone\+\_\+control, ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConfirmLicenseMission_a4a34c868c6fb9927c3ffab58077fe823}{$\sim$\+Confirm\+License\+Mission}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_acff8bf042c39d774d13326be281aaa58}{switch\+\_\+node}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 切换状态机状态 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_aa61dfdb1632c9a8b474da4c8c09e0c9f}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入任务时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classConfirmLicenseMission_addccaaab98b57127b1d5c9ae325e23b5}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 更新任务状态时调用 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_a3dabb33440d77c2c34012293aa38e50c}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出任务时调用 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLicenseProcessor}{License\+Processor}} $>$ \mbox{\hyperlink{classConfirmLicenseMission_ae917b1c9c3e94e8fa5efe333c3b70327}{get\+\_\+license\+\_\+processor}} () const
+\begin{DoxyCompactList}\small\item\em 获取号牌处理器 \end{DoxyCompactList}\item 
+std\+::tuple$<$ char, double $>$ \mbox{\hyperlink{classConfirmLicenseMission_a7b0832f394234b2bc4e855ad1fb8a8c9}{get\+\_\+move\+\_\+vector}} () const
+\begin{DoxyCompactList}\small\item\em 获取移动向量 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_aabfabbf135a6dfd2b8bc47e84908ee37}{update\+\_\+move\+\_\+vector}} (std\+::tuple$<$ char, double $>$ move\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em 更新移动向量 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_af56c27d77ea7d592eec1626df7ae67f7}{update\+\_\+target\+\_\+license\+\_\+no}} (std\+::string license\+\_\+no)
+\begin{DoxyCompactList}\small\item\em 更新目标号牌号码 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classConfirmLicenseMission_a9eeccfada6c7326bf2b6d5191164b008}{register\+\_\+states}} ()
+\begin{DoxyCompactList}\small\item\em 注册状态机中的各个状态 初始化并注册搜索、确认和重新定位三种状态到状态机中 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodeMachine}{Node\+Machine}} \mbox{\hyperlink{classConfirmLicenseMission_a07a50e90a1af87b3c67d9631a03501fe}{\+\_\+state\+\_\+machine}}
+\begin{DoxyCompactList}\small\item\em 状态机，管理搜索、确认和重新定位三种状态 负责协调不同状态之间的转换和执行 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLicenseConfig}{License\+Config}} \mbox{\hyperlink{classConfirmLicenseMission_a77754da8064a18c349329ffb05ddae15}{\+\_\+license\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em 号牌配置信息 存储号牌识别和处理相关的配置参数 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLicenseProcessor}{License\+Processor}} $>$ \mbox{\hyperlink{classConfirmLicenseMission_a8cb20a4d972a80119d8fc6d9bf78d006}{\+\_\+license\+\_\+processor}}
+\begin{DoxyCompactList}\small\item\em 号牌处理器，用于处理和识别号牌信息 封装了号牌检测、验证和比对的核心功能 \end{DoxyCompactList}\item 
+std\+::tuple$<$ char, double $>$ \mbox{\hyperlink{classConfirmLicenseMission_a14a410cc182533d9531a77ce26e0c8e6}{\+\_\+move\+\_\+vector}} = \{\textquotesingle{}z\textquotesingle{}, -\/1.\+0\}
+\begin{DoxyCompactList}\small\item\em 移动向量，默认向下移动1.0单位 第一个元素为方向字符（\textquotesingle{}y\textquotesingle{}/\textquotesingle{}z\textquotesingle{}），第二个元素为移动距离和方向 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+号牌确认任务类 继承自\+Mission\+Node基类，实现无人机对目标号牌的识别和确认控制逻辑 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConfirmLicenseMission_aecfbc877a3b95f27b66a03d0b0a52ce2}\label{classConfirmLicenseMission_aecfbc877a3b95f27b66a03d0b0a52ce2}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{ConfirmLicenseMission()}{ConfirmLicenseMission()}}
+{\footnotesize\ttfamily Confirm\+License\+Mission\+::\+Confirm\+License\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&}]{drone\+\_\+control,  }\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+构造函数实现 初始化号牌处理器，注册状态机中的状态，并设置初始状态为搜索号牌
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_aecfbc877a3b95f27b66a03d0b0a52ce2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classConfirmLicenseMission_a4a34c868c6fb9927c3ffab58077fe823}\label{classConfirmLicenseMission_a4a34c868c6fb9927c3ffab58077fe823}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!````~ConfirmLicenseMission@{$\sim$ConfirmLicenseMission}}
+\index{````~ConfirmLicenseMission@{$\sim$ConfirmLicenseMission}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConfirmLicenseMission()}{~ConfirmLicenseMission()}}
+{\footnotesize\ttfamily Confirm\+License\+Mission\+::$\sim$\+Confirm\+License\+Mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现 使用默认析构函数，自动管理资源释放 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConfirmLicenseMission_ae917b1c9c3e94e8fa5efe333c3b70327}\label{classConfirmLicenseMission_ae917b1c9c3e94e8fa5efe333c3b70327}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!get\_license\_processor@{get\_license\_processor}}
+\index{get\_license\_processor@{get\_license\_processor}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{get\_license\_processor()}{get\_license\_processor()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classLicenseProcessor}{License\+Processor}}$>$ Confirm\+License\+Mission\+::get\+\_\+license\+\_\+processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取号牌处理器 
+
+\begin{DoxyReturn}{Returns}
+号牌处理器智能指针 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConfirmLicenseMission_a7b0832f394234b2bc4e855ad1fb8a8c9}\label{classConfirmLicenseMission_a7b0832f394234b2bc4e855ad1fb8a8c9}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!get\_move\_vector@{get\_move\_vector}}
+\index{get\_move\_vector@{get\_move\_vector}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{get\_move\_vector()}{get\_move\_vector()}}
+{\footnotesize\ttfamily std\+::tuple$<$char, double$>$ Confirm\+License\+Mission\+::get\+\_\+move\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+获取移动向量 
+
+\begin{DoxyReturn}{Returns}
+移动向量，包含方向和距离 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConfirmLicenseMission_aa61dfdb1632c9a8b474da4c8c09e0c9f}\label{classConfirmLicenseMission_aa61dfdb1632c9a8b474da4c8c09e0c9f}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入任务时调用 
+
+进入任务时的回调实现 目前为空实现，可根据需要添加初始化逻辑 
+
+Implements \mbox{\hyperlink{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_aa61dfdb1632c9a8b474da4c8c09e0c9f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classConfirmLicenseMission_a3dabb33440d77c2c34012293aa38e50c}\label{classConfirmLicenseMission_a3dabb33440d77c2c34012293aa38e50c}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出任务时调用 
+
+退出任务时的回调实现 目前为空实现，可根据需要添加清理逻辑 
+
+Implements \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{Mission\+Node}}.
+
+\mbox{\Hypertarget{classConfirmLicenseMission_addccaaab98b57127b1d5c9ae325e23b5}\label{classConfirmLicenseMission_addccaaab98b57127b1d5c9ae325e23b5}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Confirm\+License\+Mission\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新任务状态时调用 
+
+更新任务状态时的回调实现 获取当前状态的控制指令并通过\+M\+A\+V\+R\+O\+S桥接器发送给无人机 
+
+Implements \mbox{\hyperlink{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_addccaaab98b57127b1d5c9ae325e23b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classConfirmLicenseMission_a9eeccfada6c7326bf2b6d5191164b008}\label{classConfirmLicenseMission_a9eeccfada6c7326bf2b6d5191164b008}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!register\_states@{register\_states}}
+\index{register\_states@{register\_states}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{register\_states()}{register\_states()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::register\+\_\+states (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+注册状态机中的各个状态 初始化并注册搜索、确认和重新定位三种状态到状态机中 
+
+注册状态机中的各个状态 将搜索号牌、确认号牌和重新定位号牌三个状态注册到状态机中 Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_a9eeccfada6c7326bf2b6d5191164b008_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_a9eeccfada6c7326bf2b6d5191164b008_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classConfirmLicenseMission_acff8bf042c39d774d13326be281aaa58}\label{classConfirmLicenseMission_acff8bf042c39d774d13326be281aaa58}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!switch\_node@{switch\_node}}
+\index{switch\_node@{switch\_node}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{switch\_node()}{switch\_node()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::switch\+\_\+node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+切换状态机状态 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 目标状态\+ID \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfirmLicenseMission_acff8bf042c39d774d13326be281aaa58_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classConfirmLicenseMission_aabfabbf135a6dfd2b8bc47e84908ee37}\label{classConfirmLicenseMission_aabfabbf135a6dfd2b8bc47e84908ee37}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!update\_move\_vector@{update\_move\_vector}}
+\index{update\_move\_vector@{update\_move\_vector}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{update\_move\_vector()}{update\_move\_vector()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::update\+\_\+move\+\_\+vector (\begin{DoxyParamCaption}\item[{std\+::tuple$<$ char, double $>$}]{move\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+更新移动向量 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+\_\+vector} & 新的移动向量 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConfirmLicenseMission_af56c27d77ea7d592eec1626df7ae67f7}\label{classConfirmLicenseMission_af56c27d77ea7d592eec1626df7ae67f7}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!update\_target\_license\_no@{update\_target\_license\_no}}
+\index{update\_target\_license\_no@{update\_target\_license\_no}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{update\_target\_license\_no()}{update\_target\_license\_no()}}
+{\footnotesize\ttfamily void Confirm\+License\+Mission\+::update\+\_\+target\+\_\+license\+\_\+no (\begin{DoxyParamCaption}\item[{std\+::string}]{license\+\_\+no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+更新目标号牌号码 
+
+
+\begin{DoxyParams}{Parameters}
+{\em license\+\_\+no} & 新的目标号牌号码 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConfirmLicenseMission_a77754da8064a18c349329ffb05ddae15}\label{classConfirmLicenseMission_a77754da8064a18c349329ffb05ddae15}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!\_license\_config@{\_license\_config}}
+\index{\_license\_config@{\_license\_config}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{\_license\_config}{\_license\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLicenseConfig}{License\+Config}} Confirm\+License\+Mission\+::\+\_\+license\+\_\+config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌配置信息 存储号牌识别和处理相关的配置参数 
+
+\mbox{\Hypertarget{classConfirmLicenseMission_a8cb20a4d972a80119d8fc6d9bf78d006}\label{classConfirmLicenseMission_a8cb20a4d972a80119d8fc6d9bf78d006}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!\_license\_processor@{\_license\_processor}}
+\index{\_license\_processor@{\_license\_processor}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{\_license\_processor}{\_license\_processor}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classLicenseProcessor}{License\+Processor}}$>$ Confirm\+License\+Mission\+::\+\_\+license\+\_\+processor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+号牌处理器，用于处理和识别号牌信息 封装了号牌检测、验证和比对的核心功能 
+
+\mbox{\Hypertarget{classConfirmLicenseMission_a14a410cc182533d9531a77ce26e0c8e6}\label{classConfirmLicenseMission_a14a410cc182533d9531a77ce26e0c8e6}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!\_move\_vector@{\_move\_vector}}
+\index{\_move\_vector@{\_move\_vector}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{\_move\_vector}{\_move\_vector}}
+{\footnotesize\ttfamily std\+::tuple$<$char, double$>$ Confirm\+License\+Mission\+::\+\_\+move\+\_\+vector = \{\textquotesingle{}z\textquotesingle{}, -\/1.\+0\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+移动向量，默认向下移动1.0单位 第一个元素为方向字符（\textquotesingle{}y\textquotesingle{}/\textquotesingle{}z\textquotesingle{}），第二个元素为移动距离和方向 
+
+\mbox{\Hypertarget{classConfirmLicenseMission_a07a50e90a1af87b3c67d9631a03501fe}\label{classConfirmLicenseMission_a07a50e90a1af87b3c67d9631a03501fe}} 
+\index{ConfirmLicenseMission@{ConfirmLicenseMission}!\_state\_machine@{\_state\_machine}}
+\index{\_state\_machine@{\_state\_machine}!ConfirmLicenseMission@{ConfirmLicenseMission}}
+\doxysubsubsection{\texorpdfstring{\_state\_machine}{\_state\_machine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNodeMachine}{Node\+Machine}} Confirm\+License\+Mission\+::\+\_\+state\+\_\+machine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+状态机，管理搜索、确认和重新定位三种状态 负责协调不同状态之间的转换和执行 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Mission\+Node/\mbox{\hyperlink{ConfirmLicenseMission_8h}{Confirm\+License\+Mission.\+h}}\item 
+src/\+Mission\+Node/\mbox{\hyperlink{ConfirmLicenseMission_8cpp}{Confirm\+License\+Mission.\+cpp}}\end{DoxyCompactItemize}

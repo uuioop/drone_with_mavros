@@ -1,0 +1,8 @@
+<map id="GPSNavMission::on_update" name="GPSNavMission::on_update">
+<area shape="rect" id="node1" title="状态更新时执行" alt="" coords="5,78,205,105"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#a7697d36430b3eef8ac364b5799e8b87d" title="检查任务是否已中止" alt="" coords="253,5,444,47"/>
+<area shape="rect" id="node3" href="$classStatusMonitor.html#ad0ac15226e5f468fc23e054880303265" title="检查任务是否已完成" alt="" coords="253,71,444,112"/>
+<area shape="rect" id="node4" href="$classMissionNode.html#ab0889e7310b36a8e9397d5a2a172efc1" title="任务更新方法，在主循环中被持续调用" alt="" coords="257,137,440,163"/>
+<area shape="rect" id="node5" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="492,129,651,171"/>
+<area shape="rect" id="node6" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="699,137,899,163"/>
+</map>

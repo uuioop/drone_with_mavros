@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['update_5fand_5flog_5fvalidity_210',['update_and_log_validity',['../classArucoTagProcessor.html#a08383d557a51c32c36fcf05b2038f10a',1,'ArucoTagProcessor']]],
-  ['update_5fmove_5fvector_211',['update_move_vector',['../classConfirmLicenseController.html#a4289a6bc61893d2e0704030b169ac547',1,'ConfirmLicenseController']]],
-  ['update_5frecognized_5flicense_212',['update_recognized_license',['../classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b',1,'LicenseProcessor']]],
-  ['update_5ftag_5fstarted_213',['update_tag_started',['../classArucoTagProcessor.html#a4a9fde3188baf0caa7ec72ffc3bf3443',1,'ArucoTagProcessor']]],
-  ['update_5ftagconfig_214',['update_tagconfig',['../classArucoTagProcessor.html#ae28e867f42494a6d8a2e3cd18a8f83ad',1,'ArucoTagProcessor']]],
-  ['update_5ftarget_5flicense_5fno_215',['update_target_license_no',['../classConfirmLicenseController.html#a596d19dc498b4ec2c5427a28dff048a8',1,'ConfirmLicenseController']]],
-  ['update_5ftarget_5fposition_216',['update_target_position',['../classMissionNavController.html#a9c32ad8b10d94046523934f335960597',1,'MissionNavController']]],
-  ['utils_2eh_217',['utils.h',['../utils_8h.html',1,'']]]
+  ['tag_5fname_231',['tag_name',['../structTagConfig.html#a6890180795996a006b15ad6a83a80ccb',1,'TagConfig']]],
+  ['tagconfig_232',['TagConfig',['../structTagConfig.html',1,'']]],
+  ['target_5fid_233',['target_id',['../structTagConfig.html#afe63e4a2dfe2ae9006b2dc7e3627018a',1,'TagConfig']]],
+  ['target_5foffset_234',['target_offset',['../structTagConfig.html#aad02527ca4bd31123b109a8ab2c57a98',1,'TagConfig']]],
+  ['target_5fpose_5fcallback_235',['target_pose_callback',['../classArucoTagProcessor.html#a38afe2fd9f5556679f2936427e23787d',1,'ArucoTagProcessor']]],
+  ['target_5ftimeout_236',['target_timeout',['../structTagConfig.html#ab7d54fc94d58b476fe8975685dff6213',1,'TagConfig::target_timeout()'],['../structLicenseConfig.html#a7d40b3db8b1457ed3680153d3efad9a8',1,'LicenseConfig::target_timeout()']]],
+  ['timestamp_237',['timestamp',['../structArucoTag.html#abaacf5e0ed51a8ae8c786f0d28cdcc3a',1,'ArucoTag::timestamp()'],['../structLicenseInfo.html#a46b4da9c1ace05bd56e9a9cfb0d4a386',1,'LicenseInfo::timestamp()']]],
+  ['topic_5fname_238',['topic_name',['../structTagConfig.html#a3dd3c6a4cfca3c39a65607879413f4fe',1,'TagConfig']]]
 ];

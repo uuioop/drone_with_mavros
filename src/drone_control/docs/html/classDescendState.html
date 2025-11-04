@@ -79,8 +79,9 @@ Inheritance diagram for DescendState:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDescendState__inherit__graph.png" border="0" usemap="#DescendState_inherit__map" alt="Inheritance graph"/></div>
 <map name="DescendState_inherit__map" id="DescendState_inherit__map">
-<area shape="rect" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="5,248,176,384"/>
-<area shape="rect" href="classStateNode.html" title="状态节点基类" alt="" coords="13,5,169,200"/>
+<area shape="rect" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="5,432,176,568"/>
+<area shape="rect" href="classStateNode.html" title="状态节点基类" alt="" coords="13,189,169,384"/>
+<area shape="rect" href="classNodeBase.html" title="节点基类" alt="" coords="29,5,153,141"/>
 </map>
 </div>
 <div class="dynheader">
@@ -88,19 +89,22 @@ Collaboration diagram for DescendState:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDescendState__coll__graph.png" border="0" usemap="#DescendState_coll__map" alt="Collaboration graph"/></div>
 <map name="DescendState_coll__map" id="DescendState_coll__map">
-<area shape="rect" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="29,1491,199,1627"/>
-<area shape="rect" href="classStateNode.html" title="状态节点基类" alt="" coords="36,1261,192,1441"/>
-<area shape="rect" href="classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,975,223,1199"/>
-<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="33,5,195,508"/>
-<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="239,571,421,912"/>
+<area shape="rect" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="5,1777,176,1913"/>
+<area shape="rect" href="classStateNode.html" title="状态节点基类" alt="" coords="13,1548,169,1728"/>
+<area shape="rect" href="classNodeBase.html" title="节点基类" alt="" coords="7,1041,131,1177"/>
+<area shape="rect" href="classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="107,1247,290,1485"/>
+<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="241,5,420,493"/>
+<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="242,556,419,971"/>
+<area shape="rect" href="classDroneControl.html" title="无人机控制类" alt="" coords="455,1033,611,1184"/>
+<area shape="rect" href="classNodeMachine.html" title="节点机基类" alt="" coords="627,666,773,861"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae533fb6c8073bfe5c41625e315caef9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDescendState.html#ae533fb6c8073bfe5c41625e315caef9d">DescendState</a> (<a class="el" href="classController.html">Controller</a> &amp;controller)</td></tr>
-<tr class="memdesc:ae533fb6c8073bfe5c41625e315caef9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classDescendState.html#ae533fb6c8073bfe5c41625e315caef9d">More...</a><br /></td></tr>
-<tr class="separator:ae533fb6c8073bfe5c41625e315caef9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342d4e4f2800b084be9af5b185a7c8e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDescendState.html#a342d4e4f2800b084be9af5b185a7c8e6">DescendState</a> (<a class="el" href="classMissionNode.html">MissionNode</a> &amp;mission)</td></tr>
+<tr class="memdesc:a342d4e4f2800b084be9af5b185a7c8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classDescendState.html#a342d4e4f2800b084be9af5b185a7c8e6">More...</a><br /></td></tr>
+<tr class="separator:a342d4e4f2800b084be9af5b185a7c8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab734ac6e23ad7a8b1e685372547c054a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDescendState.html#ab734ac6e23ad7a8b1e685372547c054a">~DescendState</a> ()=default</td></tr>
 <tr class="separator:ab734ac6e23ad7a8b1e685372547c054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d48743d70f39bb6a17c88880e3d935d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDescendState.html#a5d48743d70f39bb6a17c88880e3d935d">on_enter</a> () override</td></tr>
@@ -113,12 +117,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0225b407efca8b737df018be306bd3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出状态时调用  <a href="classDescendState.html#a0225b407efca8b737df018be306bd3e7">More...</a><br /></td></tr>
 <tr class="separator:a0225b407efca8b737df018be306bd3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classStateNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classStateNode')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classStateNode.html">StateNode</a></td></tr>
-<tr class="memitem:a2bae5a588ddddff09c56ffdb4c9e84e3 inherit pub_methods_classStateNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a2bae5a588ddddff09c56ffdb4c9e84e3">StateNode</a> (<a class="el" href="classController.html">Controller</a> &amp;controller)</td></tr>
-<tr class="memdesc:a2bae5a588ddddff09c56ffdb4c9e84e3 inherit pub_methods_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classStateNode.html#a2bae5a588ddddff09c56ffdb4c9e84e3">More...</a><br /></td></tr>
-<tr class="separator:a2bae5a588ddddff09c56ffdb4c9e84e3 inherit pub_methods_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f508434de21e696668c12d825428dca inherit pub_methods_classStateNode"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a5f508434de21e696668c12d825428dca">StateNode</a> (<a class="el" href="classMissionNode.html">MissionNode</a> &amp;mission)</td></tr>
+<tr class="memdesc:a5f508434de21e696668c12d825428dca inherit pub_methods_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classStateNode.html#a5f508434de21e696668c12d825428dca">More...</a><br /></td></tr>
+<tr class="separator:a5f508434de21e696668c12d825428dca inherit pub_methods_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aa0627c68b55ee40e57ea6fae19d270 inherit pub_methods_classStateNode"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270">~StateNode</a> ()=default</td></tr>
 <tr class="memdesc:a3aa0627c68b55ee40e57ea6fae19d270 inherit pub_methods_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <a href="classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270">More...</a><br /></td></tr>
 <tr class="separator:a3aa0627c68b55ee40e57ea6fae19d270 inherit pub_methods_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNodeBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNodeBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNodeBase.html">NodeBase</a></td></tr>
+<tr class="memitem:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNodeBase.html#a8b29cce339eab89eed354ae8774eec65">NodeBase</a> ()=default</td></tr>
+<tr class="memdesc:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classNodeBase.html#a8b29cce339eab89eed354ae8774eec65">More...</a><br /></td></tr>
+<tr class="separator:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNodeBase.html#abbdfa42dcaeb43e7224084f37318c595">~NodeBase</a> ()=default</td></tr>
+<tr class="memdesc:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <a href="classNodeBase.html#abbdfa42dcaeb43e7224084f37318c595">More...</a><br /></td></tr>
+<tr class="separator:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -133,9 +144,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a5ff2f5fee9df9c19d2cf6eefa9b0be41 inherit pro_methods_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查状态是否超时  <a href="classStateNode.html#a5ff2f5fee9df9c19d2cf6eefa9b0be41">More...</a><br /></td></tr>
 <tr class="separator:a5ff2f5fee9df9c19d2cf6eefa9b0be41 inherit pro_methods_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classStateNode"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classStateNode')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classStateNode.html">StateNode</a></td></tr>
-<tr class="memitem:ae3156769eab1071dfeb5123f043c1a50 inherit pro_attribs_classStateNode"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classController.html">Controller</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#ae3156769eab1071dfeb5123f043c1a50">_controller</a></td></tr>
-<tr class="memdesc:ae3156769eab1071dfeb5123f043c1a50 inherit pro_attribs_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">控制器引用，用于状态访问控制器功能  <a href="classStateNode.html#ae3156769eab1071dfeb5123f043c1a50">More...</a><br /></td></tr>
-<tr class="separator:ae3156769eab1071dfeb5123f043c1a50 inherit pro_attribs_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f3ac220b3935abbb4179773223eeb8 inherit pro_attribs_classStateNode"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMissionNode.html">MissionNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a91f3ac220b3935abbb4179773223eeb8">_mission</a></td></tr>
+<tr class="memdesc:a91f3ac220b3935abbb4179773223eeb8 inherit pro_attribs_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务引用，用于状态访问任务功能  <a href="classStateNode.html#a91f3ac220b3935abbb4179773223eeb8">More...</a><br /></td></tr>
+<tr class="separator:a91f3ac220b3935abbb4179773223eeb8 inherit pro_attribs_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa7e5e00ea1d3de2e93f9ba1052a1e4 inherit pro_attribs_classStateNode"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a1aa7e5e00ea1d3de2e93f9ba1052a1e4">_vel_cmd</a> ={0.0,0.0,0.0,0.0}</td></tr>
 <tr class="memdesc:a1aa7e5e00ea1d3de2e93f9ba1052a1e4 inherit pro_attribs_classStateNode"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度指令数组 [x,y,z,yaw]  <a href="classStateNode.html#a1aa7e5e00ea1d3de2e93f9ba1052a1e4">More...</a><br /></td></tr>
 <tr class="separator:a1aa7e5e00ea1d3de2e93f9ba1052a1e4 inherit pro_attribs_classStateNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +160,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>下降状态类 负责控制无人机在对准平台标签后平稳下降 </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae533fb6c8073bfe5c41625e315caef9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae533fb6c8073bfe5c41625e315caef9d">&#9670;&nbsp;</a></span>DescendState()</h2>
+<a id="a342d4e4f2800b084be9af5b185a7c8e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a342d4e4f2800b084be9af5b185a7c8e6">&#9670;&nbsp;</a></span>DescendState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,8 +169,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">DescendState::DescendState </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classController.html">Controller</a> &amp;&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classMissionNode.html">MissionNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mission</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -169,8 +180,8 @@ Additional Inherited Members</h2></td></tr>
 <p>下降状态类构造函数</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">controller</td><td>控制器引用</td></tr>
-    <tr><td class="paramname">controller</td><td>控制器引用，用于获取下降标记处理器 </td></tr>
+    <tr><td class="paramname">mission</td><td>所在任务引用</td></tr>
+    <tr><td class="paramname">mission</td><td>所在任务引用，用于获取下降标记处理器 </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,16 +304,16 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>控制指令数组 [x, y, z, yaw]</dd></dl>
 <p>处理下降逻辑，包括平台标记检测、着陆状态检查和速度计算 </p><dl class="section return"><dt>Returns</dt><dd>速度指令数组 [vx, vy, vz, yaw_rate] </dd></dl>
 
-<p>Implements <a class="el" href="classStateNode.html#ae71a6398778423862e5fd3418f20dd44">StateNode</a>.</p>
+<p>Implements <a class="el" href="classStateNode.html#a4d587b0a7f0e003ed48ad560298931b9">StateNode</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20_cgraph.png" border="0" usemap="#classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20_cgraph" alt=""/></div>
 <map name="classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20_cgraph" id="classDescendState_ad7b810ef3ac2a181ded66c46c6d15b20_cgraph">
 <area shape="rect" title="更新状态时调用，返回控制指令" alt="" coords="5,78,193,105"/>
-<area shape="rect" href="classStatusMonitor.html#aa83b58721d13650beae16ba9c0652739" title="获取无人机的着陆状态" alt="" coords="257,5,399,47"/>
-<area shape="rect" href="classController.html#a4d5cb7dcd365b5fb9ff031d04d762fd5" title="获取状态监控器引用" alt="" coords="247,71,409,112"/>
-<area shape="rect" href="classController.html#a87e7895e31eefb805a690a6fbfcffddd" title="设置控制器的完成状态" alt="" coords="241,137,415,163"/>
+<area shape="rect" href="classStatusMonitor.html#aa83b58721d13650beae16ba9c0652739" title="获取无人机的着陆状态" alt="" coords="267,5,409,47"/>
+<area shape="rect" href="classMissionNode.html#a812711a9bd5064d70befec8bbbac9ea7" title="获取状态监控器引用" alt="" coords="247,71,429,112"/>
+<area shape="rect" href="classMissionNode.html#ac3727d486f52f84d383367a65ae1145f" title="设置任务完成标志" alt="" coords="241,137,435,163"/>
 </map>
 </div>
 
@@ -334,8 +345,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/VisualNav/<a class="el" href="PrecisionLandNodes_8h_source.html">PrecisionLandNodes.h</a></li>
-<li>src/VisualNav/<a class="el" href="PrecisionLandNodes_8cpp.html">PrecisionLandNodes.cpp</a></li>
+<li>include/StateNode/<a class="el" href="PrecisionLandNodes_8h_source.html">PrecisionLandNodes.h</a></li>
+<li>src/StateNode/<a class="el" href="PrecisionLandNodes_8cpp.html">PrecisionLandNodes.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

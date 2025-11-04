@@ -11,12 +11,11 @@
 
 
 
-Collaboration diagram for Status\+Monitor\+:
-\nopagebreak
+Collaboration diagram for Status\+Monitor\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=201pt]{classStatusMonitor__coll__graph}
+\includegraphics[width=214pt]{classStatusMonitor__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -42,8 +41,18 @@ mavros\+\_\+msgs\+::\+State \mbox{\hyperlink{classStatusMonitor_af285baaffa39cc2
 \begin{DoxyCompactList}\small\item\em 获取无人机当前的完整状态 \end{DoxyCompactList}\item 
 geometry\+\_\+msgs\+::\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a628eb238fed7d855d58f9fe97084dfe2}{get\+\_\+local\+\_\+pos}} () const
 \begin{DoxyCompactList}\small\item\em 获取无人机的本地位置 \end{DoxyCompactList}\item 
-geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}{get\+\_\+global\+\_\+pos}} () const
-\begin{DoxyCompactList}\small\item\em 获取无人机的全局位置 \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{classStatusMonitor_a947972082d98fd812d025c6b8a43227d}{get\+\_\+global\+\_\+pos}} () const
+\begin{DoxyCompactList}\small\item\em 获取无人机的全局位置（经纬度+绝对海拔高度） \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a}{is\+\_\+gps\+\_\+fixed}} () const
+\begin{DoxyCompactList}\small\item\em 检查\+G\+P\+S是否已接收固定位置 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_ad0ac15226e5f468fc23e054880303265}{is\+\_\+mission\+\_\+completed}} () const
+\begin{DoxyCompactList}\small\item\em 检查任务是否已完成 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d}{is\+\_\+mission\+\_\+aborted}} () const
+\begin{DoxyCompactList}\small\item\em 检查任务是否已中止 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_aa3ff55721acb48d09f1729446d39804e}{reset\+\_\+gps\+\_\+fix}} ()
+\begin{DoxyCompactList}\small\item\em 重置\+G\+P\+S固定位置标志 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_a9a79e0bb80e813509aa266f583384d87}{reset\+\_\+mission\+\_\+flags}} ()
+\begin{DoxyCompactList}\small\item\em 重置任务相关标志（任务完成、任务中止、已到达航点索引） \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,8 +60,14 @@ void \mbox{\hyperlink{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}{stat
 \begin{DoxyCompactList}\small\item\em 状态消息回调函数 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4}{local\+\_\+pos\+\_\+cb}} (const geometry\+\_\+msgs\+::\+Pose\+Stamped\+::\+Const\+Ptr \&msg)
 \begin{DoxyCompactList}\small\item\em 本地位置消息回调函数 \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}{global\+\_\+pos\+\_\+cb}} (const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped\+::\+Const\+Ptr \&msg)
-\begin{DoxyCompactList}\small\item\em 全局位置消息回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4}{gps\+\_\+cb}} (const sensor\+\_\+msgs\+::\+Nav\+Sat\+Fix\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em G\+P\+S位置消息回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493}{rel\+\_\+alt\+\_\+cb}} (const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 相对高度(Home点)回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08}{mission\+\_\+list\+\_\+cb}} (const mavros\+\_\+msgs\+::\+Waypoint\+List\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 任务列表回调函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44}{mission\+\_\+reached\+\_\+cb}} (const mavros\+\_\+msgs\+::\+Waypoint\+Reached\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em 任务完成回调函数 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}{imu\+\_\+data\+\_\+cb}} (const sensor\+\_\+msgs\+::\+Imu\+::\+Const\+Ptr \&msg)
 \begin{DoxyCompactList}\small\item\em I\+M\+U数据回调函数 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStatusMonitor_ab44b211a6f2edbd83a58a34c2ddeba5b}{landed\+\_\+state\+\_\+cb}} (const mavros\+\_\+msgs\+::\+Extended\+State\+::\+Const\+Ptr \&msg)
@@ -66,8 +81,14 @@ ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a830f7545332b436fec63635
 \begin{DoxyCompactList}\small\item\em 无人机状态订阅器 \end{DoxyCompactList}\item 
 ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a889a4fb2368093f9eba35c3945491023}{\+\_\+local\+\_\+pos\+\_\+sub}}
 \begin{DoxyCompactList}\small\item\em 本地位置订阅器 \end{DoxyCompactList}\item 
-ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}{\+\_\+global\+\_\+pos\+\_\+sub}}
-\begin{DoxyCompactList}\small\item\em 全局位置订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a773f1ec99b399432b9ee1eee02f6c3da}{\+\_\+gps\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em G\+P\+S位置（绝对海拔高度）订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_ae77b728c0c2df9e43f67d84c0663d80b}{\+\_\+rel\+\_\+alt\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 相对高度(Home点)订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a6b746484c7a679c68c2b3f087595a2fd}{\+\_\+mission\+\_\+list\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 任务列表订阅器 \end{DoxyCompactList}\item 
+ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a4a3d756a575e63e62ee8f5e89ad7d00c}{\+\_\+mission\+\_\+reached\+\_\+sub}}
+\begin{DoxyCompactList}\small\item\em 任务完成订阅器 \end{DoxyCompactList}\item 
 ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}{\+\_\+imu\+\_\+data\+\_\+sub}}
 \begin{DoxyCompactList}\small\item\em I\+M\+U数据订阅器 \end{DoxyCompactList}\item 
 ros\+::\+Subscriber \mbox{\hyperlink{classStatusMonitor_a9ce27e48b8ddd7832201880067813126}{\+\_\+landed\+\_\+state\+\_\+sub}}
@@ -76,8 +97,20 @@ mavros\+\_\+msgs\+::\+State \mbox{\hyperlink{classStatusMonitor_aff499596c1d6189
 \begin{DoxyCompactList}\small\item\em 无人机当前状态 \end{DoxyCompactList}\item 
 geometry\+\_\+msgs\+::\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a565be98baaa535352972c33fc58ed71c}{\+\_\+local\+\_\+pos}}
 \begin{DoxyCompactList}\small\item\em 本地位置（\+E\+N\+U坐标系） \end{DoxyCompactList}\item 
-geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \mbox{\hyperlink{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}{\+\_\+global\+\_\+pos}}
-\begin{DoxyCompactList}\small\item\em 全局位置（经纬度高度） \end{DoxyCompactList}\item 
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{classStatusMonitor_afe91817c3c1c3a1a3ac1807a971a7df1}{\+\_\+global\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em 全局位置（经纬度+绝对海拔高度） \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a4f3d8610a5a99ca6bf74127a018a6f3d}{\+\_\+gps\+\_\+received\+\_\+fix}} = false
+\begin{DoxyCompactList}\small\item\em G\+P\+S是否已接收固定位置 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStatusMonitor_a2b3284da37ac6c0a94b1f38e73aa9fa6}{\+\_\+rel\+\_\+alt}} = std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN()
+\begin{DoxyCompactList}\small\item\em 相对高度(Home点) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classStatusMonitor_aab75259ef058ebcc3e41cd3864dafec0}{\+\_\+total\+\_\+waypoints}} = 0
+\begin{DoxyCompactList}\small\item\em 任务总航点数 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classStatusMonitor_a337e760e279c42754e5e75c0723bdcc1}{\+\_\+reached\+\_\+waypoint\+\_\+index}} = -\/1
+\begin{DoxyCompactList}\small\item\em 当前已到达的航点索引（从0开始） \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a3b79aa724c45c4f85ed133210b2361e9}{\+\_\+mission\+\_\+aborted}} = false
+\begin{DoxyCompactList}\small\item\em 任务是否被中止的标志 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStatusMonitor_a57c467a29131f9234a32d5fc69c6ae63}{\+\_\+mission\+\_\+completed}} = false
+\begin{DoxyCompactList}\small\item\em 任务是否已完成的标志 \end{DoxyCompactList}\item 
 geometry\+\_\+msgs\+::\+Quaternion \mbox{\hyperlink{classStatusMonitor_a6cdfb5b3a25d0426652e916d22a7454c}{\+\_\+orientation}}
 \begin{DoxyCompactList}\small\item\em 无人机姿态四元数 \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classStatusMonitor_af4be51b26d3f2ee44bfd23082b84cd2e}{\+\_\+current\+\_\+mode}} = \char`\"{}U\+N\+K\+O\+WN\char`\"{}
@@ -118,8 +151,7 @@ Status\+Monitor构造函数
 \begin{DoxyNote}{Note}
 初始化所有状态订阅器 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -170,27 +202,33 @@ Status\+Monitor析构函数
 \begin{DoxyReturn}{Returns}
 飞行模式名称 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classStatusMonitor_aaf9f534ebeae0da4d4c0186f46ef701f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}\label{classStatusMonitor_ab5137291ee4c94d51b14639d9c4e9af7}} 
+\mbox{\Hypertarget{classStatusMonitor_a947972082d98fd812d025c6b8a43227d}\label{classStatusMonitor_a947972082d98fd812d025c6b8a43227d}} 
 \index{StatusMonitor@{StatusMonitor}!get\_global\_pos@{get\_global\_pos}}
 \index{get\_global\_pos@{get\_global\_pos}!StatusMonitor@{StatusMonitor}}
 \doxysubsubsection{\texorpdfstring{get\_global\_pos()}{get\_global\_pos()}}
-{\footnotesize\ttfamily geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped Status\+Monitor\+::get\+\_\+global\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ Status\+Monitor\+::get\+\_\+global\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-获取无人机的全局位置 
+获取无人机的全局位置（经纬度+绝对海拔高度） 
 
 \begin{DoxyReturn}{Returns}
-全局位置消息 
+全局位置消息（\{经度, 纬度, 绝对海拔高度\}） 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a947972082d98fd812d025c6b8a43227d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classStatusMonitor_aa83b58721d13650beae16ba9c0652739}\label{classStatusMonitor_aa83b58721d13650beae16ba9c0652739}} 
 \index{StatusMonitor@{StatusMonitor}!get\_landed\_state@{get\_landed\_state}}
 \index{get\_landed\_state@{get\_landed\_state}!StatusMonitor@{StatusMonitor}}
@@ -204,8 +242,7 @@ Here is the caller graph for this function\+:
 \begin{DoxyReturn}{Returns}
 着陆状态代码 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -238,36 +275,35 @@ Here is the caller graph for this function\+:
 \begin{DoxyReturn}{Returns}
 姿态四元数 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}\label{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368}} 
-\index{StatusMonitor@{StatusMonitor}!global\_pos\_cb@{global\_pos\_cb}}
-\index{global\_pos\_cb@{global\_pos\_cb}!StatusMonitor@{StatusMonitor}}
-\doxysubsubsection{\texorpdfstring{global\_pos\_cb()}{global\_pos\_cb()}}
-{\footnotesize\ttfamily void Status\+Monitor\+::global\+\_\+pos\+\_\+cb (\begin{DoxyParamCaption}\item[{const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4}\label{classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4}} 
+\index{StatusMonitor@{StatusMonitor}!gps\_cb@{gps\_cb}}
+\index{gps\_cb@{gps\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{gps\_cb()}{gps\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::gps\+\_\+cb (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Nav\+Sat\+Fix\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-全局位置消息回调函数 
+G\+P\+S位置消息回调函数 
 
-全局位置回调函数
+G\+P\+S位置回调函数
 
 
 \begin{DoxyParams}{Parameters}
-{\em msg} & 全局位置消息\\
+{\em msg} & G\+P\+S位置消息\\
 \hline
 {\em msg} & 全局位置消息指针 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
-更新无人机全局位置信息 
+更新无人机全局位置信息（经度、纬度） 
 
 使用互斥锁保护状态数据 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classStatusMonitor_aab35b2d5c02c767a822a059d3e502368_icgraph}
+\includegraphics[width=350pt]{classStatusMonitor_aea222c43dddd2f34e3d3e2d31c3f06b4_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}\label{classStatusMonitor_afb563b4f08daaed1b9ca4c098445bb3d}} 
@@ -292,8 +328,7 @@ I\+M\+U数据回调函数
 
 使用互斥锁保护状态数据 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -313,8 +348,7 @@ Here is the caller graph for this function\+:
 \begin{DoxyReturn}{Returns}
 如果已解锁返回true，否则返回false 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -334,12 +368,71 @@ Here is the caller graph for this function\+:
 \begin{DoxyReturn}{Returns}
 如果连接返回true，否则返回false 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classStatusMonitor_aa2410eeb8de71dcb00e8d7105d6cf97a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a}\label{classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a}} 
+\index{StatusMonitor@{StatusMonitor}!is\_gps\_fixed@{is\_gps\_fixed}}
+\index{is\_gps\_fixed@{is\_gps\_fixed}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_gps\_fixed()}{is\_gps\_fixed()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+gps\+\_\+fixed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查\+G\+P\+S是否已接收固定位置 
+
+\begin{DoxyReturn}{Returns}
+如果已接收固定位置返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_af8b5ac1bf2119b5abf6c82828be23e6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d}\label{classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d}} 
+\index{StatusMonitor@{StatusMonitor}!is\_mission\_aborted@{is\_mission\_aborted}}
+\index{is\_mission\_aborted@{is\_mission\_aborted}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_mission\_aborted()}{is\_mission\_aborted()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+mission\+\_\+aborted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查任务是否已中止 
+
+\begin{DoxyReturn}{Returns}
+如果任务已中止返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a7697d36430b3eef8ac364b5799e8b87d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_ad0ac15226e5f468fc23e054880303265}\label{classStatusMonitor_ad0ac15226e5f468fc23e054880303265}} 
+\index{StatusMonitor@{StatusMonitor}!is\_mission\_completed@{is\_mission\_completed}}
+\index{is\_mission\_completed@{is\_mission\_completed}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{is\_mission\_completed()}{is\_mission\_completed()}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::is\+\_\+mission\+\_\+completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查任务是否已完成 
+
+\begin{DoxyReturn}{Returns}
+如果任务已完成返回true，否则返回false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_ad0ac15226e5f468fc23e054880303265_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classStatusMonitor_a53e32f033bfe3b8d8239737a201b1fa7}\label{classStatusMonitor_a53e32f033bfe3b8d8239737a201b1fa7}} 
@@ -379,8 +472,7 @@ Here is the caller graph for this function\+:
 
 使用互斥锁保护状态数据 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -411,12 +503,132 @@ Here is the caller graph for this function\+:
 
 使用互斥锁保护状态数据 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classStatusMonitor_a37fbabcb4c7331f8ef643e8f8601fbb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08}\label{classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08}} 
+\index{StatusMonitor@{StatusMonitor}!mission\_list\_cb@{mission\_list\_cb}}
+\index{mission\_list\_cb@{mission\_list\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{mission\_list\_cb()}{mission\_list\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::mission\+\_\+list\+\_\+cb (\begin{DoxyParamCaption}\item[{const mavros\+\_\+msgs\+::\+Waypoint\+List\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务列表回调函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 任务列表消息\\
+\hline
+{\em msg} & 任务列表消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新任务的总航点数 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a41b560aff8ebe76be0e5af4305c99a08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44}\label{classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44}} 
+\index{StatusMonitor@{StatusMonitor}!mission\_reached\_cb@{mission\_reached\_cb}}
+\index{mission\_reached\_cb@{mission\_reached\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{mission\_reached\_cb()}{mission\_reached\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::mission\+\_\+reached\+\_\+cb (\begin{DoxyParamCaption}\item[{const mavros\+\_\+msgs\+::\+Waypoint\+Reached\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务完成回调函数 
+
+航点到达回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 任务完成消息\\
+\hline
+{\em msg} & 航点到达消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+监控任务进度，判断任务是否完成 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a8847099319441b1e8d05cb9cc8af0f44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493}\label{classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493}} 
+\index{StatusMonitor@{StatusMonitor}!rel\_alt\_cb@{rel\_alt\_cb}}
+\index{rel\_alt\_cb@{rel\_alt\_cb}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{rel\_alt\_cb()}{rel\_alt\_cb()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::rel\+\_\+alt\+\_\+cb (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+Float64\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+相对高度(Home点)回调函数 
+
+相对高度回调函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & 相对高度消息\\
+\hline
+{\em msg} & 相对高度消息指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+更新无人机相对高度信息 
+
+使用互斥锁保护状态数据 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_adbc9dafa33e2d5e24634adc623a9c493_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_aa3ff55721acb48d09f1729446d39804e}\label{classStatusMonitor_aa3ff55721acb48d09f1729446d39804e}} 
+\index{StatusMonitor@{StatusMonitor}!reset\_gps\_fix@{reset\_gps\_fix}}
+\index{reset\_gps\_fix@{reset\_gps\_fix}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{reset\_gps\_fix()}{reset\_gps\_fix()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::reset\+\_\+gps\+\_\+fix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重置\+G\+P\+S固定位置标志 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classStatusMonitor_aa3ff55721acb48d09f1729446d39804e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStatusMonitor_a9a79e0bb80e813509aa266f583384d87}\label{classStatusMonitor_a9a79e0bb80e813509aa266f583384d87}} 
+\index{StatusMonitor@{StatusMonitor}!reset\_mission\_flags@{reset\_mission\_flags}}
+\index{reset\_mission\_flags@{reset\_mission\_flags}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{reset\_mission\_flags()}{reset\_mission\_flags()}}
+{\footnotesize\ttfamily void Status\+Monitor\+::reset\+\_\+mission\+\_\+flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重置任务相关标志（任务完成、任务中止、已到达航点索引） 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatusMonitor_a9a79e0bb80e813509aa266f583384d87_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}\label{classStatusMonitor_a6dd5eb828b94287931a0b5c40b6c24e6}} 
@@ -443,8 +655,7 @@ M\+A\+V\+R\+O\+S状态回调函数
 
 使用互斥锁保护状态数据 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -494,25 +705,35 @@ Here is the caller graph for this function\+:
 
 无人机当前状态 
 
-\mbox{\Hypertarget{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}\label{classStatusMonitor_a81d91b2d229258195e1d2ff3ebb51c84}} 
+\mbox{\Hypertarget{classStatusMonitor_afe91817c3c1c3a1a3ac1807a971a7df1}\label{classStatusMonitor_afe91817c3c1c3a1a3ac1807a971a7df1}} 
 \index{StatusMonitor@{StatusMonitor}!\_global\_pos@{\_global\_pos}}
 \index{\_global\_pos@{\_global\_pos}!StatusMonitor@{StatusMonitor}}
 \doxysubsubsection{\texorpdfstring{\_global\_pos}{\_global\_pos}}
-{\footnotesize\ttfamily geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped Status\+Monitor\+::\+\_\+global\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ Status\+Monitor\+::\+\_\+global\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-全局位置（经纬度高度） 
+全局位置（经纬度+绝对海拔高度） 
 
-\mbox{\Hypertarget{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}\label{classStatusMonitor_a134647fed34f8fdb045f7dceafb6ff2a}} 
-\index{StatusMonitor@{StatusMonitor}!\_global\_pos\_sub@{\_global\_pos\_sub}}
-\index{\_global\_pos\_sub@{\_global\_pos\_sub}!StatusMonitor@{StatusMonitor}}
-\doxysubsubsection{\texorpdfstring{\_global\_pos\_sub}{\_global\_pos\_sub}}
-{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+global\+\_\+pos\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classStatusMonitor_a4f3d8610a5a99ca6bf74127a018a6f3d}\label{classStatusMonitor_a4f3d8610a5a99ca6bf74127a018a6f3d}} 
+\index{StatusMonitor@{StatusMonitor}!\_gps\_received\_fix@{\_gps\_received\_fix}}
+\index{\_gps\_received\_fix@{\_gps\_received\_fix}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_gps\_received\_fix}{\_gps\_received\_fix}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::\+\_\+gps\+\_\+received\+\_\+fix = false\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-全局位置订阅器 
+G\+P\+S是否已接收固定位置 
+
+\mbox{\Hypertarget{classStatusMonitor_a773f1ec99b399432b9ee1eee02f6c3da}\label{classStatusMonitor_a773f1ec99b399432b9ee1eee02f6c3da}} 
+\index{StatusMonitor@{StatusMonitor}!\_gps\_sub@{\_gps\_sub}}
+\index{\_gps\_sub@{\_gps\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_gps\_sub}{\_gps\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+gps\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+G\+P\+S位置（绝对海拔高度）订阅器 
 
 \mbox{\Hypertarget{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}\label{classStatusMonitor_aa7abda62b316401a98aff1107d8896b4}} 
 \index{StatusMonitor@{StatusMonitor}!\_imu\_data\_sub@{\_imu\_data\_sub}}
@@ -564,6 +785,46 @@ I\+M\+U数据订阅器
 
 本地位置订阅器 
 
+\mbox{\Hypertarget{classStatusMonitor_a3b79aa724c45c4f85ed133210b2361e9}\label{classStatusMonitor_a3b79aa724c45c4f85ed133210b2361e9}} 
+\index{StatusMonitor@{StatusMonitor}!\_mission\_aborted@{\_mission\_aborted}}
+\index{\_mission\_aborted@{\_mission\_aborted}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_mission\_aborted}{\_mission\_aborted}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::\+\_\+mission\+\_\+aborted = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务是否被中止的标志 
+
+\mbox{\Hypertarget{classStatusMonitor_a57c467a29131f9234a32d5fc69c6ae63}\label{classStatusMonitor_a57c467a29131f9234a32d5fc69c6ae63}} 
+\index{StatusMonitor@{StatusMonitor}!\_mission\_completed@{\_mission\_completed}}
+\index{\_mission\_completed@{\_mission\_completed}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_mission\_completed}{\_mission\_completed}}
+{\footnotesize\ttfamily bool Status\+Monitor\+::\+\_\+mission\+\_\+completed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务是否已完成的标志 
+
+\mbox{\Hypertarget{classStatusMonitor_a6b746484c7a679c68c2b3f087595a2fd}\label{classStatusMonitor_a6b746484c7a679c68c2b3f087595a2fd}} 
+\index{StatusMonitor@{StatusMonitor}!\_mission\_list\_sub@{\_mission\_list\_sub}}
+\index{\_mission\_list\_sub@{\_mission\_list\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_mission\_list\_sub}{\_mission\_list\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+mission\+\_\+list\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务列表订阅器 
+
+\mbox{\Hypertarget{classStatusMonitor_a4a3d756a575e63e62ee8f5e89ad7d00c}\label{classStatusMonitor_a4a3d756a575e63e62ee8f5e89ad7d00c}} 
+\index{StatusMonitor@{StatusMonitor}!\_mission\_reached\_sub@{\_mission\_reached\_sub}}
+\index{\_mission\_reached\_sub@{\_mission\_reached\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_mission\_reached\_sub}{\_mission\_reached\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+mission\+\_\+reached\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务完成订阅器 
+
 \mbox{\Hypertarget{classStatusMonitor_a4fafc3bf8ac75e61f7d9b096e3131a7c}\label{classStatusMonitor_a4fafc3bf8ac75e61f7d9b096e3131a7c}} 
 \index{StatusMonitor@{StatusMonitor}!\_nh@{\_nh}}
 \index{\_nh@{\_nh}!StatusMonitor@{StatusMonitor}}
@@ -583,6 +844,36 @@ R\+O\+S节点句柄引用
 
 
 无人机姿态四元数 
+
+\mbox{\Hypertarget{classStatusMonitor_a337e760e279c42754e5e75c0723bdcc1}\label{classStatusMonitor_a337e760e279c42754e5e75c0723bdcc1}} 
+\index{StatusMonitor@{StatusMonitor}!\_reached\_waypoint\_index@{\_reached\_waypoint\_index}}
+\index{\_reached\_waypoint\_index@{\_reached\_waypoint\_index}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_reached\_waypoint\_index}{\_reached\_waypoint\_index}}
+{\footnotesize\ttfamily int Status\+Monitor\+::\+\_\+reached\+\_\+waypoint\+\_\+index = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+当前已到达的航点索引（从0开始） 
+
+\mbox{\Hypertarget{classStatusMonitor_a2b3284da37ac6c0a94b1f38e73aa9fa6}\label{classStatusMonitor_a2b3284da37ac6c0a94b1f38e73aa9fa6}} 
+\index{StatusMonitor@{StatusMonitor}!\_rel\_alt@{\_rel\_alt}}
+\index{\_rel\_alt@{\_rel\_alt}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_rel\_alt}{\_rel\_alt}}
+{\footnotesize\ttfamily double Status\+Monitor\+::\+\_\+rel\+\_\+alt = std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+NaN()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+相对高度(Home点) 
+
+\mbox{\Hypertarget{classStatusMonitor_ae77b728c0c2df9e43f67d84c0663d80b}\label{classStatusMonitor_ae77b728c0c2df9e43f67d84c0663d80b}} 
+\index{StatusMonitor@{StatusMonitor}!\_rel\_alt\_sub@{\_rel\_alt\_sub}}
+\index{\_rel\_alt\_sub@{\_rel\_alt\_sub}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_rel\_alt\_sub}{\_rel\_alt\_sub}}
+{\footnotesize\ttfamily ros\+::\+Subscriber Status\+Monitor\+::\+\_\+rel\+\_\+alt\+\_\+sub\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+相对高度(Home点)订阅器 
 
 \mbox{\Hypertarget{classStatusMonitor_a830f7545332b436fec6363558d865780}\label{classStatusMonitor_a830f7545332b436fec6363558d865780}} 
 \index{StatusMonitor@{StatusMonitor}!\_state\_sub@{\_state\_sub}}
@@ -607,6 +898,16 @@ R\+O\+S节点句柄引用
 \begin{DoxyNote}{Note}
 mutable关键字允许在const成员函数中锁定和解锁互斥锁 
 \end{DoxyNote}
+\mbox{\Hypertarget{classStatusMonitor_aab75259ef058ebcc3e41cd3864dafec0}\label{classStatusMonitor_aab75259ef058ebcc3e41cd3864dafec0}} 
+\index{StatusMonitor@{StatusMonitor}!\_total\_waypoints@{\_total\_waypoints}}
+\index{\_total\_waypoints@{\_total\_waypoints}!StatusMonitor@{StatusMonitor}}
+\doxysubsubsection{\texorpdfstring{\_total\_waypoints}{\_total\_waypoints}}
+{\footnotesize\ttfamily size\+\_\+t Status\+Monitor\+::\+\_\+total\+\_\+waypoints = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务总航点数 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

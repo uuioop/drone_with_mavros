@@ -1,0 +1,230 @@
+\hypertarget{classIdleMission}{}\doxysection{Idle\+Mission Class Reference}
+\label{classIdleMission}\index{IdleMission@{IdleMission}}
+
+
+空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求  
+
+
+
+
+{\ttfamily \#include $<$Idle\+Mission.\+h$>$}
+
+
+
+Inheritance diagram for Idle\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classIdleMission__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Idle\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classIdleMission__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIdleMission_a51d05e324190449745d11a87fc4168ff}{Idle\+Mission}} (\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&drone\+\_\+control, ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIdleMission_a2fe281fc63ead45f8e0dfff96b9bffc0}{$\sim$\+Idle\+Mission}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIdleMission_a0beb3c3cc26a37b91f3e59ef52d014f7}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入空闲状态时调用 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classIdleMission_ae99afd2b2cb6e4d82e87e79e0fc958c9}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 空闲状态更新方法 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出空闲状态时调用 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classIdleMission_a773446138cfd397f4978f26cf9636a00}{start\+\_\+mission\+\_\+service\+\_\+callback}} (my\+\_\+interfaces\+::\+Nav\+::\+Request \&req, my\+\_\+interfaces\+::\+Nav\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em 处理启动任务机服务请求 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Service\+Server \mbox{\hyperlink{classIdleMission_a7e24cb1c98dd0882aa377b2b2eab6494}{\+\_\+start\+\_\+mission\+\_\+service}}
+\begin{DoxyCompactList}\small\item\em 启动任务机服务 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIdleMission_afa128c97a555cb374e340453c3c0c14a}{\+\_\+is\+\_\+running}} =false
+\begin{DoxyCompactList}\small\item\em 任务机是否正在运行 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+空闲状态任务类 负责在无人机未执行任何任务时监听启动任务机服务请求 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIdleMission_a51d05e324190449745d11a87fc4168ff}\label{classIdleMission_a51d05e324190449745d11a87fc4168ff}} 
+\index{IdleMission@{IdleMission}!IdleMission@{IdleMission}}
+\index{IdleMission@{IdleMission}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{IdleMission()}{IdleMission()}}
+{\footnotesize\ttfamily Idle\+Mission\+::\+Idle\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&}]{drone\+\_\+control,  }\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drone\+\_\+control} & 无人机控制引用 \\
+\hline
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIdleMission_a51d05e324190449745d11a87fc4168ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIdleMission_a2fe281fc63ead45f8e0dfff96b9bffc0}\label{classIdleMission_a2fe281fc63ead45f8e0dfff96b9bffc0}} 
+\index{IdleMission@{IdleMission}!````~IdleMission@{$\sim$IdleMission}}
+\index{````~IdleMission@{$\sim$IdleMission}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{$\sim$IdleMission()}{~IdleMission()}}
+{\footnotesize\ttfamily Idle\+Mission\+::$\sim$\+Idle\+Mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIdleMission_a0beb3c3cc26a37b91f3e59ef52d014f7}\label{classIdleMission_a0beb3c3cc26a37b91f3e59ef52d014f7}} 
+\index{IdleMission@{IdleMission}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void Idle\+Mission\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入空闲状态时调用 
+
+记录日志 
+
+Implements \mbox{\hyperlink{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIdleMission_a0beb3c3cc26a37b91f3e59ef52d014f7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30}\label{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30}} 
+\index{IdleMission@{IdleMission}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void Idle\+Mission\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出空闲状态时调用 
+
+目前为空实现 
+
+Implements \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{Mission\+Node}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classIdleMission_a73a6cfc65cc627888d4f801ac1d93b30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIdleMission_ae99afd2b2cb6e4d82e87e79e0fc958c9}\label{classIdleMission_ae99afd2b2cb6e4d82e87e79e0fc958c9}} 
+\index{IdleMission@{IdleMission}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ Idle\+Mission\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+空闲状态更新方法 
+
+保持无人机静止，不执行任何操作 
+
+Implements \mbox{\hyperlink{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIdleMission_ae99afd2b2cb6e4d82e87e79e0fc958c9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classIdleMission_a773446138cfd397f4978f26cf9636a00}\label{classIdleMission_a773446138cfd397f4978f26cf9636a00}} 
+\index{IdleMission@{IdleMission}!start\_mission\_service\_callback@{start\_mission\_service\_callback}}
+\index{start\_mission\_service\_callback@{start\_mission\_service\_callback}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{start\_mission\_service\_callback()}{start\_mission\_service\_callback()}}
+{\footnotesize\ttfamily bool Idle\+Mission\+::start\+\_\+mission\+\_\+service\+\_\+callback (\begin{DoxyParamCaption}\item[{my\+\_\+interfaces\+::\+Nav\+::\+Request \&}]{req,  }\item[{my\+\_\+interfaces\+::\+Nav\+::\+Response \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+处理启动任务机服务请求 
+
+当收到启动任务机服务请求时，切换到指定任务状态
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & 服务请求 \\
+\hline
+{\em res} & 服务响应 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+是否成功处理请求 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIdleMission_a773446138cfd397f4978f26cf9636a00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIdleMission_a773446138cfd397f4978f26cf9636a00_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIdleMission_afa128c97a555cb374e340453c3c0c14a}\label{classIdleMission_afa128c97a555cb374e340453c3c0c14a}} 
+\index{IdleMission@{IdleMission}!\_is\_running@{\_is\_running}}
+\index{\_is\_running@{\_is\_running}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{\_is\_running}{\_is\_running}}
+{\footnotesize\ttfamily bool Idle\+Mission\+::\+\_\+is\+\_\+running =false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务机是否正在运行 
+
+\mbox{\Hypertarget{classIdleMission_a7e24cb1c98dd0882aa377b2b2eab6494}\label{classIdleMission_a7e24cb1c98dd0882aa377b2b2eab6494}} 
+\index{IdleMission@{IdleMission}!\_start\_mission\_service@{\_start\_mission\_service}}
+\index{\_start\_mission\_service@{\_start\_mission\_service}!IdleMission@{IdleMission}}
+\doxysubsubsection{\texorpdfstring{\_start\_mission\_service}{\_start\_mission\_service}}
+{\footnotesize\ttfamily ros\+::\+Service\+Server Idle\+Mission\+::\+\_\+start\+\_\+mission\+\_\+service\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+启动任务机服务 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Mission\+Node/\mbox{\hyperlink{IdleMission_8h}{Idle\+Mission.\+h}}\item 
+src/\+Mission\+Node/\mbox{\hyperlink{IdleMission_8cpp}{Idle\+Mission.\+cpp}}\end{DoxyCompactItemize}

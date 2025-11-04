@@ -1,0 +1,10 @@
+<map id="PrecisionLandMission::on_update" name="PrecisionLandMission::on_update">
+<area shape="rect" id="node1" title="更新任务状态时调用" alt="" coords="5,56,168,97"/>
+<area shape="rect" id="node2" href="$classMissionNode.html#ab0889e7310b36a8e9397d5a2a172efc1" title="任务更新方法，在主循环中被持续调用" alt="" coords="244,13,427,39"/>
+<area shape="rect" id="node5" href="$classNodeMachine.html#aa1c40bdf7e0390f5e067b68a6ea3962d" title="更新当前活动节点" alt="" coords="242,63,429,90"/>
+<area shape="rect" id="node6" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="216,114,455,141"/>
+<area shape="rect" id="node3" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="536,5,695,47"/>
+<area shape="rect" id="node4" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="776,13,976,39"/>
+<area shape="rect" id="node7" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="538,93,693,119"/>
+<area shape="rect" id="node8" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="503,143,728,170"/>
+</map>

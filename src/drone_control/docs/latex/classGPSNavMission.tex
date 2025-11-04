@@ -1,0 +1,263 @@
+\hypertarget{classGPSNavMission}{}\doxysection{G\+P\+S\+Nav\+Mission Class Reference}
+\label{classGPSNavMission}\index{GPSNavMission@{GPSNavMission}}
+
+
+G\+P\+S导航任务  
+
+
+
+
+{\ttfamily \#include $<$G\+P\+S\+Nav\+Mission.\+h$>$}
+
+
+
+Inheritance diagram for G\+P\+S\+Nav\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGPSNavMission__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+P\+S\+Nav\+Mission\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGPSNavMission__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPSNavMission_ae68dabb453442ba4db03751a05c75db6}{G\+P\+S\+Nav\+Mission}} (\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&drone\+\_\+control, ros\+::\+Node\+Handle \&nh, \mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&status\+\_\+monitor, \mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&mavros\+\_\+bridge)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGPSNavMission_a771093d4bbd176804b957b833017f8d2}{$\sim$\+G\+P\+S\+Nav\+Mission}} ()
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSNavMission_a2f1f48325006a33848bf31853410363f}{on\+\_\+enter}} () override
+\begin{DoxyCompactList}\small\item\em 进入状态时执行 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classGPSNavMission_ab509b50683832063050c891ac38b1f55}{on\+\_\+update}} () override
+\begin{DoxyCompactList}\small\item\em 状态更新时执行 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSNavMission_a46550a8d5d26166aa07ad6c265626c11}{on\+\_\+exit}} () override
+\begin{DoxyCompactList}\small\item\em 退出状态时执行 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGPSNavMission_a61acc0d0eb22bccc943da63f618735e1}{set\+\_\+target\+\_\+position}} (double latitude\+\_\+deg, double longitude\+\_\+deg, double relative\+\_\+altitude\+\_\+m)
+\begin{DoxyCompactList}\small\item\em 更新目标位置 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPSNavMission_a147ff30f03d4b349c287db2fddb6ef6a}{upload\+\_\+mission}} ()
+\begin{DoxyCompactList}\small\item\em 上传任务航点到无人机 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{classGPSNavMission_a041d8c583c852427f491b554533d83ed}{\+\_\+target\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em 目标位置数组 \mbox{[}纬度(度), 经度(度), 相对高度(米)\mbox{]} \end{DoxyCompactList}\item 
+std\+::vector$<$ mavros\+\_\+msgs\+::\+Waypoint $>$ \mbox{\hyperlink{classGPSNavMission_a294122f478e4cd6501bd9e80e46d4ae6}{waypoints}}
+\begin{DoxyCompactList}\small\item\em 任务航点列表 \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::array$<$ double, 3 $>$ $>$ \mbox{\hyperlink{classGPSNavMission_a1055c3abc623c067e543f76ee91a446f}{\+\_\+waypoint\+\_\+positions}}
+\begin{DoxyCompactList}\small\item\em 任务航点位置列表，每个元素为\{纬度(度), 经度(度), 相对高度(米)\} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+G\+P\+S导航任务 
+
+继承自\+Mission\+Node基类，实现基于\+G\+P\+S的自动任务导航功能 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGPSNavMission_ae68dabb453442ba4db03751a05c75db6}\label{classGPSNavMission_ae68dabb453442ba4db03751a05c75db6}} 
+\index{GPSNavMission@{GPSNavMission}!GPSNavMission@{GPSNavMission}}
+\index{GPSNavMission@{GPSNavMission}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{GPSNavMission()}{GPSNavMission()}}
+{\footnotesize\ttfamily G\+P\+S\+Nav\+Mission\+::\+G\+P\+S\+Nav\+Mission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDroneControl}{Drone\+Control}} \&}]{drone\+\_\+control,  }\item[{ros\+::\+Node\+Handle \&}]{nh,  }\item[{\mbox{\hyperlink{classStatusMonitor}{Status\+Monitor}} \&}]{status\+\_\+monitor,  }\item[{\mbox{\hyperlink{classMavrosBridge}{Mavros\+Bridge}} \&}]{mavros\+\_\+bridge }\end{DoxyParamCaption})}
+
+
+
+构造函数 
+
+构造函数实现
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄引用 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用\\
+\hline
+\end{DoxyParams}
+初始化\+G\+P\+S导航任务节点
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & R\+O\+S节点句柄 \\
+\hline
+{\em status\+\_\+monitor} & 状态监控器引用 \\
+\hline
+{\em mavros\+\_\+bridge} & M\+A\+V\+R\+O\+S桥接器引用 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGPSNavMission_a771093d4bbd176804b957b833017f8d2}\label{classGPSNavMission_a771093d4bbd176804b957b833017f8d2}} 
+\index{GPSNavMission@{GPSNavMission}!````~GPSNavMission@{$\sim$GPSNavMission}}
+\index{````~GPSNavMission@{$\sim$GPSNavMission}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{$\sim$GPSNavMission()}{~GPSNavMission()}}
+{\footnotesize\ttfamily G\+P\+S\+Nav\+Mission\+::$\sim$\+G\+P\+S\+Nav\+Mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+析构函数 
+
+析构函数实现
+
+使用默认析构函数，自动管理资源释放 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPSNavMission_a2f1f48325006a33848bf31853410363f}\label{classGPSNavMission_a2f1f48325006a33848bf31853410363f}} 
+\index{GPSNavMission@{GPSNavMission}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{on\_enter()}{on\_enter()}}
+{\footnotesize\ttfamily void G\+P\+S\+Nav\+Mission\+::on\+\_\+enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+进入状态时执行 
+
+进入\+G\+P\+S导航任务时的回调实现
+
+\begin{DoxyNote}{Note}
+初始化导航相关参数和设置
+\end{DoxyNote}
+目前为空实现，可根据需要添加初始化逻辑 
+
+Implements \mbox{\hyperlink{classNodeBase_a64f5848d1703a50e3c677f66cefc218d}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSNavMission_a2f1f48325006a33848bf31853410363f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGPSNavMission_a46550a8d5d26166aa07ad6c265626c11}\label{classGPSNavMission_a46550a8d5d26166aa07ad6c265626c11}} 
+\index{GPSNavMission@{GPSNavMission}!on\_exit@{on\_exit}}
+\index{on\_exit@{on\_exit}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{on\_exit()}{on\_exit()}}
+{\footnotesize\ttfamily void G\+P\+S\+Nav\+Mission\+::on\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+退出状态时执行 
+
+退出\+G\+P\+S导航任务时的回调实现
+
+\begin{DoxyNote}{Note}
+清理导航相关资源和状态
+\end{DoxyNote}
+目前为空实现，可根据需要添加清理逻辑 
+
+Implements \mbox{\hyperlink{classMissionNode_accba4f7ab23bb0522047e87d5b8d289b}{Mission\+Node}}.
+
+\mbox{\Hypertarget{classGPSNavMission_ab509b50683832063050c891ac38b1f55}\label{classGPSNavMission_ab509b50683832063050c891ac38b1f55}} 
+\index{GPSNavMission@{GPSNavMission}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$ double, 4 $>$ G\+P\+S\+Nav\+Mission\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+状态更新时执行 
+
+更新\+G\+P\+S导航任务状态时的回调实现
+
+\begin{DoxyNote}{Note}
+实现导航逻辑，控制无人机到达目标位置
+\end{DoxyNote}
+目前为空实现，可根据需要添加\+G\+P\+S导航逻辑 
+
+Implements \mbox{\hyperlink{classNodeBase_a4af8c9a80b351fc1050d07deb29c920c}{Node\+Base}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSNavMission_ab509b50683832063050c891ac38b1f55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classGPSNavMission_a61acc0d0eb22bccc943da63f618735e1}\label{classGPSNavMission_a61acc0d0eb22bccc943da63f618735e1}} 
+\index{GPSNavMission@{GPSNavMission}!set\_target\_position@{set\_target\_position}}
+\index{set\_target\_position@{set\_target\_position}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{set\_target\_position()}{set\_target\_position()}}
+{\footnotesize\ttfamily void G\+P\+S\+Nav\+Mission\+::set\+\_\+target\+\_\+position (\begin{DoxyParamCaption}\item[{double}]{latitude\+\_\+deg,  }\item[{double}]{longitude\+\_\+deg,  }\item[{double}]{relative\+\_\+altitude\+\_\+m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+更新目标位置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & 新的目标位置，格式为\{X, Y, Z\} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGPSNavMission_a147ff30f03d4b349c287db2fddb6ef6a}\label{classGPSNavMission_a147ff30f03d4b349c287db2fddb6ef6a}} 
+\index{GPSNavMission@{GPSNavMission}!upload\_mission@{upload\_mission}}
+\index{upload\_mission@{upload\_mission}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{upload\_mission()}{upload\_mission()}}
+{\footnotesize\ttfamily void G\+P\+S\+Nav\+Mission\+::upload\+\_\+mission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+上传任务航点到无人机 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSNavMission_a147ff30f03d4b349c287db2fddb6ef6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGPSNavMission_a147ff30f03d4b349c287db2fddb6ef6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGPSNavMission_a041d8c583c852427f491b554533d83ed}\label{classGPSNavMission_a041d8c583c852427f491b554533d83ed}} 
+\index{GPSNavMission@{GPSNavMission}!\_target\_position@{\_target\_position}}
+\index{\_target\_position@{\_target\_position}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{\_target\_position}{\_target\_position}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ G\+P\+S\+Nav\+Mission\+::\+\_\+target\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+目标位置数组 \mbox{[}纬度(度), 经度(度), 相对高度(米)\mbox{]} 
+
+\mbox{\Hypertarget{classGPSNavMission_a1055c3abc623c067e543f76ee91a446f}\label{classGPSNavMission_a1055c3abc623c067e543f76ee91a446f}} 
+\index{GPSNavMission@{GPSNavMission}!\_waypoint\_positions@{\_waypoint\_positions}}
+\index{\_waypoint\_positions@{\_waypoint\_positions}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{\_waypoint\_positions}{\_waypoint\_positions}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$double, 3$>$ $>$ G\+P\+S\+Nav\+Mission\+::\+\_\+waypoint\+\_\+positions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务航点位置列表，每个元素为\{纬度(度), 经度(度), 相对高度(米)\} 
+
+\mbox{\Hypertarget{classGPSNavMission_a294122f478e4cd6501bd9e80e46d4ae6}\label{classGPSNavMission_a294122f478e4cd6501bd9e80e46d4ae6}} 
+\index{GPSNavMission@{GPSNavMission}!waypoints@{waypoints}}
+\index{waypoints@{waypoints}!GPSNavMission@{GPSNavMission}}
+\doxysubsubsection{\texorpdfstring{waypoints}{waypoints}}
+{\footnotesize\ttfamily std\+::vector$<$mavros\+\_\+msgs\+::\+Waypoint$>$ G\+P\+S\+Nav\+Mission\+::waypoints\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+任务航点列表 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Mission\+Node/\mbox{\hyperlink{GPSNavMission_8h}{G\+P\+S\+Nav\+Mission.\+h}}\item 
+src/\+Mission\+Node/\mbox{\hyperlink{GPSNavMission_8cpp}{G\+P\+S\+Nav\+Mission.\+cpp}}\end{DoxyCompactItemize}

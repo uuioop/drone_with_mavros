@@ -11,8 +11,7 @@
 
 
 
-Collaboration diagram for Tag\+Config\+:
-\nopagebreak
+Collaboration diagram for Tag\+Config\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,6 +23,8 @@ Collaboration diagram for Tag\+Config\+:
 \item 
 std\+::string \mbox{\hyperlink{structTagConfig_a3dd3c6a4cfca3c39a65607879413f4fe}{topic\+\_\+name}} =\char`\"{}/aruco\+\_\+detect/pose\char`\"{}
 \begin{DoxyCompactList}\small\item\em 订阅的主题名称，用于接收标记检测结果 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structTagConfig_afe63e4a2dfe2ae9006b2dc7e3627018a}{target\+\_\+id}} =0
+\begin{DoxyCompactList}\small\item\em 目标\+I\+D，用于指定需要控制的特定标记 \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{structTagConfig_a6890180795996a006b15ad6a83a80ccb}{tag\+\_\+name}} =\char`\"{}default\char`\"{}
 \begin{DoxyCompactList}\small\item\em 标记名称标识，用于区分不同标记 \end{DoxyCompactList}\item 
 Eigen\+::\+Matrix3d \mbox{\hyperlink{structTagConfig_a42488812cb64e2f04df86341b22d1395}{rotation\+\_\+matrix}} =Eigen\+::\+Matrix3d\+::\+Identity()
@@ -178,6 +179,16 @@ P\+I\+D控制器的比例系数
 
 
 标记名称标识，用于区分不同标记 
+
+\mbox{\Hypertarget{structTagConfig_afe63e4a2dfe2ae9006b2dc7e3627018a}\label{structTagConfig_afe63e4a2dfe2ae9006b2dc7e3627018a}} 
+\index{TagConfig@{TagConfig}!target\_id@{target\_id}}
+\index{target\_id@{target\_id}!TagConfig@{TagConfig}}
+\doxysubsubsection{\texorpdfstring{target\_id}{target\_id}}
+{\footnotesize\ttfamily int Tag\+Config\+::target\+\_\+id =0}
+
+
+
+目标\+I\+D，用于指定需要控制的特定标记 
 
 \mbox{\Hypertarget{structTagConfig_aad02527ca4bd31123b109a8ab2c57a98}\label{structTagConfig_aad02527ca4bd31123b109a8ab2c57a98}} 
 \index{TagConfig@{TagConfig}!target\_offset@{target\_offset}}

@@ -1,5 +1,5 @@
 <map id="ArucoTagProcessor" name="ArucoTagProcessor">
-<area shape="rect" id="node1" title="ArUco标记处理器类" alt="" coords="44,351,251,765"/>
-<area shape="rect" id="node2" href="$structArucoTag.html" title="ArUco标记结构体" alt="" coords="5,93,113,200"/>
-<area shape="rect" id="node3" href="$structTagConfig.html" title="标记配置结构体" alt="" coords="137,5,333,288"/>
+<area shape="rect" id="node1" title="ArUco标记处理器类" alt="" coords="44,292,251,692"/>
+<area shape="rect" id="node2" href="$structArucoTag.html" title="ArUco标记结构体" alt="" coords="5,64,113,171"/>
+<area shape="rect" id="node3" href="$structTagConfig.html" title="标记配置结构体" alt="" coords="137,5,333,229"/>
 </map>

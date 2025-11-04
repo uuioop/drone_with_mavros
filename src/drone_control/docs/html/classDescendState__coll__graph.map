@@ -1,7 +1,10 @@
 <map id="DescendState" name="DescendState">
-<area shape="rect" id="node1" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="29,1491,199,1627"/>
-<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="36,1261,192,1441"/>
-<area shape="rect" id="node3" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,975,223,1199"/>
-<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="33,5,195,508"/>
-<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="239,571,421,912"/>
+<area shape="rect" id="node1" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="5,1777,176,1913"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="13,1548,169,1728"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="7,1041,131,1177"/>
+<area shape="rect" id="node4" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="107,1247,290,1485"/>
+<area shape="rect" id="node5" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="241,5,420,493"/>
+<area shape="rect" id="node6" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="242,556,419,971"/>
+<area shape="rect" id="node7" href="$classDroneControl.html" title="无人机控制类" alt="" coords="455,1033,611,1184"/>
+<area shape="rect" id="node8" href="$classNodeMachine.html" title="节点机基类" alt="" coords="627,666,773,861"/>
 </map>

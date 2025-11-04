@@ -11,8 +11,7 @@ Ar\+Uco标记处理器类
 
 
 
-Collaboration diagram for Aruco\+Tag\+Processor\+:
-\nopagebreak
+Collaboration diagram for Aruco\+Tag\+Processor\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,14 +25,12 @@ Collaboration diagram for Aruco\+Tag\+Processor\+:
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classArucoTagProcessor_a584fafed502cd5fa21691c1cbcf11250}{$\sim$\+Aruco\+Tag\+Processor}} ()
 \begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classArucoTagProcessor_a2e6c730d582983b6674945b6cecce1f7}{set\+\_\+start}} (bool started)
+void \mbox{\hyperlink{classArucoTagProcessor_a405e7c5a0b05c9ac8d3e2653c20622a2}{set\+\_\+start}} (bool flag)
 \begin{DoxyCompactList}\small\item\em 设置处理器启动状态 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classArucoTagProcessor_a08383d557a51c32c36fcf05b2038f10a}{update\+\_\+and\+\_\+log\+\_\+validity}} ()
 \begin{DoxyCompactList}\small\item\em 更新并记录标记有效性 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classArucoTagProcessor_ae28e867f42494a6d8a2e3cd18a8f83ad}{update\+\_\+tagconfig}} (const \mbox{\hyperlink{structTagConfig}{Tag\+Config}} config)
 \begin{DoxyCompactList}\small\item\em 更新标记配置 \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classArucoTagProcessor_a4a9fde3188baf0caa7ec72ffc3bf3443}{update\+\_\+tag\+\_\+started}} (const bool started)
-\begin{DoxyCompactList}\small\item\em 更新标记启动状态 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classArucoTagProcessor_a54b70e6de83233fd0a85fe5256c440a6}{is\+\_\+valid}} () const
 \begin{DoxyCompactList}\small\item\em 检查标记是否有效 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classArucoTagProcessor_adcc21c5619797a337d1f70290d1e506f}{is\+\_\+aligned}} () const
@@ -45,7 +42,7 @@ std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classArucoTagProcessor_a06e20fde1
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classArucoTagProcessor_a07e1d1da2791953f47be1112c34635ec}{target\+\_\+pose\+\_\+callback}} (const geometry\+\_\+msgs\+::\+Pose\+Stamped\+::\+Const\+Ptr \&msg)
+void \mbox{\hyperlink{classArucoTagProcessor_a38afe2fd9f5556679f2936427e23787d}{target\+\_\+pose\+\_\+callback}} (const fiducial\+\_\+msgs\+::\+Fiducial\+Transform\+Array\+::\+Const\+Ptr \&msg)
 \begin{DoxyCompactList}\small\item\em 目标位姿回调函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structArucoTag}{Aruco\+Tag}} \mbox{\hyperlink{classArucoTagProcessor_a6cf4cd546795956a614fbec97eb5a04b}{get\+\_\+tag\+\_\+body}} (const \mbox{\hyperlink{structArucoTag}{Aruco\+Tag}} \&tag\+\_\+cam) const
 \begin{DoxyCompactList}\small\item\em 将相机坐标系中的标记转换为机体坐标系 \end{DoxyCompactList}\item 
@@ -116,8 +113,7 @@ Ar\+Uco标记处理器类
 {\em tag\+\_\+config} & 标记配置参数 \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -171,8 +167,7 @@ std\+::array$<$double,4$>$ 包含x,y,z,yaw速度指令的数组
 \begin{DoxyReturn}{Returns}
 包含\mbox{[}vx, vy, vz, yaw\+\_\+rate\mbox{]}的速度指令数组 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,16 +194,14 @@ double 偏航角速度指令（度/秒）
 \begin{DoxyReturn}{Returns}
 偏航角速度指令（角度/秒） 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classArucoTagProcessor_a90eb16f0f62b260877263c3af29dc531_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,16 +232,14 @@ false 如果距离无效
 \begin{DoxyReturn}{Returns}
 如果距离有效返回true，否则返回false 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classArucoTagProcessor_abe7deb02d9d29837747d9a4e5349e216_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,8 +268,7 @@ false 如果标记未超时
 \begin{DoxyReturn}{Returns}
 如果标记超时返回true，否则返回false 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -312,8 +302,7 @@ std\+::array$<$double,4$>$ 包含x,y,z,yaw误差的数组
 {\em std\+::runtime\+\_\+error} & 如果标记无效 \\
 \hline
 \end{DoxyExceptions}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -350,16 +339,14 @@ Here is the call graph for this function\+:
 \begin{DoxyReturn}{Returns}
 机身坐标系下的标记位姿 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=334pt]{classArucoTagProcessor_a6cf4cd546795956a614fbec97eb5a04b_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -388,16 +375,14 @@ double 偏航角误差（度）
 \begin{DoxyReturn}{Returns}
 偏航角误差（角度制） 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=346pt]{classArucoTagProcessor_aaf3d1fa5498ab780a8186adac557807d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -443,11 +428,11 @@ true 如果标记当前有效
 
 false 如果标记当前无效 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classArucoTagProcessor_a2e6c730d582983b6674945b6cecce1f7}\label{classArucoTagProcessor_a2e6c730d582983b6674945b6cecce1f7}} 
+\mbox{\Hypertarget{classArucoTagProcessor_a405e7c5a0b05c9ac8d3e2653c20622a2}\label{classArucoTagProcessor_a405e7c5a0b05c9ac8d3e2653c20622a2}} 
 \index{ArucoTagProcessor@{ArucoTagProcessor}!set\_start@{set\_start}}
 \index{set\_start@{set\_start}!ArucoTagProcessor@{ArucoTagProcessor}}
 \doxysubsubsection{\texorpdfstring{set\_start()}{set\_start()}}
-{\footnotesize\ttfamily void Aruco\+Tag\+Processor\+::set\+\_\+start (\begin{DoxyParamCaption}\item[{bool}]{started }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Aruco\+Tag\+Processor\+::set\+\_\+start (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -455,24 +440,24 @@ false 如果标记当前无效
 
 
 \begin{DoxyParams}{Parameters}
-{\em started} & 启动状态 \\
+{\em flag} & 启动状态 \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classArucoTagProcessor_a07e1d1da2791953f47be1112c34635ec}\label{classArucoTagProcessor_a07e1d1da2791953f47be1112c34635ec}} 
+\mbox{\Hypertarget{classArucoTagProcessor_a38afe2fd9f5556679f2936427e23787d}\label{classArucoTagProcessor_a38afe2fd9f5556679f2936427e23787d}} 
 \index{ArucoTagProcessor@{ArucoTagProcessor}!target\_pose\_callback@{target\_pose\_callback}}
 \index{target\_pose\_callback@{target\_pose\_callback}!ArucoTagProcessor@{ArucoTagProcessor}}
 \doxysubsubsection{\texorpdfstring{target\_pose\_callback()}{target\_pose\_callback()}}
-{\footnotesize\ttfamily void Aruco\+Tag\+Processor\+::target\+\_\+pose\+\_\+callback (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Aruco\+Tag\+Processor\+::target\+\_\+pose\+\_\+callback (\begin{DoxyParamCaption}\item[{const fiducial\+\_\+msgs\+::\+Fiducial\+Transform\+Array\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 目标位姿回调函数 
 
-处理接收到的目标位姿消息，更新标记数据
+处理从相机接收到的标记位姿信息，将其转换为机身坐标系
 
 
 \begin{DoxyParams}{Parameters}
-{\em msg} & 位姿消息指针\\
+{\em msg} & 包含标记位姿的\+R\+O\+S消息（fiducial\+\_\+transform类型）\\
 \hline
 \end{DoxyParams}
 处理从相机接收到的标记位姿信息，将其转换为机身坐标系
@@ -482,20 +467,18 @@ false 如果标记当前无效
 {\em msg} & 包含标记位姿的\+R\+O\+S消息 \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classArucoTagProcessor_a07e1d1da2791953f47be1112c34635ec_cgraph}
+\includegraphics[width=350pt]{classArucoTagProcessor_a38afe2fd9f5556679f2936427e23787d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classArucoTagProcessor_a07e1d1da2791953f47be1112c34635ec_icgraph}
+\includegraphics[width=350pt]{classArucoTagProcessor_a38afe2fd9f5556679f2936427e23787d_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classArucoTagProcessor_a08383d557a51c32c36fcf05b2038f10a}\label{classArucoTagProcessor_a08383d557a51c32c36fcf05b2038f10a}} 
@@ -512,29 +495,13 @@ Here is the caller graph for this function\+:
 
 检查标记是否超时，更新当前有效性状态，并记录变化
 
-检查标记是否有效、是否超时、距离是否有效，并在状态变化时记录\+R\+O\+S日志 Here is the call graph for this function\+:
-\nopagebreak
+检查标记是否有效、是否超时、距离是否有效，并在状态变化时记录\+R\+O\+S日志 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classArucoTagProcessor_a08383d557a51c32c36fcf05b2038f10a_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classArucoTagProcessor_a4a9fde3188baf0caa7ec72ffc3bf3443}\label{classArucoTagProcessor_a4a9fde3188baf0caa7ec72ffc3bf3443}} 
-\index{ArucoTagProcessor@{ArucoTagProcessor}!update\_tag\_started@{update\_tag\_started}}
-\index{update\_tag\_started@{update\_tag\_started}!ArucoTagProcessor@{ArucoTagProcessor}}
-\doxysubsubsection{\texorpdfstring{update\_tag\_started()}{update\_tag\_started()}}
-{\footnotesize\ttfamily void Aruco\+Tag\+Processor\+::update\+\_\+tag\+\_\+started (\begin{DoxyParamCaption}\item[{const bool}]{started }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-更新标记启动状态 
-
-
-\begin{DoxyParams}{Parameters}
-{\em started} & 启动状态 \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classArucoTagProcessor_ae28e867f42494a6d8a2e3cd18a8f83ad}\label{classArucoTagProcessor_ae28e867f42494a6d8a2e3cd18a8f83ad}} 
 \index{ArucoTagProcessor@{ArucoTagProcessor}!update\_tagconfig@{update\_tagconfig}}
 \index{update\_tagconfig@{update\_tagconfig}!ArucoTagProcessor@{ArucoTagProcessor}}

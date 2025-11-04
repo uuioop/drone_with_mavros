@@ -1,6 +1,9 @@
 <map id="StateNode" name="StateNode">
-<area shape="rect" id="node1" title="状态节点基类" alt="" coords="36,1261,192,1441"/>
-<area shape="rect" id="node2" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,975,223,1199"/>
-<area shape="rect" id="node3" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="33,5,195,508"/>
-<area shape="rect" id="node4" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="239,571,421,912"/>
+<area shape="rect" id="node1" title="状态节点基类" alt="" coords="11,1548,167,1728"/>
+<area shape="rect" id="node2" href="$classNodeBase.html" title="节点基类" alt="" coords="5,1041,129,1177"/>
+<area shape="rect" id="node3" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="105,1247,288,1485"/>
+<area shape="rect" id="node4" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="239,5,418,493"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="240,556,417,971"/>
+<area shape="rect" id="node6" href="$classDroneControl.html" title="无人机控制类" alt="" coords="453,1033,609,1184"/>
+<area shape="rect" id="node7" href="$classNodeMachine.html" title="节点机基类" alt="" coords="625,666,771,861"/>
 </map>

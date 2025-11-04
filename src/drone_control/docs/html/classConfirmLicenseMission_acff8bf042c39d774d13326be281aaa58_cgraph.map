@@ -1,0 +1,4 @@
+<map id="ConfirmLicenseMission::switch_node" name="ConfirmLicenseMission::switch_node">
+<area shape="rect" id="node1" title="切换状态机状态" alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node2" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="227,13,427,39"/>
+</map>

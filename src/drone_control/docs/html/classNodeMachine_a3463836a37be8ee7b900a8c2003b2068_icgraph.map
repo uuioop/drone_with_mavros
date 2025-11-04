@@ -1,0 +1,14 @@
+<map id="NodeMachine::switch_node" name="NodeMachine::switch_node">
+<area shape="rect" id="node1" title="切换到指定的节点" alt="" coords="717,180,917,207"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="503,107,662,149"/>
+<area shape="rect" id="node11" href="$classPrecisionLandMission.html#a1d478c0092fcd7f3f71c494823252dcd" title="切换状态机状态" alt="" coords="501,173,664,214"/>
+<area shape="rect" id="node12" href="$classConfirmLicenseMission.html#acff8bf042c39d774d13326be281aaa58" title="切换状态机状态" alt="" coords="496,238,669,279"/>
+<area shape="rect" id="node3" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="256,64,445,91"/>
+<area shape="rect" id="node4" href="$classMissionNode.html#ab0889e7310b36a8e9397d5a2a172efc1" title="任务更新方法，在主循环中被持续调用" alt="" coords="259,115,442,141"/>
+<area shape="rect" id="node9" href="$classIdleMission.html#a773446138cfd397f4978f26cf9636a00" title="处理启动任务机服务请求" alt="" coords="253,198,448,239"/>
+<area shape="rect" id="node5" href="$classIdleMission.html#ae99afd2b2cb6e4d82e87e79e0fc958c9" title="空闲状态更新方法" alt="" coords="19,5,191,32"/>
+<area shape="rect" id="node6" href="$classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,56,205,83"/>
+<area shape="rect" id="node7" href="$classPrecisionLandMission.html#a5efa3a6e054ecb9df15e85c9a72982d7" title="更新任务状态时调用" alt="" coords="24,107,187,149"/>
+<area shape="rect" id="node8" href="$classConfirmLicenseMission.html#addccaaab98b57127b1d5c9ae325e23b5" title="更新任务状态时调用" alt="" coords="19,173,192,214"/>
+<area shape="rect" id="node10" href="$classIdleMission.html#a51d05e324190449745d11a87fc4168ff" title="构造函数" alt="" coords="16,239,195,265"/>
+</map>

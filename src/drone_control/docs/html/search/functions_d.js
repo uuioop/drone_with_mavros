@@ -1,23 +1,10 @@
 var searchData=
 [
-  ['_7ealignonguidetagstate_392',['~AlignOnGuideTagState',['../classAlignOnGuideTagState.html#a05d856af987c44dc33258d4ae1190ece',1,'AlignOnGuideTagState']]],
-  ['_7ealignonplatformtagstate_393',['~AlignOnPlatformTagState',['../classAlignOnPlatformTagState.html#aa1f7293e8f9c8c21b9e6d0f3ef60bce7',1,'AlignOnPlatformTagState']]],
-  ['_7eapproachguidetagstate_394',['~ApproachGuideTagState',['../classApproachGuideTagState.html#a00b27306f488000c9cb77bf74a13bd20',1,'ApproachGuideTagState']]],
-  ['_7earucotagprocessor_395',['~ArucoTagProcessor',['../classArucoTagProcessor.html#a584fafed502cd5fa21691c1cbcf11250',1,'ArucoTagProcessor']]],
-  ['_7econfirmlicensecontroller_396',['~ConfirmLicenseController',['../classConfirmLicenseController.html#a89b3c1e459d28132b40a4c85067828bb',1,'ConfirmLicenseController']]],
-  ['_7econfirmlicensestate_397',['~ConfirmLicenseState',['../classConfirmLicenseState.html#a88af3bb6e63bfa51937f6ef26d481fba',1,'ConfirmLicenseState']]],
-  ['_7econtroller_398',['~Controller',['../classController.html#a8d16a7a97c266dc0d5aa5685c4dcdd89',1,'Controller']]],
-  ['_7edescendstate_399',['~DescendState',['../classDescendState.html#ab734ac6e23ad7a8b1e685372547c054a',1,'DescendState']]],
-  ['_7edronecontrol_400',['~DroneControl',['../classDroneControl.html#a80167369cb14c68fc2f088c44f98f5e0',1,'DroneControl']]],
-  ['_7elandstate_401',['~LandState',['../classLandState.html#a5c28cd0a8c2c4caadd7dcc62ae7b59b2',1,'LandState']]],
-  ['_7elicenseprocessor_402',['~LicenseProcessor',['../classLicenseProcessor.html#ae480a9d5180cd06be50bd32461552a77',1,'LicenseProcessor']]],
-  ['_7emavrosbridge_403',['~MavrosBridge',['../classMavrosBridge.html#acf771a52097c415bc8832797ea0885c6',1,'MavrosBridge']]],
-  ['_7emissionnavcontroller_404',['~MissionNavController',['../classMissionNavController.html#acb15b815a60ba9f26347ebcaaa69fa81',1,'MissionNavController']]],
-  ['_7eprecisionlandcontroller_405',['~PrecisionLandController',['../classPrecisionLandController.html#ac8908be0e71163c249d3cdd3d5dc728c',1,'PrecisionLandController']]],
-  ['_7erepositionlicensestate_406',['~RepositionLicenseState',['../classRepositionLicenseState.html#a839b065d25921753d042df7b047cdded',1,'RepositionLicenseState']]],
-  ['_7esearchlicensestate_407',['~SearchLicenseState',['../classSearchLicenseState.html#a2391a827541adb016dfaa10fb09a59e7',1,'SearchLicenseState']]],
-  ['_7esearchtagstate_408',['~SearchTagState',['../classSearchTagState.html#a0e56d1859f3bf6e264f3f1abbaa7c385',1,'SearchTagState']]],
-  ['_7estatemachine_409',['~StateMachine',['../classStateMachine.html#a93d66cb2a89b186789d655a08b02674e',1,'StateMachine']]],
-  ['_7estatenode_410',['~StateNode',['../classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270',1,'StateNode']]],
-  ['_7estatusmonitor_411',['~StatusMonitor',['../classStatusMonitor.html#ae3373536aee5926854598781a56f7462',1,'StatusMonitor']]]
+  ['update_5fand_5flog_5fvalidity_431',['update_and_log_validity',['../classArucoTagProcessor.html#a08383d557a51c32c36fcf05b2038f10a',1,'ArucoTagProcessor']]],
+  ['update_5fmove_5fvector_432',['update_move_vector',['../classConfirmLicenseMission.html#aabfabbf135a6dfd2b8bc47e84908ee37',1,'ConfirmLicenseMission']]],
+  ['update_5frecognized_5flicense_433',['update_recognized_license',['../classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b',1,'LicenseProcessor']]],
+  ['update_5ftagconfig_434',['update_tagconfig',['../classArucoTagProcessor.html#ae28e867f42494a6d8a2e3cd18a8f83ad',1,'ArucoTagProcessor']]],
+  ['update_5ftarget_5flicense_5fno_435',['update_target_license_no',['../classConfirmLicenseMission.html#af56c27d77ea7d592eec1626df7ae67f7',1,'ConfirmLicenseMission']]],
+  ['upload_5fmission_436',['upload_mission',['../classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2',1,'MavrosBridge::upload_mission(const std::vector&lt; mavros_msgs::Waypoint &gt; &amp;waypoints)'],['../classMavrosBridge.html#a63e9961c1165e5b5888e93bd9a3791ca',1,'MavrosBridge::upload_mission(const std::vector&lt; std::array&lt; double, 3 &gt;&gt; &amp;waypoint_positions)'],['../classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a',1,'GPSNavMission::upload_mission()']]],
+  ['upload_5fwaypoints_437',['upload_waypoints',['../classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b',1,'MavrosBridge']]]
 ];

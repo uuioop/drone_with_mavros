@@ -11,8 +11,7 @@ M\+A\+V\+R\+O\+S桥接器类，封装了与\+M\+A\+V\+R\+O\+S通信的功能，�
 
 
 
-Collaboration diagram for Mavros\+Bridge\+:
-\nopagebreak
+Collaboration diagram for Mavros\+Bridge\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,21 +31,29 @@ bool \mbox{\hyperlink{classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a}{arm}}
 \begin{DoxyCompactList}\small\item\em 解锁无人机（准备飞行） \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classMavrosBridge_aab01bf288f00d88f665f0a8f6b9c82f1}{disarm}} ()
 \begin{DoxyCompactList}\small\item\em 锁定无人机（停止飞行） \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classMavrosBridge_a5213ec50f24b43d38b648dc328541c58}{set\+\_\+mode}} (std\+::string mode)
-\begin{DoxyCompactList}\small\item\em 设置无人机飞行模式 \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0}{start\+\_\+offboard\+\_\+mode}} ()
-\begin{DoxyCompactList}\small\item\em 启动离板控制模式(\+O\+F\+F\+B\+O\+A\+R\+D) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed}{switch\+\_\+flight\+\_\+mode}} (const std\+::string \&target\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em 切换无人机飞行模式 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classMavrosBridge_a642bbce30b30e90deca38c3372852538}{set\+\_\+position\+\_\+local}} (const std\+::array$<$ double, 4 $>$ \&pos, const std\+::array$<$ double, 4 $>$ \&orient=\{0.\+0, 0.\+0, 0.\+0, 1.\+0\})
 \begin{DoxyCompactList}\small\item\em 设置本地坐标系下的目标位置和姿态 \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classMavrosBridge_ae95991183794026341a1a25e2e0f3dca}{set\+\_\+position\+\_\+global}} (const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \&pos)
-\begin{DoxyCompactList}\small\item\em 设置全局坐标系下的目标位置 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2}{upload\+\_\+mission}} (const std\+::vector$<$ mavros\+\_\+msgs\+::\+Waypoint $>$ \&waypoints)
+\begin{DoxyCompactList}\small\item\em 设置任务航点列表 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca}{upload\+\_\+mission}} (const std\+::vector$<$ std\+::array$<$ double, 3 $>$$>$ \&waypoint\+\_\+positions)
+\begin{DoxyCompactList}\small\item\em 设置任务航点位置列表 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d}{set\+\_\+velocity\+\_\+body}} (const std\+::array$<$ double, 4 $>$ \&vel)
 \begin{DoxyCompactList}\small\item\em 设置机体坐标系下的速度指令 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da}{set\+\_\+arm}} (bool \mbox{\hyperlink{classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a}{arm}})
+bool \mbox{\hyperlink{classMavrosBridge_a68c2743effbb069153be9b7af647d783}{set\+\_\+arm}} (bool flag)
 \begin{DoxyCompactList}\small\item\em 设置无人机解锁或上锁状态 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_a9fc2476fc395297bb46119237fd957d5}{set\+\_\+mode}} (const std\+::string \&mode)
+\begin{DoxyCompactList}\small\item\em 设置无人机飞行模式 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0}{start\+\_\+offboard\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em 启动离板控制模式(\+O\+F\+F\+B\+O\+A\+R\+D) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6}{clear\+\_\+waypoints}} ()
+\begin{DoxyCompactList}\small\item\em 清除当前航点列表 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b}{upload\+\_\+waypoints}} (const std\+::vector$<$ mavros\+\_\+msgs\+::\+Waypoint $>$ \&waypoints)
+\begin{DoxyCompactList}\small\item\em 上传航点列表到飞控 \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Service\+Type $>$ }\\bool \mbox{\hyperlink{classMavrosBridge_a489099042be8260b7bf748f5171b17bb}{call\+Service}} (ros\+::\+Service\+Client \&client, Service\+Type \&service, const std\+::string \&service\+\_\+name)
 \begin{DoxyCompactList}\small\item\em 服务调用辅助模板函数 \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Message\+Type $>$ }\\bool \mbox{\hyperlink{classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f}{publish\+Message}} (ros\+::\+Publisher \&publisher, Message\+Type \&message, const std\+::string \&frame\+\_\+id=\char`\"{}map\char`\"{})
@@ -62,10 +69,12 @@ ros\+::\+Service\+Client \mbox{\hyperlink{classMavrosBridge_a4a0d73abbd5ac76465f
 \begin{DoxyCompactList}\small\item\em 解锁/锁定服务客户端 \end{DoxyCompactList}\item 
 ros\+::\+Service\+Client \mbox{\hyperlink{classMavrosBridge_ad29b4b290b1a1da58491eba4cb97415f}{\+\_\+set\+\_\+mode\+\_\+client}}
 \begin{DoxyCompactList}\small\item\em 设置模式服务客户端 \end{DoxyCompactList}\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{classMavrosBridge_a95df6b4756f729ac4964e4d0f1f8dc0b}{\+\_\+wp\+\_\+clear\+\_\+client}}
+\begin{DoxyCompactList}\small\item\em 清除航点服务客户端 \end{DoxyCompactList}\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{classMavrosBridge_a4979b44203a259baf434047bfd2173a6}{\+\_\+wp\+\_\+push\+\_\+client}}
+\begin{DoxyCompactList}\small\item\em 推送航点服务客户端 \end{DoxyCompactList}\item 
 ros\+::\+Publisher \mbox{\hyperlink{classMavrosBridge_aeb57b92d2c4b4ef2822b87543297a45c}{\+\_\+local\+\_\+pos\+\_\+pub}}
 \begin{DoxyCompactList}\small\item\em 本地位置发布者 \end{DoxyCompactList}\item 
-ros\+::\+Publisher \mbox{\hyperlink{classMavrosBridge_ad10b9dc75db43605a1af5d5332451410}{\+\_\+global\+\_\+pos\+\_\+pub}}
-\begin{DoxyCompactList}\small\item\em 全局位置发布者 \end{DoxyCompactList}\item 
 ros\+::\+Publisher \mbox{\hyperlink{classMavrosBridge_a7155763543a2b176dc91445ad1708063}{\+\_\+body\+\_\+vel\+\_\+pub}}
 \begin{DoxyCompactList}\small\item\em 机体速度发布者 \end{DoxyCompactList}\item 
 ros\+::\+Rate \mbox{\hyperlink{classMavrosBridge_ab27aeb0ad1b611bb96fe07b4f907ceab}{\+\_\+rate}} \{20.\+0\}
@@ -149,16 +158,14 @@ Mavros\+Bridge析构函数
 \begin{DoxyNote}{Note}
 调用set\+\_\+arm(true)实现 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -193,6 +200,38 @@ bool Mavros\+Bridge\+::call\+Service (\begin{DoxyParamCaption}\item[{ros\+::\+Se
 \begin{DoxyReturn}{Returns}
 服务调用成功返回true 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6}\label{classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6}} 
+\index{MavrosBridge@{MavrosBridge}!clear\_waypoints@{clear\_waypoints}}
+\index{clear\_waypoints@{clear\_waypoints}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{clear\_waypoints()}{clear\_waypoints()}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::clear\+\_\+waypoints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+清除当前航点列表 
+
+\begin{DoxyReturn}{Returns}
+清除成功返回true
+
+清除成功返回true 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+调用\+M\+A\+V\+R\+O\+S的waypoint\+\_\+clear服务 
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{classMavrosBridge_a7a70c52e8e986a2c7a3cfeb5bfc82419}\label{classMavrosBridge_a7a70c52e8e986a2c7a3cfeb5bfc82419}} 
 \index{MavrosBridge@{MavrosBridge}!connect\_to\_fcu@{connect\_to\_fcu}}
 \index{connect\_to\_fcu@{connect\_to\_fcu}!MavrosBridge@{MavrosBridge}}
@@ -211,8 +250,7 @@ bool Mavros\+Bridge\+::call\+Service (\begin{DoxyParamCaption}\item[{ros\+::\+Se
 \begin{DoxyNote}{Note}
 等待与\+F\+C\+U建立连接 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,8 +277,7 @@ Here is the call graph for this function\+:
 \begin{DoxyNote}{Note}
 调用set\+\_\+arm(false)实现 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -275,19 +312,18 @@ bool Mavros\+Bridge\+::publish\+Message (\begin{DoxyParamCaption}\item[{ros\+::\
 \begin{DoxyReturn}{Returns}
 发布成功返回true 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da}\label{classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da}} 
+\mbox{\Hypertarget{classMavrosBridge_a68c2743effbb069153be9b7af647d783}\label{classMavrosBridge_a68c2743effbb069153be9b7af647d783}} 
 \index{MavrosBridge@{MavrosBridge}!set\_arm@{set\_arm}}
 \index{set\_arm@{set\_arm}!MavrosBridge@{MavrosBridge}}
 \doxysubsubsection{\texorpdfstring{set\_arm()}{set\_arm()}}
-{\footnotesize\ttfamily bool Mavros\+Bridge\+::set\+\_\+arm (\begin{DoxyParamCaption}\item[{bool}]{arm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::set\+\_\+arm (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -295,7 +331,7 @@ Here is the caller graph for this function\+:
 
 
 \begin{DoxyParams}{Parameters}
-{\em arm} & true为解锁，false为锁定 \\
+{\em flag} & true为解锁，false为锁定 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -303,7 +339,7 @@ Here is the caller graph for this function\+:
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-{\em arm} & true为解锁，false为锁定 \\
+{\em flag} & true为解锁，false为锁定 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -312,27 +348,25 @@ Here is the caller graph for this function\+:
 \begin{DoxyNote}{Note}
 持续尝试直到状态正确设置 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_cgraph}
+\includegraphics[width=350pt]{classMavrosBridge_a68c2743effbb069153be9b7af647d783_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_icgraph}
+\includegraphics[width=350pt]{classMavrosBridge_a68c2743effbb069153be9b7af647d783_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMavrosBridge_a5213ec50f24b43d38b648dc328541c58}\label{classMavrosBridge_a5213ec50f24b43d38b648dc328541c58}} 
+\mbox{\Hypertarget{classMavrosBridge_a9fc2476fc395297bb46119237fd957d5}\label{classMavrosBridge_a9fc2476fc395297bb46119237fd957d5}} 
 \index{MavrosBridge@{MavrosBridge}!set\_mode@{set\_mode}}
 \index{set\_mode@{set\_mode}!MavrosBridge@{MavrosBridge}}
 \doxysubsubsection{\texorpdfstring{set\_mode()}{set\_mode()}}
-{\footnotesize\ttfamily bool Mavros\+Bridge\+::set\+\_\+mode (\begin{DoxyParamCaption}\item[{std\+::string}]{mode }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::set\+\_\+mode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -357,32 +391,13 @@ Here is the caller graph for this function\+:
 \begin{DoxyNote}{Note}
 调用\+M\+A\+V\+R\+O\+S的set\+\_\+mode服务 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classMavrosBridge_a5213ec50f24b43d38b648dc328541c58_icgraph}
+\includegraphics[width=350pt]{classMavrosBridge_a9fc2476fc395297bb46119237fd957d5_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classMavrosBridge_ae95991183794026341a1a25e2e0f3dca}\label{classMavrosBridge_ae95991183794026341a1a25e2e0f3dca}} 
-\index{MavrosBridge@{MavrosBridge}!set\_position\_global@{set\_position\_global}}
-\index{set\_position\_global@{set\_position\_global}!MavrosBridge@{MavrosBridge}}
-\doxysubsubsection{\texorpdfstring{set\_position\_global()}{set\_position\_global()}}
-{\footnotesize\ttfamily bool Mavros\+Bridge\+::set\+\_\+position\+\_\+global (\begin{DoxyParamCaption}\item[{const geographic\+\_\+msgs\+::\+Geo\+Pose\+Stamped \&}]{pos }\end{DoxyParamCaption})}
-
-
-
-设置全局坐标系下的目标位置 
-
-
-\begin{DoxyParams}{Parameters}
-{\em pos} & 全局位置消息 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-设置成功返回true 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classMavrosBridge_a642bbce30b30e90deca38c3372852538}\label{classMavrosBridge_a642bbce30b30e90deca38c3372852538}} 
 \index{MavrosBridge@{MavrosBridge}!set\_position\_local@{set\_position\_local}}
 \index{set\_position\_local@{set\_position\_local}!MavrosBridge@{MavrosBridge}}
@@ -421,8 +436,7 @@ Here is the caller graph for this function\+:
 
 如果未指定orient参数，则使用pos中的yaw值计算四元数 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -465,16 +479,14 @@ Here is the call graph for this function\+:
 
 M\+A\+V\+R\+O\+S会自动处理\+R\+O\+S到\+P\+X4的坐标系转换 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -485,7 +497,7 @@ Here is the caller graph for this function\+:
 \index{MavrosBridge@{MavrosBridge}!start\_offboard\_mode@{start\_offboard\_mode}}
 \index{start\_offboard\_mode@{start\_offboard\_mode}!MavrosBridge@{MavrosBridge}}
 \doxysubsubsection{\texorpdfstring{start\_offboard\_mode()}{start\_offboard\_mode()}}
-{\footnotesize\ttfamily bool Mavros\+Bridge\+::start\+\_\+offboard\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::start\+\_\+offboard\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -499,12 +511,159 @@ Here is the caller graph for this function\+:
 \begin{DoxyNote}{Note}
 进入\+O\+F\+F\+B\+O\+A\+R\+D模式前先发送100个悬停指令 
 \end{DoxyNote}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed}\label{classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed}} 
+\index{MavrosBridge@{MavrosBridge}!switch\_flight\_mode@{switch\_flight\_mode}}
+\index{switch\_flight\_mode@{switch\_flight\_mode}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{switch\_flight\_mode()}{switch\_flight\_mode()}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::switch\+\_\+flight\+\_\+mode (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{target\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+切换无人机飞行模式 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & 飞行模式名称 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+切换成功返回true
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em target\+\_\+mode} & 目标飞行模式名称 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+切换成功返回true 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+如果目标模式为\+O\+F\+F\+B\+O\+A\+R\+D，则需要特定的启动方法start\+\_\+offboard\+\_\+mode() 
+
+否则直接尝试切换模式 
+\end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2}\label{classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2}} 
+\index{MavrosBridge@{MavrosBridge}!upload\_mission@{upload\_mission}}
+\index{upload\_mission@{upload\_mission}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{upload\_mission()}{upload\_mission()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::upload\+\_\+mission (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ mavros\+\_\+msgs\+::\+Waypoint $>$ \&}]{waypoints }\end{DoxyParamCaption})}
+
+
+
+设置任务航点列表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waypoints} & 任务航点列表 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+自定义程度高 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+设置成功返回true 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca}\label{classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca}} 
+\index{MavrosBridge@{MavrosBridge}!upload\_mission@{upload\_mission}}
+\index{upload\_mission@{upload\_mission}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{upload\_mission()}{upload\_mission()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::upload\+\_\+mission (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::array$<$ double, 3 $>$$>$ \&}]{waypoint\+\_\+positions }\end{DoxyParamCaption})}
+
+
+
+设置任务航点位置列表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waypoint\+\_\+positions} & 任务航点位置列表，每个元素为\{纬度(度), 经度(度), 绝对高度(米)\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+设置成功返回true 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b}\label{classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b}} 
+\index{MavrosBridge@{MavrosBridge}!upload\_waypoints@{upload\_waypoints}}
+\index{upload\_waypoints@{upload\_waypoints}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{upload\_waypoints()}{upload\_waypoints()}}
+{\footnotesize\ttfamily bool Mavros\+Bridge\+::upload\+\_\+waypoints (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ mavros\+\_\+msgs\+::\+Waypoint $>$ \&}]{waypoints }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+上传航点列表到飞控 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waypoints} & 航点列表 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+上传成功返回true
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em waypoints} & 航点列表 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+上传成功返回true 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+调用\+M\+A\+V\+R\+O\+S的waypoint\+\_\+push服务 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b_icgraph}
 \end{center}
 \end{figure}
 
@@ -529,16 +688,6 @@ Here is the call graph for this function\+:
 
 
 机体速度发布者 
-
-\mbox{\Hypertarget{classMavrosBridge_ad10b9dc75db43605a1af5d5332451410}\label{classMavrosBridge_ad10b9dc75db43605a1af5d5332451410}} 
-\index{MavrosBridge@{MavrosBridge}!\_global\_pos\_pub@{\_global\_pos\_pub}}
-\index{\_global\_pos\_pub@{\_global\_pos\_pub}!MavrosBridge@{MavrosBridge}}
-\doxysubsubsection{\texorpdfstring{\_global\_pos\_pub}{\_global\_pos\_pub}}
-{\footnotesize\ttfamily ros\+::\+Publisher Mavros\+Bridge\+::\+\_\+global\+\_\+pos\+\_\+pub\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-全局位置发布者 
 
 \mbox{\Hypertarget{classMavrosBridge_aeb57b92d2c4b4ef2822b87543297a45c}\label{classMavrosBridge_aeb57b92d2c4b4ef2822b87543297a45c}} 
 \index{MavrosBridge@{MavrosBridge}!\_local\_pos\_pub@{\_local\_pos\_pub}}
@@ -589,6 +738,26 @@ R\+O\+S节点句柄引用
 
 
 状态监控器引用 
+
+\mbox{\Hypertarget{classMavrosBridge_a95df6b4756f729ac4964e4d0f1f8dc0b}\label{classMavrosBridge_a95df6b4756f729ac4964e4d0f1f8dc0b}} 
+\index{MavrosBridge@{MavrosBridge}!\_wp\_clear\_client@{\_wp\_clear\_client}}
+\index{\_wp\_clear\_client@{\_wp\_clear\_client}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{\_wp\_clear\_client}{\_wp\_clear\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client Mavros\+Bridge\+::\+\_\+wp\+\_\+clear\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+清除航点服务客户端 
+
+\mbox{\Hypertarget{classMavrosBridge_a4979b44203a259baf434047bfd2173a6}\label{classMavrosBridge_a4979b44203a259baf434047bfd2173a6}} 
+\index{MavrosBridge@{MavrosBridge}!\_wp\_push\_client@{\_wp\_push\_client}}
+\index{\_wp\_push\_client@{\_wp\_push\_client}!MavrosBridge@{MavrosBridge}}
+\doxysubsubsection{\texorpdfstring{\_wp\_push\_client}{\_wp\_push\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client Mavros\+Bridge\+::\+\_\+wp\+\_\+push\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+推送航点服务客户端 
 
 
 

@@ -11,8 +11,7 @@
 
 
 
-Collaboration diagram for License\+Processor\+:
-\nopagebreak
+Collaboration diagram for License\+Processor\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,10 +27,12 @@ Collaboration diagram for License\+Processor\+:
 \begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \mbox{\hyperlink{classLicenseProcessor_af841af957c86bcd1dd70bd27fb732d62}{get\+\_\+license\+\_\+info\+\_\+stable}} () const
 \begin{DoxyCompactList}\small\item\em 获取识别稳定的号牌信息 \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}{set\+\_\+start}} (bool started)
+void \mbox{\hyperlink{classLicenseProcessor_ab681204560293d6435d9eb95518fff79}{set\+\_\+start}} (bool flag)
 \begin{DoxyCompactList}\small\item\em 设置是否启动回调函数 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}{set\+\_\+target\+\_\+license}} (const std\+::string \&license\+\_\+no)
 \begin{DoxyCompactList}\small\item\em 设置目标号牌 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3}{is\+\_\+recognized}} () const
+\begin{DoxyCompactList}\small\item\em 检查是否已识别到号牌 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}{is\+\_\+valid}} () const
 \begin{DoxyCompactList}\small\item\em 检查当前号牌信息是否有效 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLicenseProcessor_af13f3d5ae0ccced549405f5a1b14772b}{is\+\_\+aligned}} () const
@@ -51,7 +52,7 @@ void \mbox{\hyperlink{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}{c
 \item 
 void \mbox{\hyperlink{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e}{license\+\_\+callback}} (const my\+\_\+interfaces\+::\+License\+Info\+::\+Const\+Ptr \&msg)
 \begin{DoxyCompactList}\small\item\em 号牌回调函数 \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}{check\+\_\+timeout}} () const
+bool \mbox{\hyperlink{classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda}{check\+\_\+timeout}} (const \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \&license\+\_\+info) const
 \begin{DoxyCompactList}\small\item\em 检查号牌信息是否超时 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b}{update\+\_\+recognized\+\_\+license}} (const \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \&license\+\_\+info)
 \begin{DoxyCompactList}\small\item\em 更新识别到的号牌信息 \end{DoxyCompactList}\item 
@@ -64,7 +65,7 @@ ros\+::\+Node\+Handle \& \mbox{\hyperlink{classLicenseProcessor_a1968a1473d21514
 \begin{DoxyCompactList}\small\item\em R\+O\+S节点句柄引用 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classLicenseProcessor_af005e27feae2c380f5a860c72e313ba1}{\+\_\+is\+\_\+started}} = false
 \begin{DoxyCompactList}\small\item\em 处理器是否已启动 \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}{\+\_\+license\+\_\+no}}
+\mbox{\hyperlink{structLicenseInfo}{License\+Info}} \mbox{\hyperlink{classLicenseProcessor_aafd53cad3e170444dd2b594eb55c8b64}{\+\_\+license\+\_\+info}}
 \begin{DoxyCompactList}\small\item\em 最新识别的号牌内容 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \mbox{\hyperlink{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}{\+\_\+license\+\_\+info\+\_\+stable}}
 \begin{DoxyCompactList}\small\item\em 稳定识别的号牌信息 \end{DoxyCompactList}\item 
@@ -116,8 +117,7 @@ std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classLicenseProcessor_a51795b51
 {\em license\+\_\+config} & 号牌配置参数 \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -205,11 +205,11 @@ double 速度指令值
 \begin{DoxyReturn}{Returns}
 对应轴的速度指令值 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}\label{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566}} 
+\mbox{\Hypertarget{classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda}\label{classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda}} 
 \index{LicenseProcessor@{LicenseProcessor}!check\_timeout@{check\_timeout}}
 \index{check\_timeout@{check\_timeout}!LicenseProcessor@{LicenseProcessor}}
 \doxysubsubsection{\texorpdfstring{check\_timeout()}{check\_timeout()}}
-{\footnotesize\ttfamily bool License\+Processor\+::check\+\_\+timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily bool License\+Processor\+::check\+\_\+timeout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLicenseInfo}{License\+Info}} \&}]{license\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -227,12 +227,11 @@ false 如果号牌信息未超时
 \begin{DoxyReturn}{Returns}
 如果号牌信息超时返回true，否则返回false 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph}
+\includegraphics[width=350pt]{classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}\label{classLicenseProcessor_af59b98113eefb9d6ff2a1a8b2239b34a}} 
@@ -343,12 +342,35 @@ false 如果号牌号码无效
 \begin{DoxyReturn}{Returns}
 如果号牌格式有效返回true，否则返回false 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classLicenseProcessor_a313cfa61be30832cb44dfcda57d06db8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3}\label{classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3}} 
+\index{LicenseProcessor@{LicenseProcessor}!is\_recognized@{is\_recognized}}
+\index{is\_recognized@{is\_recognized}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{is\_recognized()}{is\_recognized()}}
+{\footnotesize\ttfamily bool License\+Processor\+::is\+\_\+recognized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+检查是否已识别到号牌 
+
+判断是否识别到号牌
+
+\begin{DoxyReturn}{Returns}
+true 如果已识别 
+
+false 如果未识别 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}\label{classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d}} 
@@ -371,8 +393,7 @@ false 如果号牌信息无效
 \begin{DoxyReturn}{Returns}
 如果号牌信息有效返回true，否则返回false 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -405,27 +426,25 @@ Here is the call graph for this function\+:
 {\em msg} & 包含号牌信息的\+R\+O\+S消息 \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classLicenseProcessor_a8223a97cd8d9c8c5886f2ff4a256da5e_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}\label{classLicenseProcessor_a8dab2298e88eb968c8b8bebc9b778f9d}} 
+\mbox{\Hypertarget{classLicenseProcessor_ab681204560293d6435d9eb95518fff79}\label{classLicenseProcessor_ab681204560293d6435d9eb95518fff79}} 
 \index{LicenseProcessor@{LicenseProcessor}!set\_start@{set\_start}}
 \index{set\_start@{set\_start}!LicenseProcessor@{LicenseProcessor}}
 \doxysubsubsection{\texorpdfstring{set\_start()}{set\_start()}}
-{\footnotesize\ttfamily void License\+Processor\+::set\+\_\+start (\begin{DoxyParamCaption}\item[{bool}]{started }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void License\+Processor\+::set\+\_\+start (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -433,7 +452,7 @@ Here is the caller graph for this function\+:
 
 
 \begin{DoxyParams}{Parameters}
-{\em started} & 启动状态 \\
+{\em flag} & 启动状态 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}\label{classLicenseProcessor_aec6d6b29758326a7c372bbf4f67a597e}} 
@@ -486,16 +505,14 @@ Here is the caller graph for this function\+:
 {\em license\+\_\+info} & 最新识别到的号牌信息 \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classLicenseProcessor_a92834bb6fe16d010396f346ab211d25b_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -525,6 +542,16 @@ Here is the caller graph for this function\+:
 
 号牌配置参数 
 
+\mbox{\Hypertarget{classLicenseProcessor_aafd53cad3e170444dd2b594eb55c8b64}\label{classLicenseProcessor_aafd53cad3e170444dd2b594eb55c8b64}} 
+\index{LicenseProcessor@{LicenseProcessor}!\_license\_info@{\_license\_info}}
+\index{\_license\_info@{\_license\_info}!LicenseProcessor@{LicenseProcessor}}
+\doxysubsubsection{\texorpdfstring{\_license\_info}{\_license\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLicenseInfo}{License\+Info}} License\+Processor\+::\+\_\+license\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+最新识别的号牌内容 
+
 \mbox{\Hypertarget{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}\label{classLicenseProcessor_acb4745d71a28e374014fdc7e8423f460}} 
 \index{LicenseProcessor@{LicenseProcessor}!\_license\_info\_stable@{\_license\_info\_stable}}
 \index{\_license\_info\_stable@{\_license\_info\_stable}!LicenseProcessor@{LicenseProcessor}}
@@ -534,16 +561,6 @@ Here is the caller graph for this function\+:
 
 
 稳定识别的号牌信息 
-
-\mbox{\Hypertarget{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}\label{classLicenseProcessor_a7532b99c060b6eeaf7dc75a2e23754f1}} 
-\index{LicenseProcessor@{LicenseProcessor}!\_license\_no@{\_license\_no}}
-\index{\_license\_no@{\_license\_no}!LicenseProcessor@{LicenseProcessor}}
-\doxysubsubsection{\texorpdfstring{\_license\_no}{\_license\_no}}
-{\footnotesize\ttfamily std\+::string License\+Processor\+::\+\_\+license\+\_\+no\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-最新识别的号牌内容 
 
 \mbox{\Hypertarget{classLicenseProcessor_a16ca8dce78b6779872921363dac42374}\label{classLicenseProcessor_a16ca8dce78b6779872921363dac42374}} 
 \index{LicenseProcessor@{LicenseProcessor}!\_license\_sub@{\_license\_sub}}

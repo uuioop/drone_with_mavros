@@ -6,16 +6,15 @@
 
 
 {\ttfamily \#include $<$cmath$>$}\newline
-Include dependency graph for utils.\+h\+:
-\nopagebreak
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for utils.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=184pt]{utils_8h__incl}
+\includegraphics[width=188pt]{utils_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,7 +27,9 @@ This graph shows which files directly or indirectly include this file\+:
 double \mbox{\hyperlink{utils_8h_a91efdd328cd59d46a9b3b670757173ae}{deg2rad\+\_\+normalized}} (double degrees)
 \begin{DoxyCompactList}\small\item\em 将角度转换为弧度并归一化到\mbox{[}-\/π, π\mbox{]}范围 \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}{rad2deg\+\_\+normalized}} (double radians)
-\begin{DoxyCompactList}\small\item\em 将弧度转换为角度并归一化到\mbox{[}-\/180, 180\mbox{]}范围 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 将弧度转换为角度并归一化到\mbox{[}-\/180, 180\mbox{]}范围 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utils_8h_a31649049be15c2ee64eeab81a78b3c04}{check\+\_\+target\+\_\+pos\+\_\+valid}} (std\+::array$<$ double, 3 $>$ target\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em 检查目标位置数据的有效性 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -37,6 +38,35 @@ double \mbox{\hyperlink{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}{rad2deg\+\_\
 该文件提供了角度和弧度转换相关的工具函数，用于无人机控制中的坐标变换和姿态计算。 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a31649049be15c2ee64eeab81a78b3c04}\label{utils_8h_a31649049be15c2ee64eeab81a78b3c04}} 
+\index{utils.h@{utils.h}!check\_target\_pos\_valid@{check\_target\_pos\_valid}}
+\index{check\_target\_pos\_valid@{check\_target\_pos\_valid}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{check\_target\_pos\_valid()}{check\_target\_pos\_valid()}}
+{\footnotesize\ttfamily bool check\+\_\+target\+\_\+pos\+\_\+valid (\begin{DoxyParamCaption}\item[{std\+::array$<$ double, 3 $>$}]{target\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+检查目标位置数据的有效性 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & 纬度(度) \\
+\hline
+{\em lon} & 经度(度) \\
+\hline
+{\em alt} & 相对高度(米) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+位置数据有效返回true 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+检测标准：
+\begin{DoxyItemize}
+\item 经纬度为非\+Na\+N且在合理范围内(-\/90到90度，-\/180到180度)
+\item 相对高度为非\+Na\+N且不小于-\/0.1米 
+\end{DoxyItemize}
+\end{DoxyNote}
 \mbox{\Hypertarget{utils_8h_a91efdd328cd59d46a9b3b670757173ae}\label{utils_8h_a91efdd328cd59d46a9b3b670757173ae}} 
 \index{utils.h@{utils.h}!deg2rad\_normalized@{deg2rad\_normalized}}
 \index{deg2rad\_normalized@{deg2rad\_normalized}!utils.h@{utils.h}}
@@ -55,8 +85,7 @@ double \mbox{\hyperlink{utils_8h_a7c49671bd08b0ecb3cb52cbfb2063f08}{rad2deg\+\_\
 \begin{DoxyReturn}{Returns}
 归一化后的弧度值 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -81,8 +110,7 @@ Here is the caller graph for this function\+:
 \begin{DoxyReturn}{Returns}
 归一化后的角度值 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

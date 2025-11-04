@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Land\+State\+:
-\nopagebreak
+Inheritance diagram for Land\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Land\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Land\+State\+:
-\nopagebreak
+Collaboration diagram for Land\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +30,7 @@ Collaboration diagram for Land\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}{Land\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classLandState_ab90f6c160b62d96f5bcfdff22f66cc68}{Land\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}{$\sim$\+Land\+State}} ()=default
 \item 
@@ -49,11 +47,11 @@ void \mbox{\hyperlink{classLandState_a76407ac1403443fa4ae604afad7dc51b}{on\+\_\+
 着陆状态类 负责控制无人机执行最终的着陆操作 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}\label{classLandState_aa6bcc741d1421aab1bc56fa73e9a0f51}} 
+\mbox{\Hypertarget{classLandState_ab90f6c160b62d96f5bcfdff22f66cc68}\label{classLandState_ab90f6c160b62d96f5bcfdff22f66cc68}} 
 \index{LandState@{LandState}!LandState@{LandState}}
 \index{LandState@{LandState}!LandState@{LandState}}
 \doxysubsubsection{\texorpdfstring{LandState()}{LandState()}}
-{\footnotesize\ttfamily Land\+State\+::\+Land\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Land\+State\+::\+Land\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -61,7 +59,7 @@ void \mbox{\hyperlink{classLandState_a76407ac1403443fa4ae604afad7dc51b}{on\+\_\+
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用 \\
+{\em mission} & 所在任务引用 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}\label{classLandState_a5c28cd0a8c2c4caadd7dcc62ae7b59b2}} 
@@ -99,9 +97,9 @@ Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{St
 
 退出状态时调用 
 
-退出应急降落状态
+退出着陆状态
 
-退出应急降落状态时调用，目前为空实现 
+退出着陆状态时调用，目前为空实现 
 
 Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{State\+Node}}.
 
@@ -125,10 +123,9 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,5 +136,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

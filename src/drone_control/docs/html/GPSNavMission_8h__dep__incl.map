@@ -1,0 +1,5 @@
+<map id="include/MissionNode/GPSNavMission.h" name="include/MissionNode/GPSNavMission.h">
+<area shape="rect" id="node1" title="GPS导航任务类定义" alt="" coords="147,5,305,47"/>
+<area shape="rect" id="node2" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="5,95,196,121"/>
+<area shape="rect" id="node3" href="$GPSNavMission_8cpp.html" title="任务导航任务节点实现文件" alt="" coords="220,95,483,121"/>
+</map>

@@ -13,7 +13,13 @@
 #include "core/MavrosBridge.h"
 #include "core/NodeMachine.h"
 
-
+/**
+ * @class DroneControl
+ * @brief 无人机控制类
+ * 
+ * 该类负责管理无人机的状态监控、Mavros桥接、控制器池和服务调用。
+ * 它提供了设置入口控制器、切换控制器和更新状态的方法。
+ */
 class DroneControl
 {
 public:

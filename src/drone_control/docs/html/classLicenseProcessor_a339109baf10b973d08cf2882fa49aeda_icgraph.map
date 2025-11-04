@@ -1,0 +1,5 @@
+<map id="LicenseProcessor::check_timeout" name="LicenseProcessor::check_timeout">
+<area shape="rect" id="node1" title="检查号牌信息是否超时" alt="" coords="207,39,387,80"/>
+<area shape="rect" id="node2" href="$classLicenseProcessor.html#ae137449e70ae5c6979f4b9b35788d1b3" title="检查是否已识别到号牌" alt="" coords="5,5,159,47"/>
+<area shape="rect" id="node3" href="$classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d" title="检查当前号牌信息是否有效" alt="" coords="5,71,159,112"/>
+</map>

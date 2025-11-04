@@ -1,0 +1,21 @@
+<map id="include/core/NodeBase.h" name="include/core/NodeBase.h">
+<area shape="rect" id="node1" title="节点基类定义" alt="" coords="737,5,919,32"/>
+<area shape="rect" id="node2" href="$NodeMachine_8h.html" title="节点机基类定义" alt="" coords="725,80,931,107"/>
+<area shape="rect" id="node4" href="$MissionNode_8h.html" title="任务基类定义，所有具体任务的抽象接口" alt="" coords="452,229,609,271"/>
+<area shape="rect" id="node17" href="$StateNode_8h.html" title="状态节点基类定义" alt="" coords="1090,237,1315,263"/>
+<area shape="rect" id="node3" href="$DroneControl_8h.html" title="无人机控制类" alt="" coords="583,155,785,181"/>
+<area shape="rect" id="node5" href="$ConfirmLicenseMission_8h.html" title="号牌确认任务头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="887,319,1076,360"/>
+<area shape="rect" id="node13" href="$PrecisionLandMission_8h.html" title="精确着陆任务头文件 负责管理无人机使用ArUco标签进行精确着陆的过程" alt="" coords="684,319,863,360"/>
+<area shape="rect" id="node6" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="551,415,742,442"/>
+<area shape="rect" id="node16" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="685,237,790,263"/>
+<area shape="rect" id="node9" href="$GPSNavMission_8h.html" title="GPS导航任务类定义" alt="" coords="452,319,609,360"/>
+<area shape="rect" id="node11" href="$IdleMission_8h.html" title="空闲状态任务头文件 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="271,319,428,360"/>
+<area shape="rect" id="node7" href="$ConfirmLicenseMission_8cpp.html" title="号牌确认任务实现" alt="" coords="1456,408,1691,449"/>
+<area shape="rect" id="node8" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="1213,408,1432,449"/>
+<area shape="rect" id="node10" href="$GPSNavMission_8cpp.html" title="任务导航任务节点实现文件" alt="" coords="265,415,527,442"/>
+<area shape="rect" id="node12" href="$IdleMission_8cpp.html" title="空闲状态任务实现" alt="" coords="5,415,240,442"/>
+<area shape="rect" id="node14" href="$PrecisionLandMission_8cpp.html" title="精确着陆任务节点实现文件" alt="" coords="997,408,1189,449"/>
+<area shape="rect" id="node15" href="$PrecisionLandNodes_8cpp.html" title="精确着陆状态节点实现文件" alt="" coords="766,408,973,449"/>
+<area shape="rect" id="node18" href="$ConfirmLicenseNodes_8h.html" title="号牌确认状态机节点定义 包含搜索号牌、确认号牌和重新定位号牌三种状态" alt="" coords="1329,319,1527,360"/>
+<area shape="rect" id="node19" href="$PrecisionLandNodes_8h.html" title="精确着陆状态机节点定义 包含搜索标签、对准引导标签、接近引导标签、对准平台标签、下降和着陆等状态" alt="" coords="1101,319,1305,360"/>
+</map>

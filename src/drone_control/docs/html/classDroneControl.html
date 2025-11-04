@@ -71,16 +71,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>无人机控制类  
+ <a href="classDroneControl.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="DroneControl_8h_source.html">DroneControl.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for DroneControl:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDroneControl__coll__graph.png" border="0" usemap="#DroneControl_coll__map" alt="Collaboration graph"/></div>
 <map name="DroneControl_coll__map" id="DroneControl_coll__map">
-<area shape="rect" title=" " alt="" coords="8,1261,225,1485"/>
-<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="73,5,234,508"/>
-<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="62,571,245,912"/>
-<area shape="rect" href="classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="254,975,472,1199"/>
+<area shape="rect" title="无人机控制类" alt="" coords="223,1033,379,1184"/>
+<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,184,493"/>
+<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="213,556,390,971"/>
+<area shape="rect" href="classNodeMachine.html" title="节点机基类" alt="" coords="415,666,561,861"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -92,27 +95,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a80167369cb14c68fc2f088c44f98f5e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a80167369cb14c68fc2f088c44f98f5e0">~DroneControl</a> ()</td></tr>
 <tr class="memdesc:a80167369cb14c68fc2f088c44f98f5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <a href="classDroneControl.html#a80167369cb14c68fc2f088c44f98f5e0">More...</a><br /></td></tr>
 <tr class="separator:a80167369cb14c68fc2f088c44f98f5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae83af02883d9b648ab186b3f2140638d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#ae83af02883d9b648ab186b3f2140638d">set_entry</a> (const std::string &amp;controller_name)</td></tr>
-<tr class="memdesc:ae83af02883d9b648ab186b3f2140638d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置入口控制器  <a href="classDroneControl.html#ae83af02883d9b648ab186b3f2140638d">More...</a><br /></td></tr>
-<tr class="separator:ae83af02883d9b648ab186b3f2140638d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b172298f481d5a7ced2db17f51f9ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0">switch_controller</a> (const std::string &amp;controller_name)</td></tr>
-<tr class="memdesc:a2b172298f481d5a7ced2db17f51f9ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换当前活动控制器  <a href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0">More...</a><br /></td></tr>
-<tr class="separator:a2b172298f481d5a7ced2db17f51f9ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8832a2d45e206b2d4116e0d405a71b95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a8832a2d45e206b2d4116e0d405a71b95">on_enter</a> ()</td></tr>
+<tr class="memdesc:a8832a2d45e206b2d4116e0d405a71b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">进入当前任务  <a href="classDroneControl.html#a8832a2d45e206b2d4116e0d405a71b95">More...</a><br /></td></tr>
+<tr class="separator:a8832a2d45e206b2d4116e0d405a71b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bbcdecdbfc9d0e93a2819c1ea56d0a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1">on_update</a> ()</td></tr>
-<tr class="memdesc:a2bbcdecdbfc9d0e93a2819c1ea56d0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新当前活动控制器的状态  <a href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1">More...</a><br /></td></tr>
+<tr class="memdesc:a2bbcdecdbfc9d0e93a2819c1ea56d0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新当前任务的状态  <a href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1">More...</a><br /></td></tr>
 <tr class="separator:a2bbcdecdbfc9d0e93a2819c1ea56d0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135104465da10a9777e1416972cceae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a135104465da10a9777e1416972cceae1">switch_mission</a> (const std::string &amp;mission_name)</td></tr>
+<tr class="memdesc:a135104465da10a9777e1416972cceae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换当前任务  <a href="classDroneControl.html#a135104465da10a9777e1416972cceae1">More...</a><br /></td></tr>
+<tr class="separator:a135104465da10a9777e1416972cceae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:adc7a106117a5370cf0370641de606636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#adc7a106117a5370cf0370641de606636">register_controllers</a> ()</td></tr>
-<tr class="memdesc:adc7a106117a5370cf0370641de606636"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册所有可用的控制器  <a href="classDroneControl.html#adc7a106117a5370cf0370641de606636">More...</a><br /></td></tr>
-<tr class="separator:adc7a106117a5370cf0370641de606636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae24fc650525708b52e30bcba97998cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#aae24fc650525708b52e30bcba97998cf">set_entry_service_callback</a> (const my_interfaces::Nav::Request &amp;req, my_interfaces::Nav::Response &amp;res)</td></tr>
-<tr class="memdesc:aae24fc650525708b52e30bcba97998cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置入口控制器的服务回调函数  <a href="classDroneControl.html#aae24fc650525708b52e30bcba97998cf">More...</a><br /></td></tr>
-<tr class="separator:aae24fc650525708b52e30bcba97998cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad23c17af9a1e664863c1b480dee70c67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67">switch_flight_mode</a> (const std::string &amp;current_mode, const std::string &amp;target_mode)</td></tr>
-<tr class="memdesc:ad23c17af9a1e664863c1b480dee70c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换无人机飞行模式  <a href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67">More...</a><br /></td></tr>
-<tr class="separator:ad23c17af9a1e664863c1b480dee70c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ebb293b278c7cecfbeed0d45c932409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a2ebb293b278c7cecfbeed0d45c932409">register_missions</a> ()</td></tr>
+<tr class="memdesc:a2ebb293b278c7cecfbeed0d45c932409"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册所有可用的任务  <a href="classDroneControl.html#a2ebb293b278c7cecfbeed0d45c932409">More...</a><br /></td></tr>
+<tr class="separator:a2ebb293b278c7cecfbeed0d45c932409"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -124,16 +121,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aac8cdffb3eb493afffa55cad78f8e2d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMavrosBridge.html">MavrosBridge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#aac8cdffb3eb493afffa55cad78f8e2d0">_mavros_bridge</a></td></tr>
 <tr class="memdesc:aac8cdffb3eb493afffa55cad78f8e2d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mavros桥接器  <a href="classDroneControl.html#aac8cdffb3eb493afffa55cad78f8e2d0">More...</a><br /></td></tr>
 <tr class="separator:aac8cdffb3eb493afffa55cad78f8e2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a573fd584251de1ab9ca4b15f3a32a54b"><td class="memItemLeft" align="right" valign="top">ros::ServiceServer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a573fd584251de1ab9ca4b15f3a32a54b">_set_entry_service</a></td></tr>
-<tr class="separator:a573fd584251de1ab9ca4b15f3a32a54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8af12910c06146e861c754d78f8d013"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classController.html">Controller</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#af8af12910c06146e861c754d78f8d013">_active_controller</a> = nullptr</td></tr>
-<tr class="separator:af8af12910c06146e861c754d78f8d013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d84f132fe54076d02fa227da93b599"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::shared_ptr&lt; <a class="el" href="classController.html">Controller</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a88d84f132fe54076d02fa227da93b599">_controller_pool</a></td></tr>
-<tr class="separator:a88d84f132fe54076d02fa227da93b599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80fcfc5241b11ea2d2728c31da52401d"><td class="memItemLeft" align="right" valign="top">ros::Rate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a80fcfc5241b11ea2d2728c31da52401d">_rate</a> {20.0}</td></tr>
-<tr class="separator:a80fcfc5241b11ea2d2728c31da52401d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152c6c4e1a0df1b1313dbe0cc0092c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNodeMachine.html">NodeMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDroneControl.html#a152c6c4e1a0df1b1313dbe0cc0092c8e">_mission_machine</a></td></tr>
+<tr class="memdesc:a152c6c4e1a0df1b1313dbe0cc0092c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务节点机  <a href="classDroneControl.html#a152c6c4e1a0df1b1313dbe0cc0092c8e">More...</a><br /></td></tr>
+<tr class="separator:a152c6c4e1a0df1b1313dbe0cc0092c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>无人机控制类 </p>
+<p>该类负责管理无人机的状态监控、Mavros桥接、控制器池和服务调用。 它提供了设置入口控制器、切换控制器和更新状态的方法。 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af04a844fd29a35376c40c83217646e30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af04a844fd29a35376c40c83217646e30">&#9670;&nbsp;</a></span>DroneControl()</h2>
 
@@ -160,8 +155,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDroneControl_af04a844fd29a35376c40c83217646e30_cgraph.png" border="0" usemap="#classDroneControl_af04a844fd29a35376c40c83217646e30_cgraph" alt=""/></div>
 <map name="classDroneControl_af04a844fd29a35376c40c83217646e30_cgraph" id="classDroneControl_af04a844fd29a35376c40c83217646e30_cgraph">
-<area shape="rect" title="构造函数" alt="" coords="5,13,208,39"/>
-<area shape="rect" href="classDroneControl.html#adc7a106117a5370cf0370641de606636" title="注册所有可用的控制器" alt="" coords="256,5,423,47"/>
+<area shape="rect" title="构造函数" alt="" coords="5,42,208,69"/>
+<area shape="rect" href="classDroneControl.html#a2ebb293b278c7cecfbeed0d45c932409" title="注册所有可用的任务" alt="" coords="263,5,429,47"/>
+<area shape="rect" href="classNodeMachine.html#aa807db605eae5d920695ca964207c1e5" title="设置节点机的入口节点" alt="" coords="256,71,436,98"/>
+<area shape="rect" href="classNodeMachine.html#a4916c83ae35f3b55a3bfa83d18be30fc" title="注册节点" alt="" coords="484,13,692,39"/>
 </map>
 </div>
 
@@ -198,6 +195,34 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8832a2d45e206b2d4116e0d405a71b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8832a2d45e206b2d4116e0d405a71b95">&#9670;&nbsp;</a></span>on_enter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DroneControl::on_enter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>进入当前任务 </p>
+<p>调用当前任务的on_enter()方法，初始化任务。 NOTE: 该方法为空实现。 </p>
+
+</div>
+</div>
 <a id="a2bbcdecdbfc9d0e93a2819c1ea56d0a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bbcdecdbfc9d0e93a2819c1ea56d0a1">&#9670;&nbsp;</a></span>on_update()</h2>
 
@@ -213,9 +238,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>更新当前活动控制器的状态 </p>
+<p>更新当前任务的状态 </p>
 <p>更新控制器状态，主控制循环函数</p>
-<p>调用当前活动控制器的on_update()方法，更新其状态。</p>
+<p>调用当前任务的on_update()方法，更新其状态。</p>
 <dl class="section note"><dt>Note</dt><dd>检查当前控制器是否完成任务，必要时切换控制器 </dd>
 <dd>
 调用当前活动控制器的on_update方法 </dd></dl>
@@ -224,20 +249,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_cgraph.png" border="0" usemap="#classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_cgraph" alt=""/></div>
 <map name="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_cgraph" id="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_cgraph">
-<area shape="rect" title="更新当前活动控制器的状态" alt="" coords="5,93,189,120"/>
-<area shape="rect" href="classController.html#ad82023794b210bafcf0033fd4000ff40" title="检查控制器是否完成" alt="" coords="237,5,428,32"/>
-<area shape="rect" href="classController.html#a9dd1c9b5f003f3bb5241df1804f7fa22" title="获取控制器完成后应切换到的下一个控制器名称" alt="" coords="257,57,408,98"/>
-<area shape="rect" href="classController.html#a8b2a76f58fb42a8520fccecc62077754" title="控制器更新方法，在主循环中被持续调用" alt="" coords="251,123,414,149"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="253,174,412,215"/>
-<area shape="rect" href="classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="493,50,635,91"/>
-<area shape="rect" href="classController.html#acffd5ea0506661240bf37d07ab0df646" title="获取控制器所需的飞行模式" alt="" coords="476,115,652,157"/>
-<area shape="rect" href="classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="489,181,639,208"/>
-<area shape="rect" href="classController.html#abccf9fcc461f9ecc60276e42457c62e0" title="控制器退出时调用的方法，用于清理资源" alt="" coords="493,232,635,259"/>
-<area shape="rect" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="485,283,643,325"/>
-<area shape="rect" href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="727,265,911,292"/>
-<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="700,316,939,343"/>
-<area shape="rect" href="utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="1022,291,1177,317"/>
-<area shape="rect" href="classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="987,341,1212,368"/>
+<area shape="rect" title="更新当前任务的状态" alt="" coords="5,5,189,32"/>
+<area shape="rect" href="classNodeMachine.html#aa1c40bdf7e0390f5e067b68a6ea3962d" title="更新当前活动节点" alt="" coords="237,5,424,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -245,15 +258,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_icgraph.png" border="0" usemap="#classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_icgraph" alt=""/></div>
 <map name="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_icgraph" id="classDroneControl_a2bbcdecdbfc9d0e93a2819c1ea56d0a1_icgraph">
-<area shape="rect" title="更新当前活动控制器的状态" alt="" coords="108,5,292,32"/>
+<area shape="rect" title="更新当前任务的状态" alt="" coords="108,5,292,32"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="adc7a106117a5370cf0370641de606636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc7a106117a5370cf0370641de606636">&#9670;&nbsp;</a></span>register_controllers()</h2>
+<a id="a2ebb293b278c7cecfbeed0d45c932409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebb293b278c7cecfbeed0d45c932409">&#9670;&nbsp;</a></span>register_missions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +275,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DroneControl::register_controllers </td>
+          <td class="memname">void DroneControl::register_missions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -275,303 +288,81 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>注册所有可用的控制器 </p>
-<dl class="section note"><dt>Note</dt><dd>将各控制器实例化并添加到控制器池中 </dd></dl>
+<p>注册所有可用的任务 </p>
+<dl class="section note"><dt>Note</dt><dd>将各任务实例化并添加到任务池中 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_cgraph.png" border="0" usemap="#classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_cgraph" alt=""/></div>
+<map name="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_cgraph" id="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_cgraph">
+<area shape="rect" title="注册所有可用的任务" alt="" coords="5,5,172,47"/>
+<area shape="rect" href="classNodeMachine.html#a4916c83ae35f3b55a3bfa83d18be30fc" title="注册节点" alt="" coords="220,13,428,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classDroneControl_adc7a106117a5370cf0370641de606636_icgraph.png" border="0" usemap="#classDroneControl_adc7a106117a5370cf0370641de606636_icgraph" alt=""/></div>
-<map name="classDroneControl_adc7a106117a5370cf0370641de606636_icgraph" id="classDroneControl_adc7a106117a5370cf0370641de606636_icgraph">
-<area shape="rect" title="注册所有可用的控制器" alt="" coords="256,5,423,47"/>
+<div class="center"><img src="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_icgraph.png" border="0" usemap="#classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_icgraph" alt=""/></div>
+<map name="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_icgraph" id="classDroneControl_a2ebb293b278c7cecfbeed0d45c932409_icgraph">
+<area shape="rect" title="注册所有可用的任务" alt="" coords="256,5,423,47"/>
 <area shape="rect" href="classDroneControl.html#af04a844fd29a35376c40c83217646e30" title="构造函数" alt="" coords="5,13,208,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae83af02883d9b648ab186b3f2140638d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae83af02883d9b648ab186b3f2140638d">&#9670;&nbsp;</a></span>set_entry()</h2>
+<a id="a135104465da10a9777e1416972cceae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135104465da10a9777e1416972cceae1">&#9670;&nbsp;</a></span>switch_mission()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DroneControl::set_entry </td>
+          <td class="memname">void DroneControl::switch_mission </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>controller_name</em></td><td>)</td>
+          <td class="paramname"><em>mission_name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>设置入口控制器 </p>
+<p>切换当前任务 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">controller_name</td><td>入口控制器的名称</td></tr>
-    <tr><td class="paramname">controller_name</td><td>控制器名称 </td></tr>
+    <tr><td class="paramname">mission_name</td><td>目标任务名称 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>将指定名称的控制器设为活动控制器并调用其on_enter方法 </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classDroneControl_ae83af02883d9b648ab186b3f2140638d_cgraph.png" border="0" usemap="#classDroneControl_ae83af02883d9b648ab186b3f2140638d_cgraph" alt=""/></div>
-<map name="classDroneControl_ae83af02883d9b648ab186b3f2140638d_cgraph" id="classDroneControl_ae83af02883d9b648ab186b3f2140638d_cgraph">
-<area shape="rect" title="设置入口控制器" alt="" coords="5,5,183,32"/>
-<area shape="rect" href="classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="231,5,381,32"/>
+<div class="center"><img src="classDroneControl_a135104465da10a9777e1416972cceae1_cgraph.png" border="0" usemap="#classDroneControl_a135104465da10a9777e1416972cceae1_cgraph" alt=""/></div>
+<map name="classDroneControl_a135104465da10a9777e1416972cceae1_cgraph" id="classDroneControl_a135104465da10a9777e1416972cceae1_cgraph">
+<area shape="rect" title="切换当前任务" alt="" coords="5,5,164,47"/>
+<area shape="rect" href="classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="212,13,412,39"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classDroneControl_ae83af02883d9b648ab186b3f2140638d_icgraph.png" border="0" usemap="#classDroneControl_ae83af02883d9b648ab186b3f2140638d_icgraph" alt=""/></div>
-<map name="classDroneControl_ae83af02883d9b648ab186b3f2140638d_icgraph" id="classDroneControl_ae83af02883d9b648ab186b3f2140638d_icgraph">
-<area shape="rect" title="设置入口控制器" alt="" coords="231,13,408,39"/>
-<area shape="rect" href="classDroneControl.html#aae24fc650525708b52e30bcba97998cf" title="设置入口控制器的服务回调函数" alt="" coords="5,5,183,47"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="aae24fc650525708b52e30bcba97998cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae24fc650525708b52e30bcba97998cf">&#9670;&nbsp;</a></span>set_entry_service_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DroneControl::set_entry_service_callback </td>
-          <td>(</td>
-          <td class="paramtype">const my_interfaces::Nav::Request &amp;&#160;</td>
-          <td class="paramname"><em>req</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">my_interfaces::Nav::Response &amp;&#160;</td>
-          <td class="paramname"><em>res</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>设置入口控制器的服务回调函数 </p>
-<p>入口服务回调函数</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">req</td><td>服务请求，包含目标位置和测试标志 </td></tr>
-    <tr><td class="paramname">res</td><td>服务响应，设置执行结果和消息 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>虽然函数返回类型为void，但需要正确设置res.success和res.message字段</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">req</td><td>服务请求，包含目标位置和测试标志 </td></tr>
-    <tr><td class="paramname">res</td><td>服务响应，用于设置执行结果 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>服务通过修改res参数的success和message字段返回结果，无显式返回值 </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDroneControl_aae24fc650525708b52e30bcba97998cf_cgraph.png" border="0" usemap="#classDroneControl_aae24fc650525708b52e30bcba97998cf_cgraph" alt=""/></div>
-<map name="classDroneControl_aae24fc650525708b52e30bcba97998cf_cgraph" id="classDroneControl_aae24fc650525708b52e30bcba97998cf_cgraph">
-<area shape="rect" title="设置入口控制器的服务回调函数" alt="" coords="5,5,183,47"/>
-<area shape="rect" href="classDroneControl.html#ae83af02883d9b648ab186b3f2140638d" title="设置入口控制器" alt="" coords="231,13,408,39"/>
-<area shape="rect" href="classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="456,13,607,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a2b172298f481d5a7ced2db17f51f9ae0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b172298f481d5a7ced2db17f51f9ae0">&#9670;&nbsp;</a></span>switch_controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DroneControl::switch_controller </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>controller_name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>切换当前活动控制器 </p>
-<p>切换控制器</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">controller_name</td><td>目标控制器的名称</td></tr>
-    <tr><td class="paramname">controller_name</td><td>新控制器名称，空字符串表示结束控制 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>先退出当前控制器，再切换到新控制器并调用其on_enter方法 </dd>
-<dd>
-自动切换飞行模式到新控制器所需的模式 </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_cgraph.png" border="0" usemap="#classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_cgraph" alt=""/></div>
-<map name="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_cgraph" id="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_cgraph">
-<area shape="rect" title="切换当前活动控制器" alt="" coords="5,129,164,171"/>
-<area shape="rect" href="classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="229,5,371,47"/>
-<area shape="rect" href="classController.html#acffd5ea0506661240bf37d07ab0df646" title="获取控制器所需的飞行模式" alt="" coords="212,71,388,112"/>
-<area shape="rect" href="classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="225,137,375,163"/>
-<area shape="rect" href="classController.html#abccf9fcc461f9ecc60276e42457c62e0" title="控制器退出时调用的方法，用于清理资源" alt="" coords="229,187,371,214"/>
-<area shape="rect" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="221,239,379,280"/>
-<area shape="rect" href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="463,221,647,247"/>
-<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="436,271,675,298"/>
-<area shape="rect" href="utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="758,246,913,273"/>
-<area shape="rect" href="classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="723,297,948,323"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_icgraph.png" border="0" usemap="#classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_icgraph" alt=""/></div>
-<map name="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_icgraph" id="classDroneControl_a2b172298f481d5a7ced2db17f51f9ae0_icgraph">
-<area shape="rect" title="切换当前活动控制器" alt="" coords="340,5,499,47"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ad23c17af9a1e664863c1b480dee70c67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad23c17af9a1e664863c1b480dee70c67">&#9670;&nbsp;</a></span>switch_flight_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DroneControl::switch_flight_mode </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>current_mode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>target_mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>切换无人机飞行模式 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">current_mode</td><td>当前飞行模式 </td></tr>
-    <tr><td class="paramname">target_mode</td><td>目标飞行模式 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>从OFFBOARD模式切换时会持续发布悬停指令以保持稳定 </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_cgraph.png" border="0" usemap="#classDroneControl_ad23c17af9a1e664863c1b480dee70c67_cgraph" alt=""/></div>
-<map name="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_cgraph" id="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_cgraph">
-<area shape="rect" title="切换无人机飞行模式" alt="" coords="5,23,164,65"/>
-<area shape="rect" href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="239,5,423,32"/>
-<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="212,56,451,83"/>
-<area shape="rect" href="utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="534,31,689,57"/>
-<area shape="rect" href="classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="499,81,724,108"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_icgraph.png" border="0" usemap="#classDroneControl_ad23c17af9a1e664863c1b480dee70c67_icgraph" alt=""/></div>
-<map name="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_icgraph" id="classDroneControl_ad23c17af9a1e664863c1b480dee70c67_icgraph">
-<area shape="rect" title="切换无人机飞行模式" alt="" coords="547,5,705,47"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,5,499,47"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
+<div class="center"><img src="classDroneControl_a135104465da10a9777e1416972cceae1_icgraph.png" border="0" usemap="#classDroneControl_a135104465da10a9777e1416972cceae1_icgraph" alt=""/></div>
+<map name="classDroneControl_a135104465da10a9777e1416972cceae1_icgraph" id="classDroneControl_a135104465da10a9777e1416972cceae1_icgraph">
+<area shape="rect" title="切换当前任务" alt="" coords="496,107,655,149"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="256,64,445,91"/>
+<area shape="rect" href="classMissionNode.html#ab0889e7310b36a8e9397d5a2a172efc1" title="任务更新方法，在主循环中被持续调用" alt="" coords="259,115,442,141"/>
+<area shape="rect" href="classIdleMission.html#a773446138cfd397f4978f26cf9636a00" title="处理启动任务机服务请求" alt="" coords="253,198,448,239"/>
+<area shape="rect" href="classIdleMission.html#ae99afd2b2cb6e4d82e87e79e0fc958c9" title="空闲状态更新方法" alt="" coords="19,5,191,32"/>
+<area shape="rect" href="classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,56,205,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a5efa3a6e054ecb9df15e85c9a72982d7" title="更新任务状态时调用" alt="" coords="24,107,187,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#addccaaab98b57127b1d5c9ae325e23b5" title="更新任务状态时调用" alt="" coords="19,173,192,214"/>
+<area shape="rect" href="classIdleMission.html#a51d05e324190449745d11a87fc4168ff" title="构造函数" alt="" coords="16,239,195,265"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af8af12910c06146e861c754d78f8d013"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8af12910c06146e861c754d78f8d013">&#9670;&nbsp;</a></span>_active_controller</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classController.html">Controller</a>* DroneControl::_active_controller = nullptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a88d84f132fe54076d02fa227da93b599"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88d84f132fe54076d02fa227da93b599">&#9670;&nbsp;</a></span>_controller_pool</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt;std::string, std::shared_ptr&lt;<a class="el" href="classController.html">Controller</a>&gt; &gt; DroneControl::_controller_pool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aac8cdffb3eb493afffa55cad78f8e2d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac8cdffb3eb493afffa55cad78f8e2d0">&#9670;&nbsp;</a></span>_mavros_bridge</h2>
 
@@ -597,6 +388,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a152c6c4e1a0df1b1313dbe0cc0092c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152c6c4e1a0df1b1313dbe0cc0092c8e">&#9670;&nbsp;</a></span>_mission_machine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNodeMachine.html">NodeMachine</a> DroneControl::_mission_machine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务节点机 </p>
+<p>用于管理和执行不同的任务节点，如导航、定位等。 </p>
+
+</div>
+</div>
 <a id="aa714c9a649544b377cda14ef5b891c47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa714c9a649544b377cda14ef5b891c47">&#9670;&nbsp;</a></span>_nh</h2>
 
@@ -608,50 +424,6 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">ros::NodeHandle DroneControl::_nh</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a80fcfc5241b11ea2d2728c31da52401d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80fcfc5241b11ea2d2728c31da52401d">&#9670;&nbsp;</a></span>_rate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::Rate DroneControl::_rate {20.0}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a573fd584251de1ab9ca4b15f3a32a54b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a573fd584251de1ab9ca4b15f3a32a54b">&#9670;&nbsp;</a></span>_set_entry_service</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::ServiceServer DroneControl::_set_entry_service</td>
         </tr>
       </table>
   </td>

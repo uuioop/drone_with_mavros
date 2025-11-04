@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Align\+On\+Guide\+Tag\+State\+:
-\nopagebreak
+Inheritance diagram for Align\+On\+Guide\+Tag\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Align\+On\+Guide\+Tag\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Align\+On\+Guide\+Tag\+State\+:
-\nopagebreak
+Collaboration diagram for Align\+On\+Guide\+Tag\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +30,7 @@ Collaboration diagram for Align\+On\+Guide\+Tag\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}{Align\+On\+Guide\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classAlignOnGuideTagState_aa804fcec78a55d51ba70861b064535b0}{Align\+On\+Guide\+Tag\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}{$\sim$\+Align\+On\+Guide\+Tag\+State}} ()=default
 \item 
@@ -58,11 +56,11 @@ std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classAlignOnGuideTagState_a6673a7
 对准引导标签状态类 负责控制无人机对准到\+Ar\+Uco引导标签的中心位置 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}\label{classAlignOnGuideTagState_ad56e64ba7a6efa4ad6f0bd27d649a697}} 
+\mbox{\Hypertarget{classAlignOnGuideTagState_aa804fcec78a55d51ba70861b064535b0}\label{classAlignOnGuideTagState_aa804fcec78a55d51ba70861b064535b0}} 
 \index{AlignOnGuideTagState@{AlignOnGuideTagState}!AlignOnGuideTagState@{AlignOnGuideTagState}}
 \index{AlignOnGuideTagState@{AlignOnGuideTagState}!AlignOnGuideTagState@{AlignOnGuideTagState}}
 \doxysubsubsection{\texorpdfstring{AlignOnGuideTagState()}{AlignOnGuideTagState()}}
-{\footnotesize\ttfamily Align\+On\+Guide\+Tag\+State\+::\+Align\+On\+Guide\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Align\+On\+Guide\+Tag\+State\+::\+Align\+On\+Guide\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})}
 
 
 
@@ -72,14 +70,14 @@ Align\+On\+Guide\+Tag\+State构造函数
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用\\
+{\em mission} & 所在任务引用\\
 \hline
 \end{DoxyParams}
 初始化对准引导标记状态节点，获取前端标记处理器并设置对准容差
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用 \\
+{\em mission} & 所在任务引用 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}\label{classAlignOnGuideTagState_a05d856af987c44dc33258d4ae1190ece}} 
@@ -145,7 +143,7 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
 
 
@@ -184,5 +182,5 @@ Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{St
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

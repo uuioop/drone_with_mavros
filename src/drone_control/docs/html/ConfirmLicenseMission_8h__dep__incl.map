@@ -1,0 +1,6 @@
+<map id="include/MissionNode/ConfirmLicenseMission.h" name="include/MissionNode/ConfirmLicenseMission.h">
+<area shape="rect" id="node1" title="号牌确认任务头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="243,5,433,47"/>
+<area shape="rect" id="node2" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="5,102,196,129"/>
+<area shape="rect" id="node3" href="$ConfirmLicenseMission_8cpp.html" title="号牌确认任务实现" alt="" coords="221,95,455,136"/>
+<area shape="rect" id="node4" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="479,95,698,136"/>
+</map>

@@ -1,6 +1,6 @@
 <map id="DroneControl" name="DroneControl">
-<area shape="rect" id="node1" title=" " alt="" coords="8,1261,225,1485"/>
-<area shape="rect" id="node2" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="73,5,234,508"/>
-<area shape="rect" id="node3" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="62,571,245,912"/>
-<area shape="rect" id="node4" href="$classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="254,975,472,1199"/>
+<area shape="rect" id="node1" title="无人机控制类" alt="" coords="223,1033,379,1184"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,184,493"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="213,556,390,971"/>
+<area shape="rect" id="node4" href="$classNodeMachine.html" title="节点机基类" alt="" coords="415,666,561,861"/>
 </map>

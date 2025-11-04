@@ -1,0 +1,4 @@
+<map id="StatusMonitor::reset_gps_fix" name="StatusMonitor::reset_gps_fix">
+<area shape="rect" id="node1" title="重置GPS固定位置标志" alt="" coords="205,5,360,47"/>
+<area shape="rect" id="node2" href="$classIdleMission.html#a73a6cfc65cc627888d4f801ac1d93b30" title="退出空闲状态时调用" alt="" coords="5,13,157,39"/>
+</map>

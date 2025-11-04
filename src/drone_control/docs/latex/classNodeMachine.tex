@@ -1,0 +1,220 @@
+\hypertarget{classNodeMachine}{}\doxysection{Node\+Machine Class Reference}
+\label{classNodeMachine}\index{NodeMachine@{NodeMachine}}
+
+
+节点机基类  
+
+
+
+
+{\ttfamily \#include $<$Node\+Machine.\+h$>$}
+
+
+
+Collaboration diagram for Node\+Machine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classNodeMachine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNodeMachine_acf3867de4c48f8101409b8c402307caf}{Node\+Machine}} ()=default
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNodeMachine_a4021f4c3feaab60bc84042479a9bbc32}{$\sim$\+Node\+Machine}} ()=default
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeMachine_aa807db605eae5d920695ca964207c1e5}{set\+\_\+entry}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 设置节点机的入口节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeMachine_a3463836a37be8ee7b900a8c2003b2068}{switch\+\_\+node}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em 切换到指定的节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeMachine_a4916c83ae35f3b55a3bfa83d18be30fc}{register\+\_\+node}} (const std\+::string \&id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNodeBase}{Node\+Base}} $>$ node)
+\begin{DoxyCompactList}\small\item\em 注册节点 \end{DoxyCompactList}\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classNodeMachine_aa1c40bdf7e0390f5e067b68a6ea3962d}{on\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em 更新当前活动节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeMachine_a61b9f78abc7e0b9a81929c9a9c92f1bf}{reset}} ()
+\begin{DoxyCompactList}\small\item\em 重置节点机状态，准备重新初始化 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classNodeMachine_a8447eb4fedb82cc96abbcf3454aca56f}{\+\_\+need\+\_\+init}}
+\begin{DoxyCompactList}\small\item\em 标识节点机是否需要初始化 \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNodeBase}{Node\+Base}} $>$ $>$ \mbox{\hyperlink{classNodeMachine_add602019c24b7645b0ca7e18601cfcf8}{\+\_\+node\+\_\+pool}}
+\begin{DoxyCompactList}\small\item\em 节点池，存储所有已注册的节点 \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNodeBase}{Node\+Base}} $>$ \mbox{\hyperlink{classNodeMachine_adfdcbda4f2fa0945b621c968b6c00806}{\+\_\+current\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em 当前活动节点的智能指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+节点机基类 
+
+节点机类，用于管理节点的注册、切换和更新，提供节点转换的基础设施。 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNodeMachine_acf3867de4c48f8101409b8c402307caf}\label{classNodeMachine_acf3867de4c48f8101409b8c402307caf}} 
+\index{NodeMachine@{NodeMachine}!NodeMachine@{NodeMachine}}
+\index{NodeMachine@{NodeMachine}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{NodeMachine()}{NodeMachine()}}
+{\footnotesize\ttfamily Node\+Machine\+::\+Node\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+构造函数 
+
+\mbox{\Hypertarget{classNodeMachine_a4021f4c3feaab60bc84042479a9bbc32}\label{classNodeMachine_a4021f4c3feaab60bc84042479a9bbc32}} 
+\index{NodeMachine@{NodeMachine}!````~NodeMachine@{$\sim$NodeMachine}}
+\index{````~NodeMachine@{$\sim$NodeMachine}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{$\sim$NodeMachine()}{~NodeMachine()}}
+{\footnotesize\ttfamily virtual Node\+Machine\+::$\sim$\+Node\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+析构函数 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeMachine_aa1c40bdf7e0390f5e067b68a6ea3962d}\label{classNodeMachine_aa1c40bdf7e0390f5e067b68a6ea3962d}} 
+\index{NodeMachine@{NodeMachine}!on\_update@{on\_update}}
+\index{on\_update@{on\_update}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{on\_update()}{on\_update()}}
+{\footnotesize\ttfamily std\+::array$<$double,4$>$ Node\+Machine\+::on\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+更新当前活动节点 
+
+调用当前活动节点的update()方法，更新其状态。
+
+\begin{DoxyReturn}{Returns}
+std\+::array$<$double,4$>$ 包含x,y,z,yaw速度指令的数组 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+为了兼顾使用板外模式的状态（返回速度指令），任务机及状态机的更新函数都返回数组类型 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNodeMachine_aa1c40bdf7e0390f5e067b68a6ea3962d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classNodeMachine_a4916c83ae35f3b55a3bfa83d18be30fc}\label{classNodeMachine_a4916c83ae35f3b55a3bfa83d18be30fc}} 
+\index{NodeMachine@{NodeMachine}!register\_node@{register\_node}}
+\index{register\_node@{register\_node}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{register\_node()}{register\_node()}}
+{\footnotesize\ttfamily void Node\+Machine\+::register\+\_\+node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classNodeBase}{Node\+Base}} $>$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+注册节点 
+
+将节点添加到节点机的节点池中
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 节点的唯一标识符 \\
+\hline
+{\em node} & 节点的智能指针 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNodeMachine_a4916c83ae35f3b55a3bfa83d18be30fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classNodeMachine_a61b9f78abc7e0b9a81929c9a9c92f1bf}\label{classNodeMachine_a61b9f78abc7e0b9a81929c9a9c92f1bf}} 
+\index{NodeMachine@{NodeMachine}!reset@{reset}}
+\index{reset@{reset}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Node\+Machine\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+重置节点机状态，准备重新初始化 
+
+\mbox{\Hypertarget{classNodeMachine_aa807db605eae5d920695ca964207c1e5}\label{classNodeMachine_aa807db605eae5d920695ca964207c1e5}} 
+\index{NodeMachine@{NodeMachine}!set\_entry@{set\_entry}}
+\index{set\_entry@{set\_entry}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{set\_entry()}{set\_entry()}}
+{\footnotesize\ttfamily void Node\+Machine\+::set\+\_\+entry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+设置节点机的入口节点 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 入口节点的唯一标识符 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNodeMachine_aa807db605eae5d920695ca964207c1e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classNodeMachine_a3463836a37be8ee7b900a8c2003b2068}\label{classNodeMachine_a3463836a37be8ee7b900a8c2003b2068}} 
+\index{NodeMachine@{NodeMachine}!switch\_node@{switch\_node}}
+\index{switch\_node@{switch\_node}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{switch\_node()}{switch\_node()}}
+{\footnotesize\ttfamily void Node\+Machine\+::switch\+\_\+node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+切换到指定的节点 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & 目标节点的唯一标识符 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNodeMachine_a3463836a37be8ee7b900a8c2003b2068_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNodeMachine_adfdcbda4f2fa0945b621c968b6c00806}\label{classNodeMachine_adfdcbda4f2fa0945b621c968b6c00806}} 
+\index{NodeMachine@{NodeMachine}!\_current\_node@{\_current\_node}}
+\index{\_current\_node@{\_current\_node}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{\_current\_node}{\_current\_node}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classNodeBase}{Node\+Base}}$>$ Node\+Machine\+::\+\_\+current\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+当前活动节点的智能指针 
+
+\mbox{\Hypertarget{classNodeMachine_a8447eb4fedb82cc96abbcf3454aca56f}\label{classNodeMachine_a8447eb4fedb82cc96abbcf3454aca56f}} 
+\index{NodeMachine@{NodeMachine}!\_need\_init@{\_need\_init}}
+\index{\_need\_init@{\_need\_init}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{\_need\_init}{\_need\_init}}
+{\footnotesize\ttfamily bool Node\+Machine\+::\+\_\+need\+\_\+init\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+标识节点机是否需要初始化 
+
+\mbox{\Hypertarget{classNodeMachine_add602019c24b7645b0ca7e18601cfcf8}\label{classNodeMachine_add602019c24b7645b0ca7e18601cfcf8}} 
+\index{NodeMachine@{NodeMachine}!\_node\_pool@{\_node\_pool}}
+\index{\_node\_pool@{\_node\_pool}!NodeMachine@{NodeMachine}}
+\doxysubsubsection{\texorpdfstring{\_node\_pool}{\_node\_pool}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classNodeBase}{Node\+Base}}$>$ $>$ Node\+Machine\+::\+\_\+node\+\_\+pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+节点池，存储所有已注册的节点 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{NodeMachine_8h}{Node\+Machine.\+h}}\end{DoxyCompactItemize}

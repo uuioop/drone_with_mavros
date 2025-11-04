@@ -80,16 +80,17 @@ Inheritance diagram for StateNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStateNode__inherit__graph.png" border="0" usemap="#StateNode_inherit__map" alt="Inheritance graph"/></div>
 <map name="StateNode_inherit__map" id="StateNode_inherit__map">
-<area shape="rect" title="状态节点基类" alt="" coords="941,5,1097,200"/>
-<area shape="rect" href="classAlignOnGuideTagState.html" title="对准引导标签状态类 负责控制无人机对准到ArUco引导标签的中心位置" alt="" coords="5,248,208,413"/>
-<area shape="rect" href="classAlignOnPlatformTagState.html" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="232,263,453,399"/>
-<area shape="rect" href="classApproachGuideTagState.html" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="477,255,691,406"/>
-<area shape="rect" href="classConfirmLicenseState.html" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="715,263,909,399"/>
-<area shape="rect" href="classDescendState.html" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="933,263,1104,399"/>
-<area shape="rect" href="classLandState.html" title="着陆状态类 负责控制无人机执行最终的着陆操作" alt="" coords="1128,263,1251,399"/>
-<area shape="rect" href="classRepositionLicenseState.html" title="重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试" alt="" coords="1275,255,1485,406"/>
-<area shape="rect" href="classSearchLicenseState.html" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="1510,255,1695,406"/>
-<area shape="rect" href="classSearchTagState.html" title="搜索标签状态类 负责控制无人机搜索并发现ArUco引导标签" alt="" coords="1719,263,1886,399"/>
+<area shape="rect" title="状态节点基类" alt="" coords="941,189,1097,384"/>
+<area shape="rect" href="classAlignOnGuideTagState.html" title="对准引导标签状态类 负责控制无人机对准到ArUco引导标签的中心位置" alt="" coords="5,432,208,597"/>
+<area shape="rect" href="classAlignOnPlatformTagState.html" title="对准平台标签状态类 负责控制无人机对准到平台上的ArUco标签的中心位置" alt="" coords="232,447,453,583"/>
+<area shape="rect" href="classApproachGuideTagState.html" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="477,439,691,590"/>
+<area shape="rect" href="classConfirmLicenseState.html" title="确认号牌状态类 负责确认检测到的号牌是否为目标号牌" alt="" coords="715,447,909,583"/>
+<area shape="rect" href="classDescendState.html" title="下降状态类 负责控制无人机在对准平台标签后平稳下降" alt="" coords="933,447,1104,583"/>
+<area shape="rect" href="classLandState.html" title="着陆状态类 负责控制无人机执行最终的着陆操作" alt="" coords="1128,447,1251,583"/>
+<area shape="rect" href="classRepositionLicenseState.html" title="重新定位号牌状态类 当无法确认号牌时的应急处理状态，用于重新调整位置以再次尝试" alt="" coords="1275,439,1485,590"/>
+<area shape="rect" href="classSearchLicenseState.html" title="搜索号牌状态类 负责在图像中搜索并定位号牌" alt="" coords="1510,439,1695,590"/>
+<area shape="rect" href="classSearchTagState.html" title="搜索标签状态类 负责控制无人机搜索并发现ArUco引导标签" alt="" coords="1719,447,1886,583"/>
+<area shape="rect" href="classNodeBase.html" title="节点基类" alt="" coords="957,5,1081,141"/>
 </map>
 </div>
 <div class="dynheader">
@@ -97,18 +98,21 @@ Collaboration diagram for StateNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStateNode__coll__graph.png" border="0" usemap="#StateNode_coll__map" alt="Collaboration graph"/></div>
 <map name="StateNode_coll__map" id="StateNode_coll__map">
-<area shape="rect" title="状态节点基类" alt="" coords="36,1261,192,1441"/>
-<area shape="rect" href="classController.html" title="控制器基类，定义了所有控制器必须实现的接口和共享功能" alt="" coords="5,975,223,1199"/>
-<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="33,5,195,508"/>
-<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="239,571,421,912"/>
+<area shape="rect" title="状态节点基类" alt="" coords="11,1548,167,1728"/>
+<area shape="rect" href="classNodeBase.html" title="节点基类" alt="" coords="5,1041,129,1177"/>
+<area shape="rect" href="classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="105,1247,288,1485"/>
+<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="239,5,418,493"/>
+<area shape="rect" href="classMavrosBridge.html" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="240,556,417,971"/>
+<area shape="rect" href="classDroneControl.html" title="无人机控制类" alt="" coords="453,1033,609,1184"/>
+<area shape="rect" href="classNodeMachine.html" title="节点机基类" alt="" coords="625,666,771,861"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2bae5a588ddddff09c56ffdb4c9e84e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a2bae5a588ddddff09c56ffdb4c9e84e3">StateNode</a> (<a class="el" href="classController.html">Controller</a> &amp;controller)</td></tr>
-<tr class="memdesc:a2bae5a588ddddff09c56ffdb4c9e84e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classStateNode.html#a2bae5a588ddddff09c56ffdb4c9e84e3">More...</a><br /></td></tr>
-<tr class="separator:a2bae5a588ddddff09c56ffdb4c9e84e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f508434de21e696668c12d825428dca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a5f508434de21e696668c12d825428dca">StateNode</a> (<a class="el" href="classMissionNode.html">MissionNode</a> &amp;mission)</td></tr>
+<tr class="memdesc:a5f508434de21e696668c12d825428dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classStateNode.html#a5f508434de21e696668c12d825428dca">More...</a><br /></td></tr>
+<tr class="separator:a5f508434de21e696668c12d825428dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aa0627c68b55ee40e57ea6fae19d270"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270">~StateNode</a> ()=default</td></tr>
 <tr class="memdesc:a3aa0627c68b55ee40e57ea6fae19d270"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <a href="classStateNode.html#a3aa0627c68b55ee40e57ea6fae19d270">More...</a><br /></td></tr>
 <tr class="separator:a3aa0627c68b55ee40e57ea6fae19d270"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +122,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5df00068ea1553216865bc4879009739"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a5df00068ea1553216865bc4879009739">on_exit</a> ()=0</td></tr>
 <tr class="memdesc:a5df00068ea1553216865bc4879009739"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出状态时执行的函数  <a href="classStateNode.html#a5df00068ea1553216865bc4879009739">More...</a><br /></td></tr>
 <tr class="separator:a5df00068ea1553216865bc4879009739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae71a6398778423862e5fd3418f20dd44"><td class="memItemLeft" align="right" valign="top">virtual std::array&lt; double, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#ae71a6398778423862e5fd3418f20dd44">on_update</a> ()=0</td></tr>
-<tr class="memdesc:ae71a6398778423862e5fd3418f20dd44"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新状态时执行的函数  <a href="classStateNode.html#ae71a6398778423862e5fd3418f20dd44">More...</a><br /></td></tr>
-<tr class="separator:ae71a6398778423862e5fd3418f20dd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d587b0a7f0e003ed48ad560298931b9"><td class="memItemLeft" align="right" valign="top">virtual std::array&lt; double, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a4d587b0a7f0e003ed48ad560298931b9">on_update</a> () override=0</td></tr>
+<tr class="memdesc:a4d587b0a7f0e003ed48ad560298931b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新状态时执行的函数  <a href="classStateNode.html#a4d587b0a7f0e003ed48ad560298931b9">More...</a><br /></td></tr>
+<tr class="separator:a4d587b0a7f0e003ed48ad560298931b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNodeBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNodeBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNodeBase.html">NodeBase</a></td></tr>
+<tr class="memitem:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNodeBase.html#a8b29cce339eab89eed354ae8774eec65">NodeBase</a> ()=default</td></tr>
+<tr class="memdesc:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <a href="classNodeBase.html#a8b29cce339eab89eed354ae8774eec65">More...</a><br /></td></tr>
+<tr class="separator:a8b29cce339eab89eed354ae8774eec65 inherit pub_methods_classNodeBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNodeBase.html#abbdfa42dcaeb43e7224084f37318c595">~NodeBase</a> ()=default</td></tr>
+<tr class="memdesc:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <a href="classNodeBase.html#abbdfa42dcaeb43e7224084f37318c595">More...</a><br /></td></tr>
+<tr class="separator:abbdfa42dcaeb43e7224084f37318c595 inherit pub_methods_classNodeBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -130,9 +141,9 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae3156769eab1071dfeb5123f043c1a50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classController.html">Controller</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#ae3156769eab1071dfeb5123f043c1a50">_controller</a></td></tr>
-<tr class="memdesc:ae3156769eab1071dfeb5123f043c1a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">控制器引用，用于状态访问控制器功能  <a href="classStateNode.html#ae3156769eab1071dfeb5123f043c1a50">More...</a><br /></td></tr>
-<tr class="separator:ae3156769eab1071dfeb5123f043c1a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f3ac220b3935abbb4179773223eeb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMissionNode.html">MissionNode</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a91f3ac220b3935abbb4179773223eeb8">_mission</a></td></tr>
+<tr class="memdesc:a91f3ac220b3935abbb4179773223eeb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务引用，用于状态访问任务功能  <a href="classStateNode.html#a91f3ac220b3935abbb4179773223eeb8">More...</a><br /></td></tr>
+<tr class="separator:a91f3ac220b3935abbb4179773223eeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aa7e5e00ea1d3de2e93f9ba1052a1e4"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStateNode.html#a1aa7e5e00ea1d3de2e93f9ba1052a1e4">_vel_cmd</a> ={0.0,0.0,0.0,0.0}</td></tr>
 <tr class="memdesc:a1aa7e5e00ea1d3de2e93f9ba1052a1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度指令数组 [x,y,z,yaw]  <a href="classStateNode.html#a1aa7e5e00ea1d3de2e93f9ba1052a1e4">More...</a><br /></td></tr>
 <tr class="separator:a1aa7e5e00ea1d3de2e93f9ba1052a1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,10 +156,10 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>状态节点基类 </p>
-<p>所有状态机中的具体状态都应继承自此类，实现各自的进入、更新和退出行为。 提供了超时检测等通用功能，以及与控制器的交互机制。 </p>
+<p>所有状态机中的具体状态都应继承自此类，实现各自的进入、更新和退出行为。 提供了超时检测等通用功能，以及与所在任务的交互机制。 </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2bae5a588ddddff09c56ffdb4c9e84e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bae5a588ddddff09c56ffdb4c9e84e3">&#9670;&nbsp;</a></span>StateNode()</h2>
+<a id="a5f508434de21e696668c12d825428dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f508434de21e696668c12d825428dca">&#9670;&nbsp;</a></span>StateNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,8 +170,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">StateNode::StateNode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classController.html">Controller</a> &amp;&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classMissionNode.html">MissionNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mission</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -174,7 +185,7 @@ Protected Attributes</h2></td></tr>
 <p>构造函数 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">controller</td><td>控制器引用，用于状态访问控制器功能 </td></tr>
+    <tr><td class="paramname">mission</td><td>任务引用，用于状态访问任务功能 </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,7 +255,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classStateNode_a5ff2f5fee9df9c19d2cf6eefa9b0be41_icgraph.png" border="0" usemap="#classStateNode_a5ff2f5fee9df9c19d2cf6eefa9b0be41_icgraph" alt=""/></div>
 <map name="classStateNode_a5ff2f5fee9df9c19d2cf6eefa9b0be41_icgraph" id="classStateNode_a5ff2f5fee9df9c19d2cf6eefa9b0be41_icgraph">
 <area shape="rect" title="检查状态是否超时" alt="" coords="228,78,395,105"/>
-<area shape="rect" href="classSearchTagState.html#a5f8b8ad058e922367eae84d30f88cc54" title="更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台" alt="" coords="19,5,166,47"/>
+<area shape="rect" href="classSearchTagState.html#a5f8b8ad058e922367eae84d30f88cc54" title="更新状态时调用，返回控制指令 执行搜索操作，搜索并发现ArUco引导标签" alt="" coords="19,5,166,47"/>
 <area shape="rect" href="classConfirmLicenseState.html#aca1b10812f587026513f22100a40793c" title="更新状态时调用，返回控制指令 验证检测到的号牌是否与目标号牌匹配" alt="" coords="14,71,171,112"/>
 <area shape="rect" href="classRepositionLicenseState.html#a40a629b3fc375c4418692022567f0770" title="更新状态时调用，返回控制指令" alt="" coords="5,136,180,177"/>
 </map>
@@ -278,21 +289,9 @@ Here is the caller graph for this function:</div>
 <p>进入状态时执行的函数 </p>
 <p>虚纯函数，派生类必须实现，用于初始化状态相关的变量和行为 </p>
 
+<p>Implements <a class="el" href="classNodeBase.html#a64f5848d1703a50e3c677f66cefc218d">NodeBase</a>.</p>
+
 <p>Implemented in <a class="el" href="classLandState.html#af2c37240588ecaa7412d9e317d5c728f">LandState</a>, <a class="el" href="classDescendState.html#a5d48743d70f39bb6a17c88880e3d935d">DescendState</a>, <a class="el" href="classAlignOnPlatformTagState.html#a03e484bd60450a9d09daba6af88cb795">AlignOnPlatformTagState</a>, <a class="el" href="classApproachGuideTagState.html#af29bb3b7189d7cc4c6efaac70d3bc922">ApproachGuideTagState</a>, <a class="el" href="classRepositionLicenseState.html#a03155c6789b00363f22d3a2794640e50">RepositionLicenseState</a>, <a class="el" href="classConfirmLicenseState.html#a10267b3026ac5329dd56df0de475486f">ConfirmLicenseState</a>, <a class="el" href="classAlignOnGuideTagState.html#af6c20a79bec4a9fd58d735dc73aec73a">AlignOnGuideTagState</a>, <a class="el" href="classSearchTagState.html#afdfda239d47a65dbc8fb0f2b3ff13575">SearchTagState</a>, and <a class="el" href="classSearchLicenseState.html#a976ddd05b5154ef6b2b0f8177224623d">SearchLicenseState</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classStateNode_aadf61cd1c8fa8c2f48688170f65ec926_icgraph.png" border="0" usemap="#classStateNode_aadf61cd1c8fa8c2f48688170f65ec926_icgraph" alt=""/></div>
-<map name="classStateNode_aadf61cd1c8fa8c2f48688170f65ec926_icgraph" id="classStateNode_aadf61cd1c8fa8c2f48688170f65ec926_icgraph">
-<area shape="rect" title="进入状态时执行的函数" alt="" coords="475,111,629,138"/>
-<area shape="rect" href="classStateMachine.html#a4866fbecfed4a1533180a6b29deea590" title="更新当前状态" alt="" coords="240,78,427,105"/>
-<area shape="rect" href="classStateMachine.html#ae8658b2080bd1550c57174a68c65df59" title="切换到指定的状态" alt="" coords="253,136,414,177"/>
-<area shape="rect" href="classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="11,5,187,47"/>
-<area shape="rect" href="classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="5,71,192,112"/>
-<area shape="rect" href="classPrecisionLandController.html#ab603c9a00fd58c9cbf250fbd215821bc" title="切换状态机状态" alt="" coords="11,136,187,177"/>
-<area shape="rect" href="classConfirmLicenseController.html#a5d901dfae633f65ff3be6c14d9c364a4" title="切换状态机状态" alt="" coords="5,201,192,243"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -322,23 +321,14 @@ Here is the caller graph for this function:</div>
 <p>退出状态时执行的函数 </p>
 <p>虚纯函数，派生类必须实现，用于清理状态相关的资源和行为 </p>
 
+<p>Implements <a class="el" href="classNodeBase.html#a2f56336a670af1f962a449d42758595c">NodeBase</a>.</p>
+
 <p>Implemented in <a class="el" href="classLandState.html#a76407ac1403443fa4ae604afad7dc51b">LandState</a>, <a class="el" href="classDescendState.html#a0225b407efca8b737df018be306bd3e7">DescendState</a>, <a class="el" href="classAlignOnPlatformTagState.html#a7bb97c6a939c0322b99da65f3a258847">AlignOnPlatformTagState</a>, <a class="el" href="classApproachGuideTagState.html#a65f57b028f0659476705032b09c89af4">ApproachGuideTagState</a>, <a class="el" href="classRepositionLicenseState.html#a0e82fd9404af119652417940af732807">RepositionLicenseState</a>, <a class="el" href="classConfirmLicenseState.html#a8a3a286e145af2a6774ec95fc27883ea">ConfirmLicenseState</a>, <a class="el" href="classAlignOnGuideTagState.html#aea4160e57acfe2b8520a88804d5ef660">AlignOnGuideTagState</a>, <a class="el" href="classSearchTagState.html#aa2c7f8744957218b5edad31f609a1dd6">SearchTagState</a>, and <a class="el" href="classSearchLicenseState.html#ac67159bddb3023ab284711d1737d04ed">SearchLicenseState</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classStateNode_a5df00068ea1553216865bc4879009739_icgraph.png" border="0" usemap="#classStateNode_a5df00068ea1553216865bc4879009739_icgraph" alt=""/></div>
-<map name="classStateNode_a5df00068ea1553216865bc4879009739_icgraph" id="classStateNode_a5df00068ea1553216865bc4879009739_icgraph">
-<area shape="rect" title="退出状态时执行的函数" alt="" coords="449,46,596,73"/>
-<area shape="rect" href="classStateMachine.html#ae8658b2080bd1550c57174a68c65df59" title="切换到指定的状态" alt="" coords="240,39,401,80"/>
-<area shape="rect" href="classPrecisionLandController.html#ab603c9a00fd58c9cbf250fbd215821bc" title="切换状态机状态" alt="" coords="11,5,187,47"/>
-<area shape="rect" href="classConfirmLicenseController.html#a5d901dfae633f65ff3be6c14d9c364a4" title="切换状态机状态" alt="" coords="5,71,192,112"/>
-</map>
-</div>
 
 </div>
 </div>
-<a id="ae71a6398778423862e5fd3418f20dd44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae71a6398778423862e5fd3418f20dd44">&#9670;&nbsp;</a></span>on_update()</h2>
+<a id="a4d587b0a7f0e003ed48ad560298931b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d587b0a7f0e003ed48ad560298931b9">&#9670;&nbsp;</a></span>on_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +345,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -364,46 +354,13 @@ Here is the caller graph for this function:</div>
 <p>虚纯函数，派生类必须实现，用于执行状态的主要逻辑并返回控制指令</p>
 <dl class="section return"><dt>Returns</dt><dd>std::array&lt;double,4&gt; 包含x,y,z,yaw速度指令的数组 </dd></dl>
 
+<p>Implements <a class="el" href="classNodeBase.html#a4af8c9a80b351fc1050d07deb29c920c">NodeBase</a>.</p>
+
 <p>Implemented in <a class="el" href="classLandState.html#a2aeb2224aa76fffb0181de050b7613e5">LandState</a>, <a class="el" href="classDescendState.html#ad7b810ef3ac2a181ded66c46c6d15b20">DescendState</a>, <a class="el" href="classAlignOnPlatformTagState.html#a53485303e7c25a61afc9533c6dba47f1">AlignOnPlatformTagState</a>, <a class="el" href="classApproachGuideTagState.html#af4683b61821014fd6156ad44bd52db55">ApproachGuideTagState</a>, <a class="el" href="classRepositionLicenseState.html#a40a629b3fc375c4418692022567f0770">RepositionLicenseState</a>, <a class="el" href="classConfirmLicenseState.html#aca1b10812f587026513f22100a40793c">ConfirmLicenseState</a>, <a class="el" href="classAlignOnGuideTagState.html#a5ca2f99e3c378d6848bdda603fb9573b">AlignOnGuideTagState</a>, <a class="el" href="classSearchTagState.html#a5f8b8ad058e922367eae84d30f88cc54">SearchTagState</a>, and <a class="el" href="classSearchLicenseState.html#aaf18a8d2c7f56f8ad2a6ff2a662c1fe0">SearchLicenseState</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classStateNode_ae71a6398778423862e5fd3418f20dd44_icgraph.png" border="0" usemap="#classStateNode_ae71a6398778423862e5fd3418f20dd44_icgraph" alt=""/></div>
-<map name="classStateNode_ae71a6398778423862e5fd3418f20dd44_icgraph" id="classStateNode_ae71a6398778423862e5fd3418f20dd44_icgraph">
-<area shape="rect" title="更新状态时执行的函数" alt="" coords="475,46,641,73"/>
-<area shape="rect" href="classStateMachine.html#a4866fbecfed4a1533180a6b29deea590" title="更新当前状态" alt="" coords="240,46,427,73"/>
-<area shape="rect" href="classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="11,5,187,47"/>
-<area shape="rect" href="classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="5,71,192,112"/>
-</map>
-</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae3156769eab1071dfeb5123f043c1a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3156769eab1071dfeb5123f043c1a50">&#9670;&nbsp;</a></span>_controller</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classController.html">Controller</a>&amp; StateNode::_controller</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>控制器引用，用于状态访问控制器功能 </p>
-
-</div>
-</div>
 <a id="a091d0085239e0fad335a033e7381f210"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a091d0085239e0fad335a033e7381f210">&#9670;&nbsp;</a></span>_entry_time</h2>
 
@@ -425,6 +382,30 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>进入此状态时的时间戳 </p>
+
+</div>
+</div>
+<a id="a91f3ac220b3935abbb4179773223eeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f3ac220b3935abbb4179773223eeb8">&#9670;&nbsp;</a></span>_mission</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMissionNode.html">MissionNode</a>&amp; StateNode::_mission</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务引用，用于状态访问任务功能 </p>
 
 </div>
 </div>
@@ -477,7 +458,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/fsm/<a class="el" href="StateNode_8h_source.html">StateNode.h</a></li>
+<li>include/StateNode/<a class="el" href="StateNode_8h_source.html">StateNode.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

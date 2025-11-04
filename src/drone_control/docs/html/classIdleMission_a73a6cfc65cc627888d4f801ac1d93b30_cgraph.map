@@ -1,0 +1,4 @@
+<map id="IdleMission::on_exit" name="IdleMission::on_exit">
+<area shape="rect" id="node1" title="退出空闲状态时调用" alt="" coords="5,13,157,39"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aa3ff55721acb48d09f1729446d39804e" title="重置GPS固定位置标志" alt="" coords="205,5,360,47"/>
+</map>

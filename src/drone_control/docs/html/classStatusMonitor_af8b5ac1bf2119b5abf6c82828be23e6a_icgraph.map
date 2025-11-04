@@ -1,0 +1,4 @@
+<map id="StatusMonitor::is_gps_fixed" name="StatusMonitor::is_gps_fixed">
+<area shape="rect" id="node1" title="检查GPS是否已接收固定位置" alt="" coords="243,5,405,47"/>
+<area shape="rect" id="node2" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>

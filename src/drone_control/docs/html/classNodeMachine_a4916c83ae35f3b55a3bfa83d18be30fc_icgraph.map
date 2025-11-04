@@ -1,0 +1,9 @@
+<map id="NodeMachine::register_node" name="NodeMachine::register_node">
+<area shape="rect" id="node1" title="注册节点" alt="" coords="477,78,685,105"/>
+<area shape="rect" id="node2" href="$classDroneControl.html#a2ebb293b278c7cecfbeed0d45c932409" title="注册所有可用的任务" alt="" coords="259,5,426,47"/>
+<area shape="rect" id="node4" href="$classPrecisionLandMission.html#aeb09eec149fc1f1aeaa4ed43edd7fa4a" title="注册状态机中的各个状态 初始化并注册精确着陆过程中所需的各种状态到状态机中" alt="" coords="261,71,424,112"/>
+<area shape="rect" id="node6" href="$classConfirmLicenseMission.html#a9eeccfada6c7326bf2b6d5191164b008" title="注册状态机中的各个状态 初始化并注册搜索、确认和重新定位三种状态到状态机中" alt="" coords="256,136,429,177"/>
+<area shape="rect" id="node3" href="$classDroneControl.html#af04a844fd29a35376c40c83217646e30" title="构造函数" alt="" coords="5,13,208,39"/>
+<area shape="rect" id="node5" href="$classPrecisionLandMission.html#a76f770109480896c50ac1d56962ed28a" title="构造函数" alt="" coords="21,71,192,112"/>
+<area shape="rect" id="node7" href="$classConfirmLicenseMission.html#aecfbc877a3b95f27b66a03d0b0a52ce2" title="构造函数" alt="" coords="16,136,197,177"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="StatusMonitor::reset_mission_flags" name="StatusMonitor::reset_mission_flags">
+<area shape="rect" id="node1" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="879,5,1033,47"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="679,5,831,47"/>
+<area shape="rect" id="node3" href="$classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="467,5,631,47"/>
+<area shape="rect" id="node4" href="$classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" id="node5" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>

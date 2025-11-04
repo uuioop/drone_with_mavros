@@ -1,0 +1,4 @@
+<map id="DroneControl::register_missions" name="DroneControl::register_missions">
+<area shape="rect" id="node1" title="注册所有可用的任务" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$classNodeMachine.html#a4916c83ae35f3b55a3bfa83d18be30fc" title="注册节点" alt="" coords="220,13,428,39"/>
+</map>

@@ -1,4 +1,4 @@
 <map id="DroneControl::on_update" name="DroneControl::on_update">
-<area shape="rect" id="node1" title="更新当前活动控制器的状态" alt="" coords="108,5,292,32"/>
+<area shape="rect" id="node1" title="更新当前任务的状态" alt="" coords="108,5,292,32"/>
 <area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,5,60,32"/>
 </map>

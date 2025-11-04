@@ -1,0 +1,6 @@
+<map id="IdleMission::start_mission_service_callback" name="IdleMission::start_mission_service_callback">
+<area shape="rect" id="node1" title="处理启动任务机服务请求" alt="" coords="5,27,200,69"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#aa2410eeb8de71dcb00e8d7105d6cf97a" title="检查无人机是否已连接" alt="" coords="248,5,455,32"/>
+<area shape="rect" id="node3" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="272,57,431,98"/>
+<area shape="rect" id="node4" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="503,64,703,91"/>
+</map>

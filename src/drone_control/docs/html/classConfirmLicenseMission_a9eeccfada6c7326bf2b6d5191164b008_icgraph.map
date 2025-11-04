@@ -1,0 +1,4 @@
+<map id="ConfirmLicenseMission::register_states" name="ConfirmLicenseMission::register_states">
+<area shape="rect" id="node1" title="注册状态机中的各个状态 初始化并注册搜索、确认和重新定位三种状态到状态机中" alt="" coords="235,5,408,47"/>
+<area shape="rect" id="node2" href="$classConfirmLicenseMission.html#aecfbc877a3b95f27b66a03d0b0a52ce2" title="构造函数" alt="" coords="5,5,187,47"/>
+</map>

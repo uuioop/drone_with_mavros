@@ -1,6 +1,9 @@
 <map id="StatusMonitor::get_flight_mode" name="StatusMonitor::get_flight_mode">
-<area shape="rect" id="node1" title="获取无人机当前的飞行模式" alt="" coords="547,5,689,47"/>
-<area shape="rect" id="node2" href="$classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,5,499,47"/>
-<area shape="rect" id="node3" href="$classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,13,292,39"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node1" title="获取无人机当前的飞行模式" alt="" coords="672,78,815,119"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" id="node3" href="$classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" id="node4" href="$classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" id="node5" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" id="node6" href="$classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" id="node7" href="$classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
 </map>

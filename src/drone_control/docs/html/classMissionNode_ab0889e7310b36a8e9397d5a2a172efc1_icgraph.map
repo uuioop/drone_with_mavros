@@ -1,0 +1,7 @@
+<map id="MissionNode::on_update" name="MissionNode::on_update">
+<area shape="rect" id="node1" title="任务更新方法，在主循环中被持续调用" alt="" coords="253,85,436,112"/>
+<area shape="rect" id="node2" href="$classIdleMission.html#ae99afd2b2cb6e4d82e87e79e0fc958c9" title="空闲状态更新方法" alt="" coords="19,5,191,32"/>
+<area shape="rect" id="node3" href="$classGPSNavMission.html#ab509b50683832063050c891ac38b1f55" title="状态更新时执行" alt="" coords="5,56,205,83"/>
+<area shape="rect" id="node4" href="$classPrecisionLandMission.html#a5efa3a6e054ecb9df15e85c9a72982d7" title="更新任务状态时调用" alt="" coords="24,107,187,149"/>
+<area shape="rect" id="node5" href="$classConfirmLicenseMission.html#addccaaab98b57127b1d5c9ae325e23b5" title="更新任务状态时调用" alt="" coords="19,173,192,214"/>
+</map>

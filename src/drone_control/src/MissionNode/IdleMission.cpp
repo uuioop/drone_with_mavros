@@ -1,3 +1,7 @@
+/**
+ * @file IdleMission.cpp
+ * @brief 空闲状态任务实现
+ */
 #include "MissionNode/IdleMission.h"
 /**
  * @brief 构造函数
@@ -35,6 +39,7 @@ void IdleMission::on_enter()
  */
 std::array<double,4> IdleMission::on_update()
 {
+    // 根据服务回调函数而不是该布尔值来判断是否切换到其他任务
     _is_finished = false;
     return MissionNode::on_update();
 }
@@ -47,6 +52,8 @@ void IdleMission::on_exit()
 {
     // 退出空闲状态
     _is_running = false;
+    // 重置GPS固定状态
+    _status_monitor.reset_gps_fix();
 }
 /**
  * @brief 处理启动任务机服务请求
@@ -59,6 +66,14 @@ void IdleMission::on_exit()
  */
 bool IdleMission::start_mission_service_callback(my_interfaces::Nav::Request& req, my_interfaces::Nav::Response& res)
 {
+    if (! _status_monitor.is_connected())
+    {
+        res.success = false;
+        res.message = "Drone is not connected. Please check the connection.";
+        ROS_WARN("Service call rejected: Drone is not connected.");
+        return true; // 服务已处理（即使是拒绝）
+    }
+    
     if (! _is_running)
     {    
         res.success = false;

@@ -1,4 +1,5 @@
 <map id="ApproachGuideTagState" name="ApproachGuideTagState">
-<area shape="rect" id="node1" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="5,248,219,399"/>
-<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="34,5,190,200"/>
+<area shape="rect" id="node1" title="接近引导标签状态类 负责控制无人机向ArUco引导标签方向接近，同时开始使用下视摄像头搜索平台标签" alt="" coords="5,432,219,583"/>
+<area shape="rect" id="node2" href="$classStateNode.html" title="状态节点基类" alt="" coords="34,189,190,384"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="50,5,174,141"/>
 </map>

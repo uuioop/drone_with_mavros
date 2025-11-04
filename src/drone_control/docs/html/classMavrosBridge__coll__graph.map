@@ -1,4 +1,4 @@
 <map id="MavrosBridge" name="MavrosBridge">
-<area shape="rect" id="node1" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="5,571,188,912"/>
-<area shape="rect" id="node2" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="16,5,177,508"/>
+<area shape="rect" id="node1" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="6,556,183,971"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,184,493"/>
 </map>

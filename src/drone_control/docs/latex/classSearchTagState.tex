@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for Search\+Tag\+State\+:
-\nopagebreak
+Inheritance diagram for Search\+Tag\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Search\+Tag\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Search\+Tag\+State\+:
-\nopagebreak
+Collaboration diagram for Search\+Tag\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,16 +30,16 @@ Collaboration diagram for Search\+Tag\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}{Search\+Tag\+State}} (\mbox{\hyperlink{classController}{Controller}} \&controller)
+\mbox{\hyperlink{classSearchTagState_a8ab0a8ce9ea0bbeb5d9b69d3a61308d9}{Search\+Tag\+State}} (\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&mission)
 \begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}{$\sim$\+Search\+Tag\+State}} ()=default
 \item 
 void \mbox{\hyperlink{classSearchTagState_afdfda239d47a65dbc8fb0f2b3ff13575}{on\+\_\+enter}} () override
-\begin{DoxyCompactList}\small\item\em 进入状态时调用 初始化着陆过程所需的参数和状态 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 进入状态时调用 初始化搜索过程所需的参数和状态 \end{DoxyCompactList}\item 
 std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{classSearchTagState_a5f8b8ad058e922367eae84d30f88cc54}{on\+\_\+update}} () override
-\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 更新状态时调用，返回控制指令 执行搜索操作，搜索并发现\+Ar\+Uco引导标签 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSearchTagState_aa2c7f8744957218b5edad31f609a1dd6}{on\+\_\+exit}} () override
-\begin{DoxyCompactList}\small\item\em 退出状态时调用 清理着陆过程中的临时变量和状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 退出状态时调用 清理搜索过程中的临时变量和状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,11 +52,11 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classArucoTagProcessor}{Aruco\+Tag\+P
 搜索标签状态类 负责控制无人机搜索并发现\+Ar\+Uco引导标签 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}\label{classSearchTagState_afd7c0fad984982602c96b09504e5ecaf}} 
+\mbox{\Hypertarget{classSearchTagState_a8ab0a8ce9ea0bbeb5d9b69d3a61308d9}\label{classSearchTagState_a8ab0a8ce9ea0bbeb5d9b69d3a61308d9}} 
 \index{SearchTagState@{SearchTagState}!SearchTagState@{SearchTagState}}
 \index{SearchTagState@{SearchTagState}!SearchTagState@{SearchTagState}}
 \doxysubsubsection{\texorpdfstring{SearchTagState()}{SearchTagState()}}
-{\footnotesize\ttfamily Search\+Tag\+State\+::\+Search\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classController}{Controller}} \&}]{controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Search\+Tag\+State\+::\+Search\+Tag\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMissionNode}{Mission\+Node}} \&}]{mission }\end{DoxyParamCaption})}
 
 
 
@@ -68,14 +66,14 @@ Search\+Tag\+State构造函数
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用\\
+{\em mission} & 所在任务引用\\
 \hline
 \end{DoxyParams}
 初始化搜索标记状态节点，获取前端标记处理器并设置超时时长
 
 
 \begin{DoxyParams}{Parameters}
-{\em controller} & 控制器引用 \\
+{\em mission} & 所在任务引用 \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}\label{classSearchTagState_a0e56d1859f3bf6e264f3f1abbaa7c385}} 
@@ -95,7 +93,7 @@ Search\+Tag\+State构造函数
 
 
 
-进入状态时调用 初始化着陆过程所需的参数和状态 
+进入状态时调用 初始化搜索过程所需的参数和状态 
 
 进入搜索标记状态时调用
 
@@ -111,7 +109,7 @@ Implements \mbox{\hyperlink{classStateNode_aadf61cd1c8fa8c2f48688170f65ec926}{St
 
 
 
-退出状态时调用 清理着陆过程中的临时变量和状态 
+退出状态时调用 清理搜索过程中的临时变量和状态 
 
 退出搜索标记状态时调用
 
@@ -127,7 +125,7 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 
 
 
-更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台 
+更新状态时调用，返回控制指令 执行搜索操作，搜索并发现\+Ar\+Uco引导标签 
 
 搜索标记状态更新方法
 
@@ -141,10 +139,9 @@ Implements \mbox{\hyperlink{classStateNode_a5df00068ea1553216865bc4879009739}{St
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classStateNode_ae71a6398778423862e5fd3418f20dd44}{State\+Node}}.
+Implements \mbox{\hyperlink{classStateNode_a4d587b0a7f0e003ed48ad560298931b9}{State\+Node}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -168,5 +165,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
-src/\+Visual\+Nav/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}
+include/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8h}{Precision\+Land\+Nodes.\+h}}\item 
+src/\+State\+Node/\mbox{\hyperlink{PrecisionLandNodes_8cpp}{Precision\+Land\+Nodes.\+cpp}}\end{DoxyCompactItemize}

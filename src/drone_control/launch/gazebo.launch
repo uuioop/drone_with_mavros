@@ -1,4 +1,5 @@
 <launch>
+    <param name="/use_sim_time" value="true" />
     <!-- Gazebo环境下无需开启真实相机节点 -->
     <!-- 直接使用Gazebo仿真环境提供的相机话题 -->
 

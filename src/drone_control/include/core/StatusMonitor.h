@@ -6,12 +6,17 @@
 #include <ros/ros.h>
 #include <mavros_msgs/State.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <geographic_msgs/GeoPoseStamped.h>
+#include <mavros_msgs/WaypointList.h> // 用于接收当前航点列表
+#include <mavros_msgs/WaypointReached.h>
+#include <sensor_msgs/NavSatFix.h> // 用于GPS经纬度
+#include <std_msgs/Float64.h>      // 用于相对高度
 #include <geometry_msgs/Quaternion.h>
 #include <sensor_msgs/Imu.h>
 #include <mavros_msgs/ExtendedState.h>
 #include <string>
 #include <mutex>
+#include <limits>
+#include <array>
 
 /**
  * @class StatusMonitor
@@ -113,13 +118,64 @@ public:
     }
     
     /**
-     * @brief 获取无人机的全局位置
-     * @return 全局位置消息
+     * @brief 获取无人机的全局位置（经纬度+绝对海拔高度）
+     * @return 全局位置消息（{经度, 纬度, 绝对海拔高度}）
      */
-    geographic_msgs::GeoPoseStamped get_global_pos() const
+    std::array<double, 3> get_global_pos() const
     {
         std::lock_guard<std::mutex> lock(_status_mutex);
         return _global_pos;
+    }
+    
+    /**
+     * @brief 检查GPS是否已接收固定位置
+     * @return 如果已接收固定位置返回true，否则返回false
+     */
+    bool is_gps_fixed() const
+    {
+        std::lock_guard<std::mutex> lock(_status_mutex);
+        return _gps_received_fix;
+    }
+
+    /**
+     * @brief 检查任务是否已完成
+     * @return 如果任务已完成返回true，否则返回false
+     */
+    bool is_mission_completed() const
+    {
+        std::lock_guard<std::mutex> lock(_status_mutex);
+        return _mission_completed;
+    }
+
+    /**
+     * @brief 检查任务是否已中止
+     * @return 如果任务已中止返回true，否则返回false
+     */
+    bool is_mission_aborted() const
+    {
+        std::lock_guard<std::mutex> lock(_status_mutex);
+        return _mission_aborted;
+    }
+
+    /**
+     * @brief 重置GPS固定位置标志
+     */
+    void reset_gps_fix()
+    {
+        std::lock_guard<std::mutex> lock(_status_mutex);
+        _gps_received_fix = false;
+    }
+
+    /**
+     * @brief 重置任务相关标志（任务完成、任务中止、已到达航点索引）
+     */
+    void reset_mission_flags()
+    {
+        ROS_INFO("Mission flags have been reset manually.");
+        std::lock_guard<std::mutex> lock(_status_mutex);
+        _reached_waypoint_index = -1;
+        _mission_completed = false;
+        _mission_aborted = false;
     }
 
 private:
@@ -139,9 +195,24 @@ private:
     ros::Subscriber _local_pos_sub;
     
     /**
-     * @brief 全局位置订阅器
+     * @brief GPS位置（绝对海拔高度）订阅器
      */
-    ros::Subscriber _global_pos_sub;
+    ros::Subscriber _gps_sub;
+
+    /**
+     * @brief 相对高度(Home点)订阅器
+     */
+    ros::Subscriber _rel_alt_sub;
+
+    /**
+     * @brief 任务列表订阅器
+     */
+    ros::Subscriber _mission_list_sub;
+
+    /**
+     * @brief 任务完成订阅器
+     */
+    ros::Subscriber _mission_reached_sub;
     
     /**
      * @brief IMU数据订阅器
@@ -164,9 +235,39 @@ private:
     geometry_msgs::PoseStamped _local_pos;
     
     /**
-     * @brief 全局位置（经纬度高度）
+     * @brief 全局位置（经纬度+绝对海拔高度）
      */
-    geographic_msgs::GeoPoseStamped _global_pos;
+    std::array<double, 3> _global_pos;
+    
+    /**
+     * @brief GPS是否已接收固定位置
+     */
+    bool _gps_received_fix = false;
+    
+    /**
+     * @brief 相对高度(Home点)
+     */
+    double _rel_alt = std::numeric_limits<double>::quiet_NaN();
+
+    /**
+     * @brief 任务总航点数
+     */
+    size_t _total_waypoints = 0;
+
+    /**
+     * @brief 当前已到达的航点索引（从0开始）
+     */
+    int _reached_waypoint_index = -1;
+    
+    /**
+     * @brief 任务是否被中止的标志
+     */
+    bool _mission_aborted = false;
+
+    /**
+     * @brief 任务是否已完成的标志
+     */
+    bool _mission_completed = false;
     
     /**
      * @brief 无人机姿态四元数
@@ -213,10 +314,28 @@ private:
     void local_pos_cb(const geometry_msgs::PoseStamped::ConstPtr& msg);
     
     /**
-     * @brief 全局位置消息回调函数
-     * @param msg 全局位置消息
+     * @brief GPS位置消息回调函数
+     * @param msg GPS位置消息
      */
-    void global_pos_cb(const geographic_msgs::GeoPoseStamped::ConstPtr& msg);
+    void gps_cb(const sensor_msgs::NavSatFix::ConstPtr& msg);
+    
+    /**
+     * @brief 相对高度(Home点)回调函数
+     * @param msg 相对高度消息
+     */
+    void rel_alt_cb(const std_msgs::Float64::ConstPtr& msg);
+    
+    /**
+     * @brief 任务列表回调函数
+     * @param msg 任务列表消息
+     */
+    void mission_list_cb(const mavros_msgs::WaypointList::ConstPtr& msg);
+    
+    /**
+     * @brief 任务完成回调函数
+     * @param msg 任务完成消息
+     */
+    void mission_reached_cb(const mavros_msgs::WaypointReached::ConstPtr& msg);
     
     /**
      * @brief IMU数据回调函数

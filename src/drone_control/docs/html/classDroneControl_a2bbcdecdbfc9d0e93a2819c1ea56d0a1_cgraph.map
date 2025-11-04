@@ -1,16 +1,4 @@
 <map id="DroneControl::on_update" name="DroneControl::on_update">
-<area shape="rect" id="node1" title="更新当前活动控制器的状态" alt="" coords="5,93,189,120"/>
-<area shape="rect" id="node2" href="$classController.html#ad82023794b210bafcf0033fd4000ff40" title="检查控制器是否完成" alt="" coords="237,5,428,32"/>
-<area shape="rect" id="node3" href="$classController.html#a9dd1c9b5f003f3bb5241df1804f7fa22" title="获取控制器完成后应切换到的下一个控制器名称" alt="" coords="257,57,408,98"/>
-<area shape="rect" id="node4" href="$classController.html#a8b2a76f58fb42a8520fccecc62077754" title="控制器更新方法，在主循环中被持续调用" alt="" coords="251,123,414,149"/>
-<area shape="rect" id="node5" href="$classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="253,174,412,215"/>
-<area shape="rect" id="node6" href="$classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="493,50,635,91"/>
-<area shape="rect" id="node7" href="$classController.html#acffd5ea0506661240bf37d07ab0df646" title="获取控制器所需的飞行模式" alt="" coords="476,115,652,157"/>
-<area shape="rect" id="node8" href="$classController.html#a746be737f8c6c44d129af4fa06f8318d" title="控制器进入时调用的方法，用于初始化" alt="" coords="489,181,639,208"/>
-<area shape="rect" id="node9" href="$classController.html#abccf9fcc461f9ecc60276e42457c62e0" title="控制器退出时调用的方法，用于清理资源" alt="" coords="493,232,635,259"/>
-<area shape="rect" id="node10" href="$classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="485,283,643,325"/>
-<area shape="rect" id="node11" href="$classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="727,265,911,292"/>
-<area shape="rect" id="node12" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="700,316,939,343"/>
-<area shape="rect" id="node13" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="1022,291,1177,317"/>
-<area shape="rect" id="node14" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="987,341,1212,368"/>
+<area shape="rect" id="node1" title="更新当前任务的状态" alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node2" href="$classNodeMachine.html#aa1c40bdf7e0390f5e067b68a6ea3962d" title="更新当前活动节点" alt="" coords="237,5,424,32"/>
 </map>

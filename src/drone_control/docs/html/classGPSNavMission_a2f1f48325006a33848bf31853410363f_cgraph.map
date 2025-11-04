@@ -1,0 +1,24 @@
+<map id="GPSNavMission::on_enter" name="GPSNavMission::on_enter">
+<area shape="rect" id="node1" title="进入状态时执行" alt="" coords="5,163,195,189"/>
+<area shape="rect" id="node2" href="$classStatusMonitor.html#af8b5ac1bf2119b5abf6c82828be23e6a" title="检查GPS是否已接收固定位置" alt="" coords="249,54,412,95"/>
+<area shape="rect" id="node3" href="$classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="245,120,416,147"/>
+<area shape="rect" id="node15" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="251,185,410,226"/>
+<area shape="rect" id="node17" href="$classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,275,419,317"/>
+<area shape="rect" id="node4" href="$classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="493,5,640,32"/>
+<area shape="rect" id="node6" href="$classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="965,31,1146,57"/>
+<area shape="rect" id="node7" href="$classMissionNode.html#ac3727d486f52f84d383367a65ae1145f" title="设置任务完成标志" alt="" coords="470,107,663,133"/>
+<area shape="rect" id="node8" href="$classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="485,158,648,199"/>
+<area shape="rect" id="node5" href="$classMavrosBridge.html#a68c2743effbb069153be9b7af647d783" title="设置无人机解锁或上锁状态" alt="" coords="715,5,888,32"/>
+<area shape="rect" id="node9" href="$classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="730,107,873,149"/>
+<area shape="rect" id="node10" href="$classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5" title="设置无人机飞行模式" alt="" coords="963,177,1147,204"/>
+<area shape="rect" id="node11" href="$classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="726,225,877,266"/>
+<area shape="rect" id="node12" href="$classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="936,232,1175,259"/>
+<area shape="rect" id="node13" href="$utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="1258,207,1413,233"/>
+<area shape="rect" id="node14" href="$classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="1223,257,1448,284"/>
+<area shape="rect" id="node16" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="467,224,667,251"/>
+<area shape="rect" id="node18" href="$classStatusMonitor.html#a947972082d98fd812d025c6b8a43227d" title="获取无人机的全局位置（经纬度+绝对海拔高度）" alt="" coords="495,275,638,317"/>
+<area shape="rect" id="node19" href="$classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="485,341,649,382"/>
+<area shape="rect" id="node20" href="$classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="725,315,877,357"/>
+<area shape="rect" id="node22" href="$classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b" title="上传航点列表到飞控" alt="" coords="719,381,883,422"/>
+<area shape="rect" id="node21" href="$classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="978,315,1133,357"/>
+</map>

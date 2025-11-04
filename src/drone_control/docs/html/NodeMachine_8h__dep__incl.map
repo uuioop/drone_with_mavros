@@ -1,0 +1,17 @@
+<map id="include/core/NodeMachine.h" name="include/core/NodeMachine.h">
+<area shape="rect" id="node1" title="节点机基类定义" alt="" coords="823,5,1029,32"/>
+<area shape="rect" id="node2" href="$DroneControl_8h.html" title="无人机控制类" alt="" coords="665,80,867,107"/>
+<area shape="rect" id="node4" href="$ConfirmLicenseMission_8h.html" title="号牌确认任务头文件 负责管理无人机对目标号牌的搜索、确认和重新定位过程" alt="" coords="782,244,971,285"/>
+<area shape="rect" id="node12" href="$PrecisionLandMission_8h.html" title="精确着陆任务头文件 负责管理无人机使用ArUco标签进行精确着陆的过程" alt="" coords="995,244,1174,285"/>
+<area shape="rect" id="node3" href="$MissionNode_8h.html" title="任务基类定义，所有具体任务的抽象接口" alt="" coords="550,155,707,196"/>
+<area shape="rect" id="node5" href="$DroneControl_8cpp.html" title="DroneControl类的实现文件，提供无人机的整体控制功能" alt="" coords="552,341,743,367"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="无人机控制节点主入口文件" alt="" coords="783,162,888,189"/>
+<area shape="rect" id="node8" href="$GPSNavMission_8h.html" title="GPS导航任务类定义" alt="" coords="369,244,526,285"/>
+<area shape="rect" id="node10" href="$IdleMission_8h.html" title="空闲状态任务头文件 负责在无人机未执行任何任务时监听启动任务机服务请求" alt="" coords="550,244,707,285"/>
+<area shape="rect" id="node6" href="$ConfirmLicenseMission_8cpp.html" title="号牌确认任务实现" alt="" coords="1010,333,1245,375"/>
+<area shape="rect" id="node7" href="$ConfirmLicenseNodes_8cpp.html" title="号牌确认状态节点实现文件" alt="" coords="767,333,986,375"/>
+<area shape="rect" id="node9" href="$GPSNavMission_8cpp.html" title="任务导航任务节点实现文件" alt="" coords="5,341,268,367"/>
+<area shape="rect" id="node11" href="$IdleMission_8cpp.html" title="空闲状态任务实现" alt="" coords="293,341,527,367"/>
+<area shape="rect" id="node13" href="$PrecisionLandMission_8cpp.html" title="精确着陆任务节点实现文件" alt="" coords="1501,333,1693,375"/>
+<area shape="rect" id="node14" href="$PrecisionLandNodes_8cpp.html" title="精确着陆状态节点实现文件" alt="" coords="1269,333,1476,375"/>
+</map>

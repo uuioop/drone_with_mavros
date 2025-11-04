@@ -1,4 +1,4 @@
 <map id="SearchTagState::on_update" name="SearchTagState::on_update">
-<area shape="rect" id="node1" title="更新状态时调用，返回控制指令 执行最终的着陆操作，控制无人机平稳降落到目标平台" alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node1" title="更新状态时调用，返回控制指令 执行搜索操作，搜索并发现ArUco引导标签" alt="" coords="5,5,152,47"/>
 <area shape="rect" id="node2" href="$classStateNode.html#a5ff2f5fee9df9c19d2cf6eefa9b0be41" title="检查状态是否超时" alt="" coords="200,13,367,39"/>
 </map>

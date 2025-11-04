@@ -1,0 +1,7 @@
+<map id="IdleMission::IdleMission" name="IdleMission::IdleMission">
+<area shape="rect" id="node1" title="构造函数" alt="" coords="5,35,184,61"/>
+<area shape="rect" id="node2" href="$classIdleMission.html#a773446138cfd397f4978f26cf9636a00" title="处理启动任务机服务请求" alt="" coords="232,27,427,69"/>
+<area shape="rect" id="node3" href="$classStatusMonitor.html#aa2410eeb8de71dcb00e8d7105d6cf97a" title="检查无人机是否已连接" alt="" coords="475,5,681,32"/>
+<area shape="rect" id="node4" href="$classDroneControl.html#a135104465da10a9777e1416972cceae1" title="切换当前任务" alt="" coords="499,57,657,98"/>
+<area shape="rect" id="node5" href="$classNodeMachine.html#a3463836a37be8ee7b900a8c2003b2068" title="切换到指定的节点" alt="" coords="729,64,929,91"/>
+</map>

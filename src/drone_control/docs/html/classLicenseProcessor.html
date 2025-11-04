@@ -80,7 +80,7 @@ Collaboration diagram for LicenseProcessor:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLicenseProcessor__coll__graph.png" border="0" usemap="#LicenseProcessor_coll__map" alt="Collaboration graph"/></div>
 <map name="LicenseProcessor_coll__map" id="LicenseProcessor_coll__map">
-<area shape="rect" title="号牌处理器类" alt="" coords="68,189,285,619"/>
+<area shape="rect" title="号牌处理器类" alt="" coords="68,204,285,633"/>
 <area shape="rect" href="structLicenseConfig.html" title="号牌配置结构体" alt="" coords="5,5,183,127"/>
 <area shape="rect" href="structLicenseInfo.html" title="号牌信息结构体" alt="" coords="207,5,315,127"/>
 </map>
@@ -97,12 +97,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af841af957c86bcd1dd70bd27fb732d62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLicenseInfo.html">LicenseInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#af841af957c86bcd1dd70bd27fb732d62">get_license_info_stable</a> () const</td></tr>
 <tr class="memdesc:af841af957c86bcd1dd70bd27fb732d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取识别稳定的号牌信息  <a href="classLicenseProcessor.html#af841af957c86bcd1dd70bd27fb732d62">More...</a><br /></td></tr>
 <tr class="separator:af841af957c86bcd1dd70bd27fb732d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dab2298e88eb968c8b8bebc9b778f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a8dab2298e88eb968c8b8bebc9b778f9d">set_start</a> (bool started)</td></tr>
-<tr class="memdesc:a8dab2298e88eb968c8b8bebc9b778f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启动回调函数  <a href="classLicenseProcessor.html#a8dab2298e88eb968c8b8bebc9b778f9d">More...</a><br /></td></tr>
-<tr class="separator:a8dab2298e88eb968c8b8bebc9b778f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab681204560293d6435d9eb95518fff79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#ab681204560293d6435d9eb95518fff79">set_start</a> (bool flag)</td></tr>
+<tr class="memdesc:ab681204560293d6435d9eb95518fff79"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启动回调函数  <a href="classLicenseProcessor.html#ab681204560293d6435d9eb95518fff79">More...</a><br /></td></tr>
+<tr class="separator:ab681204560293d6435d9eb95518fff79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6d6b29758326a7c372bbf4f67a597e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#aec6d6b29758326a7c372bbf4f67a597e">set_target_license</a> (const std::string &amp;license_no)</td></tr>
 <tr class="memdesc:aec6d6b29758326a7c372bbf4f67a597e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标号牌  <a href="classLicenseProcessor.html#aec6d6b29758326a7c372bbf4f67a597e">More...</a><br /></td></tr>
 <tr class="separator:aec6d6b29758326a7c372bbf4f67a597e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae137449e70ae5c6979f4b9b35788d1b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#ae137449e70ae5c6979f4b9b35788d1b3">is_recognized</a> () const</td></tr>
+<tr class="memdesc:ae137449e70ae5c6979f4b9b35788d1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否已识别到号牌  <a href="classLicenseProcessor.html#ae137449e70ae5c6979f4b9b35788d1b3">More...</a><br /></td></tr>
+<tr class="separator:ae137449e70ae5c6979f4b9b35788d1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ce3dd1f1fcc2233cd605e0e0348011d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d">is_valid</a> () const</td></tr>
 <tr class="memdesc:a1ce3dd1f1fcc2233cd605e0e0348011d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查当前号牌信息是否有效  <a href="classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d">More...</a><br /></td></tr>
 <tr class="separator:a1ce3dd1f1fcc2233cd605e0e0348011d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,9 +133,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8223a97cd8d9c8c5886f2ff4a256da5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a8223a97cd8d9c8c5886f2ff4a256da5e">license_callback</a> (const my_interfaces::LicenseInfo::ConstPtr &amp;msg)</td></tr>
 <tr class="memdesc:a8223a97cd8d9c8c5886f2ff4a256da5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">号牌回调函数  <a href="classLicenseProcessor.html#a8223a97cd8d9c8c5886f2ff4a256da5e">More...</a><br /></td></tr>
 <tr class="separator:a8223a97cd8d9c8c5886f2ff4a256da5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a075134905e6ca1b4a495018a1ab03566"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a075134905e6ca1b4a495018a1ab03566">check_timeout</a> () const</td></tr>
-<tr class="memdesc:a075134905e6ca1b4a495018a1ab03566"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查号牌信息是否超时  <a href="classLicenseProcessor.html#a075134905e6ca1b4a495018a1ab03566">More...</a><br /></td></tr>
-<tr class="separator:a075134905e6ca1b4a495018a1ab03566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339109baf10b973d08cf2882fa49aeda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a339109baf10b973d08cf2882fa49aeda">check_timeout</a> (const <a class="el" href="structLicenseInfo.html">LicenseInfo</a> &amp;license_info) const</td></tr>
+<tr class="memdesc:a339109baf10b973d08cf2882fa49aeda"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查号牌信息是否超时  <a href="classLicenseProcessor.html#a339109baf10b973d08cf2882fa49aeda">More...</a><br /></td></tr>
+<tr class="separator:a339109baf10b973d08cf2882fa49aeda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92834bb6fe16d010396f346ab211d25b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b">update_recognized_license</a> (const <a class="el" href="structLicenseInfo.html">LicenseInfo</a> &amp;license_info)</td></tr>
 <tr class="memdesc:a92834bb6fe16d010396f346ab211d25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新识别到的号牌信息  <a href="classLicenseProcessor.html#a92834bb6fe16d010396f346ab211d25b">More...</a><br /></td></tr>
 <tr class="separator:a92834bb6fe16d010396f346ab211d25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,9 +151,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af005e27feae2c380f5a860c72e313ba1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#af005e27feae2c380f5a860c72e313ba1">_is_started</a> = false</td></tr>
 <tr class="memdesc:af005e27feae2c380f5a860c72e313ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理器是否已启动  <a href="classLicenseProcessor.html#af005e27feae2c380f5a860c72e313ba1">More...</a><br /></td></tr>
 <tr class="separator:af005e27feae2c380f5a860c72e313ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7532b99c060b6eeaf7dc75a2e23754f1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#a7532b99c060b6eeaf7dc75a2e23754f1">_license_no</a></td></tr>
-<tr class="memdesc:a7532b99c060b6eeaf7dc75a2e23754f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">最新识别的号牌内容  <a href="classLicenseProcessor.html#a7532b99c060b6eeaf7dc75a2e23754f1">More...</a><br /></td></tr>
-<tr class="separator:a7532b99c060b6eeaf7dc75a2e23754f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd53cad3e170444dd2b594eb55c8b64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLicenseInfo.html">LicenseInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#aafd53cad3e170444dd2b594eb55c8b64">_license_info</a></td></tr>
+<tr class="memdesc:aafd53cad3e170444dd2b594eb55c8b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">最新识别的号牌内容  <a href="classLicenseProcessor.html#aafd53cad3e170444dd2b594eb55c8b64">More...</a><br /></td></tr>
+<tr class="separator:aafd53cad3e170444dd2b594eb55c8b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb4745d71a28e374014fdc7e8423f460"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLicenseInfo.html">LicenseInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLicenseProcessor.html#acb4745d71a28e374014fdc7e8423f460">_license_info_stable</a></td></tr>
 <tr class="memdesc:acb4745d71a28e374014fdc7e8423f460"><td class="mdescLeft">&#160;</td><td class="mdescRight">稳定识别的号牌信息  <a href="classLicenseProcessor.html#acb4745d71a28e374014fdc7e8423f460">More...</a><br /></td></tr>
 <tr class="separator:acb4745d71a28e374014fdc7e8423f460"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,8 +349,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a075134905e6ca1b4a495018a1ab03566"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a075134905e6ca1b4a495018a1ab03566">&#9670;&nbsp;</a></span>check_timeout()</h2>
+<a id="a339109baf10b973d08cf2882fa49aeda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339109baf10b973d08cf2882fa49aeda">&#9670;&nbsp;</a></span>check_timeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +361,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">bool LicenseProcessor::check_timeout </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structLicenseInfo.html">LicenseInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>license_info</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -379,10 +383,11 @@ false 如果号牌信息未超时</dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph.png" border="0" usemap="#classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph" alt=""/></div>
-<map name="classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph" id="classLicenseProcessor_a075134905e6ca1b4a495018a1ab03566_icgraph">
-<area shape="rect" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
-<area shape="rect" href="classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d" title="检查当前号牌信息是否有效" alt="" coords="5,5,159,47"/>
+<div class="center"><img src="classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda_icgraph.png" border="0" usemap="#classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda_icgraph" alt=""/></div>
+<map name="classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda_icgraph" id="classLicenseProcessor_a339109baf10b973d08cf2882fa49aeda_icgraph">
+<area shape="rect" title="检查号牌信息是否超时" alt="" coords="207,39,387,80"/>
+<area shape="rect" href="classLicenseProcessor.html#ae137449e70ae5c6979f4b9b35788d1b3" title="检查是否已识别到号牌" alt="" coords="5,5,159,47"/>
+<area shape="rect" href="classLicenseProcessor.html#a1ce3dd1f1fcc2233cd605e0e0348011d" title="检查当前号牌信息是否有效" alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -549,6 +554,39 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="ae137449e70ae5c6979f4b9b35788d1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae137449e70ae5c6979f4b9b35788d1b3">&#9670;&nbsp;</a></span>is_recognized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LicenseProcessor::is_recognized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查是否已识别到号牌 </p>
+<p>判断是否识别到号牌</p>
+<dl class="section return"><dt>Returns</dt><dd>true 如果已识别 </dd>
+<dd>
+false 如果未识别 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3_cgraph.png" border="0" usemap="#classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3_cgraph" alt=""/></div>
+<map name="classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3_cgraph" id="classLicenseProcessor_ae137449e70ae5c6979f4b9b35788d1b3_cgraph">
+<area shape="rect" title="检查是否已识别到号牌" alt="" coords="5,35,159,76"/>
+<area shape="rect" href="classLicenseProcessor.html#a339109baf10b973d08cf2882fa49aeda" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
+<area shape="rect" href="structLicenseInfo.html#ac089cd2a387806e6c893057be891d716" title="检查号牌数据是否有效" alt="" coords="219,71,374,98"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1ce3dd1f1fcc2233cd605e0e0348011d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ce3dd1f1fcc2233cd605e0e0348011d">&#9670;&nbsp;</a></span>is_valid()</h2>
 
@@ -576,7 +614,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d_cgraph.png" border="0" usemap="#classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d_cgraph" alt=""/></div>
 <map name="classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d_cgraph" id="classLicenseProcessor_a1ce3dd1f1fcc2233cd605e0e0348011d_cgraph">
 <area shape="rect" title="检查当前号牌信息是否有效" alt="" coords="5,35,159,76"/>
-<area shape="rect" href="classLicenseProcessor.html#a075134905e6ca1b4a495018a1ab03566" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
+<area shape="rect" href="classLicenseProcessor.html#a339109baf10b973d08cf2882fa49aeda" title="检查号牌信息是否超时" alt="" coords="207,5,387,47"/>
 <area shape="rect" href="structLicenseInfo.html#ac089cd2a387806e6c893057be891d716" title="检查号牌数据是否有效" alt="" coords="219,71,374,98"/>
 </map>
 </div>
@@ -645,8 +683,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a8dab2298e88eb968c8b8bebc9b778f9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dab2298e88eb968c8b8bebc9b778f9d">&#9670;&nbsp;</a></span>set_start()</h2>
+<a id="ab681204560293d6435d9eb95518fff79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab681204560293d6435d9eb95518fff79">&#9670;&nbsp;</a></span>set_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -658,7 +696,7 @@ Here is the caller graph for this function:</div>
           <td class="memname">void LicenseProcessor::set_start </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>started</em></td><td>)</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -672,7 +710,7 @@ Here is the caller graph for this function:</div>
 <p>设置是否启动回调函数 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">started</td><td>启动状态 </td></tr>
+    <tr><td class="paramname">flag</td><td>启动状态 </td></tr>
   </table>
   </dd>
 </dl>
@@ -824,6 +862,30 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="aafd53cad3e170444dd2b594eb55c8b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd53cad3e170444dd2b594eb55c8b64">&#9670;&nbsp;</a></span>_license_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structLicenseInfo.html">LicenseInfo</a> LicenseProcessor::_license_info</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最新识别的号牌内容 </p>
+
+</div>
+</div>
 <a id="acb4745d71a28e374014fdc7e8423f460"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb4745d71a28e374014fdc7e8423f460">&#9670;&nbsp;</a></span>_license_info_stable</h2>
 
@@ -845,30 +907,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>稳定识别的号牌信息 </p>
-
-</div>
-</div>
-<a id="a7532b99c060b6eeaf7dc75a2e23754f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7532b99c060b6eeaf7dc75a2e23754f1">&#9670;&nbsp;</a></span>_license_no</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string LicenseProcessor::_license_no</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>最新识别的号牌内容 </p>
 
 </div>
 </div>

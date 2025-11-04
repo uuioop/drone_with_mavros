@@ -1,0 +1,5 @@
+<map id="ConfirmLicenseMission" name="ConfirmLicenseMission">
+<area shape="rect" id="node1" title="号牌确认任务类 继承自MissionNode基类，实现无人机对目标号牌的识别和确认控制逻辑" alt="" coords="5,520,220,788"/>
+<area shape="rect" id="node2" href="$classMissionNode.html" title="任务基类，定义了所有任务必须实现的接口和共享功能" alt="" coords="21,189,204,472"/>
+<area shape="rect" id="node3" href="$classNodeBase.html" title="节点基类" alt="" coords="51,5,175,141"/>
+</map>

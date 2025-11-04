@@ -19,7 +19,8 @@ GPSNavMission::GPSNavMission(DroneControl& drone_control, ros::NodeHandle& nh, S
     : MissionNode(drone_control, nh, status_monitor, mavros_bridge)
 {
     _required_flight_mode ="AUTO.MISSION";
-    _next_mission_name="confirm_license";
+    _next_mission_name="precision_land";
+    _rate = 1;
 }
 
 /**
@@ -29,6 +30,17 @@ GPSNavMission::GPSNavMission(DroneControl& drone_control, ros::NodeHandle& nh, S
  */
 GPSNavMission::~GPSNavMission()=default;
 
+void GPSNavMission::upload_mission()
+{
+    auto global_pos = _status_monitor.get_global_pos();
+    _waypoint_positions = {
+        {global_pos[0], global_pos[1], 10},
+        {_target_position[0], _target_position[1], _target_position[2]}
+    };
+    // 发送航点位置到无人机
+    _mavros_bridge.upload_mission(_waypoint_positions);
+}
+
 /**
  * @brief 进入GPS导航任务时的回调实现
  * 
@@ -36,8 +48,21 @@ GPSNavMission::~GPSNavMission()=default;
  */
 void GPSNavMission::on_enter()
 {
-    // 初始化任务点
-    // _mission_machine.set_mission_points(_mission_points);
+    auto entry_time = ros::Time::now();
+    while(ros::ok() && !_status_monitor.is_gps_fixed())
+    {
+        ROS_WARN("Waiting for GPS fix...");
+        if (ros::Time::now() - entry_time > ros::Duration(10.0))
+        {
+            _drone_control.switch_mission("idle");
+            ROS_ERROR("Failed to get GPS fix after 10 seconds. Back to idle mode.");
+            return;
+        }
+        _rate.sleep();
+    }
+    // 初始化航点位置并发送
+    upload_mission();
+    
     MissionNode::on_enter();
 }
 
@@ -48,6 +73,10 @@ void GPSNavMission::on_enter()
  */
 std::array<double,4> GPSNavMission::on_update() 
 {
+    // 根据服务回调函数而不是该布尔值来判断是否切换到其他任务
+    _is_finished = _status_monitor.is_mission_completed() || _status_monitor.is_mission_aborted();
+    // 后续再处理，先默认切换到同一个任务
+    if (_status_monitor.is_mission_aborted()) ;
     return MissionNode::on_update();
 }
 
@@ -58,4 +87,5 @@ std::array<double,4> GPSNavMission::on_update()
  */
 void GPSNavMission::on_exit()
 {
+
 }

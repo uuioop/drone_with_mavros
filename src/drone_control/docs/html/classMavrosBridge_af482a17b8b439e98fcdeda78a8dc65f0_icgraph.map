@@ -1,0 +1,9 @@
+<map id="MavrosBridge::start_offboard_mode" name="MavrosBridge::start_offboard_mode">
+<area shape="rect" id="node1" title="启动离板控制模式(OFFBOARD)" alt="" coords="672,78,823,119"/>
+<area shape="rect" id="node2" href="$classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" id="node3" href="$classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" id="node4" href="$classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" id="node5" href="$classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" id="node6" href="$classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" id="node7" href="$classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
+</map>

@@ -80,8 +80,8 @@ Collaboration diagram for MavrosBridge:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMavrosBridge__coll__graph.png" border="0" usemap="#MavrosBridge_coll__map" alt="Collaboration graph"/></div>
 <map name="MavrosBridge_coll__map" id="MavrosBridge_coll__map">
-<area shape="rect" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="5,571,188,912"/>
-<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="16,5,177,508"/>
+<area shape="rect" title="MAVROS桥接器类，封装了与MAVROS通信的功能，提供无人机控制接口" alt="" coords="6,556,183,971"/>
+<area shape="rect" href="classStatusMonitor.html" title="无人机状态监控器类，负责订阅、存储和提供无人机的各种状态信息" alt="" coords="5,5,184,493"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -102,27 +102,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab01bf288f00d88f665f0a8f6b9c82f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1">disarm</a> ()</td></tr>
 <tr class="memdesc:aab01bf288f00d88f665f0a8f6b9c82f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">锁定无人机（停止飞行）  <a href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1">More...</a><br /></td></tr>
 <tr class="separator:aab01bf288f00d88f665f0a8f6b9c82f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5213ec50f24b43d38b648dc328541c58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58">set_mode</a> (std::string mode)</td></tr>
-<tr class="memdesc:a5213ec50f24b43d38b648dc328541c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置无人机飞行模式  <a href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58">More...</a><br /></td></tr>
-<tr class="separator:a5213ec50f24b43d38b648dc328541c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af482a17b8b439e98fcdeda78a8dc65f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0">start_offboard_mode</a> ()</td></tr>
-<tr class="memdesc:af482a17b8b439e98fcdeda78a8dc65f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动离板控制模式(OFFBOARD)  <a href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0">More...</a><br /></td></tr>
-<tr class="separator:af482a17b8b439e98fcdeda78a8dc65f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bb1ecedc923c5b190253f87a0a73ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed">switch_flight_mode</a> (const std::string &amp;target_mode)</td></tr>
+<tr class="memdesc:a51bb1ecedc923c5b190253f87a0a73ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换无人机飞行模式  <a href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed">More...</a><br /></td></tr>
+<tr class="separator:a51bb1ecedc923c5b190253f87a0a73ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a642bbce30b30e90deca38c3372852538"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a642bbce30b30e90deca38c3372852538">set_position_local</a> (const std::array&lt; double, 4 &gt; &amp;pos, const std::array&lt; double, 4 &gt; &amp;orient={0.0, 0.0, 0.0, 1.0})</td></tr>
 <tr class="memdesc:a642bbce30b30e90deca38c3372852538"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置本地坐标系下的目标位置和姿态  <a href="classMavrosBridge.html#a642bbce30b30e90deca38c3372852538">More...</a><br /></td></tr>
 <tr class="separator:a642bbce30b30e90deca38c3372852538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae95991183794026341a1a25e2e0f3dca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#ae95991183794026341a1a25e2e0f3dca">set_position_global</a> (const geographic_msgs::GeoPoseStamped &amp;pos)</td></tr>
-<tr class="memdesc:ae95991183794026341a1a25e2e0f3dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置全局坐标系下的目标位置  <a href="classMavrosBridge.html#ae95991183794026341a1a25e2e0f3dca">More...</a><br /></td></tr>
-<tr class="separator:ae95991183794026341a1a25e2e0f3dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab733cc5edf730155d589cc5a17cff4f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2">upload_mission</a> (const std::vector&lt; mavros_msgs::Waypoint &gt; &amp;waypoints)</td></tr>
+<tr class="memdesc:ab733cc5edf730155d589cc5a17cff4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置任务航点列表  <a href="classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2">More...</a><br /></td></tr>
+<tr class="separator:ab733cc5edf730155d589cc5a17cff4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e9961c1165e5b5888e93bd9a3791ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a63e9961c1165e5b5888e93bd9a3791ca">upload_mission</a> (const std::vector&lt; std::array&lt; double, 3 &gt;&gt; &amp;waypoint_positions)</td></tr>
+<tr class="memdesc:a63e9961c1165e5b5888e93bd9a3791ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置任务航点位置列表  <a href="classMavrosBridge.html#a63e9961c1165e5b5888e93bd9a3791ca">More...</a><br /></td></tr>
+<tr class="separator:a63e9961c1165e5b5888e93bd9a3791ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7c52435eb5f3b1580de6ab728f0d10d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d">set_velocity_body</a> (const std::array&lt; double, 4 &gt; &amp;vel)</td></tr>
 <tr class="memdesc:aa7c52435eb5f3b1580de6ab728f0d10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置机体坐标系下的速度指令  <a href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d">More...</a><br /></td></tr>
 <tr class="separator:aa7c52435eb5f3b1580de6ab728f0d10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa1320c0843261b8d1f04ab7d45b9a3da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da">set_arm</a> (bool <a class="el" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a">arm</a>)</td></tr>
-<tr class="memdesc:aa1320c0843261b8d1f04ab7d45b9a3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置无人机解锁或上锁状态  <a href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da">More...</a><br /></td></tr>
-<tr class="separator:aa1320c0843261b8d1f04ab7d45b9a3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c2743effbb069153be9b7af647d783"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a68c2743effbb069153be9b7af647d783">set_arm</a> (bool flag)</td></tr>
+<tr class="memdesc:a68c2743effbb069153be9b7af647d783"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置无人机解锁或上锁状态  <a href="classMavrosBridge.html#a68c2743effbb069153be9b7af647d783">More...</a><br /></td></tr>
+<tr class="separator:a68c2743effbb069153be9b7af647d783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc2476fc395297bb46119237fd957d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5">set_mode</a> (const std::string &amp;mode)</td></tr>
+<tr class="memdesc:a9fc2476fc395297bb46119237fd957d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置无人机飞行模式  <a href="classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5">More...</a><br /></td></tr>
+<tr class="separator:a9fc2476fc395297bb46119237fd957d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af482a17b8b439e98fcdeda78a8dc65f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0">start_offboard_mode</a> ()</td></tr>
+<tr class="memdesc:af482a17b8b439e98fcdeda78a8dc65f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动离板控制模式(OFFBOARD)  <a href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0">More...</a><br /></td></tr>
+<tr class="separator:af482a17b8b439e98fcdeda78a8dc65f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d0ed41d0278b8750ced8feb8152ec6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6">clear_waypoints</a> ()</td></tr>
+<tr class="memdesc:a87d0ed41d0278b8750ced8feb8152ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除当前航点列表  <a href="classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6">More...</a><br /></td></tr>
+<tr class="separator:a87d0ed41d0278b8750ced8feb8152ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d86b148247bb4caff9e29bb3158b3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b">upload_waypoints</a> (const std::vector&lt; mavros_msgs::Waypoint &gt; &amp;waypoints)</td></tr>
+<tr class="memdesc:a23d86b148247bb4caff9e29bb3158b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">上传航点列表到飞控  <a href="classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b">More...</a><br /></td></tr>
+<tr class="separator:a23d86b148247bb4caff9e29bb3158b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489099042be8260b7bf748f5171b17bb"><td class="memTemplParams" colspan="2">template&lt;typename ServiceType &gt; </td></tr>
 <tr class="memitem:a489099042be8260b7bf748f5171b17bb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a489099042be8260b7bf748f5171b17bb">callService</a> (ros::ServiceClient &amp;client, ServiceType &amp;service, const std::string &amp;service_name)</td></tr>
 <tr class="memdesc:a489099042be8260b7bf748f5171b17bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">服务调用辅助模板函数  <a href="classMavrosBridge.html#a489099042be8260b7bf748f5171b17bb">More...</a><br /></td></tr>
@@ -146,12 +158,15 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad29b4b290b1a1da58491eba4cb97415f"><td class="memItemLeft" align="right" valign="top">ros::ServiceClient&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#ad29b4b290b1a1da58491eba4cb97415f">_set_mode_client</a></td></tr>
 <tr class="memdesc:ad29b4b290b1a1da58491eba4cb97415f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置模式服务客户端  <a href="classMavrosBridge.html#ad29b4b290b1a1da58491eba4cb97415f">More...</a><br /></td></tr>
 <tr class="separator:ad29b4b290b1a1da58491eba4cb97415f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95df6b4756f729ac4964e4d0f1f8dc0b"><td class="memItemLeft" align="right" valign="top">ros::ServiceClient&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a95df6b4756f729ac4964e4d0f1f8dc0b">_wp_clear_client</a></td></tr>
+<tr class="memdesc:a95df6b4756f729ac4964e4d0f1f8dc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除航点服务客户端  <a href="classMavrosBridge.html#a95df6b4756f729ac4964e4d0f1f8dc0b">More...</a><br /></td></tr>
+<tr class="separator:a95df6b4756f729ac4964e4d0f1f8dc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4979b44203a259baf434047bfd2173a6"><td class="memItemLeft" align="right" valign="top">ros::ServiceClient&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a4979b44203a259baf434047bfd2173a6">_wp_push_client</a></td></tr>
+<tr class="memdesc:a4979b44203a259baf434047bfd2173a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">推送航点服务客户端  <a href="classMavrosBridge.html#a4979b44203a259baf434047bfd2173a6">More...</a><br /></td></tr>
+<tr class="separator:a4979b44203a259baf434047bfd2173a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb57b92d2c4b4ef2822b87543297a45c"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#aeb57b92d2c4b4ef2822b87543297a45c">_local_pos_pub</a></td></tr>
 <tr class="memdesc:aeb57b92d2c4b4ef2822b87543297a45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">本地位置发布者  <a href="classMavrosBridge.html#aeb57b92d2c4b4ef2822b87543297a45c">More...</a><br /></td></tr>
 <tr class="separator:aeb57b92d2c4b4ef2822b87543297a45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad10b9dc75db43605a1af5d5332451410"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#ad10b9dc75db43605a1af5d5332451410">_global_pos_pub</a></td></tr>
-<tr class="memdesc:ad10b9dc75db43605a1af5d5332451410"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局位置发布者  <a href="classMavrosBridge.html#ad10b9dc75db43605a1af5d5332451410">More...</a><br /></td></tr>
-<tr class="separator:ad10b9dc75db43605a1af5d5332451410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7155763543a2b176dc91445ad1708063"><td class="memItemLeft" align="right" valign="top">ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavrosBridge.html#a7155763543a2b176dc91445ad1708063">_body_vel_pub</a></td></tr>
 <tr class="memdesc:a7155763543a2b176dc91445ad1708063"><td class="mdescLeft">&#160;</td><td class="mdescRight">机体速度发布者  <a href="classMavrosBridge.html#a7155763543a2b176dc91445ad1708063">More...</a><br /></td></tr>
 <tr class="separator:a7155763543a2b176dc91445ad1708063"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,7 +280,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_cgraph.png" border="0" usemap="#classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_cgraph" alt=""/></div>
 <map name="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_cgraph" id="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_cgraph">
 <area shape="rect" title="解锁无人机（准备飞行）" alt="" coords="5,5,152,32"/>
-<area shape="rect" href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="200,5,373,32"/>
+<area shape="rect" href="classMavrosBridge.html#a68c2743effbb069153be9b7af647d783" title="设置无人机解锁或上锁状态" alt="" coords="200,5,373,32"/>
 <area shape="rect" href="classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="421,5,603,32"/>
 </map>
 </div>
@@ -274,9 +289,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_icgraph.png" border="0" usemap="#classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_icgraph" alt=""/></div>
 <map name="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_icgraph" id="classMavrosBridge_a5f6dbfe49b0264d3ed598d2bc13e647a_icgraph">
-<area shape="rect" title="解锁无人机（准备飞行）" alt="" coords="440,5,587,32"/>
-<area shape="rect" href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
-<area shape="rect" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="5,5,171,32"/>
+<area shape="rect" title="解锁无人机（准备飞行）" alt="" coords="461,85,608,112"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
 </map>
 </div>
 
@@ -343,6 +361,57 @@ template&lt;typename ServiceType &gt; </div>
 
 </div>
 </div>
+<a id="a87d0ed41d0278b8750ced8feb8152ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d0ed41d0278b8750ced8feb8152ec6">&#9670;&nbsp;</a></span>clear_waypoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MavrosBridge::clear_waypoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清除当前航点列表 </p>
+<dl class="section return"><dt>Returns</dt><dd>清除成功返回true</dd>
+<dd>
+清除成功返回true </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>调用MAVROS的waypoint_clear服务 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_cgraph.png" border="0" usemap="#classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_cgraph" alt=""/></div>
+<map name="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_cgraph" id="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_cgraph">
+<area shape="rect" title="清除当前航点列表" alt="" coords="5,5,157,47"/>
+<area shape="rect" href="classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="205,5,360,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_icgraph.png" border="0" usemap="#classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_icgraph" alt=""/></div>
+<map name="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_icgraph" id="classMavrosBridge_a87d0ed41d0278b8750ced8feb8152ec6_icgraph">
+<area shape="rect" title="清除当前航点列表" alt="" coords="679,5,831,47"/>
+<area shape="rect" href="classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="467,5,631,47"/>
+<area shape="rect" href="classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7a70c52e8e986a2c7a3cfeb5bfc82419"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a70c52e8e986a2c7a3cfeb5bfc82419">&#9670;&nbsp;</a></span>connect_to_fcu()</h2>
 
@@ -402,9 +471,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMavrosBridge_aab01bf288f00d88f665f0a8f6b9c82f1_cgraph.png" border="0" usemap="#classMavrosBridge_aab01bf288f00d88f665f0a8f6b9c82f1_cgraph" alt=""/></div>
 <map name="classMavrosBridge_aab01bf288f00d88f665f0a8f6b9c82f1_cgraph" id="classMavrosBridge_aab01bf288f00d88f665f0a8f6b9c82f1_cgraph">
 <area shape="rect" title="锁定无人机（停止飞行）" alt="" coords="5,5,171,32"/>
-<area shape="rect" href="classMavrosBridge.html#aa1320c0843261b8d1f04ab7d45b9a3da" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
-<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="457,5,604,32"/>
-<area shape="rect" href="classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="440,56,621,83"/>
+<area shape="rect" href="classMavrosBridge.html#a68c2743effbb069153be9b7af647d783" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
+<area shape="rect" href="classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="440,5,621,32"/>
 </map>
 </div>
 
@@ -473,23 +541,25 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f_icgraph.png" border="0" usemap="#classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f_icgraph" alt=""/></div>
 <map name="classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f_icgraph" id="classMavrosBridge_af407ba45ea43f4ed63ea43ba185f591f_icgraph">
-<area shape="rect" title="消息发布辅助函数" alt="" coords="1068,82,1293,109"/>
-<area shape="rect" href="classMavrosBridge.html#a642bbce30b30e90deca38c3372852538" title="设置本地坐标系下的目标位置和姿态" alt="" coords="801,45,1000,87"/>
-<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="781,111,1020,138"/>
-<area shape="rect" href="classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="552,5,728,47"/>
-<area shape="rect" href="classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="547,71,733,112"/>
-<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="565,136,715,177"/>
-<area shape="rect" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="561,201,719,243"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,201,499,243"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,209,292,235"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,209,60,235"/>
+<area shape="rect" title="消息发布辅助函数" alt="" coords="1180,49,1405,75"/>
+<area shape="rect" href="classMavrosBridge.html#a642bbce30b30e90deca38c3372852538" title="设置本地坐标系下的目标位置和姿态" alt="" coords="913,12,1112,53"/>
+<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="893,78,1132,105"/>
+<area shape="rect" href="classPrecisionLandMission.html#a5efa3a6e054ecb9df15e85c9a72982d7" title="更新任务状态时调用" alt="" coords="677,5,840,47"/>
+<area shape="rect" href="classConfirmLicenseMission.html#addccaaab98b57127b1d5c9ae325e23b5" title="更新任务状态时调用" alt="" coords="672,71,845,112"/>
+<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="683,136,834,177"/>
+<area shape="rect" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,136,624,177"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,143,413,170"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,63,181,90"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,114,195,141"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,165,181,207"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,231,187,272"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa1320c0843261b8d1f04ab7d45b9a3da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1320c0843261b8d1f04ab7d45b9a3da">&#9670;&nbsp;</a></span>set_arm()</h2>
+<a id="a68c2743effbb069153be9b7af647d783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c2743effbb069153be9b7af647d783">&#9670;&nbsp;</a></span>set_arm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -501,7 +571,7 @@ Here is the caller graph for this function:</div>
           <td class="memname">bool MavrosBridge::set_arm </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>arm</em></td><td>)</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -515,14 +585,14 @@ Here is the caller graph for this function:</div>
 <p>设置无人机解锁或上锁状态 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arm</td><td>true为解锁，false为锁定 </td></tr>
+    <tr><td class="paramname">flag</td><td>true为解锁，false为锁定 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>设置成功返回true</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arm</td><td>true为解锁，false为锁定 </td></tr>
+    <tr><td class="paramname">flag</td><td>true为解锁，false为锁定 </td></tr>
   </table>
   </dd>
 </dl>
@@ -531,40 +601,52 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_cgraph.png" border="0" usemap="#classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_cgraph" alt=""/></div>
-<map name="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_cgraph" id="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_cgraph">
+<div class="center"><img src="classMavrosBridge_a68c2743effbb069153be9b7af647d783_cgraph.png" border="0" usemap="#classMavrosBridge_a68c2743effbb069153be9b7af647d783_cgraph" alt=""/></div>
+<map name="classMavrosBridge_a68c2743effbb069153be9b7af647d783_cgraph" id="classMavrosBridge_a68c2743effbb069153be9b7af647d783_cgraph">
 <area shape="rect" title="设置无人机解锁或上锁状态" alt="" coords="5,5,179,32"/>
-<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="244,5,391,32"/>
-<area shape="rect" href="classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="227,56,408,83"/>
+<area shape="rect" href="classStatusMonitor.html#a176f40ce866ce3a7ba56841c46e96dd1" title="检查无人机是否已解锁（可飞行状态）" alt="" coords="227,5,408,32"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_icgraph.png" border="0" usemap="#classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_icgraph" alt=""/></div>
-<map name="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_icgraph" id="classMavrosBridge_aa1320c0843261b8d1f04ab7d45b9a3da_icgraph">
-<area shape="rect" title="设置无人机解锁或上锁状态" alt="" coords="219,5,392,32"/>
-<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="15,5,161,32"/>
-<area shape="rect" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="5,56,171,83"/>
+<div class="center"><img src="classMavrosBridge_a68c2743effbb069153be9b7af647d783_icgraph.png" border="0" usemap="#classMavrosBridge_a68c2743effbb069153be9b7af647d783_icgraph" alt=""/></div>
+<map name="classMavrosBridge_a68c2743effbb069153be9b7af647d783_icgraph" id="classMavrosBridge_a68c2743effbb069153be9b7af647d783_icgraph">
+<area shape="rect" title="设置无人机解锁或上锁状态" alt="" coords="675,111,848,137"/>
+<area shape="rect" href="classMavrosBridge.html#a5f6dbfe49b0264d3ed598d2bc13e647a" title="解锁无人机（准备飞行）" alt="" coords="471,85,617,112"/>
+<area shape="rect" href="classMavrosBridge.html#aab01bf288f00d88f665f0a8f6b9c82f1" title="锁定无人机（停止飞行）" alt="" coords="461,136,627,163"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5213ec50f24b43d38b648dc328541c58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5213ec50f24b43d38b648dc328541c58">&#9670;&nbsp;</a></span>set_mode()</h2>
+<a id="a9fc2476fc395297bb46119237fd957d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc2476fc395297bb46119237fd957d5">&#9670;&nbsp;</a></span>set_mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool MavrosBridge::set_mode </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>设置无人机飞行模式 </p>
@@ -586,43 +668,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classMavrosBridge_a5213ec50f24b43d38b648dc328541c58_icgraph.png" border="0" usemap="#classMavrosBridge_a5213ec50f24b43d38b648dc328541c58_icgraph" alt=""/></div>
-<map name="classMavrosBridge_a5213ec50f24b43d38b648dc328541c58_icgraph" id="classMavrosBridge_a5213ec50f24b43d38b648dc328541c58_icgraph">
-<area shape="rect" title="设置无人机飞行模式" alt="" coords="753,46,937,73"/>
-<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="551,5,701,47"/>
-<area shape="rect" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="547,71,705,112"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,71,499,112"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,78,292,105"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,78,60,105"/>
+<div class="center"><img src="classMavrosBridge_a9fc2476fc395297bb46119237fd957d5_icgraph.png" border="0" usemap="#classMavrosBridge_a9fc2476fc395297bb46119237fd957d5_icgraph" alt=""/></div>
+<map name="classMavrosBridge_a9fc2476fc395297bb46119237fd957d5_icgraph" id="classMavrosBridge_a9fc2476fc395297bb46119237fd957d5_icgraph">
+<area shape="rect" title="设置无人机飞行模式" alt="" coords="871,85,1055,112"/>
+<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="672,49,823,90"/>
+<area shape="rect" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="ae95991183794026341a1a25e2e0f3dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95991183794026341a1a25e2e0f3dca">&#9670;&nbsp;</a></span>set_position_global()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MavrosBridge::set_position_global </td>
-          <td>(</td>
-          <td class="paramtype">const geographic_msgs::GeoPoseStamped &amp;&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>设置全局坐标系下的目标位置 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>全局位置消息 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>设置成功返回true </dd></dl>
 
 </div>
 </div>
@@ -738,14 +795,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d_icgraph.png" border="0" usemap="#classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d_icgraph" alt=""/></div>
 <map name="classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d_icgraph" id="classMavrosBridge_aa7c52435eb5f3b1580de6ab728f0d10d_icgraph">
-<area shape="rect" title="设置机体坐标系下的速度指令" alt="" coords="781,111,1020,138"/>
-<area shape="rect" href="classPrecisionLandController.html#a2803292393c8e8c5d902e366219aeeb0" title="更新控制器状态时调用" alt="" coords="552,5,728,47"/>
-<area shape="rect" href="classConfirmLicenseController.html#a1a689ce809261d1119f2380d59a5c3c9" title="更新控制器状态时调用" alt="" coords="547,71,733,112"/>
-<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="565,136,715,177"/>
-<area shape="rect" href="classDroneControl.html#ad23c17af9a1e664863c1b480dee70c67" title="切换无人机飞行模式" alt="" coords="561,201,719,243"/>
-<area shape="rect" href="classDroneControl.html#a2b172298f481d5a7ced2db17f51f9ae0" title="切换当前活动控制器" alt="" coords="340,201,499,243"/>
-<area shape="rect" href="classDroneControl.html#a2bbcdecdbfc9d0e93a2819c1ea56d0a1" title="更新当前活动控制器的状态" alt="" coords="108,209,292,235"/>
-<area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="主函数，无人机控制节点的入口点" alt="" coords="5,209,60,235"/>
+<area shape="rect" title="设置机体坐标系下的速度指令" alt="" coords="893,78,1132,105"/>
+<area shape="rect" href="classPrecisionLandMission.html#a5efa3a6e054ecb9df15e85c9a72982d7" title="更新任务状态时调用" alt="" coords="677,5,840,47"/>
+<area shape="rect" href="classConfirmLicenseMission.html#addccaaab98b57127b1d5c9ae325e23b5" title="更新任务状态时调用" alt="" coords="672,71,845,112"/>
+<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="683,136,834,177"/>
+<area shape="rect" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,136,624,177"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,143,413,170"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,63,181,90"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,114,195,141"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,165,181,207"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,231,187,272"/>
 </map>
 </div>
 
@@ -756,6 +815,9 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool MavrosBridge::start_offboard_mode </td>
@@ -764,6 +826,11 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>启动离板控制模式(OFFBOARD) </p>
@@ -777,10 +844,229 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_cgraph.png" border="0" usemap="#classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_cgraph" alt=""/></div>
 <map name="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_cgraph" id="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_cgraph">
 <area shape="rect" title="启动离板控制模式(OFFBOARD)" alt="" coords="5,23,156,65"/>
-<area shape="rect" href="classMavrosBridge.html#a5213ec50f24b43d38b648dc328541c58" title="设置无人机飞行模式" alt="" coords="231,5,415,32"/>
+<area shape="rect" href="classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5" title="设置无人机飞行模式" alt="" coords="231,5,415,32"/>
 <area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="204,56,443,83"/>
 <area shape="rect" href="utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="526,31,681,57"/>
 <area shape="rect" href="classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="491,81,716,108"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_icgraph.png" border="0" usemap="#classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_icgraph" alt=""/></div>
+<map name="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_icgraph" id="classMavrosBridge_af482a17b8b439e98fcdeda78a8dc65f0_icgraph">
+<area shape="rect" title="启动离板控制模式(OFFBOARD)" alt="" coords="672,78,823,119"/>
+<area shape="rect" href="classMavrosBridge.html#a51bb1ecedc923c5b190253f87a0a73ed" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a51bb1ecedc923c5b190253f87a0a73ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51bb1ecedc923c5b190253f87a0a73ed">&#9670;&nbsp;</a></span>switch_flight_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MavrosBridge::switch_flight_mode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>切换无人机飞行模式 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>飞行模式名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>切换成功返回true</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target_mode</td><td>目标飞行模式名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>切换成功返回true </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>如果目标模式为OFFBOARD，则需要特定的启动方法start_offboard_mode() </dd>
+<dd>
+否则直接尝试切换模式 </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_cgraph.png" border="0" usemap="#classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_cgraph" alt=""/></div>
+<map name="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_cgraph" id="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_cgraph">
+<area shape="rect" title="切换无人机飞行模式" alt="" coords="5,64,168,105"/>
+<area shape="rect" href="classStatusMonitor.html#aaf9f534ebeae0da4d4c0186f46ef701f" title="获取无人机当前的飞行模式" alt="" coords="220,5,363,47"/>
+<area shape="rect" href="classMavrosBridge.html#a9fc2476fc395297bb46119237fd957d5" title="设置无人机飞行模式" alt="" coords="442,75,626,102"/>
+<area shape="rect" href="classMavrosBridge.html#af482a17b8b439e98fcdeda78a8dc65f0" title="启动离板控制模式(OFFBOARD)" alt="" coords="216,123,367,164"/>
+<area shape="rect" href="classMavrosBridge.html#aa7c52435eb5f3b1580de6ab728f0d10d" title="设置机体坐标系下的速度指令" alt="" coords="415,130,653,157"/>
+<area shape="rect" href="utils_8h.html#a91efdd328cd59d46a9b3b670757173ae" title="将角度转换为弧度并归一化到[&#45;π, π]范围" alt="" coords="737,105,891,131"/>
+<area shape="rect" href="classMavrosBridge.html#af407ba45ea43f4ed63ea43ba185f591f" title="消息发布辅助函数" alt="" coords="701,155,927,182"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_icgraph.png" border="0" usemap="#classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_icgraph" alt=""/></div>
+<map name="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_icgraph" id="classMavrosBridge_a51bb1ecedc923c5b190253f87a0a73ed_icgraph">
+<area shape="rect" title="切换无人机飞行模式" alt="" coords="461,78,624,119"/>
+<area shape="rect" href="classMissionNode.html#aaf3324362f617f71cbeb33a1c7ad0e17" title="任务进入时调用的方法，用于初始化" alt="" coords="243,85,413,112"/>
+<area shape="rect" href="classIdleMission.html#a0beb3c3cc26a37b91f3e59ef52d014f7" title="进入空闲状态时调用" alt="" coords="19,5,181,32"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,56,195,83"/>
+<area shape="rect" href="classPrecisionLandMission.html#a7e8b6a7ca2efe301dc30ec8d7a8cfc1f" title="进入任务时调用" alt="" coords="19,107,181,149"/>
+<area shape="rect" href="classConfirmLicenseMission.html#aa61dfdb1632c9a8b474da4c8c09e0c9f" title="进入任务时调用" alt="" coords="13,173,187,214"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab733cc5edf730155d589cc5a17cff4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab733cc5edf730155d589cc5a17cff4f2">&#9670;&nbsp;</a></span>upload_mission() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MavrosBridge::upload_mission </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; mavros_msgs::Waypoint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>waypoints</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置任务航点列表 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waypoints</td><td>任务航点列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>自定义程度高 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>设置成功返回true </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_cgraph.png" border="0" usemap="#classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_cgraph" alt=""/></div>
+<map name="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_cgraph" id="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_cgraph">
+<area shape="rect" title="设置任务航点列表" alt="" coords="5,39,169,80"/>
+<area shape="rect" href="classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="223,5,375,47"/>
+<area shape="rect" href="classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b" title="上传航点列表到飞控" alt="" coords="217,71,381,112"/>
+<area shape="rect" href="classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="429,5,584,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_icgraph.png" border="0" usemap="#classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_icgraph" alt=""/></div>
+<map name="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_icgraph" id="classMavrosBridge_ab733cc5edf730155d589cc5a17cff4f2_icgraph">
+<area shape="rect" title="设置任务航点列表" alt="" coords="467,5,631,47"/>
+<area shape="rect" href="classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63e9961c1165e5b5888e93bd9a3791ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e9961c1165e5b5888e93bd9a3791ca">&#9670;&nbsp;</a></span>upload_mission() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MavrosBridge::upload_mission </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::array&lt; double, 3 &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>waypoint_positions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置任务航点位置列表 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waypoint_positions</td><td>任务航点位置列表，每个元素为{纬度(度), 经度(度), 绝对高度(米)} </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>设置成功返回true </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca_cgraph.png" border="0" usemap="#classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca_cgraph" alt=""/></div>
+<map name="classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca_cgraph" id="classMavrosBridge_a63e9961c1165e5b5888e93bd9a3791ca_cgraph">
+<area shape="rect" title="设置任务航点位置列表" alt="" coords="5,39,169,80"/>
+<area shape="rect" href="classMavrosBridge.html#a87d0ed41d0278b8750ced8feb8152ec6" title="清除当前航点列表" alt="" coords="223,5,375,47"/>
+<area shape="rect" href="classMavrosBridge.html#a23d86b148247bb4caff9e29bb3158b3b" title="上传航点列表到飞控" alt="" coords="217,71,381,112"/>
+<area shape="rect" href="classStatusMonitor.html#a9a79e0bb80e813509aa266f583384d87" title="重置任务相关标志（任务完成、任务中止、已到达航点索引）" alt="" coords="429,5,584,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23d86b148247bb4caff9e29bb3158b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d86b148247bb4caff9e29bb3158b3b">&#9670;&nbsp;</a></span>upload_waypoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MavrosBridge::upload_waypoints </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; mavros_msgs::Waypoint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>waypoints</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上传航点列表到飞控 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waypoints</td><td>航点列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>上传成功返回true</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waypoints</td><td>航点列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>上传成功返回true </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>调用MAVROS的waypoint_push服务 </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b_icgraph.png" border="0" usemap="#classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b_icgraph" alt=""/></div>
+<map name="classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b_icgraph" id="classMavrosBridge_a23d86b148247bb4caff9e29bb3158b3b_icgraph">
+<area shape="rect" title="上传航点列表到飞控" alt="" coords="679,5,843,47"/>
+<area shape="rect" href="classMavrosBridge.html#ab733cc5edf730155d589cc5a17cff4f2" title="设置任务航点列表" alt="" coords="467,5,631,47"/>
+<area shape="rect" href="classGPSNavMission.html#a147ff30f03d4b349c287db2fddb6ef6a" title="上传任务航点到无人机" alt="" coords="243,5,419,47"/>
+<area shape="rect" href="classGPSNavMission.html#a2f1f48325006a33848bf31853410363f" title="进入状态时执行" alt="" coords="5,13,195,39"/>
 </map>
 </div>
 
@@ -832,30 +1118,6 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>机体速度发布者 </p>
-
-</div>
-</div>
-<a id="ad10b9dc75db43605a1af5d5332451410"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad10b9dc75db43605a1af5d5332451410">&#9670;&nbsp;</a></span>_global_pos_pub</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ros::Publisher MavrosBridge::_global_pos_pub</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>全局位置发布者 </p>
 
 </div>
 </div>
@@ -976,6 +1238,54 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>状态监控器引用 </p>
+
+</div>
+</div>
+<a id="a95df6b4756f729ac4964e4d0f1f8dc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95df6b4756f729ac4964e4d0f1f8dc0b">&#9670;&nbsp;</a></span>_wp_clear_client</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::ServiceClient MavrosBridge::_wp_clear_client</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>清除航点服务客户端 </p>
+
+</div>
+</div>
+<a id="a4979b44203a259baf434047bfd2173a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4979b44203a259baf434047bfd2173a6">&#9670;&nbsp;</a></span>_wp_push_client</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ros::ServiceClient MavrosBridge::_wp_push_client</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>推送航点服务客户端 </p>
 
 </div>
 </div>
