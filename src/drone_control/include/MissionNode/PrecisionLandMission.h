@@ -21,6 +21,7 @@ class PrecisionLandMission : public MissionNode
 public:
     /**
      * @brief 构造函数
+     * @note 设置标记配置参数
      * @param nh ROS节点句柄
      * @param status_monitor 状态监控器引用
      * @param mavros_bridge MAVROS桥接器引用
@@ -71,10 +72,10 @@ public:
      * @param use_parent 是否优先使用父节点处理器
      * @return 下视标签处理器智能指针
      */
-    std::shared_ptr<ArucoTagProcessor> get_down_tag_processor(bool use_parent =false) const
+    std::shared_ptr<ArucoTagProcessor> get_down_tag_processor() const
     {
         // 返回有效处理器，优先选择父节点
-        return (_down_tag_parent_processor->is_valid() || use_parent)  ? _down_tag_parent_processor : _down_tag_child_processor;
+        return _down_tag_processor;
     }
     
 private:
@@ -91,16 +92,10 @@ private:
     TagConfig _front_tag_config;
     
     /**
-     * @brief 下视摄像头父节点的标签配置信息
-     * 存储下视摄像头父节点检测ArUco标签的相关参数
+     * @brief 下视摄像头的标签配置信息
+     * 存储下视摄像头检测ArUco标签的相关参数
      */
-    TagConfig _down_tag_parent_config;
-
-    /**
-     * @brief 下视摄像头子节点的标签配置信息
-     * 存储下视摄像头子节点检测ArUco标签的相关参数
-     */
-    TagConfig _down_tag_child_config;
+    TagConfig _down_tag_config;
     
     /**
      * @brief 前置摄像头的标签处理器
@@ -109,16 +104,11 @@ private:
     std::shared_ptr<ArucoTagProcessor> _front_tag_processor;
     
     /**
-     * @brief 下视摄像头父节点的标签处理器
-     * 处理下视摄像头父节点拍摄的图像中ArUco标签的检测和定位
+     * @brief 下视摄像头的标签处理器
+     * 处理下视摄像头拍摄的图像中ArUco标签的检测和定位
      */
-    std::shared_ptr<ArucoTagProcessor> _down_tag_parent_processor;
+    std::shared_ptr<ArucoTagProcessor> _down_tag_processor;
     
-    /**
-     * @brief 下视摄像头子节点的标签处理器
-     * 处理下视摄像头子节点拍摄的图像中ArUco标签的检测和定位
-     */
-    std::shared_ptr<ArucoTagProcessor> _down_tag_child_processor;
 
 private:
     /**

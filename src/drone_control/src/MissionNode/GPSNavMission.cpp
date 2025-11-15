@@ -19,7 +19,7 @@ GPSNavMission::GPSNavMission(DroneControl& drone_control, ros::NodeHandle& nh, S
     : MissionNode(drone_control, nh, status_monitor, mavros_bridge)
 {
     _required_flight_mode ="AUTO.MISSION";
-    _next_mission_name="precision_land";
+    _next_mission_name="confirm_license";
     _rate = 1;
 }
 

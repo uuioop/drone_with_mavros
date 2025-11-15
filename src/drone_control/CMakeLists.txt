@@ -26,6 +26,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## 系统依赖项使用CMake的约定查找
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(Eigen3 REQUIRED)
+# 查找sqlite3库
+find_package(SQLite3 REQUIRED)
 
 ################################################
 ## 声明ROS消息、服务和动作 ##
@@ -108,7 +110,7 @@ catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES drone_control
   CATKIN_DEPENDS geometry_msgs mavros_msgs roscpp std_msgs sensor_msgs my_interfaces
-  DEPENDS Eigen3
+  DEPENDS Eigen3 SQLite3
 )
 
 ###########
@@ -121,6 +123,7 @@ include_directories(
  include
   ${catkin_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIRS}
+  ${SQLite3_INCLUDE_DIRS}
 )
 
 ## 声明C++库
@@ -152,6 +155,7 @@ add_executable(${PROJECT_NAME}_node ${SOURCES})
 ## 指定要链接库或可执行目标的库
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
+  ${SQLite3_LIBRARIES}
 )
 
 #############

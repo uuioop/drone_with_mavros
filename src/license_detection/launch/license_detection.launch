@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 号牌检测节点启动配置 -->
+  <!-- 功能：检测图像中的号牌并识别号牌号码 -->
+
+  <!-- 声明启动参数 -->
+  <arg name="detect_model_path" default="$(find license_detection)/weights/plate_detect.pt" doc="号牌检测模型路径"/>
+  <arg name="rec_model_path" default="$(find license_detection)/weights/plate_rec_color.pth" doc="号牌识别模型路径"/>
+  <arg name="is_color" default="true" doc="是否启用颜色识别"/>
+  <arg name="img_size" default="640" doc="输入图像尺寸"/>
+  <arg name="input_topic" default="/iris_front_down_camera/camera/rgb/image_raw" doc="输入图像话题"/>
+  <arg name="output_topic" default="/license_detection_result" doc="检测结果输出话题"/>
+  <arg name="result_image_topic" default="/license_detection_result_image" doc="检测结果图像输出话题"/>
+
+  <!-- 创建号牌检测节点 -->
+  <node name="license_detection_node" pkg="license_detection" type="license_detection_node.py" output="screen">
+    <param name="detect_model_path" value="$(arg detect_model_path)"/>
+    <param name="rec_model_path" value="$(arg rec_model_path)"/>
+    <param name="is_color" value="$(arg is_color)"/>
+    <param name="img_size" value="$(arg img_size)"/>
+    <param name="input_topic" value="$(arg input_topic)"/>
+    <param name="output_topic" value="$(arg output_topic)"/>
+    <param name="result_image_topic" value="$(arg result_image_topic)"/>
+  </node>
+
+  <!-- 启动rqt图像查看器显示检测结果 -->
+  <node name="rqt_image_view" pkg="rqt_image_view" type="rqt_image_view" args="$(arg result_image_topic)" output="screen"/>
+</launch>

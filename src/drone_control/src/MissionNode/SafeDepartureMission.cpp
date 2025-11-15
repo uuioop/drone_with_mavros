@@ -35,7 +35,7 @@ SafeDepartureMission::SafeDepartureMission(DroneControl& drone_control, ros::Nod
                                        -1,0,0,
                                        0,0,-1;
     _down_tag_config.alignment_axes = {'x','y','\0'}; // 对准轴：X轴（前后）和Y轴（左右）
-    _down_tag_config.aligned_tolerance = 0.12; // 对准容差：0.12米
+    _down_tag_config.aligned_tolerance = 0.15; // 对准容差：0.15米
     _down_tag_config.target_timeout = 1.0; // 目标超时时间：1.0秒
     _down_tag_config.target_offset = Eigen::Vector3d(0.0, 0.0, 0.0); // 目标偏移：无偏移
     _down_tag_config.kp = 0.4; // PID比例系数
@@ -57,6 +57,8 @@ void SafeDepartureMission::register_states()
     _state_machine.register_node("keep_away_from_tag", std::make_shared<KeepAwayFromTag>(*this));
     // 注册盲飞状态
     _state_machine.register_node("blind_state", std::make_shared<BlindState>(*this));
+    // 注册搜索信号状态
+    _state_machine.register_node("search_signal", std::make_shared<SearchSignalState>(*this));
 }
 
 void SafeDepartureMission::on_enter()

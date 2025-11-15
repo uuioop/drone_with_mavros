@@ -103,8 +103,8 @@ void ArucoTagProcessor::fiducial_callback(const fiducial_msgs::FiducialTransform
         {
             _tag = ArucoTag();
         }
-        ROS_INFO("ArucoTagProcessor: 收到标记位姿: ID=%d, X=%.2f, Y=%.2f, Z=%.2f", 
-                transform.fiducial_id, tag_body.position.x(), tag_body.position.y(), tag_body.position.z());
+        // ROS_INFO("ArucoTagProcessor: 收到标记位姿: ID=%d, X=%.2f, Y=%.2f, Z=%.2f", 
+        //         transform.fiducial_id, tag_body.position.x(), tag_body.position.y(), tag_body.position.z());
     }
 }
 
@@ -229,8 +229,8 @@ double ArucoTagProcessor::calculate_yaw_rate() const
     // 从配置中获取控制参数
     double kp = _tag_config.kp;
     double max_yaw_rate_deg_s = 10.0;
-    double min_yaw_rate_deg_s = 2.0;
-    double yaw_tolerance_deg = 10.0;
+    double min_yaw_rate_deg_s = 1.0;
+    double yaw_tolerance_deg = 5.0;
     double filter_alpha = _filter_alpha;
     
     // 获取当前偏航角误差

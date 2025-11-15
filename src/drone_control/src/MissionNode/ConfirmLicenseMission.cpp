@@ -21,6 +21,14 @@ ConfirmLicenseMission::ConfirmLicenseMission(DroneControl& drone_control, ros::N
     _license_processor=std::make_shared<LicenseProcessor>(_nh,_license_config);
     _required_flight_mode ="OFFBOARD";
     _next_mission_name="precision_land";
+    _license_config.license_topic="/license_detection_result";
+    _license_config.target_timeout=3.0;
+    _license_config.image_frame_size={848,480};
+    _license_config.detection_frame_size={848/3,480/3};
+
+    // 初始化LicenseProcessor
+    _license_processor=std::make_shared<LicenseProcessor>(_nh,_license_config);
+    _license_processor->set_target_license("闽DA01010330");
     // 注册状态机状态
     register_states();
 }

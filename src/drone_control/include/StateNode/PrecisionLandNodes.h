@@ -145,6 +145,11 @@ private:
      * 用于处理前置摄像头拍摄的图像中ArUco引导标签的检测和定位
      */
     std::shared_ptr<ArucoTagProcessor> _front_tag_processor;
+    /**
+     * @brief 下视摄像头的标签处理器
+     * 用于处理下视摄像头拍摄的图像中ArUco平台标签的检测和定位
+     */
+    std::shared_ptr<ArucoTagProcessor> _down_tag_processor;
 };
 
 /**
@@ -159,8 +164,7 @@ public:
      * @brief 构造函数
      * @param mission 所在任务引用
      */
-    AlignOnPlatformTagState(MissionNode& mission):StateNode(mission)
-    {}
+    AlignOnPlatformTagState(MissionNode& mission);
     ~AlignOnPlatformTagState()=default;
 
     /**
@@ -178,6 +182,13 @@ public:
      * @brief 退出状态时调用
      */
     void on_exit() override;
+    
+private:
+    /**
+     * @brief 下视摄像头的标签处理器
+     * 用于处理下视摄像头拍摄的图像中ArUco平台标签的检测和定位
+     */
+    std::shared_ptr<ArucoTagProcessor> _down_tag_processor;
 };
 
 /**
@@ -216,6 +227,11 @@ private:
      * 包含[x, y, z, yaw]四个方向的误差
      */
     std::array<double, 4> _alignment_errors;
+    /**
+     * @brief 下视摄像头的标签处理器
+     * 用于处理下视摄像头拍摄的图像中ArUco平台标签的检测和定位
+     */
+    std::shared_ptr<ArucoTagProcessor> _down_tag_processor;
 };
 
 /**

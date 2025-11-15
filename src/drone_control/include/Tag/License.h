@@ -56,3 +56,15 @@ struct LicenseConfig{
     /** @brief 检测框大小 [宽度, 高度]，为图像大小的三分之一 */
     std::array<int,2> detection_frame_size={640,360};
 };
+
+/**
+ * @brief 号牌统计信息结构体
+ * 
+ * 存储每个号牌的出现次数、最后出现时间和位置信息
+ */
+struct LicenseStats {
+    int count = 0;              ///< 出现次数
+    ros::Time last_seen;        ///< 最后出现时间
+    double center_x = 0.0;      ///< 号牌中心X坐标
+    double center_y = 0.0;      ///< 号牌中心Y坐标
+};

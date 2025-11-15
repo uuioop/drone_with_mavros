@@ -6,6 +6,8 @@
  * 移动方向计算和速度指令生成等，用于无人机的号牌确认任务。
  */
 #include "Tag/LicenseProcessor.h"
+#include <cmath>
+#include <limits>
 
 /**
  * @brief 构造函数实现
@@ -48,7 +50,6 @@ void LicenseProcessor::license_callback(const my_interfaces::LicenseInfo::ConstP
         msg->center_y,
         msg->header.stamp
     };
-    
     // 更新识别到的号牌信息
     update_recognized_license(license_info);
 }
@@ -62,27 +63,64 @@ void LicenseProcessor::license_callback(const my_interfaces::LicenseInfo::ConstP
  */
 void LicenseProcessor::update_recognized_license(const LicenseInfo& license_info)
 {
-    _license_info = license_info;
-    
     // 检查号牌内容是否有效
-    if (!is_license_no_valid(_license_info.license_no))
+    if (!is_license_no_valid(license_info.license_no))
         return;
     
-    // 根据识别结果更新稳定性计数器
-    if (_license_info.license_no == _target_license_no) 
-        _stability_counter++;
-    else
-        _stability_counter = 0;
-    
-    // 检查是否达到稳定阈值
-    if (_stability_counter >= _required_stability_count)
-    {
-        // 更新稳定的号牌信息
-        _license_info_stable.license_no = _license_info.license_no;
-        _license_info_stable.center_x = _license_info.center_x;
-        _license_info_stable.center_y = _license_info.center_y;
-        _license_info_stable.timestamp = _license_info.timestamp;
+    // 清理过期的号牌统计数据
+    auto now = ros::Time::now();
+    for (auto it = _license_counters.begin(); it != _license_counters.end();) {
+        if (now.toSec() - it->second.last_seen.toSec() > _license_config.target_timeout / 2.0) {
+            it = _license_counters.erase(it);
+        } else {
+            ++it;
+        }
     }
+    
+    // 更新当前号牌的计数器和最后出现时间
+    std::string license_no = license_info.license_no;
+    _license_counters[license_no].count++;
+    _license_counters[license_no].last_seen = now;
+    _license_counters[license_no].center_x = license_info.center_x;
+    _license_counters[license_no].center_y = license_info.center_y;
+    
+    // 找出所有超过阈值且离图像中心点最近的号牌
+    std::string closest_license_above_threshold;
+    double min_distance = std::numeric_limits<double>::max();
+    
+    // 图像中心点坐标
+    double image_center_x = _license_config.image_frame_size[0] / 2.0;
+    double image_center_y = _license_config.image_frame_size[1] / 2.0;
+    
+    // 遍历所有号牌，找出符合阈值且离中心点最近的
+    for (const auto& pair : _license_counters) {
+        // 只考虑超过稳定性阈值的号牌
+        if (pair.second.count >= _required_stability_count) {
+            double current_center_x = pair.second.center_x;
+            double current_center_y = pair.second.center_y;
+            
+            // 计算到图像中心点的欧几里得距离
+            double distance = std::sqrt(
+                std::pow(current_center_x - image_center_x, 2) + 
+                std::pow(current_center_y - image_center_y, 2)
+            );
+            
+            // 如果距离更近，则更新
+            if (distance < min_distance) {
+                min_distance = distance;
+                closest_license_above_threshold = pair.first;
+            }
+        }
+    }
+    
+    // 如果找到符合条件的号牌，更新稳定的号牌信息
+    if (!closest_license_above_threshold.empty()) {
+        _license_info_stable.license_no = closest_license_above_threshold;
+        _license_info_stable.center_x = _license_counters[closest_license_above_threshold].center_x;
+        _license_info_stable.center_y = _license_counters[closest_license_above_threshold].center_y;
+        _license_info_stable.timestamp = now;
+    }
+    
 }
 
 /**
@@ -108,7 +146,7 @@ bool LicenseProcessor::check_timeout(const LicenseInfo& license_info) const
 bool LicenseProcessor::is_license_no_valid(const std::string& license_no) const
 {
     // 检查号牌长度是否在有效范围内
-    if (license_no.length() < 8 || license_no.length() > 11) 
+    if (license_no.length() < 8 || license_no.length() > 13) 
         return false;
     
     // 检查后八位是否为数字
@@ -136,15 +174,39 @@ void LicenseProcessor::set_target_license(const std::string& license_no)
     _target_license_no = license_no;
 }
 
-bool LicenseProcessor::is_recognized() const
-{
-    return _license_info.is_valid() && !check_timeout(_license_info);
+/**
+ * @brief 检查当前号牌是否在期望的检测框内
+ * 
+ * 验证当前识别的号牌中心是否在配置的检测框范围内
+ * 
+ * @return 如果号牌中心在检测框内返回true，否则返回false
+ */
+bool LicenseProcessor::is_in_detection_frame() const
+{    
+    // 计算检测框的边界
+    double image_center_x = _license_config.image_frame_size[0] / 2.0;
+    double image_center_y = _license_config.image_frame_size[1] / 2.0;
+    
+    double detection_half_width = _license_config.detection_frame_size[0] / 2.0;
+    double detection_half_height = _license_config.detection_frame_size[1] / 2.0;
+    
+    // 检测框的左上角和右下角坐标
+    double detection_left = image_center_x - detection_half_width;
+    double detection_right = image_center_x + detection_half_width;
+    double detection_top = image_center_y - detection_half_height;
+    double detection_bottom = image_center_y + detection_half_height;
+    
+    // 检查号牌中心点是否在检测框内
+    bool is_x_in_range = (_license_info_stable.center_x >= detection_left) && (_license_info_stable.center_x <= detection_right);
+    bool is_y_in_range = (_license_info_stable.center_y >= detection_top) && (_license_info_stable.center_y <= detection_bottom);
+    
+    return is_x_in_range && is_y_in_range;
 }
 
 /**
- * @brief 检查当前号牌信息是否有效
+ * @brief 检查当前稳定号牌信息是否有效
  * 
- * 验证号牌信息是否完整、未超时且未被拒绝
+ * 验证当前稳定识别的号牌信息是否被更新、未超时且未被拒绝
  * 
  * @return 如果号牌信息有效返回true，否则返回false
  */
@@ -237,6 +299,10 @@ double LicenseProcessor::calculate_velocity(const char& axis) const
     - Y轴：指向底部
     */
     // 检查X方向对齐
+    if(!_license_info_stable.is_valid())
+    {
+        return 0.0;
+    }
     bool is_x_aligned = abs(_license_info_stable.center_x) >= (_license_config.image_frame_size[0]-_license_config.detection_frame_size[0])/2 
             and abs(_license_info_stable.center_x) <= (_license_config.image_frame_size[0]-_license_config.detection_frame_size[0])/2 + _license_config.detection_frame_size[0];
     

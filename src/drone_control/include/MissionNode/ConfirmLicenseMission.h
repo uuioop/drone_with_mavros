@@ -22,6 +22,7 @@ class ConfirmLicenseMission:public MissionNode
 public:
     /**
      * @brief 构造函数
+     * @note 设置号牌配置参数
      * @param nh ROS节点句柄
      * @param status_monitor 状态监控器引用
      * @param mavros_bridge MAVROS桥接器引用
@@ -117,7 +118,7 @@ private:
      * @brief 移动向量，默认向下移动1.0单位
      * 第一个元素为方向字符（'y'/'z'），第二个元素为移动距离和方向
      */
-    std::tuple<char, double> _move_vector = {'z', -1.0};
+    std::tuple<char, double> _move_vector = {'z', 1.0};
 
 private:
     /**

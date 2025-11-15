@@ -4,14 +4,15 @@
     <!-- 直接使用Gazebo仿真环境提供的相机话题 -->
 
     <!-- 下视相机ArUco检测 -->
-    <group ns="down_tracker_parent">
+    <group ns="down_aruco_tracker">
         <node pkg="aruco_detect" type="aruco_detect" name="aruco_detect">
             <remap from="camera" to="/iris_front_down_camera/usb_cam/image_raw" />
             <remap from="camera_info" to="/iris_front_down_camera/usb_cam/camera_info" />
-            <remap from="/fiducial_images" to="/down_tracker_parent/fiducial_images" />
+            <remap from="/fiducial_images" to="/down_aruco_tracker/fiducial_images" />
 
             <param name="publish_images" value="true"/>
             <param name="fiducial_len" value="0.5"/> 
+            <param name="fiducial_len_override" value="42: 0.1"/>
             <param name="image_is_rectified" value="false"/>
             <param name="dictionary"   value="10"/>    
         </node>

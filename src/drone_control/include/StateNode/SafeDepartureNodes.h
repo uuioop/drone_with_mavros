@@ -133,3 +133,32 @@ private:
     std::shared_ptr<ArucoTagProcessor> _front_tag_processor;
 };
 
+class SearchSignalState:public StateNode
+{
+public:
+    /**
+     * @brief 构造函数
+     * @param mission 所在任务引用
+     */
+    SearchSignalState(MissionNode& mission);
+    ~SearchSignalState()=default;
+    /**
+     * @brief 进入节点时调用
+     * 初始化搜索信号过程所需的参数和状态
+     */
+    void on_enter() override;
+    
+    /**
+     * @brief 更新节点时调用，返回控制指令
+     * 执行搜索信号操作，使无人机搜索信号
+     * @return 控制指令数组 [x, y, z, yaw]
+     */
+    std::array<double,4> on_update() override;
+    
+    /**
+     * @brief 退出节点时调用
+     * 清理搜索信号过程中的临时变量和状态
+     */
+    void on_exit() override;
+private:
+};

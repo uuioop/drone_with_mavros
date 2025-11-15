@@ -44,30 +44,29 @@ std::array<double,4> SearchLicenseState::on_update()
 {
     if (std::get<0>(_move_vector)== 'y')
     {   
-        _vel_cmd[1]=std::get<1>(_move_vector)*0.5;
+        _vel_cmd[1]=std::get<1>(_move_vector)*0.3;
         _vel_cmd[2]=0.0;
     }
     else if (std::get<0>(_move_vector)== 'z')
     {   
         _vel_cmd[1]=0.0;
-        _vel_cmd[2]=std::get<1>(_move_vector)*0.5;
+        _vel_cmd[2]=std::get<1>(_move_vector)*0.3;
     }
 
     if (_license_processor->is_valid())
     {
-        auto license_no=_license_processor->get_license_info_stable().license_no;
-        ROS_INFO("[CL] 发现有效号牌 %s，准备确认。",license_no.c_str());
-        static_cast<ConfirmLicenseMission&>(_mission).switch_node("confirm_license");
-        return {0.0,0.0,0.0,0.0};
-    }
-    if (_license_processor->is_recognized())
-    {
+        if(_license_processor->is_in_detection_frame())
+        {
+            static_cast<ConfirmLicenseMission&>(_mission).switch_node("confirm_license");
+            return {0.0,0.0,0.0,0.0};
+        }
         if (std::get<0>(_move_vector)== 'y')
             // 调整Z轴,使号牌中心点处于检测框中
             _vel_cmd[2]=_license_processor->calculate_velocity('z');
         else if (std::get<0>(_move_vector)== 'z')
             // 调整Y轴,使号牌中心点处于检测框中
             _vel_cmd[1]=_license_processor->calculate_velocity('y');
+        
     }
     return _vel_cmd;
 }
@@ -119,15 +118,17 @@ void ConfirmLicenseState::on_enter()
  */
 std::array<double,4> ConfirmLicenseState::on_update()
 {
+    // 号牌无效时切换到搜索状态
     if (!_license_processor->is_valid())
     {
         static_cast<ConfirmLicenseMission&>(_mission).switch_node("search_license");
         return {0.0,0.0,0.0,0.0};
     }
-    
+    // 利用超时机制悬停等待
     if (!is_timeout())
         return {0.0,0.0,0.0,0.0};
 
+    // 检查当前号牌是否与目标号牌匹配
     if (_license_processor->compare_license())
     {
         ROS_INFO("[CL] 号牌比对成功");
@@ -137,6 +138,7 @@ std::array<double,4> ConfirmLicenseState::on_update()
     else
     {
         ROS_INFO("[CL] 号牌比对失败，切换到搜索状态");
+        ROS_INFO("[CL] 错误的号牌: %s",_license_processor->get_license_info_stable().license_no.c_str());
         static_cast<ConfirmLicenseMission&>(_mission).switch_node("reposition_license");
         return {0.0,0.0,0.0,0.0};
     }
@@ -204,13 +206,13 @@ std::array<double,4> RepositionLicenseState::on_update()
     // 根据新移动向量更新速度指令
     if (std::get<0>(_new_move_vector)== 'y')
     {   
-        _vel_cmd[1]=std::get<1>(_new_move_vector)*0.5;
+        _vel_cmd[1]=std::get<1>(_new_move_vector)*0.3;
         _vel_cmd[2]=0.0;
     }
     else if (std::get<0>(_new_move_vector)== 'z')
     {   
         _vel_cmd[1]=0.0;
-        _vel_cmd[2]=std::get<1>(_new_move_vector)*0.5;
+        _vel_cmd[2]=std::get<1>(_new_move_vector)*0.3;
     }
     return _vel_cmd;
 }

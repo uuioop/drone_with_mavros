@@ -36,13 +36,12 @@ std::array<double,4> FindFrontTag::on_update()
         // 若到达一定高度还未找到引导标记，切换到盲飞状态
         if(std::abs(_alignment_errors[2])>1.5)
         {
-            ROS_INFO("11");
             static_cast<SafeDepartureMission&>(_mission).switch_node("blind_state");
             return {0.0,0.0,0.0,0.0};
         }
         _vel_cmd=_down_tag_processor->calculate_velocity_command(false);
         // 反向Z轴速度远离下方平台标记
-        _vel_cmd[2]=-_vel_cmd[2];
+        _vel_cmd[2]=_down_tag_processor->is_aligned() ? -_vel_cmd[2] : 0.0;
         return _vel_cmd;
     }
     return {0.0,0.0,0.4,0.0};
@@ -79,7 +78,7 @@ std::array<double,4> KeepAwayFromTag::on_update()
     if(!_front_tag_processor->is_valid() || std::abs(_alignment_errors[0])>1.8)
     {
         ROS_INFO("[SD] 引导标记已消失或远离目标，启动GPS返航");
-        _mission.set_finished(true);
+        static_cast<SafeDepartureMission&>(_mission).switch_node("search_signal");
         return {0.0,0.0,0.0,0.0};
     }
     _vel_cmd=_front_tag_processor->calculate_velocity_command(true);
@@ -95,7 +94,7 @@ void KeepAwayFromTag::on_exit()
 
 BlindState::BlindState(MissionNode& mission):StateNode(mission)
 {
-    _timeout_duration=ros::Duration(5.0);
+    _timeout_duration=ros::Duration(8.0);
     _front_tag_processor=static_cast<SafeDepartureMission&>(_mission).get_front_tag_processor();
 }
 
@@ -110,7 +109,7 @@ std::array<double,4> BlindState::on_update()
     if(is_timeout())
     {
         ROS_INFO("[SD] 盲飞时间结束，开始GPS导航");
-        _mission.set_finished(true);
+        static_cast<SafeDepartureMission&>(_mission).switch_node("search_signal");
         return {0.0,0.0,0.0,0.0};
     }
     if(_front_tag_processor->is_valid())
@@ -119,10 +118,37 @@ std::array<double,4> BlindState::on_update()
         static_cast<SafeDepartureMission&>(_mission).switch_node("keep_away_from_tag");
         return {0.0,0.0,0.0,0.0};
     }
-    return {-0.3,0.0,0.0,0.0};
+    return {-0.4,0.0,0.0,0.0};
 }
 
 void BlindState::on_exit()
 {
     // 退出盲飞状态
+}
+
+SearchSignalState::SearchSignalState(MissionNode& mission):StateNode(mission)
+{
+    _timeout_duration=ros::Duration(15.0);
+}
+
+void SearchSignalState::on_enter()
+{
+    ROS_INFO("[SD] 进入：搜索信号状态");
+    _entry_time= ros::Time::now();
+}
+
+std::array<double,4> SearchSignalState::on_update()
+{
+    if(is_timeout())
+    {
+        ROS_INFO("[SD] 搜索信号时间结束，切换到寻找引导标记状态");
+        _mission.set_finished(true);
+        return {0.0,0.0,0.0,0.0};
+    }
+    return {0.0,0.0,1.5,0.0};
+}
+
+void SearchSignalState::on_exit()
+{
+    // 退出搜索信号状态
 }

@@ -84,10 +84,10 @@ bool IdleMission::start_mission_service_callback(my_interfaces::Nav::Request& re
     ROS_INFO("IdleMission: Received start mission request");
     if (req.test)
 	{
-        _drone_control.switch_mission("precision_land");
+        _drone_control.switch_mission("confirm_license");
 		// 启动任务
 		res.success = true;
-		res.message = "Precision land started.";
+		res.message = "Confirm license started.";
 	}
 	else
 	{

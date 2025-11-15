@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package>
+  <name>license_detection</name>
+  <version>0.0.0</version>
+  <description>The license_detection package for ROS1</description>
+
+  <!-- 维护者信息 -->
+  <maintainer email="colu@todo.todo">colu</maintainer>
+
+  <!-- 许可证信息 -->
+  <license>TODO</license>
+
+  <!-- URL信息 -->
+  <url type="website">http://wiki.ros.org/license_detection</url>
+
+  <!-- 依赖项 -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!-- 使用depend标签表示既是构建依赖也是运行依赖 -->
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>message_filters</build_depend>
+  <build_depend>my_interfaces</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>message_filters</run_depend>
+  <run_depend>my_interfaces</run_depend>
+  
+  <!-- 测试依赖 -->
+  <test_depend>rostest</test_depend>
+  <test_depend>rosunit</test_depend>
+
+  <!-- 导出标签 -->
+  <export>
+    <catkin_package>
+    </catkin_package>
+  </export>
+</package>

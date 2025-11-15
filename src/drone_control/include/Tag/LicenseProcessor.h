@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <set>
+#include <map>
 
 #include "Tag/License.h"
 
@@ -71,14 +72,14 @@ public:
     void set_target_license(const std::string& license_no);
     
     /**
-     * @brief 检查是否已识别到号牌
+     * @brief 检查当前号牌是否在检测框内
      * 
-     * 判断是否识别到号牌
+     * 判断当前识别的号牌是否在检测框内
      * 
-     * @return true 如果已识别
-     * @return false 如果未识别
+     * @return true 如果在检测框内
+     * @return false 如果不在检测框内
      */
-    bool is_recognized() const;
+    bool is_in_detection_frame() const;
 
     /**
      * @brief 检查当前号牌信息是否有效
@@ -146,8 +147,6 @@ private:
     ros::NodeHandle& _nh;
     /** @brief 处理器是否已启动 */
     bool _is_started = false;
-    /** @brief 最新识别的号牌内容 */
-    LicenseInfo _license_info;
     /** @brief 稳定识别的号牌信息 */
     LicenseInfo _license_info_stable;
     /** @brief 号牌配置参数 */
@@ -156,12 +155,19 @@ private:
     ros::Subscriber _license_sub;
     /** @brief 目标号牌号码 */
     std::string _target_license_no;
-    /** @brief 识别结果稳定性计数器 */
+    /** @brief 最近一次识别到的号牌号码 */
+    std::string _last_recognized_license_no;
+    /** @brief 识别结果稳定性计数器（保留以保持兼容性） */
     int _stability_counter = 0;
     /** @brief 识别结果稳定性要求次数 */
     int _required_stability_count = 3;
     /** @brief 已拒绝的号牌集合 */
     std::set<std::string> _rejected_plates;
+    /** @brief 号牌统计映射表
+     * 
+     * 记录每个识别到的号牌的统计信息
+     */
+    std::map<std::string, LicenseStats> _license_counters;
 
 private:
     /**
