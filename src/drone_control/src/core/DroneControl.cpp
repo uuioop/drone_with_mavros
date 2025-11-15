@@ -12,6 +12,7 @@
 #include "MissionNode/ConfirmLicenseMission.h"
 #include "MissionNode/PrecisionLandMission.h"
 #include "MissionNode/IdleMission.h"
+#include "MissionNode/SafeDepartureMission.h"
 
 /**
  * @brief DroneControl类构造函数
@@ -44,6 +45,7 @@ void DroneControl::register_missions()
 	_mission_machine.register_node("mission_nav", std::make_shared<GPSNavMission>(*this, _nh, _status_monitor, _mavros_bridge));
 	_mission_machine.register_node("confirm_license", std::make_shared<ConfirmLicenseMission>(*this, _nh, _status_monitor, _mavros_bridge));
 	_mission_machine.register_node("precision_land", std::make_shared<PrecisionLandMission>(*this, _nh, _status_monitor, _mavros_bridge));
+	_mission_machine.register_node("safe_departure", std::make_shared<SafeDepartureMission>(*this, _nh, _status_monitor, _mavros_bridge));
 }
 
 /**

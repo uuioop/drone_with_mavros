@@ -1,6 +1,5 @@
 #pragma once
 #include<array>
-#include<ros/ros.h>
 
 #include "core/NodeBase.h"
 
@@ -66,28 +65,5 @@ protected:
     MissionNode& _mission;
     /** @brief 速度指令数组 [x,y,z,yaw] */
     std::array<double,4> _vel_cmd={0.0,0.0,0.0,0.0};
-    /** @brief 此状态的超时时长（秒），0.0表示不启用超时 */
-    ros::Duration _timeout_duration=ros::Duration(10.0);
-    /** @brief 进入此状态时的时间戳 */
-    ros::Time _entry_time;
 
-protected:
-    /**
-     * @brief 检查状态是否超时
-     * 
-     * 判断从进入状态到现在的时间是否超过了配置的超时时间
-     * 
-     * @return true 如果状态已超时
-     * @return false 如果状态未超时
-     */
-    bool is_timeout() const
-    {
-        if(_timeout_duration.toSec()<=0.0) return false;
-        // 如果进入时间或当前时间为0，说明时间尚未初始化，不应触发超时
-        if (_entry_time.toSec() == 0.0 || ros::Time::now().toSec() == 0.0) 
-        {
-            return false;
-        }
-        return (ros::Time::now()-_entry_time)>_timeout_duration;
-    }
 };

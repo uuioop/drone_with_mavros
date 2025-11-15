@@ -14,6 +14,17 @@
  * 以及标记检测和控制所需的配置参数结构体。
  */
 
+
+/**
+ * @brief 标记类型枚举
+ * 
+ * 表示标记的类型，包括单个独立标记、嵌套标记和标记板
+ */
+enum class TagType {
+    SINGLE,     ///< 单个独立标记
+    BOARD       ///< 标记板
+};
+
 /**
  * @brief ArUco标记结构体
  * 
@@ -31,14 +42,15 @@ struct ArucoTag
     /**
      * @brief 检查标记数据是否有效
      * 
-     * 通过判断时间戳是否大于0来确定数据是否已被更新
+     * 通过判断时间戳是否大于0且四元数有效来确定数据是否已被更新
      * 
      * @return true 如果标记数据有效
      * @return false 如果标记数据无效
      */
     bool is_valid() const
     { 
-        return timestamp.toSec() > 0.0; 
+        // 检查时间戳是否被更新过
+        return timestamp.toSec() > 0.0;
     }
 };
 
@@ -48,10 +60,12 @@ struct ArucoTag
  * 用于存储ArUco标记检测和控制的配置参数，所有参数基于机体坐标系
  */
 struct TagConfig {
+    /** @brief 标记类型，默认值为SINGLE */
+    TagType type=TagType::SINGLE;
     /** @brief 订阅的主题名称，用于接收标记检测结果 */
-    std::string topic_name="/aruco_detect/pose";
-    /** @brief 目标ID，用于指定需要控制的特定标记 */
-    int target_id=0;
+    std::string topic_name="";
+    /** @brief 目标ID，用于指定：要处理的目标ID列表 */
+    std::vector<int> target_ids={-5};
     /** @brief 标记名称标识，用于区分不同标记 */
     std::string tag_name="default";
     /** @brief 相机到机体的旋转矩阵，用于坐标变换 */
@@ -66,12 +80,6 @@ struct TagConfig {
     };
     /** @brief 对准容差，确定标记对准的精度要求 */
     double aligned_tolerance=0.2;
-    /** @brief 偏航角容差，以度为单位 */
-    double yaw_tolerance_deg=20.0;
-    /** @brief 最大偏航角速度，以度/秒为单位 */
-    double max_yaw_rate_deg_s=10.0;
-    /** @brief 最小偏航角速度，以度/秒为单位 */
-    double min_yaw_rate_deg_s=2.0;
     /** @brief 目标超时时间，超过此时间未检测到标记将认为丢失 */
     double target_timeout=3.0;
     /** @brief 目标偏移量，用于调整目标位置 */
@@ -85,3 +93,4 @@ struct TagConfig {
     /** @brief 最大移动速度，限制控制输出 */
     double max_speed=0.6;
 };
+

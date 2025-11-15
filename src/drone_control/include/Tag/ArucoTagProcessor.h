@@ -1,11 +1,13 @@
 #pragma once
 #include <ros/ros.h>
 #include <fiducial_msgs/FiducialTransformArray.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <Eigen/Dense>
 #include <limits>
 #include <string>
 #include <array>
 #include <vector>
+#include <unordered_map>
 
 #include "Tag/ArucoTag.h"
 
@@ -40,6 +42,9 @@ public:
     ~ArucoTagProcessor();
     
 public:
+    /** @brief 是否为父标记或复合标记 */
+    TagType get_type() const { return _tag_config.type; }
+
     /**
      * @brief 设置处理器启动状态
      * 
@@ -91,7 +96,7 @@ public:
     /**
      * @brief 计算速度指令
      * 
-     * 基于当前标记位置和对准状态，计算无人机的速度控制指令
+     * 基于当前复合标记位置和对准状态，计算无人机的速度控制指令
      * 
      * @param is_yaw 是否包含偏航控制，默认为true
      * @return std::array<double,4> 包含x,y,z,yaw速度指令的数组
@@ -101,12 +106,14 @@ public:
 private:
     /** @brief ROS节点句柄 */
     ros::NodeHandle _nh;
-    /** @brief 目标位姿订阅者，接收标记检测结果 */
-    ros::Subscriber _target_pose_sub;
-    /** @brief 当前检测到的ArUco标记 */
-    ArucoTag _tag;
+    /** @brief 自定义包标记位姿订阅者，接收标记检测结果 */
+    ros::Subscriber _pose_sub;
+    /** @brief 社区包标记位姿订阅者，接收标记检测结果 */
+    ros::Subscriber _fiducial_sub;
     /** @brief 标记配置参数 */
     TagConfig _tag_config;
+    /** @brief 当前检测到的标记 */
+    ArucoTag _tag;
     /** @brief 当前标记是否有效 */
     bool _is_valid_now = false;
     /** @brief 上一帧标记是否有效，用于检测状态变化 */
@@ -122,13 +129,31 @@ private:
 
 private:
     /**
+     * @brief 检查标记与目标的距离是否有效
+     * 
+     * @param tag 要检查的标记
+     * @return true 如果距离有效
+     * @return false 如果距离无效
+     */
+    bool check_distance_valid(const ArucoTag& tag) const;
+
+    /**
      * @brief 目标位姿回调函数
      * 
-     * 处理从相机接收到的标记位姿信息，将其转换为机身坐标系
+     * 处理从aruco_detect接收到的标记位姿信息，将其转换为机身坐标系
      * 
      * @param msg 包含标记位姿的ROS消息（fiducial_transform类型）
      */
-    void target_pose_callback(const fiducial_msgs::FiducialTransformArray::ConstPtr& msg);
+    void fiducial_callback(const fiducial_msgs::FiducialTransformArray::ConstPtr& msg);
+
+    /**
+     * @brief 目标位姿回调函数
+     * 
+     * 处理从board_detect接收到的板位姿信息，将其转换为机身坐标系
+     * 
+     * @param msg 包含板位姿的ROS消息（PoseStamped类型）
+     */
+    void board_callback(const geometry_msgs::PoseStamped::ConstPtr& msg);
     
     /**
      * @brief 将相机坐标系中的标记转换为机体坐标系
@@ -147,16 +172,6 @@ private:
      * @return false 如果标记未超时
      */
     bool check_tag_timeout() const;
-    
-    /**
-     * @brief 检查标记与目标的距离是否有效
-     * 
-     * 判断标记是否在配置的最大检测距离范围内
-     * 
-     * @return true 如果距离有效
-     * @return false 如果距离无效
-     */
-    bool check_distance_valid() const;
     
     /**
      * @brief 获取偏航角误差（度）

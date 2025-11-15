@@ -21,10 +21,10 @@ PrecisionLandMission::PrecisionLandMission(DroneControl& drone_control, ros::Nod
 MissionNode(drone_control, nh, status_monitor, mavros_bridge)
 {
     _required_flight_mode ="OFFBOARD";
-    _next_mission_name="idle";
+    _next_mission_name="safe_departure";
     // 前方标记配置（初始对准）
-    _front_tag_config.topic_name = "/front_aruco_tracker/fiducial_transforms"; // 前方标记话题名称
-    _front_tag_config.target_id = 1; // 前方标记目标ID
+    _front_tag_config.type = TagType::BOARD;
+    _front_tag_config.topic_name = "board_detect/pose"; // 前方标记话题名称
     _front_tag_config.tag_name = "land_front"; // 前方标记名称
     // 相机到机体的旋转矩阵(FLU坐标系)
     _front_tag_config.rotation_matrix << 0,0,1,
@@ -32,45 +32,61 @@ MissionNode(drone_control, nh, status_monitor, mavros_bridge)
                                         0,-1,0;
     _front_tag_config.alignment_axes = {'y','z','\0'}; // 对准轴：Y轴（左右）和Z轴（高度）
     _front_tag_config.aligned_tolerance = 0.2; // 对准容差：0.2米
-    _front_tag_config.yaw_tolerance_deg = 20.0; // 偏航角容差：20度
-    _front_tag_config.max_yaw_rate_deg_s = 10.0; // 最大偏航角速度：10度/秒
-    _front_tag_config.min_yaw_rate_deg_s = 2.0; // 最小偏航角速度：2度/秒
     _front_tag_config.target_timeout = 0.5; // 目标超时时间：0.5秒
-    _front_tag_config.target_offset = Eigen::Vector3d(1.0, 0.0, 0.0); // 目标偏移：前方1.4米
+    _front_tag_config.target_offset = Eigen::Vector3d(0.0, 0.0, 0.0); // 目标偏移：前方1.4米
     _front_tag_config.kp = 0.4; // PID比例系数
-    _front_tag_config.ki = 0.0; // PID积分系数
-    _front_tag_config.kd = 0.0; // PID微分系数
     _front_tag_config.max_speed = 0.4; // 最大移动速度：0.4米/秒
     
     // 下方平台标记配置（最终精准对准）
-    _down_tag_config.topic_name = "/down_aruco_tracker/fiducial_transforms"; // 下方标记话题名称
-    _down_tag_config.target_id = 0; // 下方标记目标ID
-    _down_tag_config.tag_name = "land_down"; // 下方标记名称
-    // 最大检测距离，X和Y方向无限制，Z方向最大2.5米
-    _down_tag_config.max_detection_distance = {
+    _down_tag_parent_config.type = TagType::SINGLE;
+    _down_tag_parent_config.topic_name = "/down_tracker_parent/fiducial_transforms"; // 下方标记话题名称
+    _down_tag_parent_config.target_ids = {23}; // 下方标记目标ID
+    _down_tag_parent_config.tag_name = "land_down_parent"; // 下方标记名称
+    // 最大检测距离，X和Y方向无限制，Z方向最大2.7米
+    _down_tag_parent_config.max_detection_distance = {
         std::numeric_limits<double>::infinity(),
         std::numeric_limits<double>::infinity(),
         2.7
     };
     // 相机到机体的旋转矩阵(FLU坐标系)
-    _down_tag_config.rotation_matrix << 0,-1,0,
+    _down_tag_parent_config.rotation_matrix << 0,-1,0,
                                        -1,0,0,
                                        0,0,-1;
-    _down_tag_config.alignment_axes = {'x','y','\0'}; // 对准轴：X轴（前后）和Y轴（左右）
-    _down_tag_config.aligned_tolerance = 0.12; // 对准容差：0.12米
-    _down_tag_config.target_timeout = 3.0; // 目标超时时间：3秒
-    _down_tag_config.target_offset = Eigen::Vector3d(0.0, 0.0, 0.0); // 目标偏移：无偏移
-    _down_tag_config.kp = 0.4; // PID比例系数
-    _down_tag_config.ki = 0.0; // PID积分系数
-    _down_tag_config.kd = 0.0; // PID微分系数
-    _down_tag_config.max_speed = 0.4; // 最大移动速度：0.4米/秒
+    _down_tag_parent_config.alignment_axes = {'x','y','\0'}; // 对准轴：X轴（前后）和Y轴（左右）
+    _down_tag_parent_config.aligned_tolerance = 0.2; // 对准容差：0.2米
+    _down_tag_parent_config.target_timeout = 0.5; // 目标超时时间：0.5秒
+    _down_tag_parent_config.target_offset = Eigen::Vector3d(0.0, 0.0, 0.0); // 目标偏移：无偏移
+    _down_tag_parent_config.kp = 0.4; // PID比例系数
+    _down_tag_parent_config.max_speed = 0.4; // 最大移动速度：0.4米/秒
+
+    // 下方平台标记配置（最终精准对准）
+    _down_tag_child_config.type = TagType::SINGLE;
+    _down_tag_child_config.topic_name = "/down_tracker_child/fiducial_transforms"; // 下方标记话题名称
+    _down_tag_child_config.target_ids = {42}; // 下方标记目标ID
+    _down_tag_child_config.tag_name = "land_down_child"; // 下方标记名称
+    // 最大检测距离，X和Y方向无限制，Z方向最大1米
+    _down_tag_child_config.max_detection_distance = {
+        std::numeric_limits<double>::infinity(),
+        std::numeric_limits<double>::infinity(),
+        2.0
+    };
+    // 相机到机体的旋转矩阵(FLU坐标系)
+    _down_tag_child_config.rotation_matrix << 0,-1,0,
+                                       -1,0,0,
+                                       0,0,-1;
+    _down_tag_child_config.alignment_axes = {'x','y','\0'}; // 对准轴：X轴（前后）和Y轴（左右）
+    _down_tag_child_config.aligned_tolerance = 0.12; // 对准容差：0.12米
+    _down_tag_child_config.target_timeout = 0.5; // 目标超时时间：0.5秒
+    _down_tag_child_config.target_offset = Eigen::Vector3d(0.0, 0.0, 0.0); // 目标偏移：无偏移
+    _down_tag_child_config.kp = 0.4; // PID比例系数
+    _down_tag_child_config.max_speed = 0.3; // 最大移动速度：0.3米/秒
 
     // 在配置完成后再创建处理器
     _front_tag_processor = std::make_shared<ArucoTagProcessor>(_nh, _front_tag_config);
-    _down_tag_processor = std::make_shared<ArucoTagProcessor>(_nh, _down_tag_config);
+    _down_tag_parent_processor = std::make_shared<ArucoTagProcessor>(_nh, _down_tag_parent_config);
+    _down_tag_child_processor = std::make_shared<ArucoTagProcessor>(_nh, _down_tag_child_config);
     // 注册状态机状态
     register_states();
-
 
 }
 
@@ -107,7 +123,8 @@ void PrecisionLandMission::on_enter()
     // 启动前置摄像头标记处理器
     _front_tag_processor->set_start(true);
     // 启动下视摄像头标记处理器
-    _down_tag_processor->set_start(true);
+    _down_tag_parent_processor->set_start(true);
+    _down_tag_child_processor->set_start(true);
 }
 /**
  * @brief 更新精确着陆任务状态时的回调实现
@@ -118,7 +135,8 @@ std::array<double,4> PrecisionLandMission::on_update()
     // 更新前置摄像头标签处理器的有效性状态
     _front_tag_processor->update_and_log_validity();
     // 更新下视摄像头标签处理器的有效性状态
-    _down_tag_processor->update_and_log_validity();
+    _down_tag_parent_processor->update_and_log_validity();
+    _down_tag_child_processor->update_and_log_validity();
     // 获取当前状态的控制指令并发送
     _mavros_bridge.set_velocity_body(_state_machine.on_update());
     // 等待下一个循环周期
@@ -135,5 +153,6 @@ void PrecisionLandMission::on_exit()
     // 关闭前置摄像头标记处理器
     _front_tag_processor->set_start(false);
     // 关闭下视摄像头标记处理器
-    _down_tag_processor->set_start(false);
+    _down_tag_parent_processor->set_start(false);
+    _down_tag_child_processor->set_start(false);
 }

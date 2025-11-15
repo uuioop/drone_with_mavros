@@ -34,8 +34,7 @@ void GPSNavMission::upload_mission()
 {
     auto global_pos = _status_monitor.get_global_pos();
     _waypoint_positions = {
-        {global_pos[0], global_pos[1], 10},
-        {_target_position[0], _target_position[1], _target_position[2]}
+        {global_pos[0], global_pos[1], 10}
     };
     // 发送航点位置到无人机
     _mavros_bridge.upload_mission(_waypoint_positions);

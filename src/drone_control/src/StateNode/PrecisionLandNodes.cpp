@@ -23,8 +23,6 @@ SearchTagState::SearchTagState(MissionNode& mission):StateNode(mission)
 {
     // 获取前端标记处理器(转换为PrecisionLandMission类型)
     _front_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_front_tag_processor();
-    // 设置超时时长
-    _timeout_duration= ros::Duration(0.0);
 }
 
 /**
@@ -175,7 +173,6 @@ ApproachGuideTagState::ApproachGuideTagState(MissionNode& mission):StateNode(mis
 {
     // 获取前端和下降标记处理器(转换为PrecisionLandMission类型)
     _front_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_front_tag_processor();
-    _down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor();
 }
 
 /**
@@ -197,15 +194,16 @@ void ApproachGuideTagState::on_enter()
  */
 std::array<double,4> ApproachGuideTagState::on_update()
 {
+    auto down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor(true);
     if (!_front_tag_processor->is_valid())
     {
         ROS_WARN("[PL] 接近引导标记状态下，搜索不到引导标记，等待后续命令");
         return {0.0, 0.0, 0.0, 0.0};
     }
-    if (_down_tag_processor->is_valid())
+    if (down_tag_processor->is_valid())
     {
         ROS_INFO("[PL] 接近引导标记状态下，搜索到下降标记，开始下降...");
-        static_cast<PrecisionLandMission&>(_mission).switch_node("align_on_platform_tag");
+        static_cast<PrecisionLandMission&>(_mission).switch_node("descend");
         return {0.0,0.0,0.0,0.0};
     }
     return _front_tag_processor->calculate_velocity_command(true);
@@ -219,19 +217,6 @@ std::array<double,4> ApproachGuideTagState::on_update()
 void ApproachGuideTagState::on_exit()
 {
     // 退出接近引导标记状态
-}
-
-/**
- * @brief AlignOnPlatformTagState构造函数
- * 
- * 初始化对准平台标记状态节点，获取下降标记处理器
- * 
- * @param mission 所在任务引用
- */
-AlignOnPlatformTagState::AlignOnPlatformTagState(MissionNode& mission):StateNode(mission)
-{
-    // 获取下降标记处理器(转换为PrecisionLandMission类型)
-    _down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor();
 }
 
 /**
@@ -253,20 +238,21 @@ void AlignOnPlatformTagState::on_enter()
  */
 std::array<double,4> AlignOnPlatformTagState::on_update()
 {
-    if (!_down_tag_processor->is_valid())
+    auto down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor(true);
+    if (!down_tag_processor->is_valid())
     {
         ROS_WARN("[PL] 对准平台标记状态下，搜索不到平台标记，等待后续命令");
         return {0.0, 0.0, 0.0, 0.0};
     }
     // 检查是否对准完成
-    if(_down_tag_processor->is_aligned())
+    if(down_tag_processor->is_aligned())
     {
         static_cast<PrecisionLandMission&>(_mission).switch_node("descend");
         return {0.0, 0.0, 0.0, 0.0};
     }
 
     // 不使用偏航角误差
-    _vel_cmd=_down_tag_processor->calculate_velocity_command(false);
+    _vel_cmd=down_tag_processor->calculate_velocity_command(false);
     // 禁用Z轴速度
     _vel_cmd[2]=0.0;
     return _vel_cmd;
@@ -283,13 +269,15 @@ void AlignOnPlatformTagState::on_exit()
 }
 
 /**
- * @brief 下降状态类构造函数
- * @param mission 所在任务引用，用于获取下降标记处理器
+ * @brief 下降状态构造函数
+ * 
+ * 初始化下降状态节点，获取下降标记处理器
+ * 
+ * @param mission 所在任务引用
  */
 DescendState::DescendState(MissionNode& mission):StateNode(mission)
 {
-    // 获取下降标记处理器(转换为PrecisionLandMission类型)
-    _down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor();
+    _timeout_duration=ros::Duration(1.5);
 }
 
 /**
@@ -300,6 +288,7 @@ DescendState::DescendState(MissionNode& mission):StateNode(mission)
 void DescendState::on_enter()
 {
     ROS_INFO("[PL] 进入：下降状态");
+    _entry_time=ros::Time::now();
 }
 
 /**
@@ -310,12 +299,8 @@ void DescendState::on_enter()
  */
 std::array<double,4> DescendState::on_update()
 {
-    if (!_down_tag_processor->is_valid())
-    {
-        ROS_WARN("[PL] 下降状态下，搜索不到平台标记，等待后续命令");
-        static_cast<PrecisionLandMission&>(_mission).switch_node("land");
-        return {0.0, 0.0, 0.0, 0.0};
-    }
+    auto down_tag_processor=static_cast<PrecisionLandMission&>(_mission).get_down_tag_processor(false);
+
     // 检查是否下降完成
     if(_mission.get_status_monitor().get_landed_state() ==
         mavros_msgs::ExtendedState::LANDED_STATE_ON_GROUND)
@@ -323,10 +308,30 @@ std::array<double,4> DescendState::on_update()
         _mission.set_finished(true);
         return {0.0, 0.0, 0.0, 0.0};
     }
+    
+    if (!down_tag_processor->is_valid())
+    {    
+        if(is_timeout())
+            static_cast<PrecisionLandMission&>(_mission).switch_node("land");
+        return {0.0, 0.0, -0.1, 0.0};
+    }
+
+    _entry_time=ros::Time::now();
+
     // 计算下降速度
-    _vel_cmd=_down_tag_processor->calculate_velocity_command(false);
-    // 固定Z轴速度
-    _vel_cmd[2]=-0.5;
+    _vel_cmd=down_tag_processor->calculate_velocity_command(false);
+    try {
+        _alignment_errors=down_tag_processor->get_alignment_errors();
+    } catch (const std::runtime_error& e) {
+        ROS_ERROR("[PL] 下降状态下，获取平台标记误差向量失败: %s", e.what());
+        return {0.0, 0.0, 0.0, 0.0};
+    }
+    if (down_tag_processor->is_aligned())
+        _vel_cmd[2]=-0.3;
+    else
+        _vel_cmd[2]=0.0;
+    // ROS_INFO("vel:%lf,%lf",_vel_cmd[0],_vel_cmd[1]);
+    // ROS_INFO("error:%lf,%lf,%lf",_alignment_errors[0],_alignment_errors[1],_alignment_errors[2]);
     return _vel_cmd;
 }
 

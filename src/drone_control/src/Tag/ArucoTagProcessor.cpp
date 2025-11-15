@@ -7,6 +7,7 @@
  */
 #include <unordered_map>
 #include <fiducial_msgs/FiducialTransformArray.h>
+#include <algorithm>
 #include "Tag/ArucoTagProcessor.h"
 #include "util/utils.h"
 
@@ -21,10 +22,12 @@
 ArucoTagProcessor::ArucoTagProcessor(ros::NodeHandle& nh, const TagConfig tag_config):
     _nh(nh),_tag_config(tag_config)
 {
-   // 订阅标记检测话题
-   _target_pose_sub = _nh.subscribe(_tag_config.topic_name, 1, &ArucoTagProcessor::target_pose_callback, this);
+    if (_tag_config.type == TagType::BOARD) {
+        _pose_sub = _nh.subscribe(_tag_config.topic_name, 1, &ArucoTagProcessor::board_callback, this);
+    } else {
+        _fiducial_sub = _nh.subscribe(_tag_config.topic_name, 1, &ArucoTagProcessor::fiducial_callback, this);
+    }
 }
-
 /**
  * @brief 析构函数实现
  * 
@@ -33,31 +36,52 @@ ArucoTagProcessor::ArucoTagProcessor(ros::NodeHandle& nh, const TagConfig tag_co
 ArucoTagProcessor::~ArucoTagProcessor()=default;
 
 /**
- * @brief 目标位姿回调函数
+ * @brief 检查标记与目标的距离是否在有效范围内
  * 
- * 处理从相机接收到的标记位姿信息，将其转换为机身坐标系
+ * 验证标记在X、Y、Z轴上的距离是否小于配置的最大检测距离
  * 
- * @param msg 包含标记位姿的ROS消息
+ * @return 如果距离有效返回true，否则返回false
  */
-void ArucoTagProcessor::target_pose_callback(const fiducial_msgs::FiducialTransformArray::ConstPtr& msg)
+bool ArucoTagProcessor::check_distance_valid(const ArucoTag& tag) const
 {
-    // 检查是否已启动处理
-    // if(!_is_started)
-    //     return;
-    ROS_INFO_ONCE("ArucoTagProcessor: 收到标记位姿");
-    // 检查是否有检测到的标记
-    if(msg->transforms.empty()) {
-        return;
+    // 检查 tag 是否有效且未超时
+    if (!tag.is_valid()) { 
+        return false;
     }
 
-    // 遍历所有transforms，选择特定ID的标记
+    // 检查标记与目标的距离是否在有效范围内
+    bool x_valid= std::abs(tag.position.x()) < _tag_config.max_detection_distance[0];
+    bool y_valid= std::abs(tag.position.y()) < _tag_config.max_detection_distance[1];
+    bool z_valid= std::abs(tag.position.z()) < _tag_config.max_detection_distance[2];
+    return x_valid and y_valid and z_valid;
+}
+
+/**
+ * @brief 目标位姿回调函数
+ * 
+ * 处理从aruco_detect接收到的标记位姿信息，将其转换为机身坐标系
+ * 
+ * @param msg 包含标记位姿的ROS消息（fiducial_transform类型）
+ */
+void ArucoTagProcessor::fiducial_callback(const fiducial_msgs::FiducialTransformArray::ConstPtr& msg)
+{
+    // 检查是否已启动处理
+    if(!_is_started)
+        return;
+    ROS_INFO_ONCE("ArucoTagProcessor: 收到标记位姿");
+    // 遍历所有检测到的transform
     for(const auto& transform : msg->transforms) {
-        // 选择特定ID的标记
-        if(transform.fiducial_id != _tag_config.target_id)
+        
+        // 检查 transform.fiducial_id 是否在 _tag_config.target_ids 列表中
+        bool found = (std::find(_tag_config.target_ids.begin(), 
+                               _tag_config.target_ids.end(), 
+                               transform.fiducial_id) != _tag_config.target_ids.end());
+        
+        if(!found) // 如果不在列表中，则跳过
             continue;
         
-        // 从transform中提取标记位姿信息
-        auto tag = ArucoTag {
+        // 转换坐标系并存储
+        auto tag_cam = ArucoTag {
             Eigen::Vector3d(transform.transform.translation.x, 
                            transform.transform.translation.y, 
                            transform.transform.translation.z),
@@ -67,14 +91,60 @@ void ArucoTagProcessor::target_pose_callback(const fiducial_msgs::FiducialTransf
                               transform.transform.rotation.z),
             msg->header.stamp
         };
-        if (_tag_config.target_id == 0)
-            ROS_INFO("%s position: %f, %f, %f", _tag_config.tag_name.c_str(), tag.position.x(), tag.position.y(), tag.position.z());
-        // 将相机坐标系下的标记位姿转换为机身坐标系
-        _tag = get_tag_body(tag);
-        break;  // 只处理第一个标记
+        
+        ArucoTag tag_body = get_tag_body(tag_cam);
+        
+        // 检查转换后的标签距离是否有效
+        if (check_distance_valid(tag_body)) 
+        {
+            _tag = tag_body;
+        }
+        else 
+        {
+            _tag = ArucoTag();
+        }
+        ROS_INFO("ArucoTagProcessor: 收到标记位姿: ID=%d, X=%.2f, Y=%.2f, Z=%.2f", 
+                transform.fiducial_id, tag_body.position.x(), tag_body.position.y(), tag_body.position.z());
     }
 }
 
+/**
+ * @brief 目标位姿回调函数
+ * 
+ * 处理从board_detect接收到的板位姿信息，将其转换为机身坐标系
+ * 
+ * @param msg 包含板位姿的ROS消息（PoseStamped类型）
+ */
+void ArucoTagProcessor::board_callback(const geometry_msgs::PoseStamped::ConstPtr& msg)
+{
+    // 检查是否已启动处理
+    if(!_is_started)
+        return;
+    ROS_INFO_ONCE("ArucoTagProcessor: 收到板位姿");
+    // 转换坐标系并存储
+    auto tag_cam = ArucoTag {
+        Eigen::Vector3d(msg->pose.position.x, 
+                       msg->pose.position.y, 
+                       msg->pose.position.z),
+        Eigen::Quaterniond(msg->pose.orientation.w, 
+                          msg->pose.orientation.x, 
+                          msg->pose.orientation.y, 
+                          msg->pose.orientation.z),
+        msg->header.stamp
+    };
+    
+    ArucoTag tag_body = get_tag_body(tag_cam);
+    
+    // 检查转换后的标签距离是否有效
+    if (check_distance_valid(tag_body)) 
+    {
+        _tag = tag_body;
+    }
+    else 
+    {
+        _tag = ArucoTag();
+    }
+}
 /**
  * @brief 将相机坐标系下的标记位姿转换为机身坐标系
  * 
@@ -115,42 +185,22 @@ ArucoTag ArucoTagProcessor::get_tag_body(const ArucoTag& tag_cam) const
 }
 
 /**
- * @brief 检查标记是否超时
+ * @brief 检查复合标签是否超时
  * 
- * 比较当前时间与标记时间戳，判断标记数据是否过期
+ * 比较当前时间与复合标签时间戳，判断复合标签数据是否过期
  * 
- * @return 如果标记超时返回true，否则返回false
+ * @return 如果复合标签超时返回true，否则返回false
  */
 bool ArucoTagProcessor::check_tag_timeout() const
 {
-    // 检查标记是否超时
+    // 检查复合标签是否超时
     return (ros::Time::now() - _tag.timestamp).toSec() > _tag_config.target_timeout;
-}
-
-/**
- * @brief 检查标记与目标的距离是否在有效范围内
- * 
- * 验证标记在X、Y、Z轴上的距离是否小于配置的最大检测距离
- * 
- * @return 如果距离有效返回true，否则返回false
- */
-bool ArucoTagProcessor::check_distance_valid() const
-{
-    if (!_tag.is_valid() && check_tag_timeout()) {
-        return false;
-    }
-
-    // 检查标记与目标的距离是否在有效范围内
-    bool x_valid= std::abs(_tag.position.x()) < _tag_config.max_detection_distance[0];
-    bool y_valid= std::abs(_tag.position.y()) < _tag_config.max_detection_distance[1];
-    bool z_valid= std::abs(_tag.position.z()) < _tag_config.max_detection_distance[2];
-    return x_valid and y_valid and z_valid;
 }
 
 /**
  * @brief 获取偏航角误差（角度）
  * 
- * 根据标记的朝向计算相对于期望方向的偏航角误差
+ * 根据复合标签的朝向计算相对于期望方向的偏航角误差
  * 
  * @return 偏航角误差（角度制）
  */
@@ -178,9 +228,9 @@ double ArucoTagProcessor::calculate_yaw_rate() const
 {
     // 从配置中获取控制参数
     double kp = _tag_config.kp;
-    double max_yaw_rate_deg_s = _tag_config.max_yaw_rate_deg_s;
-    double min_yaw_rate_deg_s = _tag_config.min_yaw_rate_deg_s;
-    double yaw_tolerance_deg = _tag_config.yaw_tolerance_deg;
+    double max_yaw_rate_deg_s = 10.0;
+    double min_yaw_rate_deg_s = 2.0;
+    double yaw_tolerance_deg = 10.0;
     double filter_alpha = _filter_alpha;
     
     // 获取当前偏航角误差
@@ -216,14 +266,14 @@ double ArucoTagProcessor::calculate_yaw_rate() const
 /**
  * @brief 更新标记有效性状态并记录日志
  * 
- * 检查标记是否有效、是否超时、距离是否有效，并在状态变化时记录ROS日志
+ * 检查复合标签是否有效、是否超时、距离是否有效，并在状态变化时记录ROS日志
  */
 void ArucoTagProcessor::update_and_log_validity()
 {
     std::string tag_name=_tag_config.tag_name;
     
-    // 综合评估标记有效性
-    _is_valid_now=_tag.is_valid() and !check_tag_timeout() and check_distance_valid();
+    // 综合评估复合标签有效性
+    _is_valid_now=_tag.is_valid() and !check_tag_timeout() and check_distance_valid(_tag);
     
     // 记录状态变化
     if (!_is_valid_now and _was_previously_valid) 
@@ -277,11 +327,11 @@ bool ArucoTagProcessor::is_aligned() const
     // 填充误差向量，根据配置的对齐轴收集对应轴的位置误差
     for (const auto& axis : alignment_axes) {
         if (axis == 'x') {
-            error_vector(idx++) = _tag.position.x();
+            error_vector(idx++) = _tag.position.x(); 
         } else if (axis == 'y') {
-            error_vector(idx++) = _tag.position.y();
+            error_vector(idx++) = _tag.position.y(); 
         } else if (axis == 'z') {
-            error_vector(idx++) = _tag.position.z();
+            error_vector(idx++) = _tag.position.z(); 
         }
     }
     
@@ -297,16 +347,16 @@ bool ArucoTagProcessor::is_aligned() const
 }
 
 /**
- * @brief 获取标记对齐误差
+ * @brief 获取复合标签对齐误差
  * 
- * 计算标记在X、Y、Z轴上的位置误差以及偏航角误差
+ * 计算复合标签在X、Y、Z轴上的位置误差以及偏航角误差
  * 
  * @return 包含[x_error, y_error, z_error, yaw_error_deg]的数组
- * @throws std::runtime_error 如果标记无效
+ * @throws std::runtime_error 如果复合标签无效  
  */
 std::array<double,4> ArucoTagProcessor::get_alignment_errors() const
 {
-    // 检查标签是否有效且未超时
+    // 检查复合标签是否有效且未超时
     if (_is_valid_now)
     {
         // 获取目标偏移量
@@ -330,14 +380,14 @@ std::array<double,4> ArucoTagProcessor::get_alignment_errors() const
 /**
  * @brief 计算速度控制指令
  * 
- * 使用P控制器根据标记位置误差计算速度指令，并应用速度限制
+ * 使用P控制器根据复合标签位置误差计算速度指令，并应用速度限制
  * 
  * @param is_yaw 是否启用偏航控制
  * @return 包含[vx, vy, vz, yaw_rate]的速度指令数组
  */
 std::array<double,4> ArucoTagProcessor::calculate_velocity_command(bool is_yaw) const
 {
-    // 检查标签是否有效且未超时
+    // 检查复合标签是否有效且未超时
     if (!_is_valid_now) {
         return {0.0, 0.0, 0.0, 0.0};
     }

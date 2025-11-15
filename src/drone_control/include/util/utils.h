@@ -73,3 +73,38 @@ inline bool check_target_pos_valid(std::array<double, 3> target_pos){
     
     return true;
 }
+
+/**
+* @brief 计算两个地理坐标点之间的距离
+* @param current_pos 当前位置 [纬度(度), 经度(度), 高度(米)]
+* @param target_pos 目标位置 [纬度(度), 经度(度), 高度(米)]
+* @return 两点之间的距离(米)
+* @note 使用Haversine公式计算球面距离，并考虑高度差进行三维距离计算
+*       地球半径取6371000米
+*/
+inline double calculate_distance(const std::array<double, 3>& current_pos, const std::array<double, 3>& target_pos) {
+    // 地球半径(米)
+    constexpr double EARTH_RADIUS = 6371000.0;
+    
+    // 将经纬度转换为弧度
+    double lat1_rad = current_pos[0] * M_PI / 180.0;
+    double lon1_rad = current_pos[1] * M_PI / 180.0;
+    double lat2_rad = target_pos[0] * M_PI / 180.0;
+    double lon2_rad = target_pos[1] * M_PI / 180.0;
+    
+    // Haversine公式计算球面距离
+    double d_lat = lat2_rad - lat1_rad;
+    double d_lon = lon2_rad - lon1_rad;
+    double a = std::sin(d_lat / 2.0) * std::sin(d_lat / 2.0) +
+               std::cos(lat1_rad) * std::cos(lat2_rad) *
+               std::sin(d_lon / 2.0) * std::sin(d_lon / 2.0);
+    double c = 2.0 * std::atan2(std::sqrt(a), std::sqrt(1.0 - a));
+    double horizontal_distance = EARTH_RADIUS * c;
+    
+    // 计算高度差
+    double vertical_distance = target_pos[2] - current_pos[2];
+    
+    // 计算三维距离
+    return std::sqrt(horizontal_distance * horizontal_distance + vertical_distance * vertical_distance);
+}
+
